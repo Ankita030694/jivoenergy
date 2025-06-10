@@ -44,11 +44,11 @@ const Navbar = () => {
           <div className="flex-shrink-0">
             <Link href="/" className="block transition-transform duration-300 hover:scale-105">
               <Image
-                src="/logo1.png"
+                src="/translogo.png"
                 alt="JIVO ENERGY"
-                width={150}
-                height={50}
-                className="h-12 w-auto"
+                width={200}
+                height={100}
+                className="h-20 w-auto"
               />
             </Link>
           </div>
