@@ -14,12 +14,12 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$globe$2e$gl$2f$dist$2f$react$2d$globe$2e$gl$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react-globe.gl/dist/react-globe.gl.mjs [app-client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature();
-'use client';
+"use client";
 ;
 ;
 ;
 // Default GeoJSON URL - Natural Earth dataset
-const DEFAULT_GEOJSON_URL = 'https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_110m_admin_0_countries.geojson';
+const DEFAULT_GEOJSON_URL = "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_110m_admin_0_countries.geojson";
 // Define regions to show hexagons for
 const TARGET_REGIONS = {
     AFRICA: {
@@ -40,7 +40,7 @@ const TARGET_REGIONS = {
         lng: {
             min: 50,
             max: 150
-        } // Adjusted to include all of China
+        }
     },
     MIDDLE_EAST: {
         lat: {
@@ -50,7 +50,7 @@ const TARGET_REGIONS = {
         lng: {
             min: 25,
             max: 65
-        } // Extended to ensure complete coverage
+        }
     }
 };
 // Check if coordinates are within target regions
@@ -105,19 +105,19 @@ function HexedGlobe({ countryGeoJsonUrl = DEFAULT_GEOJSON_URL, hexPolygonResolut
                                 const centerLat = center.lat / count;
                                 const centerLng = center.lng / count;
                                 // Special case for China to ensure it's included
-                                const isChina = feat.properties.ISO_A3 === 'CHN';
+                                const isChina = feat.properties.ISO_A3 === "CHN";
                                 const showHexagon = isChina || isInTargetRegion(centerLat, centerLng);
                                 return {
                                     ...feat,
                                     __hover: false,
                                     __showHexagon: showHexagon,
-                                    __color: showHexagon ? hexPolygonColor ? typeof hexPolygonColor === 'function' ? hexPolygonColor(feat) : hexPolygonColor : getStableColor(feat.properties.ISO_A3 || feat.properties.ADMIN) : 'transparent'
+                                    __color: showHexagon ? hexPolygonColor ? typeof hexPolygonColor === "function" ? hexPolygonColor(feat) : hexPolygonColor : getStableColor(feat.properties.ISO_A3 || feat.properties.ADMIN) : "transparent"
                                 };
                             }
                         }["HexedGlobe.useEffect.fetchData.countryHexData"]);
                         setCountries(countryHexData);
                     } catch (error) {
-                        console.error('Error loading country data:', error);
+                        console.error("Error loading country data:", error);
                     } finally{
                         setIsLoading(false);
                     }
@@ -143,12 +143,14 @@ function HexedGlobe({ countryGeoJsonUrl = DEFAULT_GEOJSON_URL, hexPolygonResolut
                 globe.pointOfView({
                     lat: 0,
                     lng: 0,
-                    altitude: 2
+                    altitude: 1.0 // Reduced from 1.2 to make globe appear larger
                 });
                 // Enable zoom and pan with limits
                 globe.controls().enableZoom = true;
-                globe.controls().minDistance = 1.5;
-                globe.controls().maxDistance = 4;
+                globe.controls().minDistance = 0.8 // Reduced from 0.92
+                ;
+                globe.controls().maxDistance = 2.0 // Reduced from 2.46
+                ;
                 globe.controls().enablePan = true;
                 // Optimize rendering
                 globe.renderer().setPixelRatio(Math.min(window.devicePixelRatio, 2));
@@ -218,35 +220,35 @@ function HexedGlobe({ countryGeoJsonUrl = DEFAULT_GEOJSON_URL, hexPolygonResolut
     if (isLoading) {
         return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             style: {
-                width: '100%',
-                height: '100%',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                backgroundColor: '#f5f5f5'
+                width: "100%",
+                height: "100%",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                backgroundColor: "#f5f5f5"
             },
             className: "jsx-d525c98fb358669b",
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     style: {
-                        textAlign: 'center'
+                        textAlign: "center"
                     },
                     className: "jsx-d525c98fb358669b",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             style: {
-                                width: '40px',
-                                height: '40px',
-                                border: '4px solid #f3f3f3',
-                                borderTop: '4px solid #3498db',
-                                borderRadius: '50%',
-                                animation: 'spin 1s linear infinite',
-                                margin: '0 auto 10px'
+                                width: "40px",
+                                height: "40px",
+                                border: "4px solid #f3f3f3",
+                                borderTop: "4px solid #3498db",
+                                borderRadius: "50%",
+                                animation: "spin 1s linear infinite",
+                                margin: "0 auto 10px"
                             },
                             className: "jsx-d525c98fb358669b"
                         }, void 0, false, {
                             fileName: "[project]/src/components/HexedGlobe.tsx",
-                            lineNumber: 238,
+                            lineNumber: 254,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -254,13 +256,13 @@ function HexedGlobe({ countryGeoJsonUrl = DEFAULT_GEOJSON_URL, hexPolygonResolut
                             children: "Loading world data..."
                         }, void 0, false, {
                             fileName: "[project]/src/components/HexedGlobe.tsx",
-                            lineNumber: 247,
+                            lineNumber: 265,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/HexedGlobe.tsx",
-                    lineNumber: 237,
+                    lineNumber: 253,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$jsx$2f$style$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -270,15 +272,17 @@ function HexedGlobe({ countryGeoJsonUrl = DEFAULT_GEOJSON_URL, hexPolygonResolut
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/HexedGlobe.tsx",
-            lineNumber: 229,
+            lineNumber: 243,
             columnNumber: 7
         }, this);
     }
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         style: {
-            width: '100%',
-            height: '100%',
-            position: 'relative'
+            width: "100%",
+            height: "100%",
+            position: "relative",
+            transform: "scale(1.7)",
+            transformOrigin: "center center"
         },
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$globe$2e$gl$2f$dist$2f$react$2d$globe$2e$gl$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -291,8 +295,8 @@ function HexedGlobe({ countryGeoJsonUrl = DEFAULT_GEOJSON_URL, hexPolygonResolut
             <div><b>${d.properties.ADMIN} (${d.properties.ISO_A2})</b></div>
             <div>Population: <i>${d.properties.POP_EST?.toLocaleString()}</i></div>
           </div>
-        ` : '',
-                hexPolygonColor: (d)=>d.__hover ? '#ff9900' : d.__color,
+        ` : "",
+                hexPolygonColor: (d)=>d.__hover ? "#ff9900" : d.__color,
                 hexPolygonAltitude: (d)=>d.__hover ? 0.02 : 0.001,
                 hexPolygonResolution: hexPolygonResolution,
                 hexPolygonMargin: 0.3,
@@ -304,51 +308,51 @@ function HexedGlobe({ countryGeoJsonUrl = DEFAULT_GEOJSON_URL, hexPolygonResolut
                 rendererConfig: {
                     antialias: true,
                     alpha: true,
-                    powerPreference: 'high-performance'
+                    powerPreference: "high-performance"
                 }
             }, void 0, false, {
                 fileName: "[project]/src/components/HexedGlobe.tsx",
-                lineNumber: 261,
+                lineNumber: 285,
                 columnNumber: 7
             }, this),
             hoveredCountry && hoveredCountry.__showHexagon && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 style: {
-                    position: 'absolute',
-                    top: '10px',
-                    left: '10px',
-                    backgroundColor: 'rgba(255, 255, 255, 0.95)',
-                    padding: '15px',
-                    borderRadius: '8px',
-                    boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
+                    position: "absolute",
+                    top: "10px",
+                    left: "10px",
+                    backgroundColor: "rgba(255, 255, 255, 0.95)",
+                    padding: "15px",
+                    borderRadius: "8px",
+                    boxShadow: "0 4px 6px rgba(0,0,0,0.1)",
                     zIndex: 1000,
-                    transition: 'all 0.2s ease-in-out',
+                    transition: "all 0.2s ease-in-out",
                     opacity: 1,
-                    backdropFilter: 'blur(8px)',
-                    border: '1px solid rgba(255,255,255,0.2)',
-                    maxWidth: '300px'
+                    backdropFilter: "blur(8px)",
+                    border: "1px solid rgba(255,255,255,0.2)",
+                    maxWidth: "300px"
                 },
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                         style: {
                             margin: 0,
-                            fontSize: '1.2rem',
-                            fontWeight: '600',
-                            color: '#333',
-                            marginBottom: '8px'
+                            fontSize: "1.2rem",
+                            fontWeight: "600",
+                            color: "#333",
+                            marginBottom: "8px"
                         },
                         children: hoveredCountry.properties.ADMIN
                     }, void 0, false, {
                         fileName: "[project]/src/components/HexedGlobe.tsx",
-                        lineNumber: 309,
+                        lineNumber: 339,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         style: {
-                            display: 'flex',
-                            flexDirection: 'column',
-                            gap: '4px',
-                            fontSize: '0.9rem',
-                            color: '#666'
+                            display: "flex",
+                            flexDirection: "column",
+                            gap: "4px",
+                            fontSize: "0.9rem",
+                            color: "#666"
                         },
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -360,7 +364,7 @@ function HexedGlobe({ countryGeoJsonUrl = DEFAULT_GEOJSON_URL, hexPolygonResolut
                                         children: "ISO:"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/HexedGlobe.tsx",
-                                        lineNumber: 326,
+                                        lineNumber: 360,
                                         columnNumber: 15
                                     }, this),
                                     " ",
@@ -368,7 +372,7 @@ function HexedGlobe({ countryGeoJsonUrl = DEFAULT_GEOJSON_URL, hexPolygonResolut
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/HexedGlobe.tsx",
-                                lineNumber: 325,
+                                lineNumber: 359,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -380,7 +384,7 @@ function HexedGlobe({ countryGeoJsonUrl = DEFAULT_GEOJSON_URL, hexPolygonResolut
                                         children: "Population:"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/HexedGlobe.tsx",
-                                        lineNumber: 329,
+                                        lineNumber: 363,
                                         columnNumber: 15
                                     }, this),
                                     " ",
@@ -388,25 +392,25 @@ function HexedGlobe({ countryGeoJsonUrl = DEFAULT_GEOJSON_URL, hexPolygonResolut
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/HexedGlobe.tsx",
-                                lineNumber: 328,
+                                lineNumber: 362,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/HexedGlobe.tsx",
-                        lineNumber: 318,
+                        lineNumber: 350,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/HexedGlobe.tsx",
-                lineNumber: 292,
+                lineNumber: 322,
                 columnNumber: 9
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/HexedGlobe.tsx",
-        lineNumber: 260,
+        lineNumber: 278,
         columnNumber: 5
     }, this);
 }
