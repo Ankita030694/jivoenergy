@@ -14,7 +14,7 @@ const Footer = () => {
           <div className="space-y-4">
             <Link href="/" className="block">
               <Image
-                src="/logo.png"
+                src="/translogo.png"
                 alt="JIVO ENERGY"
                 width={150}
                 height={50}
