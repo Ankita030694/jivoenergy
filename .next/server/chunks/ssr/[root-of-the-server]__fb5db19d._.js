@@ -2303,17 +2303,18 @@ function GlobeViz() {
     const [hoveredCountry, setHoveredCountry] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
     const [rotation, setRotation] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])({
         lat: 0,
-        lng: 0,
+        lng: -20,
         altitude: 2.5
     });
+    const [isUserInteracting, setIsUserInteracting] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const globeRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const containerRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
-        // Energy consumption per capita (avoiding countries with small pop)
-        const getVal = (feat)=>feat.properties.GDP_MD_EST / Math.max(1e5, feat.properties.POP_EST);
         fetch("https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_110m_admin_0_countries.geojson").then((res)=>res.json()).then((data)=>{
             setCountries(data.features.filter((d)=>d.properties.ISO_A2 !== "AQ"));
         });
     }, []);
+    // Auto-rotation effect
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         let animationFrameId;
         const startTime = Date.now();
@@ -2321,32 +2322,30 @@ function GlobeViz() {
         ;
         const endLng = 140 // End at eastern Asia
         ;
-        const totalRange = endLng - startLng // Total degrees to cover
-        ;
-        const cycleDuration = 30000 // 30 seconds for full cycle
+        const totalRange = endLng - startLng;
+        const cycleDuration = 60000 // 60 seconds for full cycle (was 30000)
         ;
         const animate = ()=>{
-            const elapsed = Date.now() - startTime;
-            const cycleProgress = elapsed % cycleDuration / cycleDuration;
-            // Use sine wave for smooth back-and-forth motion
-            const sineProgress = (Math.sin(cycleProgress * Math.PI * 2 - Math.PI / 2) + 1) / 2;
-            const currentLng = startLng + sineProgress * totalRange;
-            // Update rotation state
-            setRotation((prev)=>({
-                    ...prev,
-                    lng: currentLng
-                }));
-            // Also try to control the globe directly if ref is available
-            if (globeRef.current) {
-                globeRef.current.pointOfView({
-                    lat: 0,
-                    lng: currentLng,
-                    altitude: 2.5
-                }, 100);
+            // Only auto-rotate if user is not interacting
+            if (!isUserInteracting) {
+                const elapsed = Date.now() - startTime;
+                const cycleProgress = elapsed % cycleDuration / cycleDuration;
+                const sineProgress = (Math.sin(cycleProgress * Math.PI * 2 - Math.PI / 2) + 1) / 2;
+                const currentLng = startLng + sineProgress * totalRange;
+                if (globeRef.current) {
+                    globeRef.current.pointOfView({
+                        lat: 0,
+                        lng: currentLng,
+                        altitude: 2.5
+                    }, 100);
+                }
+                setRotation((prev)=>({
+                        ...prev,
+                        lng: currentLng
+                    }));
             }
             animationFrameId = requestAnimationFrame(animate);
         };
-        // Start animation after a short delay to ensure globe is loaded
         const timeoutId = setTimeout(()=>{
             animate();
         }, 1000);
@@ -2356,6 +2355,24 @@ function GlobeViz() {
             }
             clearTimeout(timeoutId);
         };
+    }, [
+        isUserInteracting
+    ]);
+    // Prevent scroll zoom on globe
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
+        const handleWheel = (e)=>{
+            if (containerRef.current?.contains(e.target)) {
+                // Allow page scroll instead of globe zoom
+                return true;
+            }
+        };
+        const container = containerRef.current;
+        if (container) {
+            container.addEventListener("wheel", handleWheel, {
+                passive: true
+            });
+            return ()=>container.removeEventListener("wheel", handleWheel);
+        }
     }, []);
     const colorScale = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$d3$2d$scale$2f$src$2f$sequential$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__sequentialSqrt__as__scaleSequentialSqrt$3e$__["scaleSequentialSqrt"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$d3$2d$scale$2d$chromatic$2f$src$2f$sequential$2d$multi$2f$viridis$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__interpolateViridis$3e$__["interpolateViridis"]);
     const getVal = (feat)=>feat.properties.GDP_MD_EST / Math.max(1e5, feat.properties.POP_EST);
@@ -2365,20 +2382,21 @@ function GlobeViz() {
         maxVal
     ]);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        ref: containerRef,
         className: "relative w-full h-screen overflow-hidden",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "absolute inset-0 bg-gradient-to-b from-[#0A192F]/60 via-[#0A192F]/40 to-black/60 z-10 pointer-events-none"
             }, void 0, false, {
                 fileName: "[project]/src/components/GlobeViz.tsx",
-                lineNumber: 100,
+                lineNumber: 114,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMwLTYuNjI3LTUuMzczLTEyLTEyLTEyUzEyIDExLjM3MyAxMiAxOGMwIDYuNjI3IDUuMzczIDEyIDEyczEyLTUuMzczIDEyLTEyem0tMTIgMGMwLTYuNjI3LTUuMzczLTEyLTEyLTEyUzAgMTEuMzczIDAgMThjMCA2LjYyNyA1LjM3MyAxMiAxMiAxMnMxMi01LjM3MyAxMi0xMnoiIGZpbGw9IiM2NEZGREEvMDUiLz48L2c+PC9zdmc+')] opacity-5 z-10 pointer-events-none"
+                className: "absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMwLTYuNjI3LTUuMzczLTEyLTEyLTEyUzEyIDExLjM3MyAxMiAxOGMwIDYuNjI3IDUuMzczIDEyIDEyczEyLTUuMzczIDEyLTEyem0tMTIgMGMwLTYuNjI3LTUuMzczLTEyLT1.MzczLTEyUzAgMTEuMzczIDAgMThjMCA2LjYyNyA1LjM3MyAxMiAxMiAxMnMxMi01LjM3MyAxMi0xMnoiIGZpbGw9IiM2NEZGREEvMDUiLz48L2c+PC9zdmc+')] opacity-5 z-10 pointer-events-none"
             }, void 0, false, {
                 fileName: "[project]/src/components/GlobeViz.tsx",
-                lineNumber: 101,
+                lineNumber: 115,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(Globe, {
@@ -2388,49 +2406,92 @@ function GlobeViz() {
                 globeImageUrl: "//cdn.jsdelivr.net/npm/three-globe/example/img/earth-blue-marble.jpg",
                 lineHoverPrecision: 0,
                 polygonsData: countries,
-                polygonAltitude: (d)=>d === hoveredCountry ? 0.156 : 0.078,
+                polygonAltitude: (d)=>d === hoveredCountry ? 0.12 : 0.06,
                 polygonCapColor: (d)=>d === hoveredCountry ? "#64FFDA" : colorScale(getVal(d)),
                 polygonSideColor: ()=>"rgba(100, 255, 218, 0.15)",
                 polygonStrokeColor: ()=>"#64FFDA",
-                polygonLabel: (obj)=>{
-                    const d = obj.properties;
+                polygonLabel: (d)=>{
+                    const country = d.properties;
                     return `
-            <div class="bg-[#0A192F]/90 p-4 rounded-lg border border-[#64FFDA]/30 shadow-lg">
-              <b class="text-[#64FFDA] text-lg">${d.ADMIN}</b><br />
-              <span class="text-[#8892B0]">Energy Consumption:</span> <i class="text-[#64FFDA]">${d.GDP_MD_EST ? d.GDP_MD_EST.toLocaleString() : "N/A"}</i> MWh<br/>
-              <span class="text-[#8892B0]">Population:</span> <i class="text-[#64FFDA]">${d.POP_EST ? d.POP_EST.toLocaleString() : "N/A"}</i>
+            <div style="
+              background: rgba(10, 25, 47, 0.95);
+              padding: 12px;
+              border-radius: 8px;
+              border: 1px solid rgba(100, 255, 218, 0.3);
+              box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+              font-family: system-ui, -apple-system, sans-serif;
+              max-width: 250px;
+            ">
+              <div style="color: #64FFDA; font-size: 16px; font-weight: bold; margin-bottom: 8px;">
+                ${country.ADMIN}
+              </div>
+              <div style="color: #8892B0; font-size: 12px; margin-bottom: 4px;">
+                Energy Consumption: 
+                <span style="color: #64FFDA; font-weight: 500;">
+                  ${country.GDP_MD_EST ? country.GDP_MD_EST.toLocaleString() : "N/A"} MWh
+                </span>
+              </div>
+              <div style="color: #8892B0; font-size: 12px;">
+                Population: 
+                <span style="color: #64FFDA; font-weight: 500;">
+                  ${country.POP_EST ? country.POP_EST.toLocaleString() : "N/A"}
+                </span>
+              </div>
             </div>
           `;
                 },
                 onPolygonHover: (polygon)=>{
                     setHoveredCountry(polygon);
                 },
+                onPolygonClick: (polygon)=>{
+                    console.log("Clicked country:", polygon?.properties?.ADMIN);
+                },
                 polygonsTransitionDuration: 300,
                 atmosphereColor: "#64FFDA",
                 atmosphereAltitude: 0.1,
                 animateIn: false,
-                enablePointerInteraction: false,
+                enablePointerInteraction: true,
                 onGlobeReady: ()=>{
                     console.log("Globe is ready!");
                     if (globeRef.current) {
-                        // Disable auto-rotation and set initial view
-                        globeRef.current.controls().autoRotate = false;
+                        // Configure controls
+                        const controls = globeRef.current.controls();
+                        controls.autoRotate = false;
+                        controls.enableZoom = false // Disable zoom
+                        ;
+                        controls.enablePan = false // Disable panning
+                        ;
+                        controls.enableRotate = true // Allow rotation
+                        ;
+                        controls.rotateSpeed = 0.25 // Slower manual rotation (was 0.5)
+                        ;
+                        // Set initial view
                         globeRef.current.pointOfView({
                             lat: 0,
                             lng: -20,
                             altitude: 2.5
                         });
+                        // Listen for user interaction
+                        controls.addEventListener("start", ()=>{
+                            setIsUserInteracting(true);
+                        });
+                        controls.addEventListener("end", ()=>{
+                            // Resume auto-rotation after 3 seconds of no interaction
+                            setTimeout(()=>{
+                                setIsUserInteracting(false);
+                            }, 3000);
+                        });
                     }
                 }
             }, void 0, false, {
                 fileName: "[project]/src/components/GlobeViz.tsx",
-                lineNumber: 104,
+                lineNumber: 119,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/GlobeViz.tsx",
-        lineNumber: 98,
+        lineNumber: 112,
         columnNumber: 5
     }, this);
 }
