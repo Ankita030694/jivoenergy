@@ -11,6 +11,7 @@ const About = () => {
               className="w-full h-full object-cover"
               controls
               poster="/video-poster.jpg"
+              crossOrigin="anonymous"
             >
               <source src="/about-video.mp4" type="video/mp4" />
               Your browser does not support the video tag.

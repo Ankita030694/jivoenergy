@@ -40,7 +40,19 @@ export default function GlobeViz() {
     )
       .then((res) => res.json())
       .then((data) => {
-        setCountries(data.features.filter((d: CountryFeature) => d.properties.ISO_A2 !== "AQ"))
+        const processedFeatures = data.features
+          .filter((d: CountryFeature) => d.properties.ISO_A2 !== "AQ")
+          .map((feature: CountryFeature) => ({
+            ...feature,
+            properties: {
+              ...feature.properties,
+              LAT: feature.properties.LAT || 0,
+              LNG: feature.properties.LNG || 0,
+              GDP_MD_EST: feature.properties.GDP_MD_EST || 0,
+              POP_EST: feature.properties.POP_EST || 0
+            }
+          }));
+        setCountries(processedFeatures);
       })
   }, [])
 
@@ -109,19 +121,15 @@ export default function GlobeViz() {
   colorScale.domain([0, maxVal])
 
   return (
-    <div ref={containerRef} className="relative w-full h-screen overflow-hidden">
+    <div ref={containerRef} className="relative w-full h-screen overflow-hidden flex items-center justify-center">
       {/* Energy-themed overlay gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0A192F]/60 via-[#0A192F]/40 to-black/60 z-10 pointer-events-none" />
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMwLTYuNjI3LTUuMzczLTEyLTEyLTEyUzEyIDExLjM3MyAxMiAxOGMwIDYuNjI3IDUuMzczIDEyIDEyczEyLTUuMzczIDEyLTEyem0tMTIgMGMwLTYuNjI3LTUuMzczLTEyLT1.MzczLTEyUzAgMTEuMzczIDAgMThjMCA2LjYyNyA1LjM3MyAxMiAxMiAxMnMxMi01LjM3MyAxMi0xMnoiIGZpbGw9IiM2NEZGREEvMDUiLz48L2c+PC9zdmc+')] opacity-5 z-10 pointer-events-none" />
-
-
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0A192F]/40 via-[#0A192F]/20 to-black/40 z-10 pointer-events-none" />
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMwLTYuNjI3LTUuMzczLTEyLTEyLTEyUzEyIDExLjM3MyAxMiAxOGMwIDYuNjI3IDUuMzczIDEyIDEyczEyLTUuMzczIDEyLTEyem0tMTIgMGMwLTYuNjI3LTUuMzczLTEyLT1.MzczLTEyUzAgMTEuMzczIDAgMThjMCA2LjYyNyA1LjM3MyAxMiAxMiAxMnMxMi01LjM3MyAxMi0xMnoiIGZpbGw9IiM2NEZGREEvMDUiLz48L2c+PC9zdmc+')] opacity-3 z-10 pointer-events-none" />
 
       <Globe
         ref={globeRef}
-        width={1500}
-        height={900}
         globeImageUrl="//cdn.jsdelivr.net/npm/three-globe/example/img/earth-blue-marble.jpg"
-        lineHoverPrecision={0}
+        lineHoverPrecision={0.5}
         polygonsData={countries}
         polygonAltitude={(d) => (d === hoveredCountry ? 0.12 : 0.06)}
         polygonCapColor={(d) => (d === hoveredCountry ? "#64FFDA" : colorScale(getVal(d as CountryFeature)))}
@@ -138,6 +146,7 @@ export default function GlobeViz() {
               box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
               font-family: system-ui, -apple-system, sans-serif;
               max-width: 250px;
+              pointer-events: none;
             ">
               <div style="color: #64FFDA; font-size: 16px; font-weight: bold; margin-bottom: 8px;">
                 ${country.ADMIN}
@@ -158,6 +167,7 @@ export default function GlobeViz() {
           `
         }}
         onPolygonHover={(polygon: any) => {
+          console.log("Hovering over:", polygon?.properties?.ADMIN)
           setHoveredCountry(polygon as CountryFeature | null)
         }}
         onPolygonClick={(polygon: any) => {
@@ -168,6 +178,13 @@ export default function GlobeViz() {
         atmosphereAltitude={0.1}
         animateIn={false}
         enablePointerInteraction={true}
+        labelLat={(d: any) => d.properties.LAT}
+        labelLng={(d: any) => d.properties.LNG}
+        labelText={(d: any) => d.properties.ADMIN}
+        labelSize={2}
+        labelDotRadius={0.4}
+        labelColor={() => "#64FFDA"}
+        labelResolution={2}
         onGlobeReady={() => {
           console.log("Globe is ready!")
           if (globeRef.current) {
@@ -196,6 +213,12 @@ export default function GlobeViz() {
           }
         }}
       />
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center z-20">
+        <h2 className="text-2xl md:text-3xl font-bold text-[#64FFDA] mb-2">
+          Contributing to clean energy transition in Asia & Africa
+        </h2>
+        <div className="w-24 h-1 bg-[#64FFDA] mx-auto opacity-50"></div>
+      </div>
     </div>
   )
 }

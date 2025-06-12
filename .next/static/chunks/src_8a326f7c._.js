@@ -54,7 +54,7 @@ const Navbar = ()=>{
         }
     }["Navbar.useEffect"], []);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
-        className: "fixed top-0 w-full z-40 transition-all duration-300 bg-gradient-to-r from-[#0A5C35] via-[#0D7A4A] to-[#0A5C35] backdrop-blur-sm border-b border-[#4ADE80]/20",
+        className: "fixed top-0 w-full z-40 transition-all duration-300 bg-white backdrop-blur-md border-b border-gray-200 shadow-sm",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
@@ -65,7 +65,7 @@ const Navbar = ()=>{
                             className: "flex-shrink-0 relative group",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "absolute -inset-1 bg-gradient-to-r from-[#4ADE80] to-[#22C55E] rounded-lg blur opacity-30 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"
+                                    className: "absolute -inset-1 bg-gradient-to-r from-[#77b900] to-[#095d37] rounded-lg blur opacity-20 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Navbar.tsx",
                                     lineNumber: 45,
@@ -99,7 +99,7 @@ const Navbar = ()=>{
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "hidden md:flex items-center justify-center flex-1 mx-8",
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "flex items-center space-x-2",
+                                className: "flex items-center space-x-1",
                                 children: [
                                     {
                                         href: '/',
@@ -135,7 +135,7 @@ const Navbar = ()=>{
                                     }
                                 ].map(({ href, label })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                         href: href,
-                                        className: `relative px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 group ${isActive(href) ? 'text-[#4ADE80]' : 'text-[#E2E8F0] hover:text-[#4ADE80]'}`,
+                                        className: `relative px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 group ${isActive(href) ? 'text-[#095d37]' : 'text-gray-700 hover:text-[#095d37]'}`,
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                 className: "relative z-10",
@@ -146,7 +146,7 @@ const Navbar = ()=>{
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: `absolute inset-0 rounded-lg transition-all duration-200 ${isActive(href) ? 'bg-[#4ADE80]/10' : 'bg-transparent group-hover:bg-[#4ADE80]/5'}`
+                                                className: `absolute inset-0 rounded-lg transition-all duration-200 ${isActive(href) ? 'bg-[#77b900]/10' : 'bg-transparent group-hover:bg-[#77b900]/5'}`
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/Navbar.tsx",
                                                 lineNumber: 80,
@@ -172,7 +172,7 @@ const Navbar = ()=>{
                             className: "hidden md:block",
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                 href: "/contact",
-                                className: `relative px-6 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 ${isActive('/contact') ? 'text-white bg-[#4ADE80] shadow-lg shadow-[#4ADE80]/20' : 'text-[#4ADE80] border-2 border-[#4ADE80] hover:bg-[#4ADE80]/10 hover:shadow-lg hover:shadow-[#4ADE80]/10'}`,
+                                className: `relative px-6 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 ${isActive('/contact') ? 'text-white bg-[#095d37] shadow-lg shadow-[#095d37]/20' : 'text-[#095d37] border-2 border-[#095d37] hover:bg-[#095d37] hover:text-white hover:shadow-lg hover:shadow-[#095d37]/20'}`,
                                 children: "Contact Us"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Navbar.tsx",
@@ -185,7 +185,7 @@ const Navbar = ()=>{
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                            className: "md:hidden relative z-50 p-2 rounded-lg hover:bg-[#4ADE80]/10 transition-colors duration-200",
+                            className: "md:hidden relative z-50 p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200",
                             onClick: toggleMobileMenu,
                             "aria-label": "Toggle mobile menu",
                             children: [
@@ -193,7 +193,7 @@ const Navbar = ()=>{
                                     className: `transition-all duration-300 ${isMobileMenuOpen ? 'opacity-100' : 'opacity-0'} absolute inset-0 flex items-center justify-center`,
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fa$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FaTimes"], {
                                         size: 24,
-                                        className: "text-[#4ADE80]"
+                                        className: "text-[#095d37]"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Navbar.tsx",
                                         lineNumber: 111,
@@ -208,7 +208,7 @@ const Navbar = ()=>{
                                     className: `transition-all duration-300 ${isMobileMenuOpen ? 'opacity-0' : 'opacity-100'}`,
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fa$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FaBars"], {
                                         size: 24,
-                                        className: "text-[#4ADE80]"
+                                        className: "text-[#095d37]"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Navbar.tsx",
                                         lineNumber: 114,
@@ -237,11 +237,11 @@ const Navbar = ()=>{
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: `fixed inset-0 z-40 bg-[#0A5C35]/95 backdrop-blur-md transition-all duration-300 ease-in-out transform ${isMobileMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0 pointer-events-none'}`,
+                className: `fixed inset-0 z-40 bg-white/95 backdrop-blur-md transition-all duration-300 ease-in-out transform ${isMobileMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0 pointer-events-none'}`,
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20",
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "flex flex-col space-y-1",
+                        className: "flex flex-col space-y-2",
                         children: [
                             {
                                 href: '/',
@@ -281,7 +281,7 @@ const Navbar = ()=>{
                             }
                         ].map(({ href, label })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                 href: href,
-                                className: `px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 ${isActive(href) ? 'text-[#4ADE80] bg-[#4ADE80]/10' : 'text-[#E2E8F0] hover:text-[#4ADE80] hover:bg-[#4ADE80]/5'}`,
+                                className: `px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 ${isActive(href) ? 'text-[#095d37] bg-[#77b900]/10' : 'text-gray-700 hover:text-[#095d37] hover:bg-[#77b900]/5'}`,
                                 onClick: closeMobileMenu,
                                 children: label
                             }, href, false, {

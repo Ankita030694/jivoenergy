@@ -72,14 +72,17 @@ const Projects = () => {
         <div className="flex flex-col md:flex-row items-center gap-8">
           {/* Project Image */}
           <div className="w-full md:w-1/2 relative h-[400px]">
-          <video
-              className="w-full h-full object-cover"
-              controls
-              poster="/video-poster.jpg"
-            >
-              <source src="/about-video.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+            <div className="w-full aspect-video relative rounded-lg overflow-hidden shadow-lg">
+              <video
+                className="w-full h-full object-cover"
+                controls
+                poster="/video-poster.jpg"
+                crossOrigin="anonymous"
+              >
+                <source src="/projects-video.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
           </div>
           
           {/* Project Description */}
