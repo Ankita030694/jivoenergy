@@ -4,6 +4,7 @@ import Image from 'next/image';
 const Navbar = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [showSubHome, setShowSubHome] = useState(false);
+  const [showLogoDropdown, setShowLogoDropdown] = useState(false);
 
   const handleTrapezoidEnter = () => {
     setIsHovered(true);
@@ -20,6 +21,14 @@ const Navbar = () => {
 
   const handleSubnavHover = () => {
     setShowSubHome(false);
+  };
+
+  const handleLogoHover = () => {
+    setShowLogoDropdown(true);
+  };
+
+  const handleLogoLeave = () => {
+    setShowLogoDropdown(false);
   };
 
   return (
@@ -83,6 +92,84 @@ const Navbar = () => {
           justify-content: center;
           padding: 0 20px;
           flex-shrink: 0;
+          position: relative;
+        }
+
+        .logo-dropdown {
+          position: absolute;
+          top: 100%;
+          left: 50%;
+          transform: translateX(-50%) translateY(10px);
+          background: rgba(10, 92, 53, 0.98);
+          border-radius: 12px;
+          padding: 15px 0;
+          display: none;
+          flex-direction: column;
+          min-width: 250px;
+          z-index: 100;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+          opacity: 0;
+          transition: all 0.3s ease;
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo-dropdown.show {
+          display: flex;
+          opacity: 1;
+          transform: translateX(-50%) translateY(0);
+        }
+
+        .logo-dropdown::before {
+          content: '';
+          position: absolute;
+          top: -8px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 16px;
+          height: 16px;
+          background: rgba(10, 92, 53, 0.98);
+          transform: rotate(45deg);
+          border-left: 1px solid rgba(255, 255, 255, 0.1);
+          border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo-dropdown a {
+          color: white;
+          text-decoration: none;
+          padding: 12px 25px;
+          transition: all 0.3s ease;
+          font-size: 14px;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+          position: relative;
+          display: flex;
+          align-items: center;
+        }
+
+        .logo-dropdown a::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 3px;
+          height: 0;
+          background: rgba(255, 255, 255, 0.8);
+          transition: height 0.3s ease;
+        }
+
+        .logo-dropdown a:hover {
+          background: rgba(255, 255, 255, 0.1);
+          padding-left: 30px;
+        }
+
+        .logo-dropdown a:hover::before {
+          height: 70%;
+        }
+
+        .logo-dropdown a:not(:last-child) {
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .trapezoid a, .subnavbtn {
@@ -206,7 +293,10 @@ const Navbar = () => {
                 <a href="#CSR">CSR</a>
 
               </div>
-              <div className="logo-container">
+              <div className="logo-container"
+                onMouseEnter={handleLogoHover}
+                onMouseLeave={handleLogoLeave}
+              >
                 <Image
                   src="/logo1.png"
                   alt="JIVO ENERGY"
@@ -214,6 +304,23 @@ const Navbar = () => {
                   height={50}
                   className="object-contain"
                 />
+                <div className={`logo-dropdown ${showLogoDropdown ? 'show' : ''}`}>
+                  <a href="#business-areas">
+                    <span>Business Areas</span>
+                  </a>
+                  <a href="#capabilities">
+                    <span>Capabilities</span>
+                  </a>
+                  <a href="#theme">
+                    <span>Theme</span>
+                  </a>
+                  <a href="#partner">
+                    <span>Partner</span>
+                  </a>
+                  <a href="#certification">
+                    <span>Certification</span>
+                  </a>
+                </div>
               </div>
               <div className="nav-items-right">
                 <a href="#Media">Media</a>
