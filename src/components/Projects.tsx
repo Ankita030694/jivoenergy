@@ -58,15 +58,17 @@ const Projects = () => {
     <section className="w-full py-16 bg-[#0A5C35] relative">
       <div 
         className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: 'url(/bg.png)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-        //   filter: 'blur(1px)',
-          opacity: 0.97,
-        }}
-      />
+      >
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover opacity-90"
+        >
+          <source src="/power.mp4" type="video/mp4" />
+        </video>
+      </div>
       <div className="container mx-auto px-4 relative z-10">
         <h2 className="text-4xl font-bold text-center mb-12 text-white">Our Projects</h2>
         <div className="flex flex-col md:flex-row items-center gap-8">

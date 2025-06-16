@@ -116,6 +116,8 @@
     --text-5xl--line-height: 1;
     --text-6xl: 3.75rem;
     --text-6xl--line-height: 1;
+    --text-7xl: 4.5rem;
+    --text-7xl--line-height: 1;
     --font-weight-medium: 500;
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
@@ -579,12 +581,16 @@
     height: calc(var(--spacing) * 48);
   }
 
-  .h-\[30vh\] {
-    height: 30vh;
-  }
-
   .h-\[40vh\] {
     height: 40vh;
+  }
+
+  .h-\[60vh\] {
+    height: 60vh;
+  }
+
+  .h-\[65vh\] {
+    height: 65vh;
   }
 
   .h-\[400px\] {
@@ -1211,6 +1217,11 @@
     line-height: var(--tw-leading, var(--text-5xl--line-height));
   }
 
+  .text-7xl {
+    font-size: var(--text-7xl);
+    line-height: var(--tw-leading, var(--text-7xl--line-height));
+  }
+
   .text-lg {
     font-size: var(--text-lg);
     line-height: var(--tw-leading, var(--text-lg--line-height));
@@ -1369,6 +1380,10 @@
 
   .opacity-75 {
     opacity: .75;
+  }
+
+  .opacity-90 {
+    opacity: .9;
   }
 
   .shadow {

@@ -92,20 +92,19 @@ const Contact = () => {
       <Navbar />
       
       {/* Hero Section - Reduced height */}
-      <div className="relative w-full h-[30vh] bg-[#0A5C35]">
-        <div 
-          className="absolute inset-0 z-0"
-          style={{
-            backgroundImage: 'url(/bg.png)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-            opacity: 0.97,
-          }}
-        />
+      <div className="relative w-full h-[65vh] bg-[#0A5C35] overflow-hidden">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover opacity-90"
+        >
+          <source src="/power.mp4" type="video/mp4" />
+        </video>
         <div className="relative z-10 h-full flex items-center justify-center">
-          <h1 className="text-4xl font-bold text-white text-center px-4">
-            Contact Us
+          <h1 className="text-7xl font-bold text-white text-center px-4">
+            CONTACT US
           </h1>
         </div>
       </div>
