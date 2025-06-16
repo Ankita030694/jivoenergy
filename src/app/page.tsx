@@ -14,13 +14,14 @@ export default function Home() {
     <div className="min-h-screen bg-white">
       <Navbar />
       <main className="flex flex-col items-center w-full">
-        <section id="hero-section" className="relative w-full min-h-screen overflow-hidden">
-          {/* Map - Place it first in the DOM order */}
-          <div className="absolute inset-0 z-10">
+        {/* Hero section with MapViz positioned below navbar */}
+        <section id="hero-section" className="relative w-full min-h-screen overflow-hidden pt-32">
+          {/* Map - positioned to start below navbar */}
+          <div className="absolute inset-0 top-10 z-10">
             <MapViz />
           </div>
 
-          {/* Hero Content */}
+          {/* Hero Content - uncomment if needed */}
           {/* <div className="absolute inset-0 z-30 flex flex-col items-center justify-center text-white">
             <div className="relative group mb-8">
               <div className="absolute -inset-1 bg-gradient-to-r from-[#4ADE80] to-[#22C55E] rounded-lg blur opacity-30 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>

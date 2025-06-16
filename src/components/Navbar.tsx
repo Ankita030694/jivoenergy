@@ -1,159 +1,233 @@
-'use client';
-
+import React, { useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
-import { FaBars, FaTimes } from 'react-icons/fa';
-import { useState, useRef, useEffect } from 'react';
-import { usePathname } from 'next/navigation';
 
 const Navbar = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const pathname = usePathname();
+  const [isHovered, setIsHovered] = useState(false);
+  const [showSubHome, setShowSubHome] = useState(false);
 
-  // Check if the current path matches the link
-  const isActive = (path: string) => {
-    return pathname === path;
+  const handleTrapezoidEnter = () => {
+    setIsHovered(true);
   };
 
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
+  const handleTrapezoidLeave = () => {
+    setIsHovered(false);
+    setShowSubHome(false);
   };
 
-  // Close mobile menu when clicking a link
-  const closeMobileMenu = () => {
-    setIsMobileMenuOpen(false);
+  const handleExpandHomeHover = () => {
+    setShowSubHome(true);
   };
 
-  // Close mobile menu when window is resized beyond mobile breakpoint
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth >= 768) {
-        setIsMobileMenuOpen(false);
-      }
-    };
-    
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  const handleSubnavHover = () => {
+    setShowSubHome(false);
+  };
 
   return (
-    <nav className="fixed top-0 w-full z-40 transition-all duration-300 bg-white backdrop-blur-md border-b border-gray-200 shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <div className="flex-shrink-0 relative group">
-            <div className="absolute -inset-1 bg-gradient-to-r from-[#77b900] to-[#095d37] rounded-lg blur opacity-20 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
-            <Link href="/" className="relative block transition-transform duration-300 hover:scale-105">
-              <Image
-                src="/translogo.png"
-                alt="JIVO ENERGY"
-                width={200}
-                height={100}
-                className="h-20 w-auto"
-              />
-            </Link>
-          </div>
+    <div className="min-w-full">
+      <style jsx>{`
+        body {
+          min-width: 800px;
+          margin: 0px;
+        }
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center justify-center flex-1 mx-8">
-            <div className="flex items-center space-x-1">
-              {[
-                { href: '/', label: 'Home' },
-                { href: '/about', label: 'JIVO ENERGY' },
-                { href: '/projects', label: 'Projects' },
-                { href: '/esg', label: 'ESG' },
-                { href: '/csr', label: 'CSR' },
-                { href: '/media', label: 'Media' },
-                { href: '/gallery', label: 'Gallery' },
-                { href: '/careers', label: 'Careers' }
-              ].map(({ href, label }) => (
-                <Link 
-                  key={href}
-                  href={href}
-                  className={`relative px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 group ${
-                    isActive(href) 
-                      ? 'text-[#095d37]' 
-                      : 'text-gray-700 hover:text-[#095d37]'
-                  }`}
-                >
-                  <span className="relative z-10">{label}</span>
-                  <span className={`absolute inset-0 rounded-lg transition-all duration-200 ${
-                    isActive(href)
-                      ? 'bg-[#77b900]/10'
-                      : 'bg-transparent group-hover:bg-[#77b900]/5'
-                  }`}></span>
-                </Link>
-              ))}
-            </div>
-          </div>
+        .trapezoid {
+          -webkit-box-sizing: content-box;
+          -moz-box-sizing: content-box;
+          box-sizing: content-box;
+          height: 0;
+          border: 80px solid rgba(0,0,0,0);
+          border-top: 0 solid;
+          border-bottom: 100px solid rgba(10, 92, 53, 0.95);
+          -webkit-border-radius: 20px 20px 0 0;
+          border-radius: 20px 20px 0 0;
+          font: normal 100%/normal Arial, Helvetica, sans-serif;
+          color: rgba(0,0,0,0.7);
+          -o-text-overflow: clip;
+          text-overflow: clip;
+          -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
+          margin-top: ${isHovered ? '0px' : '-53px'};
+          width: 1000px;
+          position: relative;
+          transition: all 0.7s ease;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0 20px;
+        }
 
-          {/* Contact Button */}
-          <div className="hidden md:block">
-            <Link 
-              href="/contact"
-              className={`relative px-6 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 ${
-                isActive('/contact')
-                  ? 'text-white bg-[#095d37] shadow-lg shadow-[#095d37]/20'
-                  : 'text-[#095d37] border-2 border-[#095d37] hover:bg-[#095d37] hover:text-white hover:shadow-lg hover:shadow-[#095d37]/20'
-              }`}
-            >
-              Contact Us
-            </Link>
-          </div>
+        .trapezoid-content {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 53px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0 20px;
+          box-sizing: border-box;
+          -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
+        }
 
-          {/* Mobile menu button */}
-          <button 
-            className="md:hidden relative z-50 p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200"
-            onClick={toggleMobileMenu}
-            aria-label="Toggle mobile menu"
+        .nav-items-left, .nav-items-right {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+        }
+
+        .logo-container {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0 20px;
+          flex-shrink: 0;
+        }
+
+        .trapezoid a, .subnavbtn {
+          -webkit-transform: none;
+          transform: none;
+          white-space: nowrap;
+          position: relative;
+          z-index: 2;
+        }
+
+        .navbar {
+          position: sticky;
+          top: 0;
+          display: flex;
+          overflow: visible;
+          justify-content: center;
+          height: 100px;
+          background: transparent;
+          width: 100%;
+          z-index: 50;
+        }
+
+        .navbar a {
+          font-size: 14px;
+          color: white;
+          text-align: center;
+          padding: 14px 15px;
+          text-decoration: none;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          transition: all 0.5s ease;
+        }
+
+        .subnav {
+          overflow: hidden;
+        }
+
+        .subnav .subnavbtn {
+          font-size: 14px;
+          border: none;
+          outline: none;
+          color: white;
+          padding: 14px 15px;
+          background-color: inherit;
+          font-family: inherit;
+          margin: 0;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          transition: all 0.5s ease;
+          cursor: pointer;
+        }
+
+        .navbar a:hover, .subnav:hover .subnavbtn {
+          background: rgba(255, 255, 255, 0.2);
+          color: white;
+          border-radius: 5px;
+        }
+
+        .subnav-content {
+          display: none;
+          position: absolute;
+          left: 0;
+          width: 100%;
+          z-index: 1;
+          transform: perspective(-10px);
+        }
+
+        .subnav-content a {
+          float: left;
+          color: white;
+          text-decoration: none;
+        }
+
+        .subnav-content a:hover {
+          background: rgba(255, 255, 255, 0.2);
+          color: white;
+        }
+
+        .subnav:hover .subnav-content {
+          display: flex;
+          justify-content: center;
+        }
+
+        .subnav-trapezoid {
+          -webkit-box-sizing: content-box;
+          -moz-box-sizing: content-box;
+          box-sizing: content-box;
+          height: 0;
+          border: 80px solid rgba(0,0,0,0);
+          border-top: 0 solid;
+          border-bottom: 100px solid rgba(10, 92, 53, 0.95);
+          -webkit-border-radius: 20px 20px 0 0;
+          border-radius: 20px 20px 0 0;
+          -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
+          display: flex;
+          justify-content: center;
+          align-items: flex-end;
+          padding: 0 20px 20px 20px;
+        }
+
+        .subnav-trapezoid a {
+          -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
+          margin: 0 10px;
+        }
+      `}</style>
+
+      <div className="min-w-full fixed z-50">
+        <nav className="navbar">
+          <div 
+            className="trapezoid"
+            onMouseEnter={handleTrapezoidEnter}
+            onMouseLeave={handleTrapezoidLeave}
           >
-            <div className={`transition-all duration-300 ${isMobileMenuOpen ? 'opacity-100' : 'opacity-0'} absolute inset-0 flex items-center justify-center`}>
-              <FaTimes size={24} className="text-[#095d37]" />
-            </div>
-            <div className={`transition-all duration-300 ${isMobileMenuOpen ? 'opacity-0' : 'opacity-100'}`}>
-              <FaBars size={24} className="text-[#095d37]" />
-            </div>
-          </button>
-        </div>
-      </div>
+            <div className="trapezoid-content">
+              <div className="nav-items-left">
+                <a className="sub-home" href="#">Home</a>
+                <a href="#Projects">Projects</a>
+                <a href="#Gallery">Gallery</a>
+                <a href="#CSR">CSR</a>
 
-      {/* Mobile menu */}
-      <div 
-        className={`fixed inset-0 z-40 bg-white/95 backdrop-blur-md transition-all duration-300 ease-in-out transform ${
-          isMobileMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0 pointer-events-none'
-        }`}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
-          <div className="flex flex-col space-y-2">
-            {[
-              { href: '/', label: 'Home' },
-              { href: '/about', label: 'JIVO ENERGY' },
-              { href: '/projects', label: 'Projects' },
-              { href: '/esg', label: 'ESG' },
-              { href: '/csr', label: 'CSR' },
-              { href: '/media', label: 'Media' },
-              { href: '/gallery', label: 'Gallery' },
-              { href: '/careers', label: 'Careers' },
-              { href: '/contact', label: 'Contact Us' }
-            ].map(({ href, label }) => (
-              <Link 
-                key={href}
-                href={href}
-                className={`px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 ${
-                  isActive(href)
-                    ? 'text-[#095d37] bg-[#77b900]/10'
-                    : 'text-gray-700 hover:text-[#095d37] hover:bg-[#77b900]/5'
-                }`}
-                onClick={closeMobileMenu}
-              >
-                {label}
-              </Link>
-            ))}
+              </div>
+              <div className="logo-container">
+                <Image
+                  src="/logo1.png"
+                  alt="JIVO ENERGY"
+                  width={150}
+                  height={50}
+                  className="object-contain"
+                />
+              </div>
+              <div className="nav-items-right">
+                <a href="#Media">Media</a>
+                <a href="#ESG">ESG</a>
+
+                <a href="#Careers">Careers</a>
+                <a href="#Contact">Contact Us</a>
+              </div>
+            </div>
           </div>
-        </div>
+        </nav>
       </div>
-    </nav>
+    </div>
   );
 };
 
-export default Navbar; 
+export default Navbar;

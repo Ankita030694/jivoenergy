@@ -8,39 +8,309 @@ const mod = __turbopack_context__.x("next/dist/compiled/next-server/app-page-tur
 
 module.exports = mod;
 }}),
-"[externals]/next/dist/server/app-render/work-async-storage.external.js [external] (next/dist/server/app-render/work-async-storage.external.js, cjs)": (function(__turbopack_context__) {
+"[project]/src/components/Navbar.tsx [app-ssr] (ecmascript)": ((__turbopack_context__) => {
+"use strict";
 
-var { g: global, __dirname, m: module, e: exports } = __turbopack_context__;
+var { g: global, __dirname } = __turbopack_context__;
 {
-const mod = __turbopack_context__.x("next/dist/server/app-render/work-async-storage.external.js", () => require("next/dist/server/app-render/work-async-storage.external.js"));
-
-module.exports = mod;
+__turbopack_context__.s({
+    "default": (()=>__TURBOPACK__default__export__)
+});
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$jsx$2f$style$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/styled-jsx/style.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/image.js [app-ssr] (ecmascript)");
+;
+;
+;
+;
+const Navbar = ()=>{
+    const [isHovered, setIsHovered] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [showSubHome, setShowSubHome] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
+    const handleTrapezoidEnter = ()=>{
+        setIsHovered(true);
+    };
+    const handleTrapezoidLeave = ()=>{
+        setIsHovered(false);
+        setShowSubHome(false);
+    };
+    const handleExpandHomeHover = ()=>{
+        setShowSubHome(true);
+    };
+    const handleSubnavHover = ()=>{
+        setShowSubHome(false);
+    };
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        className: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$jsx$2f$style$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].dynamic([
+            [
+                "c197a7168e706bc3",
+                [
+                    isHovered ? '0px' : '-53px'
+                ]
+            ]
+        ]) + " " + "min-w-full",
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$jsx$2f$style$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                id: "c197a7168e706bc3",
+                dynamic: [
+                    isHovered ? '0px' : '-53px'
+                ],
+                children: `body.__jsx-style-dynamic-selector{min-width:800px;margin:0}.trapezoid.__jsx-style-dynamic-selector{box-sizing:content-box;color:#000000b3;text-overflow:clip;height:0;margin-top:${isHovered ? '0px' : '-53px'};border:80px solid #0000;border-top:0 solid;border-bottom:100px solid #0a5c35f2;border-radius:20px 20px 0 0;justify-content:space-between;align-items:center;width:1000px;padding:0 20px;font:100% Arial,Helvetica,sans-serif;transition:all .7s;display:flex;position:relative;transform:rotateX(180deg)}.trapezoid-content.__jsx-style-dynamic-selector{box-sizing:border-box;justify-content:space-between;align-items:center;width:100%;height:53px;padding:0 20px;display:flex;position:absolute;top:0;left:0;transform:rotateX(180deg)}.nav-items-left.__jsx-style-dynamic-selector,.nav-items-right.__jsx-style-dynamic-selector{align-items:center;gap:10px;display:flex}.logo-container.__jsx-style-dynamic-selector{flex-shrink:0;justify-content:center;align-items:center;padding:0 20px;display:flex}.trapezoid.__jsx-style-dynamic-selector a.__jsx-style-dynamic-selector,.subnavbtn.__jsx-style-dynamic-selector{white-space:nowrap;z-index:2;position:relative;transform:none}.navbar.__jsx-style-dynamic-selector{z-index:50;background:0 0;justify-content:center;width:100%;height:100px;display:flex;position:sticky;top:0;overflow:visible}.navbar.__jsx-style-dynamic-selector a.__jsx-style-dynamic-selector{color:#fff;text-align:center;text-transform:uppercase;letter-spacing:2px;padding:14px 15px;font-size:14px;text-decoration:none;transition:all .5s}.subnav.__jsx-style-dynamic-selector{overflow:hidden}.subnav.__jsx-style-dynamic-selector .subnavbtn.__jsx-style-dynamic-selector{color:#fff;background-color:inherit;text-transform:uppercase;letter-spacing:2px;cursor:pointer;border:none;outline:none;margin:0;padding:14px 15px;font-family:inherit;font-size:14px;transition:all .5s}.navbar.__jsx-style-dynamic-selector a.__jsx-style-dynamic-selector:hover,.subnav.__jsx-style-dynamic-selector:hover .subnavbtn.__jsx-style-dynamic-selector{color:#fff;background:#fff3;border-radius:5px}.subnav-content.__jsx-style-dynamic-selector{z-index:1;width:100%;display:none;position:absolute;left:0;transform:perspective(-10px)}.subnav-content.__jsx-style-dynamic-selector a.__jsx-style-dynamic-selector{float:left;color:#fff;text-decoration:none}.subnav-content.__jsx-style-dynamic-selector a.__jsx-style-dynamic-selector:hover{color:#fff;background:#fff3}.subnav.__jsx-style-dynamic-selector:hover .subnav-content.__jsx-style-dynamic-selector{justify-content:center;display:flex}.subnav-trapezoid.__jsx-style-dynamic-selector{box-sizing:content-box;border:80px solid #0000;border-top:0 solid;border-bottom:100px solid #0a5c35f2;border-radius:20px 20px 0 0;justify-content:center;align-items:flex-end;height:0;padding:0 20px 20px;display:flex;transform:rotateX(180deg)}.subnav-trapezoid.__jsx-style-dynamic-selector a.__jsx-style-dynamic-selector{margin:0 10px;transform:rotateX(180deg)}`
+            }, void 0, false, void 0, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$jsx$2f$style$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].dynamic([
+                    [
+                        "c197a7168e706bc3",
+                        [
+                            isHovered ? '0px' : '-53px'
+                        ]
+                    ]
+                ]) + " " + "min-w-full fixed z-50",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
+                    className: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$jsx$2f$style$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].dynamic([
+                        [
+                            "c197a7168e706bc3",
+                            [
+                                isHovered ? '0px' : '-53px'
+                            ]
+                        ]
+                    ]) + " " + "navbar",
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        onMouseEnter: handleTrapezoidEnter,
+                        onMouseLeave: handleTrapezoidLeave,
+                        className: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$jsx$2f$style$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].dynamic([
+                            [
+                                "c197a7168e706bc3",
+                                [
+                                    isHovered ? '0px' : '-53px'
+                                ]
+                            ]
+                        ]) + " " + "trapezoid",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$jsx$2f$style$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].dynamic([
+                                [
+                                    "c197a7168e706bc3",
+                                    [
+                                        isHovered ? '0px' : '-53px'
+                                    ]
+                                ]
+                            ]) + " " + "trapezoid-content",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$jsx$2f$style$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].dynamic([
+                                        [
+                                            "c197a7168e706bc3",
+                                            [
+                                                isHovered ? '0px' : '-53px'
+                                            ]
+                                        ]
+                                    ]) + " " + "nav-items-left",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                            href: "#",
+                                            className: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$jsx$2f$style$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].dynamic([
+                                                [
+                                                    "c197a7168e706bc3",
+                                                    [
+                                                        isHovered ? '0px' : '-53px'
+                                                    ]
+                                                ]
+                                            ]) + " " + "sub-home",
+                                            children: "Home"
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/Navbar.tsx",
+                                            lineNumber: 203,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                            href: "#Projects",
+                                            className: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$jsx$2f$style$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].dynamic([
+                                                [
+                                                    "c197a7168e706bc3",
+                                                    [
+                                                        isHovered ? '0px' : '-53px'
+                                                    ]
+                                                ]
+                                            ]),
+                                            children: "Projects"
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/Navbar.tsx",
+                                            lineNumber: 204,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                            href: "#Gallery",
+                                            className: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$jsx$2f$style$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].dynamic([
+                                                [
+                                                    "c197a7168e706bc3",
+                                                    [
+                                                        isHovered ? '0px' : '-53px'
+                                                    ]
+                                                ]
+                                            ]),
+                                            children: "Gallery"
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/Navbar.tsx",
+                                            lineNumber: 205,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                            href: "#CSR",
+                                            className: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$jsx$2f$style$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].dynamic([
+                                                [
+                                                    "c197a7168e706bc3",
+                                                    [
+                                                        isHovered ? '0px' : '-53px'
+                                                    ]
+                                                ]
+                                            ]),
+                                            children: "CSR"
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/Navbar.tsx",
+                                            lineNumber: 206,
+                                            columnNumber: 17
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/src/components/Navbar.tsx",
+                                    lineNumber: 202,
+                                    columnNumber: 15
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$jsx$2f$style$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].dynamic([
+                                        [
+                                            "c197a7168e706bc3",
+                                            [
+                                                isHovered ? '0px' : '-53px'
+                                            ]
+                                        ]
+                                    ]) + " " + "logo-container",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                        src: "/logo1.png",
+                                        alt: "JIVO ENERGY",
+                                        width: 150,
+                                        height: 50,
+                                        className: "object-contain"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/Navbar.tsx",
+                                        lineNumber: 210,
+                                        columnNumber: 17
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/Navbar.tsx",
+                                    lineNumber: 209,
+                                    columnNumber: 15
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$jsx$2f$style$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].dynamic([
+                                        [
+                                            "c197a7168e706bc3",
+                                            [
+                                                isHovered ? '0px' : '-53px'
+                                            ]
+                                        ]
+                                    ]) + " " + "nav-items-right",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                            href: "#Media",
+                                            className: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$jsx$2f$style$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].dynamic([
+                                                [
+                                                    "c197a7168e706bc3",
+                                                    [
+                                                        isHovered ? '0px' : '-53px'
+                                                    ]
+                                                ]
+                                            ]),
+                                            children: "Media"
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/Navbar.tsx",
+                                            lineNumber: 219,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                            href: "#ESG",
+                                            className: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$jsx$2f$style$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].dynamic([
+                                                [
+                                                    "c197a7168e706bc3",
+                                                    [
+                                                        isHovered ? '0px' : '-53px'
+                                                    ]
+                                                ]
+                                            ]),
+                                            children: "ESG"
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/Navbar.tsx",
+                                            lineNumber: 220,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                            href: "#Careers",
+                                            className: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$jsx$2f$style$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].dynamic([
+                                                [
+                                                    "c197a7168e706bc3",
+                                                    [
+                                                        isHovered ? '0px' : '-53px'
+                                                    ]
+                                                ]
+                                            ]),
+                                            children: "Careers"
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/Navbar.tsx",
+                                            lineNumber: 222,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                            href: "#Contact",
+                                            className: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$jsx$2f$style$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].dynamic([
+                                                [
+                                                    "c197a7168e706bc3",
+                                                    [
+                                                        isHovered ? '0px' : '-53px'
+                                                    ]
+                                                ]
+                                            ]),
+                                            children: "Contact Us"
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/Navbar.tsx",
+                                            lineNumber: 223,
+                                            columnNumber: 17
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/src/components/Navbar.tsx",
+                                    lineNumber: 218,
+                                    columnNumber: 15
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/src/components/Navbar.tsx",
+                            lineNumber: 201,
+                            columnNumber: 13
+                        }, this)
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/Navbar.tsx",
+                        lineNumber: 196,
+                        columnNumber: 11
+                    }, this)
+                }, void 0, false, {
+                    fileName: "[project]/src/components/Navbar.tsx",
+                    lineNumber: 195,
+                    columnNumber: 9
+                }, this)
+            }, void 0, false, {
+                fileName: "[project]/src/components/Navbar.tsx",
+                lineNumber: 194,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "[project]/src/components/Navbar.tsx",
+        lineNumber: 26,
+        columnNumber: 5
+    }, this);
+};
+const __TURBOPACK__default__export__ = Navbar;
 }}),
-"[externals]/next/dist/server/app-render/action-async-storage.external.js [external] (next/dist/server/app-render/action-async-storage.external.js, cjs)": (function(__turbopack_context__) {
-
-var { g: global, __dirname, m: module, e: exports } = __turbopack_context__;
-{
-const mod = __turbopack_context__.x("next/dist/server/app-render/action-async-storage.external.js", () => require("next/dist/server/app-render/action-async-storage.external.js"));
-
-module.exports = mod;
-}}),
-"[externals]/next/dist/server/app-render/work-unit-async-storage.external.js [external] (next/dist/server/app-render/work-unit-async-storage.external.js, cjs)": (function(__turbopack_context__) {
-
-var { g: global, __dirname, m: module, e: exports } = __turbopack_context__;
-{
-const mod = __turbopack_context__.x("next/dist/server/app-render/work-unit-async-storage.external.js", () => require("next/dist/server/app-render/work-unit-async-storage.external.js"));
-
-module.exports = mod;
-}}),
-"[project]/src/components/Navbar.tsx [app-ssr] (ecmascript)": (function(__turbopack_context__) {
-
-var { g: global, __dirname, m: module, e: exports } = __turbopack_context__;
-{
-const e = new Error(`Could not parse module '[project]/src/components/Navbar.tsx'
-
-Unexpected token `div`. Expected jsx identifier`);
-e.code = 'MODULE_UNPARSEABLE';
-throw e;}}),
 "[project]/src/components/About.tsx [app-ssr] (ecmascript)": ((__turbopack_context__) => {
 "use strict";
 
@@ -1401,6 +1671,30 @@ const ContactForm = ()=>{
 };
 const __TURBOPACK__default__export__ = ContactForm;
 }}),
+"[externals]/next/dist/server/app-render/work-async-storage.external.js [external] (next/dist/server/app-render/work-async-storage.external.js, cjs)": (function(__turbopack_context__) {
+
+var { g: global, __dirname, m: module, e: exports } = __turbopack_context__;
+{
+const mod = __turbopack_context__.x("next/dist/server/app-render/work-async-storage.external.js", () => require("next/dist/server/app-render/work-async-storage.external.js"));
+
+module.exports = mod;
+}}),
+"[externals]/next/dist/server/app-render/action-async-storage.external.js [external] (next/dist/server/app-render/action-async-storage.external.js, cjs)": (function(__turbopack_context__) {
+
+var { g: global, __dirname, m: module, e: exports } = __turbopack_context__;
+{
+const mod = __turbopack_context__.x("next/dist/server/app-render/action-async-storage.external.js", () => require("next/dist/server/app-render/action-async-storage.external.js"));
+
+module.exports = mod;
+}}),
+"[externals]/next/dist/server/app-render/work-unit-async-storage.external.js [external] (next/dist/server/app-render/work-unit-async-storage.external.js, cjs)": (function(__turbopack_context__) {
+
+var { g: global, __dirname, m: module, e: exports } = __turbopack_context__;
+{
+const mod = __turbopack_context__.x("next/dist/server/app-render/work-unit-async-storage.external.js", () => require("next/dist/server/app-render/work-unit-async-storage.external.js"));
+
+module.exports = mod;
+}}),
 "[project]/src/components/Footer.tsx [app-ssr] (ecmascript)": ((__turbopack_context__) => {
 "use strict";
 
@@ -1997,8 +2291,120 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$scri
 ;
 ;
 ;
+// Country-specific data
+const countryData = {
+    // Africa
+    ET: {
+        name: "Ethiopia",
+        projects: 12,
+        capacity: "850 MW",
+        status: "Active Development"
+    },
+    KE: {
+        name: "Kenya",
+        projects: 8,
+        capacity: "620 MW",
+        status: "Operational"
+    },
+    TZ: {
+        name: "Tanzania",
+        projects: 6,
+        capacity: "450 MW",
+        status: "Planning Phase"
+    },
+    UG: {
+        name: "Uganda",
+        projects: 4,
+        capacity: "320 MW",
+        status: "Construction"
+    },
+    BF: {
+        name: "Burkina Faso",
+        projects: 3,
+        capacity: "180 MW",
+        status: "Early Development"
+    },
+    CV: {
+        name: "Cape Verde",
+        projects: 2,
+        capacity: "95 MW",
+        status: "Operational"
+    },
+    LR: {
+        name: "Liberia",
+        projects: 1,
+        capacity: "45 MW",
+        status: "Planning"
+    },
+    ST: {
+        name: "São Tomé & Príncipe",
+        projects: 1,
+        capacity: "25 MW",
+        status: "Feasibility"
+    },
+    SN: {
+        name: "Senegal",
+        projects: 5,
+        capacity: "380 MW",
+        status: "Active Development"
+    },
+    SL: {
+        name: "Sierra Leone",
+        projects: 2,
+        capacity: "120 MW",
+        status: "Construction"
+    },
+    MW: {
+        name: "Malawi",
+        projects: 3,
+        capacity: "200 MW",
+        status: "Planning Phase"
+    },
+    ZA: {
+        name: "South Africa",
+        projects: 15,
+        capacity: "1200 MW",
+        status: "Operational"
+    },
+    ZW: {
+        name: "Zimbabwe",
+        projects: 4,
+        capacity: "280 MW",
+        status: "Development"
+    },
+    LY: {
+        name: "Libya",
+        projects: 6,
+        capacity: "500 MW",
+        status: "Planning"
+    },
+    TN: {
+        name: "Tunisia",
+        projects: 7,
+        capacity: "420 MW",
+        status: "Construction"
+    },
+    // Asia & Middle East
+    AE: {
+        name: "UAE",
+        projects: 10,
+        capacity: "750 MW",
+        status: "Operational"
+    },
+    IN: {
+        name: "India",
+        projects: 25,
+        capacity: "2100 MW",
+        status: "Multi-Phase Development"
+    }
+};
 function MapViz() {
     const chartRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const [selectedCountry, setSelectedCountry] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
+    const [popupPosition, setPopupPosition] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])({
+        x: 0,
+        y: 0
+    });
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         if (!chartRef.current || !window.am5) return;
         // Use am5.ready to ensure everything is loaded properly
@@ -2132,33 +2538,150 @@ function MapViz() {
                     "AQ"
                 ]
             }));
-            // Set default template
+            // Create point series for location icons
+            const pointSeries = chart.series.push(window.am5map.MapPointSeries.new(root, {}));
+            // Wait for polygon series to be ready
+            polygonSeries.events.on("datavalidated", function() {
+                // Create location icons for target countries
+                targetRegions.forEach((countryId)=>{
+                    const dataItem = polygonSeries.getDataItemById(countryId);
+                    if (dataItem) {
+                        const polygon = dataItem.get("mapPolygon");
+                        if (polygon) {
+                            const centroid = polygon.visualCentroid();
+                            pointSeries.data.push({
+                                geometry: {
+                                    type: "Point",
+                                    coordinates: [
+                                        centroid.longitude,
+                                        centroid.latitude
+                                    ]
+                                },
+                                countryId: countryId
+                            });
+                        }
+                    }
+                });
+            });
+            // Configure point series
+            pointSeries.bullets.push(function() {
+                const bullet = window.am5.Bullet.new(root, {
+                    sprite: window.am5.Graphics.new(root, {
+                        svgPath: "M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z",
+                        fill: window.am5.color("#16a34a"),
+                        centerX: 0,
+                        centerY: 0,
+                        tooltipText: "{name}",
+                        cursorOverStyle: "pointer"
+                    })
+                });
+                // Add click event to the bullet sprite
+                bullet.get("sprite").events.on("click", function(ev) {
+                    const dataItem = ev.target.dataItem;
+                    if (dataItem) {
+                        const countryId = dataItem.get("countryId");
+                        const coordinates = dataItem.get("geometry").coordinates;
+                        const point = chart.convert({
+                            longitude: coordinates[0],
+                            latitude: coordinates[1]
+                        });
+                        setSelectedCountry(countryId);
+                        setPopupPosition({
+                            x: point.x,
+                            y: point.y
+                        });
+                    }
+                });
+                return bullet;
+            });
+            // Set default template with improved tooltip
             polygonSeries.mapPolygons.template.setAll({
-                tooltipText: "{name}",
-                toggleKey: "active",
                 interactive: true,
                 fill: window.am5.color("#e5e7eb"),
                 stroke: window.am5.color("#77b900"),
                 strokeWidth: 0.5
             });
-            // Process data to add color information
+            // Custom tooltip content for target countries
+            polygonSeries.mapPolygons.template.set("tooltipHTML", `
+        <div style="
+          background: white; 
+          padding: 16px; 
+          border-radius: 8px; 
+          box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+          min-width: 250px;
+          max-width: 300px;
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+          border: 1px solid #e2e8f0;
+        ">
+          <div style="font-size: 16px; font-weight: 600; color: #1e293b; margin-bottom: 8px;">
+            {name}
+          </div>
+          <div style="font-size: 13px; color: #64748b; line-height: 1.4;">
+            <div style="margin-bottom: 4px;"><strong>Projects:</strong> {projects}</div>
+            <div style="margin-bottom: 4px;"><strong>Capacity:</strong> {capacity}</div>
+            <div style="margin-bottom: 4px;"><strong>Status:</strong> {status}</div>
+            <div style="margin-top: 8px; font-size: 12px; color: #94a3b8;">
+              Click for more details
+            </div>
+          </div>
+        </div>
+      `);
+            // Add click event to polygons
+            polygonSeries.mapPolygons.template.events.on("click", function(ev) {
+                const dataItem = ev.target.dataItem;
+                if (dataItem) {
+                    const dataContext = dataItem.dataContext;
+                    if (dataContext && targetRegions.includes(dataContext.id)) {
+                        const polygon = dataItem.get("mapPolygon");
+                        const centroid = polygon.visualCentroid();
+                        const point = chart.convert({
+                            longitude: centroid.longitude,
+                            latitude: centroid.latitude
+                        });
+                        setSelectedCountry(dataContext.id);
+                        setPopupPosition({
+                            x: point.x,
+                            y: point.y
+                        });
+                    }
+                }
+            });
+            // Process data to add color information and country data
             polygonSeries.data.processor = window.am5.DataProcessor.new(root, {
                 reusable: true
             });
-            // Set up the data with colors
+            // Set up the data with colors and country information
             polygonSeries.events.on("datavalidated", function() {
                 polygonSeries.mapPolygons.each(function(polygon) {
                     const dataItem = polygon.dataItem;
                     const dataContext = dataItem?.dataContext;
                     if (dataContext) {
                         const id = dataContext.id;
-                        console.log("Country ID:", id) // Debug log
-                        ;
                         if (targetRegions.includes(id)) {
                             const countryColor = countryColorMap.get(id);
+                            const data = countryData[id];
                             polygon.set("fill", window.am5.color(countryColor));
-                            console.log("Colored:", id, "with color:", countryColor) // Debug log
-                            ;
+                            // Add country data to the dataItem for tooltip
+                            if (data) {
+                                dataItem.set("projects", data.projects);
+                                dataItem.set("capacity", data.capacity);
+                                dataItem.set("status", data.status);
+                            }
+                        } else {
+                            // For non-target countries, set simple tooltip
+                            polygon.set("tooltipHTML", `
+                <div style="
+                  background: white; 
+                  padding: 12px; 
+                  border-radius: 6px; 
+                  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+                  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+                  font-size: 14px;
+                  color: #64748b;
+                ">
+                  {name}
+                </div>
+              `);
                         }
                     }
                 });
@@ -2210,11 +2733,33 @@ function MapViz() {
             };
         });
     }, []);
+    // Handle click outside popup
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
+        const handleClickOutside = (event)=>{
+            if (selectedCountry && !event.target.closest('.popup-container')) {
+                setSelectedCountry(null);
+            }
+        };
+        document.addEventListener('mousedown', handleClickOutside);
+        return ()=>{
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [
+        selectedCountry
+    ]);
     const handleScriptLoad = ()=>{
         // Force re-render when scripts are loaded
         if (chartRef.current && window.am5) {
         // Trigger useEffect by updating a dependency or state if needed
         }
+    };
+    const getCountryInfo = (countryId)=>{
+        return countryData[countryId] || {
+            name: countryId,
+            projects: 0,
+            capacity: "N/A",
+            status: "No active projects"
+        };
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
         children: [
@@ -2224,7 +2769,7 @@ function MapViz() {
                 onLoad: handleScriptLoad
             }, void 0, false, {
                 fileName: "[project]/src/components/MapViz.tsx",
-                lineNumber: 196,
+                lineNumber: 373,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$script$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -2232,7 +2777,7 @@ function MapViz() {
                 strategy: "beforeInteractive"
             }, void 0, false, {
                 fileName: "[project]/src/components/MapViz.tsx",
-                lineNumber: 197,
+                lineNumber: 374,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$script$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -2240,7 +2785,7 @@ function MapViz() {
                 strategy: "beforeInteractive"
             }, void 0, false, {
                 fileName: "[project]/src/components/MapViz.tsx",
-                lineNumber: 198,
+                lineNumber: 375,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$script$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -2248,37 +2793,185 @@ function MapViz() {
                 strategy: "beforeInteractive"
             }, void 0, false, {
                 fileName: "[project]/src/components/MapViz.tsx",
-                lineNumber: 199,
+                lineNumber: 376,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "flex items-center justify-center w-full h-full bg-[#ffffff]",
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    ref: chartRef,
-                    className: "w-full h-screen",
-                    style: {
-                        overflowX: 'hidden',
-                        overflowY: 'hidden',
-                        pointerEvents: 'auto'
-                    },
-                    onWheel: (e)=>{
-                        // Prevent map from capturing scroll events
-                        e.preventDefault();
-                        // Allow the scroll to bubble up to the parent for page scrolling
-                        const scrollEvent = new WheelEvent('wheel', {
-                            deltaY: e.deltaY,
-                            bubbles: true
-                        });
-                        e.currentTarget.parentElement?.dispatchEvent(scrollEvent);
-                    }
-                }, void 0, false, {
-                    fileName: "[project]/src/components/MapViz.tsx",
-                    lineNumber: 201,
-                    columnNumber: 9
-                }, this)
-            }, void 0, false, {
+                className: "flex items-center justify-center w-full h-full bg-[#ffffff] relative",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        ref: chartRef,
+                        className: "w-full h-screen",
+                        style: {
+                            overflowX: 'hidden',
+                            overflowY: 'hidden',
+                            pointerEvents: 'auto'
+                        },
+                        onWheel: (e)=>{
+                            // Prevent map from capturing scroll events
+                            e.preventDefault();
+                            // Allow the scroll to bubble up to the parent for page scrolling
+                            const scrollEvent = new WheelEvent('wheel', {
+                                deltaY: e.deltaY,
+                                bubbles: true
+                            });
+                            e.currentTarget.parentElement?.dispatchEvent(scrollEvent);
+                        }
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/MapViz.tsx",
+                        lineNumber: 378,
+                        columnNumber: 9
+                    }, this),
+                    selectedCountry && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "popup-container absolute bg-white rounded-xl shadow-2xl p-6 z-50 border border-gray-200",
+                        style: {
+                            left: `${popupPosition.x + 20}px`,
+                            top: `${popupPosition.y - 100}px`,
+                            minWidth: '320px',
+                            maxWidth: '400px',
+                            transform: 'translate(-50%, -50%)'
+                        },
+                        children: (()=>{
+                            const info = getCountryInfo(selectedCountry);
+                            return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "flex justify-between items-start mb-4",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                                className: "text-xl font-bold text-gray-900",
+                                                children: info.name
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/components/MapViz.tsx",
+                                                lineNumber: 413,
+                                                columnNumber: 21
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                className: "text-gray-400 hover:text-gray-600 text-xl font-semibold",
+                                                onClick: ()=>setSelectedCountry(null),
+                                                children: "×"
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/components/MapViz.tsx",
+                                                lineNumber: 414,
+                                                columnNumber: 21
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/src/components/MapViz.tsx",
+                                        lineNumber: 412,
+                                        columnNumber: 19
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "space-y-3",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "flex justify-between",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        className: "font-medium text-gray-700",
+                                                        children: "Active Projects:"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/components/MapViz.tsx",
+                                                        lineNumber: 423,
+                                                        columnNumber: 23
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        className: "text-green-600 font-semibold",
+                                                        children: info.projects
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/components/MapViz.tsx",
+                                                        lineNumber: 424,
+                                                        columnNumber: 23
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/src/components/MapViz.tsx",
+                                                lineNumber: 422,
+                                                columnNumber: 21
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "flex justify-between",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        className: "font-medium text-gray-700",
+                                                        children: "Total Capacity:"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/components/MapViz.tsx",
+                                                        lineNumber: 427,
+                                                        columnNumber: 23
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        className: "text-blue-600 font-semibold",
+                                                        children: info.capacity
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/components/MapViz.tsx",
+                                                        lineNumber: 428,
+                                                        columnNumber: 23
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/src/components/MapViz.tsx",
+                                                lineNumber: 426,
+                                                columnNumber: 21
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "flex justify-between",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        className: "font-medium text-gray-700",
+                                                        children: "Status:"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/components/MapViz.tsx",
+                                                        lineNumber: 431,
+                                                        columnNumber: 23
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        className: "text-orange-600 font-semibold",
+                                                        children: info.status
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/components/MapViz.tsx",
+                                                        lineNumber: 432,
+                                                        columnNumber: 23
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/src/components/MapViz.tsx",
+                                                lineNumber: 430,
+                                                columnNumber: 21
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/src/components/MapViz.tsx",
+                                        lineNumber: 421,
+                                        columnNumber: 19
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "mt-4 pt-4 border-t border-gray-100",
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                            className: "text-sm text-gray-600",
+                                            children: "Renewable energy development project with focus on sustainable power generation and grid infrastructure."
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/MapViz.tsx",
+                                            lineNumber: 436,
+                                            columnNumber: 21
+                                        }, this)
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/MapViz.tsx",
+                                        lineNumber: 435,
+                                        columnNumber: 19
+                                    }, this)
+                                ]
+                            }, void 0, true);
+                        })()
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/MapViz.tsx",
+                        lineNumber: 398,
+                        columnNumber: 11
+                    }, this)
+                ]
+            }, void 0, true, {
                 fileName: "[project]/src/components/MapViz.tsx",
-                lineNumber: 200,
+                lineNumber: 377,
                 columnNumber: 7
             }, this)
         ]
@@ -2391,4 +3084,4 @@ function Home() {
 
 };
 
-//# sourceMappingURL=%5Broot-of-the-server%5D__1d6e4236._.js.map
+//# sourceMappingURL=%5Broot-of-the-server%5D__3606c7b3._.js.map
