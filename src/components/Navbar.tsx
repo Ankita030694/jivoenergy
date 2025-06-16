@@ -200,9 +200,9 @@ const Navbar = () => {
           >
             <div className="trapezoid-content">
               <div className="nav-items-left">
-                <a className="sub-home" href="#">Home</a>
+                <a className="sub-home" href="/">Home</a>
                 <a href="#Projects">Projects</a>
-                <a href="#Gallery">Gallery</a>
+                <a href="/gallery">Gallery</a>
                 <a href="#CSR">CSR</a>
 
               </div>
@@ -219,8 +219,8 @@ const Navbar = () => {
                 <a href="#Media">Media</a>
                 <a href="#ESG">ESG</a>
 
-                <a href="#Careers">Careers</a>
-                <a href="#Contact">Contact Us</a>
+                <a href="/careers">Careers</a>
+                <a href="/contact">Contact Us</a>
               </div>
             </div>
           </div>
