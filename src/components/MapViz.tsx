@@ -15,24 +15,143 @@ declare global {
 // Country-specific data
 const countryData = {
   // Africa
-  ET: { name: "Ethiopia", projects: 12, capacity: "850 MW", status: "Active Development" },
-  KE: { name: "Kenya", projects: 8, capacity: "620 MW", status: "Operational" },
-  TZ: { name: "Tanzania", projects: 6, capacity: "450 MW", status: "Planning Phase" },
-  UG: { name: "Uganda", projects: 4, capacity: "320 MW", status: "Construction" },
-  BF: { name: "Burkina Faso", projects: 3, capacity: "180 MW", status: "Early Development" },
-  CV: { name: "Cape Verde", projects: 2, capacity: "95 MW", status: "Operational" },
-  LR: { name: "Liberia", projects: 1, capacity: "45 MW", status: "Planning" },
-  ST: { name: "São Tomé & Príncipe", projects: 1, capacity: "25 MW", status: "Feasibility" },
-  SN: { name: "Senegal", projects: 5, capacity: "380 MW", status: "Active Development" },
-  SL: { name: "Sierra Leone", projects: 2, capacity: "120 MW", status: "Construction" },
-  MW: { name: "Malawi", projects: 3, capacity: "200 MW", status: "Planning Phase" },
-  ZA: { name: "South Africa", projects: 15, capacity: "1200 MW", status: "Operational" },
-  ZW: { name: "Zimbabwe", projects: 4, capacity: "280 MW", status: "Development" },
-  LY: { name: "Libya", projects: 6, capacity: "500 MW", status: "Planning" },
-  TN: { name: "Tunisia", projects: 7, capacity: "420 MW", status: "Construction" },
+  ET: { 
+    name: "Ethiopia", 
+    projects: 12, 
+    capacity: "850 MW", 
+    status: "Active Development",
+    flag: "https://flagcdn.com/w160/et.png",
+    projectImage: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=300&h=200&fit=crop"
+  },
+  KE: { 
+    name: "Kenya", 
+    projects: 8, 
+    capacity: "620 MW", 
+    status: "Operational",
+    flag: "https://flagcdn.com/w160/ke.png",
+    projectImage: "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=300&h=200&fit=crop"
+  },
+  TZ: { 
+    name: "Tanzania", 
+    projects: 6, 
+    capacity: "450 MW", 
+    status: "Planning Phase",
+    flag: "https://flagcdn.com/w160/tz.png",
+    projectImage: "https://images.unsplash.com/photo-1566312087-9b02b5c62c77?w=300&h=200&fit=crop"
+  },
+  UG: { 
+    name: "Uganda", 
+    projects: 4, 
+    capacity: "320 MW", 
+    status: "Construction",
+    flag: "https://flagcdn.com/w160/ug.png",
+    projectImage: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=300&h=200&fit=crop"
+  },
+  BF: { 
+    name: "Burkina Faso", 
+    projects: 3, 
+    capacity: "180 MW", 
+    status: "Early Development",
+    flag: "https://flagcdn.com/w160/bf.png",
+    projectImage: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=300&h=200&fit=crop"
+  },
+  CV: { 
+    name: "Cape Verde", 
+    projects: 2, 
+    capacity: "95 MW", 
+    status: "Operational",
+    flag: "https://flagcdn.com/w160/cv.png",
+    projectImage: "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=300&h=200&fit=crop"
+  },
+  LR: { 
+    name: "Liberia", 
+    projects: 1, 
+    capacity: "45 MW", 
+    status: "Planning",
+    flag: "https://flagcdn.com/w160/lr.png",
+    projectImage: "https://images.unsplash.com/photo-1566312087-9b02b5c62c77?w=300&h=200&fit=crop"
+  },
+  ST: { 
+    name: "São Tomé & Príncipe", 
+    projects: 1, 
+    capacity: "25 MW", 
+    status: "Feasibility",
+    flag: "https://flagcdn.com/w160/st.png",
+    projectImage: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=300&h=200&fit=crop"
+  },
+  SN: { 
+    name: "Senegal", 
+    projects: 5, 
+    capacity: "380 MW", 
+    status: "Active Development",
+    flag: "https://flagcdn.com/w160/sn.png",
+    projectImage: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=300&h=200&fit=crop"
+  },
+  SL: { 
+    name: "Sierra Leone", 
+    projects: 2, 
+    capacity: "120 MW", 
+    status: "Construction",
+    flag: "https://flagcdn.com/w160/sl.png",
+    projectImage: "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=300&h=200&fit=crop"
+  },
+  MW: { 
+    name: "Malawi", 
+    projects: 3, 
+    capacity: "200 MW", 
+    status: "Planning Phase",
+    flag: "https://flagcdn.com/w160/mw.png",
+    projectImage: "https://images.unsplash.com/photo-1566312087-9b02b5c62c77?w=300&h=200&fit=crop"
+  },
+  ZA: { 
+    name: "South Africa", 
+    projects: 15, 
+    capacity: "1200 MW", 
+    status: "Operational",
+    flag: "https://flagcdn.com/w160/za.png",
+    projectImage: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=300&h=200&fit=crop"
+  },
+  ZW: { 
+    name: "Zimbabwe", 
+    projects: 4, 
+    capacity: "280 MW", 
+    status: "Development",
+    flag: "https://flagcdn.com/w160/zw.png",
+    projectImage: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=300&h=200&fit=crop"
+  },
+  LY: { 
+    name: "Libya", 
+    projects: 6, 
+    capacity: "500 MW", 
+    status: "Planning",
+    flag: "https://flagcdn.com/w160/ly.png",
+    projectImage: "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=300&h=200&fit=crop"
+  },
+  TN: { 
+    name: "Tunisia", 
+    projects: 7, 
+    capacity: "420 MW", 
+    status: "Construction",
+    flag: "https://flagcdn.com/w160/tn.png",
+    projectImage: "https://images.unsplash.com/photo-1566312087-9b02b5c62c77?w=300&h=200&fit=crop"
+  },
   // Asia & Middle East
-  AE: { name: "UAE", projects: 10, capacity: "750 MW", status: "Operational" },
-  IN: { name: "India", projects: 25, capacity: "2100 MW", status: "Multi-Phase Development" },
+  AE: { 
+    name: "UAE", 
+    projects: 10, 
+    capacity: "750 MW", 
+    status: "Operational",
+    flag: "https://flagcdn.com/w160/ae.png",
+    projectImage: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=300&h=200&fit=crop"
+  },
+  IN: { 
+    name: "India", 
+    projects: 25, 
+    capacity: "2100 MW", 
+    status: "Multi-Phase Development",
+    flag: "https://flagcdn.com/w160/in.png",
+    projectImage: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=300&h=200&fit=crop"
+  },
 }
 
 export default function MapViz() {
@@ -131,6 +250,38 @@ export default function MapViz() {
         window.am5map.MapPointSeries.new(root, {})
       )
 
+      // Add country name labels
+      pointSeries.bullets.push(function(root: any, series: any, dataItem: any) {
+        const data = dataItem.dataContext as any
+        return window.am5.Bullet.new(root, {
+          locationX: 1,
+          locationY: 0,
+          sprite: window.am5.Label.new(root, {
+            text: data.name,
+            centerX: 0,
+            centerY: window.am5.p50,
+            fill: window.am5.color("#1f2937"),
+            fontSize: "12px",
+            fontWeight: "600",
+            background: window.am5.RoundedRectangle.new(root, {
+              fill: window.am5.color("#ffffff"),
+              fillOpacity: 0.9,
+              cornerRadiusTL: 4,
+              cornerRadiusTR: 4,
+              cornerRadiusBL: 4,
+              cornerRadiusBR: 4,
+              stroke: window.am5.color("#e5e7eb"),
+              strokeWidth: 1
+            }),
+            paddingTop: 4,
+            paddingBottom: 4,
+            paddingLeft: 8,
+            paddingRight: 8,
+            dx: 15
+          })
+        })
+      })
+
       // Wait for polygon series to be ready
       polygonSeries.events.on("datavalidated", function() {
         // Create location icons for target countries
@@ -140,13 +291,20 @@ export default function MapViz() {
             const polygon = dataItem.get("mapPolygon")
             if (polygon) {
               const centroid = polygon.visualCentroid()
-              pointSeries.data.push({
+              const data = countryData[countryId as keyof typeof countryData]
+              
+              // Create point data with country information
+              const pointData = {
                 geometry: {
                   type: "Point",
                   coordinates: [centroid.longitude, centroid.latitude]
                 },
-                countryId: countryId
-              })
+                countryId: countryId,
+                name: data?.name || countryId
+              }
+              
+              // Add the point to the series
+              pointSeries.data.push(pointData)
             }
           }
         })
@@ -175,6 +333,13 @@ export default function MapViz() {
               longitude: coordinates[0],
               latitude: coordinates[1]
             })
+            
+            console.log('Marker clicked:', {
+              countryId,
+              coordinates,
+              point,
+              countryData: countryData[countryId as keyof typeof countryData]
+            });
             
             setSelectedCountry(countryId)
             setPopupPosition({
@@ -234,6 +399,13 @@ export default function MapViz() {
               latitude: centroid.latitude
             })
             
+            console.log('Polygon clicked:', {
+              countryId: dataContext.id,
+              centroid,
+              point,
+              countryData: countryData[dataContext.id as keyof typeof countryData]
+            });
+            
             setSelectedCountry(dataContext.id)
             setPopupPosition({
               x: point.x,
@@ -250,6 +422,7 @@ export default function MapViz() {
 
       // Set up the data with colors and country information
       polygonSeries.events.on("datavalidated", function() {
+        console.log('Polygon series data validated');
         polygonSeries.mapPolygons.each(function(polygon: any) {
           const dataItem = polygon.dataItem
           const dataContext = dataItem?.dataContext as any
@@ -259,6 +432,13 @@ export default function MapViz() {
               const countryColor = countryColorMap.get(id)
               const data = countryData[id as keyof typeof countryData]
               
+              console.log('Setting up polygon:', {
+                id,
+                hasColor: !!countryColor,
+                hasData: !!data,
+                name: data?.name
+              });
+              
               polygon.set("fill", window.am5.color(countryColor))
               
               // Add country data to the dataItem for tooltip
@@ -266,6 +446,7 @@ export default function MapViz() {
                 dataItem.set("projects", data.projects)
                 dataItem.set("capacity", data.capacity)
                 dataItem.set("status", data.status)
+                dataItem.set("name", data.name)
               }
             } else {
               // For non-target countries, set simple tooltip
@@ -323,9 +504,11 @@ export default function MapViz() {
       chart.set("homeZoomLevel", 1.8)
       chart.set("homeGeoPoint", { longitude: 0, latitude: 105 })
 
-      // Set clicking on "water" to zoom out
-      chart.chartContainer.get("background").events.on("click", function () {
-        chart.goHome()
+      // Add background click handler
+      chart.chartContainer.get("background").events.on("click", function(ev: any) {
+        console.log('Background/water clicked');
+        ev.event.stopPropagation();
+        chart.goHome();
       })
 
       // Make stuff animate on load
@@ -341,8 +524,24 @@ export default function MapViz() {
   // Handle click outside popup
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (selectedCountry && !(event.target as Element).closest('.popup-container')) {
-        setSelectedCountry(null)
+      const target = event.target as Element;
+      const popupContainer = document.querySelector('.popup-container');
+      const mapBackground = document.querySelector('.am5-background');
+      
+      console.log('Click event:', {
+        target: target.className,
+        isPopupClick: popupContainer?.contains(target),
+        isMapBackground: mapBackground?.contains(target),
+        selectedCountry
+      });
+      
+      // Only close if clicking outside popup and not on map background
+      if (selectedCountry && 
+          popupContainer && 
+          !popupContainer.contains(target) &&
+          !mapBackground?.contains(target)) {
+        console.log('Closing popup, selectedCountry:', selectedCountry);
+        setSelectedCountry(null);
       }
     }
 
@@ -351,6 +550,11 @@ export default function MapViz() {
       document.removeEventListener('mousedown', handleClickOutside)
     }
   }, [selectedCountry])
+
+  // Add debug log for selectedCountry changes
+  useEffect(() => {
+    console.log('selectedCountry changed:', selectedCountry);
+  }, [selectedCountry]);
 
   const handleScriptLoad = () => {
     // Force re-render when scripts are loaded
@@ -364,7 +568,9 @@ export default function MapViz() {
       name: countryId,
       projects: 0,
       capacity: "N/A",
-      status: "No active projects"
+      status: "No active projects",
+      flag: "https://flagcdn.com/w160/xx.png", // Default/fallback flag
+      projectImage: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=300&h=200&fit=crop"
     }
   }
 
@@ -377,16 +583,20 @@ export default function MapViz() {
       <div className="flex items-center justify-center w-full h-full bg-[#ffffff] relative">
         <div 
           ref={chartRef} 
-          className="w-full h-screen"
+          className="w-full h-screen map-container"
           style={{
             overflowX: 'hidden',
             overflowY: 'hidden',
-            pointerEvents: 'auto'
+            pointerEvents: 'auto',
+            position: 'relative',
+            zIndex: 1
+          }}
+          onClick={(e) => {
+            console.log('Map container clicked');
+            e.stopPropagation();
           }}
           onWheel={(e) => {
-            // Prevent map from capturing scroll events
             e.preventDefault()
-            // Allow the scroll to bubble up to the parent for page scrolling
             const scrollEvent = new WheelEvent('wheel', {
               deltaY: e.deltaY,
               bubbles: true
@@ -396,21 +606,37 @@ export default function MapViz() {
         />
         {selectedCountry && (
           <div 
-            className="popup-container absolute bg-white rounded-xl shadow-2xl p-6 z-50 border border-gray-200"
+            className="popup-container absolute bg-white rounded-xl shadow-2xl p-6 border border-gray-200"
             style={{
               left: `${popupPosition.x + 20}px`,
               top: `${popupPosition.y - 100}px`,
-              minWidth: '320px',
-              maxWidth: '400px',
-              transform: 'translate(-50%, -50%)'
+              minWidth: '380px',
+              maxWidth: '450px',
+              transform: 'translate(-50%, -50%)',
+              zIndex: 2
+            }}
+            onClick={(e) => {
+              console.log('Popup clicked');
+              e.stopPropagation();
             }}
           >
             {(() => {
               const info = getCountryInfo(selectedCountry)
               return (
                 <>
+                  {/* Header with flag and title */}
                   <div className="flex justify-between items-start mb-4">
-                    <h3 className="text-xl font-bold text-gray-900">{info.name}</h3>
+                    <div className="flex items-center gap-3">
+                      <img 
+                        src={info.flag} 
+                        alt={`${info.name} flag`}
+                        className="w-8 h-6 object-cover rounded border border-gray-200"
+                        onError={(e) => {
+                          (e.target as HTMLImageElement).style.display = 'none'
+                        }}
+                      />
+                      <h3 className="text-xl font-bold text-gray-900">{info.name}</h3>
+                    </div>
                     <button 
                       className="text-gray-400 hover:text-gray-600 text-xl font-semibold"
                       onClick={() => setSelectedCountry(null)}
@@ -418,6 +644,20 @@ export default function MapViz() {
                       ×
                     </button>
                   </div>
+
+                  {/* Project Image */}
+                  <div className="mb-4">
+                    <img 
+                      src={info.projectImage} 
+                      alt={`${info.name} renewable energy project`}
+                      className="w-full h-32 object-cover rounded-lg border border-gray-200"
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).style.display = 'none'
+                      }}
+                    />
+                  </div>
+
+                  {/* Project Details */}
                   <div className="space-y-3">
                     <div className="flex justify-between">
                       <span className="font-medium text-gray-700">Active Projects:</span>
@@ -432,6 +672,8 @@ export default function MapViz() {
                       <span className="text-orange-600 font-semibold">{info.status}</span>
                     </div>
                   </div>
+
+                  {/* Description */}
                   <div className="mt-4 pt-4 border-t border-gray-100">
                     <p className="text-sm text-gray-600">
                       Renewable energy development project with focus on sustainable power generation and grid infrastructure.

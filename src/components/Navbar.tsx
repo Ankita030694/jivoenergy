@@ -46,7 +46,7 @@ const Navbar = () => {
           text-overflow: clip;
           -webkit-transform: rotateX(180deg);
           transform: rotateX(180deg);
-          margin-top: ${isHovered ? '0px' : '-53px'};
+          margin-top: -23px;
           width: 1000px;
           position: relative;
           transition: all 0.7s ease;
