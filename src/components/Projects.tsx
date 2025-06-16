@@ -58,8 +58,22 @@ const Projects = () => {
     <section className="w-full py-16 bg-[#0A5C35] relative">
       <div 
         className="absolute inset-0 z-0"
-      >
-        <video
+        style={{
+          backgroundImage: 'url(/bg.png)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        //   filter: 'blur(1px)',
+          opacity: 0.97,
+        }}
+      />
+      <div className="container mx-auto px-4 relative z-10">
+        <h2 className="text-4xl font-bold text-center mb-12 text-white">Our Projects</h2>
+        <div className="flex flex-col md:flex-row items-center gap-8">
+          {/* Project Image */}
+          <div className="w-full md:w-1/2 relative h-[400px]">
+            <div className="w-full aspect-video relative rounded-lg overflow-hidden shadow-lg">
+            <video
           autoPlay
           loop
           muted
@@ -68,22 +82,6 @@ const Projects = () => {
         >
           <source src="/power.mp4" type="video/mp4" />
         </video>
-      </div>
-      <div className="container mx-auto px-4 relative z-10">
-        <h2 className="text-4xl font-bold text-center mb-12 text-white">Our Projects</h2>
-        <div className="flex flex-col md:flex-row items-center gap-8">
-          {/* Project Image */}
-          <div className="w-full md:w-1/2 relative h-[400px]">
-            <div className="w-full aspect-video relative rounded-lg overflow-hidden shadow-lg">
-              <video
-                className="w-full h-full object-cover"
-                controls
-                poster="/video-poster.jpg"
-                crossOrigin="anonymous"
-              >
-                <source src="/projects-video.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
             </div>
           </div>
           

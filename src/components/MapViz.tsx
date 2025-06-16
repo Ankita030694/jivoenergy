@@ -183,7 +183,7 @@ export default function MapViz() {
           minZoomLevel: 0.5,
           centerLongitude: 100,
           centerLatitude: 20,
-          zoomLevel: 1.6,
+          zoomLevel: 2.1,
           wheelX: "none",
           wheelY: "none",
           pinchZoom: false,
