@@ -305,16 +305,16 @@ const Navbar = () => {
                   className="object-contain"
                 />
                 <div className={`logo-dropdown ${showLogoDropdown ? 'show' : ''}`}>
-                  <a href="#business-areas">
+                  <a href="business-areas">
                     <span>Business Areas</span>
                   </a>
-                  <a href="#capabilities">
+                  <a href="our-capabilities">
                     <span>Capabilities</span>
                   </a>
                   <a href="#theme">
                     <span>Theme</span>
                   </a>
-                  <a href="#partner">
+                  <a href="partners">
                     <span>Partner</span>
                   </a>
                   <a href="#certification">
