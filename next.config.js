@@ -18,7 +18,8 @@ const nextConfig = {
       'assets.weforum.org',
       'gwec.net',
       'www.solarpowereurope.org',
-      'isolaralliance.org'
+      'isolaralliance.org',
+      'images.unsplash.com'
     ],
   },
 }

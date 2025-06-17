@@ -317,7 +317,7 @@ const Navbar = () => {
                   <a href="partners">
                     <span>Partner</span>
                   </a>
-                  <a href="#certification">
+                  <a href="certificate">
                     <span>Certification</span>
                   </a>
                 </div>
