@@ -15,9 +15,9 @@ export default function Home() {
       <Navbar />
       <main className="flex flex-col items-center w-full">
         {/* Hero section with MapViz positioned below navbar */}
-        <section id="hero-section" className="relative w-full min-h-screen overflow-hidden pt-32">
+        <section id="hero-section" className="relative w-full h-[150vh]">
           {/* Map - positioned to start below navbar */}
-          <div className="absolute inset-0 top-10 z-10">
+          <div className="absolute inset-0 z-10">
             <MapViz />
           </div>
 

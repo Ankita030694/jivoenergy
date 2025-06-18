@@ -583,7 +583,7 @@ export default function MapViz() {
       <div className="flex items-center justify-center w-full h-full bg-[#ffffff] relative">
         <div 
           ref={chartRef} 
-          className="w-full h-screen map-container"
+          className="w-full h-[150vh] map-container"
           style={{
             overflowX: 'hidden',
             overflowY: 'hidden',
