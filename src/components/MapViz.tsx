@@ -178,12 +178,12 @@ export default function MapViz() {
           panX: "translateX",
           panY: "translateY",
           projection: window.am5map.geoMercator(),
-          maxPanOut: 0.4,
-          maxZoomLevel: 4,
-          minZoomLevel: 0.5,
-          centerLongitude: 30,
-          centerLatitude: 15,
-          zoomLevel: 1.8,
+          maxPanOut: 0.2,
+          maxZoomLevel: 3,
+          minZoomLevel: 1.5,
+          centerLongitude: 60,
+          centerLatitude: 0,
+          zoomLevel: 1.7,
           wheelX: "none",
           wheelY: "none",
           pinchZoom: false,
@@ -501,8 +501,8 @@ export default function MapViz() {
       zoomControl.homeButton.set("visible", true)
 
       // Set home position
-      chart.set("homeZoomLevel", 1.8)
-      chart.set("homeGeoPoint", { longitude: 30, latitude: 15 })
+      chart.set("homeZoomLevel", 1.7)
+      chart.set("homeGeoPoint", { longitude: 60, latitude: 0 })
 
       // Add background click handler
       chart.chartContainer.get("background").events.on("click", function(ev: any) {
