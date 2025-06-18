@@ -495,10 +495,6 @@
     top: calc(var(--spacing) * 4);
   }
 
-  .top-10 {
-    top: calc(var(--spacing) * 10);
-  }
-
   .top-24 {
     top: calc(var(--spacing) * 24);
   }
@@ -759,18 +755,6 @@
 
   .h-\[65vh\] {
     height: 65vh;
-  }
-
-  .h-\[100vh\] {
-    height: 100vh;
-  }
-
-  .h-\[110vh\] {
-    height: 110vh;
-  }
-
-  .h-\[130vh\] {
-    height: 130vh;
   }
 
   .h-\[150vh\] {
@@ -1405,10 +1389,6 @@
 
   .pt-8 {
     padding-top: calc(var(--spacing) * 8);
-  }
-
-  .pt-32 {
-    padding-top: calc(var(--spacing) * 32);
   }
 
   .pb-2 {

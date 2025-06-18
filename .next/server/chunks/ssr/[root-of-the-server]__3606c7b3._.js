@@ -2441,9 +2441,9 @@ function MapViz() {
                 maxPanOut: 0.4,
                 maxZoomLevel: 4,
                 minZoomLevel: 0.5,
-                centerLongitude: 100,
-                centerLatitude: 20,
-                zoomLevel: 2.1,
+                centerLongitude: 30,
+                centerLatitude: 15,
+                zoomLevel: 1.8,
                 wheelX: "none",
                 wheelY: "none",
                 pinchZoom: false
@@ -2791,8 +2791,8 @@ function MapViz() {
             // Set home position
             chart.set("homeZoomLevel", 1.8);
             chart.set("homeGeoPoint", {
-                longitude: 0,
-                latitude: 105
+                longitude: 30,
+                latitude: 15
             });
             // Add background click handler
             chart.chartContainer.get("background").events.on("click", function(ev) {
