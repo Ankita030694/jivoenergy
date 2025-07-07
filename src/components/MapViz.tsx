@@ -175,9 +175,9 @@ export default function MapViz() {
       // Create gradient for map background
       const backgroundGradient = window.am5.RadialGradient.new(root, {
         stops: [
-          { color: window.am5.color("#0f1419") },
-          { color: window.am5.color("#1a2332") },
-          { color: window.am5.color("#243447") }
+          { color: window.am5.color("#062516") },
+          { color: window.am5.color("#062516") },
+          { color: window.am5.color("#062516") }
         ]
       })
 
@@ -197,7 +197,7 @@ export default function MapViz() {
           wheelY: "none",
           pinchZoom: false,
           background: window.am5.Rectangle.new(root, {
-            fill: backgroundGradient,
+            fill: window.am5.color("#062516"),
             fillOpacity: 1
           })
         }),
@@ -227,10 +227,31 @@ export default function MapViz() {
       ]
 
       // Enhanced primary color with variations for visual depth
-      const primaryColor = "#085D36"
-      const primaryColorLight = "#0a6b3f"
-      const primaryColorDark = "#064f2e"
-      const primaryColorGlow = "#10b981"
+      const primaryColor = "#062516"
+      const primaryColorLight = "#0a3a1f"
+      const primaryColorDark = "#041a0f"
+      const primaryColorGlow = "#0d5a2a"
+      
+      // Different shades of green for marked countries
+      const countryColors = {
+        ET: "#0d5a2a", // Light green
+        KE: "#0a4a22", // Medium green
+        TZ: "#083d1c", // Dark green
+        UG: "#063218", // Very dark green
+        BF: "#052814", // Darkest green
+        CV: "#0b6b32", // Teal green
+        LR: "#0a7a3a", // Blue green
+        ST: "#098942", // Dark blue green
+        SN: "#0a8a4a", // Blue
+        SL: "#0b9a52", // Indigo
+        MW: "#0caa5a", // Purple
+        ZA: "#0dba62", // Dark purple
+        ZW: "#0eca6a", // Brown
+        LY: "#0fda72", // Red
+        TN: "#10ea7a", // Light red
+        AE: "#11fa82", // Orange
+        IN: "#12ff8a", // Light orange
+      }
 
       // Create polygon series for all countries with enhanced styling
       const polygonSeries = chart.series.push(
@@ -262,8 +283,8 @@ export default function MapViz() {
             background: window.am5.RoundedRectangle.new(root, {
               fill: window.am5.LinearGradient.new(root, {
                 stops: [
-                  { color: window.am5.color("#085D36") },
-                  { color: window.am5.color("#064f2e") }
+                  { color: window.am5.color("#062516") },
+                  { color: window.am5.color("#041a0f") }
                 ]
               }),
               fillOpacity: 0.95,
@@ -271,7 +292,7 @@ export default function MapViz() {
               cornerRadiusTR: 6,
               cornerRadiusBL: 6,
               cornerRadiusBR: 6,
-              stroke: window.am5.color("#10b981"),
+              stroke: window.am5.color("#0d5a2a"),
               strokeWidth: 1
             }),
             paddingTop: 6,
@@ -318,7 +339,7 @@ export default function MapViz() {
         // Outer glow circle
         const glowCircle = window.am5.Circle.new(root, {
           radius: 12,
-          fill: window.am5.color("#10b981"),
+          fill: window.am5.color("#0d5a2a"),
           fillOpacity: 0.3
         })
         
@@ -327,8 +348,8 @@ export default function MapViz() {
           svgPath: "M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z",
           fill: window.am5.LinearGradient.new(root, {
             stops: [
-              { color: window.am5.color("#10b981") },
-              { color: window.am5.color("#085D36") }
+              { color: window.am5.color("#0d5a2a") },
+              { color: window.am5.color("#062516") }
             ]
           }),
           stroke: window.am5.color("#ffffff"),
@@ -350,7 +371,7 @@ export default function MapViz() {
         // Enhanced hover animation
         marker.states.create("hover", {
           scale: 1.4,
-          fill: window.am5.color("#10b981")
+          fill: window.am5.color("#0d5a2a")
         })
 
         // Pulsing animation for markers
@@ -395,10 +416,10 @@ export default function MapViz() {
       // Enhanced polygon styling with modern colors and effects
       polygonSeries.mapPolygons.template.setAll({
         interactive: true,
-        fill: window.am5.color("#2d3748"), // Dark gray for non-target countries
-        stroke: window.am5.color("#4a5568"),
-        strokeWidth: 0.3,
-        strokeOpacity: 0.5
+        fill: window.am5.color("#ffffff"), // White for non-target countries
+        stroke: window.am5.color("#e5e7eb"),
+        strokeWidth: 0.5,
+        strokeOpacity: 0.8
       })
 
       // Enhanced tooltip with modern glass-morphism design
@@ -415,7 +436,7 @@ export default function MapViz() {
           min-width: 280px;
           max-width: 350px;
           font-family: 'Inter', system-ui, sans-serif;
-          border: 1px solid rgba(8, 93, 54, 0.1);
+          border: 1px solid rgba(6, 37, 22, 0.1);
           position: relative;
           overflow: hidden;
         ">
@@ -425,23 +446,23 @@ export default function MapViz() {
             left: 0;
             right: 0;
             height: 3px;
-            background: linear-gradient(90deg, #085D36 0%, #10b981 50%, #085D36 100%);
+            background: linear-gradient(90deg, #062516 0%, #0d5a2a 50%, #062516 100%);
           "></div>
           <div style="font-size: 18px; font-weight: 700; color: #1a202c; margin-bottom: 12px; display: flex; align-items: center;">
             <div style="
               width: 8px; 
               height: 8px; 
-              background: #085D36; 
+              background: #062516; 
               border-radius: 50%; 
               margin-right: 8px;
-              box-shadow: 0 0 8px #10b981;
+              box-shadow: 0 0 8px #0d5a2a;
             "></div>
             {name}
           </div>
           <div style="font-size: 14px; color: #4a5568; line-height: 1.6;">
             <div style="margin-bottom: 8px; display: flex; justify-content: space-between;">
               <span style="font-weight: 600;">Projects:</span> 
-              <span style="color: #085D36; font-weight: 700;">{projects}</span>
+              <span style="color: #062516; font-weight: 700;">{projects}</span>
             </div>
             <div style="margin-bottom: 8px; display: flex; justify-content: space-between;">
               <span style="font-weight: 600;">Capacity:</span> 
@@ -454,7 +475,7 @@ export default function MapViz() {
             <div style="
               margin-top: 12px; 
               padding-top: 12px; 
-              border-top: 1px solid rgba(8, 93, 54, 0.1);
+              border-top: 1px solid rgba(6, 37, 22, 0.1);
               font-size: 12px; 
               color: #6b7280;
               text-align: center;
@@ -509,24 +530,19 @@ export default function MapViz() {
             const id = dataContext.id
             if (targetRegions.includes(id)) {
               const data = countryData[id as keyof typeof countryData]
+              const countryColor = countryColors[id as keyof typeof countryColors] || primaryColor
               
               console.log('Setting up enhanced polygon:', {
                 id,
-                name: data?.name
+                name: data?.name,
+                color: countryColor
               });
               
-              // Create gradient fill for target countries
-              const countryGradient = window.am5.LinearGradient.new(root, {
-                stops: [
-                  { color: window.am5.color(primaryColor) },
-                  { color: window.am5.color(primaryColorLight) }
-                ]
-              })
-              
-              polygon.set("fill", countryGradient)
-              polygon.set("stroke", window.am5.color("#10b981"))
-              polygon.set("strokeWidth", 1)
-              polygon.set("strokeOpacity", 0.8)
+              // Use solid color for target countries
+              polygon.set("fill", window.am5.color(countryColor))
+              polygon.set("stroke", window.am5.color("#ffffff"))
+              polygon.set("strokeWidth", 1.5)
+              polygon.set("strokeOpacity", 1)
               
               // Add country data to the dataItem for tooltip
               if (data) {
@@ -563,31 +579,27 @@ export default function MapViz() {
         if (dataItem) {
           const dataContext = dataItem.dataContext as any
           if (dataContext && targetRegions.includes(dataContext.id)) {
+            const countryColor = countryColors[dataContext.id as keyof typeof countryColors] || primaryColor
             // Enhanced hover states for target countries
             this.states.create("hover", {
-              fill: window.am5.LinearGradient.new(root, {
-                stops: [
-                  { color: window.am5.color("#10b981") },
-                  { color: window.am5.color("#085D36") }
-                ]
-              }),
-              stroke: window.am5.color("#34d399"),
+              fill: window.am5.color(countryColor),
+              stroke: window.am5.color("#ffffff"),
               strokeWidth: 2,
               scale: 1.02
             })
             this.states.create("active", {
-              fill: window.am5.color(primaryColorDark),
+              fill: window.am5.color(countryColor),
               scale: 0.98
             })
           } else {
             // Enhanced hover for non-target countries
             this.states.create("hover", {
-              fill: window.am5.color("#4a5568"),
-              stroke: window.am5.color("#718096"),
+              fill: window.am5.color("#f3f4f6"),
+              stroke: window.am5.color("#d1d5db"),
               strokeWidth: 1
             })
             this.states.create("active", {
-              fill: window.am5.color("#2d3748")
+              fill: window.am5.color("#e5e7eb")
             })
           }
         }
@@ -602,21 +614,21 @@ export default function MapViz() {
 
       // Style zoom control buttons
       zoomControl.plusButton.set("background", window.am5.RoundedRectangle.new(root, {
-        fill: window.am5.color("#085D36"),
+        fill: window.am5.color("#062516"),
         cornerRadiusTL: 6,
         cornerRadiusTR: 6,
         cornerRadiusBL: 6,
         cornerRadiusBR: 6
       }))
       zoomControl.minusButton.set("background", window.am5.RoundedRectangle.new(root, {
-        fill: window.am5.color("#085D36"),
+        fill: window.am5.color("#062516"),
         cornerRadiusTL: 6,
         cornerRadiusTR: 6,
         cornerRadiusBL: 6,
         cornerRadiusBR: 6
       }))
       zoomControl.homeButton.set("background", window.am5.RoundedRectangle.new(root, {
-        fill: window.am5.color("#085D36"),
+        fill: window.am5.color("#062516"),
         cornerRadiusTL: 6,
         cornerRadiusTR: 6,
         cornerRadiusBL: 6,
@@ -708,7 +720,7 @@ export default function MapViz() {
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
         
         .map-container {
-          background: linear-gradient(135deg, #0f1419 0%, #1a2332 50%, #243447 100%);
+          background: #062516;
           position: relative;
           overflow: hidden;
         }
@@ -721,9 +733,9 @@ export default function MapViz() {
           right: 0;
           bottom: 0;
           background: 
-            radial-gradient(circle at 20% 20%, rgba(16, 185, 129, 0.1) 0%, transparent 50%),
-            radial-gradient(circle at 80% 80%, rgba(8, 93, 54, 0.08) 0%, transparent 50%),
-            radial-gradient(circle at 40% 60%, rgba(52, 211, 153, 0.05) 0%, transparent 50%);
+            radial-gradient(circle at 20% 20%, rgba(13, 90, 42, 0.1) 0%, transparent 50%),
+            radial-gradient(circle at 80% 80%, rgba(6, 37, 22, 0.08) 0%, transparent 50%),
+            radial-gradient(circle at 40% 60%, rgba(10, 58, 26, 0.05) 0%, transparent 50%);
           pointer-events: none;
           z-index: 0;
         }
@@ -732,7 +744,7 @@ export default function MapViz() {
           font-family: 'Inter', system-ui, sans-serif;
           backdrop-filter: blur(20px);
           background: rgba(255, 255, 255, 0.98);
-          border: 1px solid rgba(8, 93, 54, 0.1);
+          border: 1px solid rgba(6, 37, 22, 0.1);
           box-shadow: 
             0 25px 50px rgba(0, 0, 0, 0.2),
             0 0 0 1px rgba(255, 255, 255, 0.1),
@@ -759,7 +771,7 @@ export default function MapViz() {
           left: 0;
           right: 0;
           height: 3px;
-          background: linear-gradient(90deg, #085D36 0%, #10b981 50%, #085D36 100%);
+          background: linear-gradient(90deg, #062516 0%, #0d5a2a 50%, #062516 100%);
           border-radius: 12px 12px 0 0;
         }
       `}</style>

@@ -26,25 +26,32 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$imag
 ;
 const Navbar = ()=>{
     const [isMenuOpen, setIsMenuOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [isDropdownOpen, setIsDropdownOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const toggleMenu = ()=>{
         setIsMenuOpen(!isMenuOpen);
+    };
+    const openDropdown = ()=>{
+        setIsDropdownOpen(true);
+    };
+    const closeDropdown = ()=>{
+        setIsDropdownOpen(false);
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$jsx$2f$style$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                id: "2f270be11b87509d",
-                children: '.nav.jsx-2f270be11b87509d{z-index:1000;background:0 0;justify-content:center;align-items:center;padding:15px 0;display:flex;position:fixed;top:0;left:0;right:0}.nav__container.jsx-2f270be11b87509d{-webkit-backdrop-filter:blur(10px);background:#fffffff2;border:1px solid #fff3;border-radius:16px;justify-content:space-between;align-items:center;width:100%;max-width:1200px;height:60px;margin:0 80px;padding:0;display:flex;position:relative;box-shadow:0 4px 20px #0000001a}.nav__container.jsx-2f270be11b87509d:after{content:"";-webkit-backdrop-filter:blur(10px);z-index:-1;background:#fffffff2;border:1px solid #fff3;border-top-right-radius:20px;border-bottom-right-radius:16px;width:80px;height:100%;position:absolute;top:0;right:-45px;transform:skew(-36deg);box-shadow:7px 6px 10px #0000001a}.nav__container.jsx-2f270be11b87509d:before{content:"";-webkit-backdrop-filter:blur(10px);z-index:-1;background:#fffffff2;border:1px solid #fff3;border-top-left-radius:20px;border-bottom-left-radius:16px;width:80px;height:100%;position:absolute;top:0;left:-45px;transform:skew(36deg);box-shadow:-7px 8px 10px #0000001a}.nav__logo.jsx-2f270be11b87509d{padding:0 15px}.nav__logo.jsx-2f270be11b87509d a.jsx-2f270be11b87509d{align-items:center;display:flex}.nav__menu.jsx-2f270be11b87509d{gap:15px;margin:0;padding:0;list-style:none;display:flex}.nav__item.jsx-2f270be11b87509d{margin:0}.nav__link.jsx-2f270be11b87509d{color:#333;white-space:nowrap;border-radius:6px;padding:6px 10px;font-size:14px;font-weight:500;text-decoration:none;transition:all .3s}.nav__link.jsx-2f270be11b87509d:hover{color:#062516;background-color:#f5f5f5cc}.nav__toggle.jsx-2f270be11b87509d{cursor:pointer;background:0 0;border:none;flex-direction:column;margin-right:15px;padding:8px;display:none}.nav__toggle.jsx-2f270be11b87509d span.jsx-2f270be11b87509d{background-color:#333;border-radius:2px;width:25px;height:3px;margin:3px 0;transition:all .3s}.nav__cta.jsx-2f270be11b87509d{color:#fff;cursor:pointer;z-index:1;white-space:nowrap;background:#085d36;border:none;border-radius:8px 8px 32px;align-items:center;gap:6px;margin-right:-10px;padding:10px 25px;font-family:inherit;font-size:16px;font-weight:500;transition:all .3s cubic-bezier(.4,0,.2,1);display:flex;position:relative}.nav__cta.jsx-2f270be11b87509d:after{content:"";z-index:-1;background:#085d36;border-top-right-radius:1rem;border-bottom-right-radius:1rem;width:50px;height:100%;position:absolute;top:0;right:-22px;transform:skew(-36deg)}.nav__cta.jsx-2f270be11b87509d:hover{background-color:#051e12;transform:translateY(-1px)}.nav__cta.jsx-2f270be11b87509d svg.jsx-2f270be11b87509d{transition:transform .3s}.nav__cta.jsx-2f270be11b87509d:hover svg.jsx-2f270be11b87509d{transform:translate(2px)}.onlymobile.jsx-2f270be11b87509d{display:none}@media (width<=768px){.nav__container.jsx-2f270be11b87509d{margin:0 15px}.nav__container.jsx-2f270be11b87509d:before,.nav__container.jsx-2f270be11b87509d:after{display:none}.nav__menu.jsx-2f270be11b87509d{-webkit-backdrop-filter:blur(10px);opacity:0;visibility:hidden;background:#fffffff2;border:1px solid #fff3;border-radius:0 0 16px 16px;flex-direction:column;gap:8px;padding:15px;transition:all .3s;position:absolute;top:100%;left:0;right:0;transform:translateY(-10px);box-shadow:0 4px 20px #0000001a}.nav__menu.active.jsx-2f270be11b87509d{opacity:1;visibility:visible;transform:translateY(0)}.nav__toggle.jsx-2f270be11b87509d{display:flex}.nav__toggle.active.jsx-2f270be11b87509d span.jsx-2f270be11b87509d:first-child{transform:rotate(-45deg)translate(-5px,6px)}.nav__toggle.active.jsx-2f270be11b87509d span.jsx-2f270be11b87509d:nth-child(2){opacity:0}.nav__toggle.active.jsx-2f270be11b87509d span.jsx-2f270be11b87509d:nth-child(3){transform:rotate(45deg)translate(-5px,-6px)}.nav__cta.jsx-2f270be11b87509d{display:none}.onlymobile.jsx-2f270be11b87509d{display:block}}@media (width<=480px){.nav__container.jsx-2f270be11b87509d{height:55px;margin:0 10px}.nav__logo.jsx-2f270be11b87509d{padding:0 12px}}'
+                id: "d49b5aa11d30436d",
+                children: '.nav.jsx-d49b5aa11d30436d{z-index:1000;background:0 0;justify-content:center;align-items:center;padding:15px 0;display:flex;position:fixed;top:0;left:0;right:0}.nav__container.jsx-d49b5aa11d30436d{-webkit-backdrop-filter:blur(10px);background:#fffffff2;border:none;justify-content:space-between;align-items:center;width:100%;max-width:1200px;height:60px;margin:0 80px;padding:0;display:flex;position:relative}.nav__container.jsx-d49b5aa11d30436d:after{content:"";-webkit-backdrop-filter:blur(10px);z-index:-1;background:#fffffff2;border:none;border-top-right-radius:20px;border-bottom-right-radius:16px;width:80px;height:100%;position:absolute;top:0;right:-45px;transform:skew(-36deg);box-shadow:7px 6px 10px #0000001a}.nav__container.jsx-d49b5aa11d30436d:before{content:"";-webkit-backdrop-filter:blur(10px);z-index:-1;background:#fffffff2;border:none;border-top-left-radius:20px;border-bottom-left-radius:16px;width:80px;height:100%;position:absolute;top:0;left:-45px;transform:skew(36deg);box-shadow:-7px 8px 10px #0000001a}.nav__logo.jsx-d49b5aa11d30436d{padding:0 15px}.nav__logo.jsx-d49b5aa11d30436d a.jsx-d49b5aa11d30436d{align-items:center;display:flex}.nav__menu.jsx-d49b5aa11d30436d{gap:15px;margin:0;padding:0;list-style:none;display:flex}.nav__item.jsx-d49b5aa11d30436d{margin:0;position:relative}.nav__link.jsx-d49b5aa11d30436d{color:#333;white-space:nowrap;cursor:pointer;border-radius:6px;align-items:center;gap:4px;padding:6px 10px;font-size:14px;font-weight:500;text-decoration:none;transition:all .3s;display:flex}.nav__link.jsx-d49b5aa11d30436d:hover{color:#062516;background-color:#f5f5f5cc}.dropdown-arrow.jsx-d49b5aa11d30436d{width:12px;height:12px;transition:transform .3s}.dropdown-arrow.open.jsx-d49b5aa11d30436d{transform:rotate(180deg)}.dropdown-menu.jsx-d49b5aa11d30436d{-webkit-backdrop-filter:blur(10px);opacity:0;visibility:hidden;z-index:1001;background:#fffffff2;border:1px solid #0000001a;border-radius:8px;min-width:180px;transition:all .3s;position:absolute;top:100%;left:0;transform:translateY(-10px);box-shadow:0 4px 20px #0000001a}.dropdown-menu.open.jsx-d49b5aa11d30436d{opacity:1;visibility:visible;transform:translateY(0)}.dropdown-item.jsx-d49b5aa11d30436d{list-style:none}.dropdown-link.jsx-d49b5aa11d30436d{color:#333;border-bottom:1px solid #0000000d;padding:10px 15px;font-size:14px;font-weight:500;text-decoration:none;transition:all .3s;display:block}.dropdown-link.jsx-d49b5aa11d30436d:last-child{border-bottom:none}.dropdown-link.jsx-d49b5aa11d30436d:hover{color:#085d36;background-color:#085d361a}.nav__toggle.jsx-d49b5aa11d30436d{cursor:pointer;background:0 0;border:none;flex-direction:column;margin-right:15px;padding:8px;display:none}.nav__toggle.jsx-d49b5aa11d30436d span.jsx-d49b5aa11d30436d{background-color:#333;border-radius:2px;width:25px;height:3px;margin:3px 0;transition:all .3s}.nav__cta.jsx-d49b5aa11d30436d{color:#fff;cursor:pointer;z-index:1;white-space:nowrap;background:#085d36;border:none;border-radius:8px 8px 32px;align-items:center;gap:6px;margin-right:-10px;padding:10px 25px;font-family:inherit;font-size:16px;font-weight:500;transition:all .3s cubic-bezier(.4,0,.2,1);display:flex;position:relative}.nav__cta.jsx-d49b5aa11d30436d:after{content:"";z-index:-1;background:#085d36;border-top-right-radius:1rem;border-bottom-right-radius:1rem;width:50px;height:100%;position:absolute;top:0;right:-22px;transform:skew(-36deg)}.nav__cta.jsx-d49b5aa11d30436d:hover{background-color:#051e12;transform:translateY(-1px)}.nav__cta.jsx-d49b5aa11d30436d svg.jsx-d49b5aa11d30436d{transition:transform .3s}.nav__cta.jsx-d49b5aa11d30436d:hover svg.jsx-d49b5aa11d30436d{transform:translate(2px)}.onlymobile.jsx-d49b5aa11d30436d{display:none}@media (width<=768px){.nav__container.jsx-d49b5aa11d30436d{margin:0 15px}.nav__container.jsx-d49b5aa11d30436d:before,.nav__container.jsx-d49b5aa11d30436d:after{display:none}.nav__menu.jsx-d49b5aa11d30436d{-webkit-backdrop-filter:blur(10px);opacity:0;visibility:hidden;background:#fffffff2;border:none;border-radius:0 0 16px 16px;flex-direction:column;gap:8px;padding:15px;transition:all .3s;position:absolute;top:100%;left:0;right:0;transform:translateY(-10px);box-shadow:0 4px 20px #0000001a}.nav__menu.active.jsx-d49b5aa11d30436d{opacity:1;visibility:visible;transform:translateY(0)}.dropdown-menu.jsx-d49b5aa11d30436d{box-shadow:none;opacity:1;visibility:visible;background:0 0;border:none;min-width:auto;margin-top:10px;margin-left:20px;position:static;transform:none}.dropdown-menu.open.jsx-d49b5aa11d30436d{display:block}.dropdown-link.jsx-d49b5aa11d30436d{border-bottom:none;padding:8px 15px;font-size:13px}.nav__toggle.jsx-d49b5aa11d30436d{display:flex}.nav__toggle.active.jsx-d49b5aa11d30436d span.jsx-d49b5aa11d30436d:first-child{transform:rotate(-45deg)translate(-5px,6px)}.nav__toggle.active.jsx-d49b5aa11d30436d span.jsx-d49b5aa11d30436d:nth-child(2){opacity:0}.nav__toggle.active.jsx-d49b5aa11d30436d span.jsx-d49b5aa11d30436d:nth-child(3){transform:rotate(45deg)translate(-5px,-6px)}.nav__cta.jsx-d49b5aa11d30436d{display:none}.onlymobile.jsx-d49b5aa11d30436d{display:block}}@media (width<=480px){.nav__container.jsx-d49b5aa11d30436d{height:55px;margin:0 10px}.nav__logo.jsx-d49b5aa11d30436d{padding:0 12px}}'
             }, void 0, false, void 0, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
-                className: "jsx-2f270be11b87509d" + " " + "nav",
+                className: "jsx-d49b5aa11d30436d" + " " + "nav",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "jsx-2f270be11b87509d" + " " + "nav__container",
+                    className: "jsx-d49b5aa11d30436d" + " " + "nav__container",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "jsx-2f270be11b87509d" + " " + "nav__logo",
+                            className: "jsx-d49b5aa11d30436d" + " " + "nav__logo",
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                 href: "/",
-                                className: "jsx-2f270be11b87509d",
+                                className: "jsx-d49b5aa11d30436d",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                                     src: "/logo1.png",
                                     alt: "JIVO ENERGY",
@@ -53,228 +60,359 @@ const Navbar = ()=>{
                                     className: "object-contain"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Navbar.tsx",
-                                    lineNumber: 266,
+                                    lineNumber: 359,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Navbar.tsx",
-                                lineNumber: 265,
+                                lineNumber: 358,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/components/Navbar.tsx",
-                            lineNumber: 264,
+                            lineNumber: 357,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
-                            className: "jsx-2f270be11b87509d" + " " + `nav__menu ${isMenuOpen ? 'active' : ''}`,
+                            className: "jsx-d49b5aa11d30436d" + " " + `nav__menu ${isMenuOpen ? 'active' : ''}`,
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                    className: "jsx-2f270be11b87509d" + " " + "nav__item",
-                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                        href: "/",
-                                        className: "jsx-2f270be11b87509d" + " " + "nav__link",
-                                        children: "Jivo Energy"
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/components/Navbar.tsx",
-                                        lineNumber: 278,
-                                        columnNumber: 15
-                                    }, this)
-                                }, void 0, false, {
+                                    className: "jsx-d49b5aa11d30436d" + " " + "nav__item",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                            onMouseEnter: openDropdown,
+                                            onMouseLeave: closeDropdown,
+                                            style: {
+                                                cursor: 'pointer'
+                                            },
+                                            className: "jsx-d49b5aa11d30436d" + " " + "nav__link",
+                                            children: [
+                                                "Jivo Energy",
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                                                    width: "12",
+                                                    height: "12",
+                                                    viewBox: "0 0 12 12",
+                                                    fill: "none",
+                                                    xmlns: "http://www.w3.org/2000/svg",
+                                                    className: "jsx-d49b5aa11d30436d" + " " + `dropdown-arrow ${isDropdownOpen ? 'open' : ''}`,
+                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                                                        d: "M3 4.5L6 7.5L9 4.5",
+                                                        stroke: "currentColor",
+                                                        strokeWidth: "1.5",
+                                                        strokeLinecap: "round",
+                                                        strokeLinejoin: "round",
+                                                        className: "jsx-d49b5aa11d30436d"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/components/Navbar.tsx",
+                                                        lineNumber: 386,
+                                                        columnNumber: 19
+                                                    }, this)
+                                                }, void 0, false, {
+                                                    fileName: "[project]/src/components/Navbar.tsx",
+                                                    lineNumber: 378,
+                                                    columnNumber: 17
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/src/components/Navbar.tsx",
+                                            lineNumber: 371,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
+                                            onMouseEnter: openDropdown,
+                                            onMouseLeave: closeDropdown,
+                                            className: "jsx-d49b5aa11d30436d" + " " + `dropdown-menu ${isDropdownOpen ? 'open' : ''}`,
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                                    className: "jsx-d49b5aa11d30436d" + " " + "dropdown-item",
+                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                                        href: "/business-areas",
+                                                        className: "jsx-d49b5aa11d30436d" + " " + "dropdown-link",
+                                                        children: "Business Areas"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/components/Navbar.tsx",
+                                                        lineNumber: 395,
+                                                        columnNumber: 19
+                                                    }, this)
+                                                }, void 0, false, {
+                                                    fileName: "[project]/src/components/Navbar.tsx",
+                                                    lineNumber: 394,
+                                                    columnNumber: 17
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                                    className: "jsx-d49b5aa11d30436d" + " " + "dropdown-item",
+                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                                        href: "/partners",
+                                                        className: "jsx-d49b5aa11d30436d" + " " + "dropdown-link",
+                                                        children: "Partners"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/components/Navbar.tsx",
+                                                        lineNumber: 398,
+                                                        columnNumber: 19
+                                                    }, this)
+                                                }, void 0, false, {
+                                                    fileName: "[project]/src/components/Navbar.tsx",
+                                                    lineNumber: 397,
+                                                    columnNumber: 17
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                                    className: "jsx-d49b5aa11d30436d" + " " + "dropdown-item",
+                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                                        href: "/certificate",
+                                                        className: "jsx-d49b5aa11d30436d" + " " + "dropdown-link",
+                                                        children: "Certificate"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/components/Navbar.tsx",
+                                                        lineNumber: 401,
+                                                        columnNumber: 19
+                                                    }, this)
+                                                }, void 0, false, {
+                                                    fileName: "[project]/src/components/Navbar.tsx",
+                                                    lineNumber: 400,
+                                                    columnNumber: 17
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                                    className: "jsx-d49b5aa11d30436d" + " " + "dropdown-item",
+                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                                        href: "/capabilities",
+                                                        className: "jsx-d49b5aa11d30436d" + " " + "dropdown-link",
+                                                        children: "Capabilities"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/components/Navbar.tsx",
+                                                        lineNumber: 404,
+                                                        columnNumber: 19
+                                                    }, this)
+                                                }, void 0, false, {
+                                                    fileName: "[project]/src/components/Navbar.tsx",
+                                                    lineNumber: 403,
+                                                    columnNumber: 17
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                                    className: "jsx-d49b5aa11d30436d" + " " + "dropdown-item",
+                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                                        href: "/theme",
+                                                        className: "jsx-d49b5aa11d30436d" + " " + "dropdown-link",
+                                                        children: "Theme"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/components/Navbar.tsx",
+                                                        lineNumber: 407,
+                                                        columnNumber: 19
+                                                    }, this)
+                                                }, void 0, false, {
+                                                    fileName: "[project]/src/components/Navbar.tsx",
+                                                    lineNumber: 406,
+                                                    columnNumber: 17
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/src/components/Navbar.tsx",
+                                            lineNumber: 389,
+                                            columnNumber: 15
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
                                     fileName: "[project]/src/components/Navbar.tsx",
-                                    lineNumber: 277,
+                                    lineNumber: 370,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                    className: "jsx-2f270be11b87509d" + " " + "nav__item",
+                                    className: "jsx-d49b5aa11d30436d" + " " + "nav__item",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                         href: "/projects",
-                                        className: "jsx-2f270be11b87509d" + " " + "nav__link",
+                                        className: "jsx-d49b5aa11d30436d" + " " + "nav__link",
                                         children: "Projects"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Navbar.tsx",
-                                        lineNumber: 281,
+                                        lineNumber: 412,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Navbar.tsx",
-                                    lineNumber: 280,
+                                    lineNumber: 411,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                    className: "jsx-2f270be11b87509d" + " " + "nav__item",
+                                    className: "jsx-d49b5aa11d30436d" + " " + "nav__item",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                         href: "/gallery",
-                                        className: "jsx-2f270be11b87509d" + " " + "nav__link",
+                                        className: "jsx-d49b5aa11d30436d" + " " + "nav__link",
                                         children: "Gallery"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Navbar.tsx",
-                                        lineNumber: 284,
+                                        lineNumber: 415,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Navbar.tsx",
-                                    lineNumber: 283,
+                                    lineNumber: 414,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                    className: "jsx-2f270be11b87509d" + " " + "nav__item",
+                                    className: "jsx-d49b5aa11d30436d" + " " + "nav__item",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                         href: "/csr",
-                                        className: "jsx-2f270be11b87509d" + " " + "nav__link",
+                                        className: "jsx-d49b5aa11d30436d" + " " + "nav__link",
                                         children: "CSR"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Navbar.tsx",
-                                        lineNumber: 287,
+                                        lineNumber: 418,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Navbar.tsx",
-                                    lineNumber: 286,
+                                    lineNumber: 417,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                    className: "jsx-2f270be11b87509d" + " " + "nav__item",
+                                    className: "jsx-d49b5aa11d30436d" + " " + "nav__item",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                         href: "/media",
-                                        className: "jsx-2f270be11b87509d" + " " + "nav__link",
+                                        className: "jsx-d49b5aa11d30436d" + " " + "nav__link",
                                         children: "Media"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Navbar.tsx",
-                                        lineNumber: 290,
+                                        lineNumber: 421,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Navbar.tsx",
-                                    lineNumber: 289,
+                                    lineNumber: 420,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                    className: "jsx-2f270be11b87509d" + " " + "nav__item",
+                                    className: "jsx-d49b5aa11d30436d" + " " + "nav__item",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                         href: "/esg",
-                                        className: "jsx-2f270be11b87509d" + " " + "nav__link",
+                                        className: "jsx-d49b5aa11d30436d" + " " + "nav__link",
                                         children: "ESG"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Navbar.tsx",
-                                        lineNumber: 293,
+                                        lineNumber: 424,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Navbar.tsx",
-                                    lineNumber: 292,
+                                    lineNumber: 423,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                    className: "jsx-2f270be11b87509d" + " " + "nav__item",
+                                    className: "jsx-d49b5aa11d30436d" + " " + "nav__item",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                         href: "/careers",
-                                        className: "jsx-2f270be11b87509d" + " " + "nav__link",
+                                        className: "jsx-d49b5aa11d30436d" + " " + "nav__link",
                                         children: "Careers"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Navbar.tsx",
-                                        lineNumber: 296,
+                                        lineNumber: 427,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Navbar.tsx",
-                                    lineNumber: 295,
+                                    lineNumber: 426,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                    className: "jsx-2f270be11b87509d" + " " + "nav__item",
+                                    className: "jsx-d49b5aa11d30436d" + " " + "nav__item",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                         href: "/contact",
-                                        className: "jsx-2f270be11b87509d" + " " + "nav__link onlymobile",
+                                        className: "jsx-d49b5aa11d30436d" + " " + "nav__link onlymobile",
                                         children: "Contact Us"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Navbar.tsx",
-                                        lineNumber: 299,
+                                        lineNumber: 430,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Navbar.tsx",
-                                    lineNumber: 298,
+                                    lineNumber: 429,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/Navbar.tsx",
-                            lineNumber: 276,
+                            lineNumber: 369,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                             "aria-label": "Toggle menu",
                             onClick: toggleMenu,
-                            className: "jsx-2f270be11b87509d" + " " + `nav__toggle ${isMenuOpen ? 'active' : ''}`,
+                            className: "jsx-d49b5aa11d30436d" + " " + `nav__toggle ${isMenuOpen ? 'active' : ''}`,
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                    className: "jsx-2f270be11b87509d"
+                                    className: "jsx-d49b5aa11d30436d"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Navbar.tsx",
-                                    lineNumber: 308,
+                                    lineNumber: 439,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                    className: "jsx-2f270be11b87509d"
+                                    className: "jsx-d49b5aa11d30436d"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Navbar.tsx",
-                                    lineNumber: 309,
+                                    lineNumber: 440,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                    className: "jsx-2f270be11b87509d"
+                                    className: "jsx-d49b5aa11d30436d"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Navbar.tsx",
-                                    lineNumber: 310,
+                                    lineNumber: 441,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/Navbar.tsx",
-                            lineNumber: 303,
+                            lineNumber: 434,
                             columnNumber: 11
                         }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                            className: "jsx-2f270be11b87509d" + " " + "nav__cta",
-                            children: [
-                                "Contact us",
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-                                    width: "15",
-                                    height: "12",
-                                    viewBox: "0 0 15 12",
-                                    fill: "none",
-                                    xmlns: "http://www.w3.org/2000/svg",
-                                    className: "jsx-2f270be11b87509d",
-                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                                        d: "M14.2287 2.62989L5.86852 0.389786C5.70362 0.3456 5.53163 0.334326 5.36237 0.35661C5.19311 0.378893 5.02989 0.434296 4.88205 0.519656C4.7342 0.605016 4.60461 0.718661 4.50069 0.854102C4.39676 0.989543 4.32053 1.14413 4.27634 1.30903C4.23215 1.47393 4.22088 1.64592 4.24316 1.81518C4.26545 1.98444 4.32085 2.14766 4.40621 2.2955C4.49157 2.44335 4.60521 2.57294 4.74066 2.67686C4.8761 2.78079 5.03068 2.85702 5.19558 2.90121L9.26821 3.99247L0.726294 8.92415C0.427657 9.09656 0.209744 9.38055 0.120493 9.71364C0.0312436 10.0467 0.077968 10.4016 0.250386 10.7003C0.422804 10.9989 0.706792 11.2168 1.03988 11.3061C1.37296 11.3953 1.72786 11.3486 2.0265 11.1762L10.5684 6.24449L9.47716 10.3171C9.43247 10.482 9.42082 10.6541 9.44287 10.8236C9.46493 10.993 9.52027 11.1564 9.6057 11.3044C9.69113 11.4523 9.80496 11.5819 9.94066 11.6858C10.0764 11.7896 10.2312 11.8655 10.3964 11.9093C10.7294 11.9985 11.0843 11.9517 11.3828 11.7794C11.6814 11.607 11.8993 11.3231 11.9886 10.9901L14.2287 2.62989Z",
-                                        fill: "white",
-                                        className: "jsx-2f270be11b87509d"
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                            href: "/contact",
+                            className: "jsx-d49b5aa11d30436d",
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                className: "jsx-d49b5aa11d30436d" + " " + "nav__cta",
+                                children: [
+                                    "Contact us",
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                                        width: "15",
+                                        height: "12",
+                                        viewBox: "0 0 15 12",
+                                        fill: "none",
+                                        xmlns: "http://www.w3.org/2000/svg",
+                                        className: "jsx-d49b5aa11d30436d",
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                                            d: "M14.2287 2.62989L5.86852 0.389786C5.70362 0.3456 5.53163 0.334326 5.36237 0.35661C5.19311 0.378893 5.02989 0.434296 4.88205 0.519656C4.7342 0.605016 4.60461 0.718661 4.50069 0.854102C4.39676 0.989543 4.32053 1.14413 4.27634 1.30903C4.23215 1.47393 4.22088 1.64592 4.24316 1.81518C4.26545 1.98444 4.32085 2.14766 4.40621 2.2955C4.49157 2.44335 4.60521 2.57294 4.74066 2.67686C4.8761 2.78079 5.03068 2.85702 5.19558 2.90121L9.26821 3.99247L0.726294 8.92415C0.427657 9.09656 0.209744 9.38055 0.120493 9.71364C0.0312436 10.0467 0.077968 10.4016 0.250386 10.7003C0.422804 10.9989 0.706792 11.2168 1.03988 11.3061C1.37296 11.3953 1.72786 11.3486 2.0265 11.1762L10.5684 6.24449L9.47716 10.3171C9.43247 10.482 9.42082 10.6541 9.44287 10.8236C9.46493 10.993 9.52027 11.1564 9.6057 11.3044C9.69113 11.4523 9.80496 11.5819 9.94066 11.6858C10.0764 11.7896 10.2312 11.8655 10.3964 11.9093C10.7294 11.9985 11.0843 11.9517 11.3828 11.7794C11.6814 11.607 11.8993 11.3231 11.9886 10.9901L14.2287 2.62989Z",
+                                            fill: "white",
+                                            className: "jsx-d49b5aa11d30436d"
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/Navbar.tsx",
+                                            lineNumber: 448,
+                                            columnNumber: 15
+                                        }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Navbar.tsx",
-                                        lineNumber: 316,
-                                        columnNumber: 15
+                                        lineNumber: 447,
+                                        columnNumber: 13
                                     }, this)
-                                }, void 0, false, {
-                                    fileName: "[project]/src/components/Navbar.tsx",
-                                    lineNumber: 315,
-                                    columnNumber: 13
-                                }, this)
-                            ]
-                        }, void 0, true, {
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/src/components/Navbar.tsx",
+                                lineNumber: 445,
+                                columnNumber: 14
+                            }, this)
+                        }, void 0, false, {
                             fileName: "[project]/src/components/Navbar.tsx",
-                            lineNumber: 313,
+                            lineNumber: 444,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/Navbar.tsx",
-                    lineNumber: 263,
+                    lineNumber: 356,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/Navbar.tsx",
-                lineNumber: 262,
+                lineNumber: 355,
                 columnNumber: 7
             }, this)
         ]
@@ -293,89 +431,364 @@ __turbopack_context__.s({
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
 ;
 const About = ()=>{
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "w-full py-16 px-4 md:px-8 bg-white",
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
+        className: "about-stats",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "max-w-7xl mx-auto",
-            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "grid grid-cols-1 md:grid-cols-2 gap-8 items-center",
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "w-full aspect-video relative rounded-lg overflow-hidden shadow-lg",
-                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("video", {
-                            className: "w-full h-full object-cover",
-                            controls: true,
-                            poster: "/video-poster.jpg",
-                            crossOrigin: "anonymous",
+            className: "about-stats__container",
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "about-stats__header",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                            className: "about-stats__subtitle",
+                            children: "About Us"
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/About.tsx",
+                            lineNumber: 8,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                            className: "about-stats__title",
                             children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("source", {
-                                    src: "/about-video.mp4",
-                                    type: "video/mp4"
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    children: "Decades Of"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/About.tsx",
-                                    lineNumber: 16,
-                                    columnNumber: 15
+                                    lineNumber: 10,
+                                    columnNumber: 13
                                 }, this),
-                                "Your browser does not support the video tag."
+                                "Expertise Dedicated To Success"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/About.tsx",
-                            lineNumber: 10,
-                            columnNumber: 13
+                            lineNumber: 9,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                            className: "about-stats__description",
+                            children: "With over two decades of experience in renewable energy development, we have established ourselves as a trusted partner in the clean energy transition, delivering innovative solutions across multiple markets."
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/About.tsx",
+                            lineNumber: 13,
+                            columnNumber: 11
                         }, this)
-                    }, void 0, false, {
-                        fileName: "[project]/src/components/About.tsx",
-                        lineNumber: 9,
-                        columnNumber: 11
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "space-y-6",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                className: "text-3xl font-bold text-[#062516]",
-                                children: "About Jivo Energy"
-                            }, void 0, false, {
-                                fileName: "[project]/src/components/About.tsx",
-                                lineNumber: 23,
-                                columnNumber: 13
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "text-lg text-gray-700",
-                                children: "We are a leading energy solutions provider committed to transforming the way the world consumes energy. Our innovative approach combines cutting-edge technology with sustainable practices to deliver reliable and efficient energy solutions."
-                            }, void 0, false, {
-                                fileName: "[project]/src/components/About.tsx",
-                                lineNumber: 24,
-                                columnNumber: 13
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "text-lg text-gray-700",
-                                children: "With a global presence and a team of experts, we work tirelessly to create a more sustainable future through renewable energy initiatives and smart energy management systems."
-                            }, void 0, false, {
-                                fileName: "[project]/src/components/About.tsx",
-                                lineNumber: 29,
-                                columnNumber: 13
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                className: "px-6 py-3 bg-[#062516] text-white rounded-lg hover:bg-[#051e12] transition-colors",
-                                children: "Learn More"
-                            }, void 0, false, {
-                                fileName: "[project]/src/components/About.tsx",
-                                lineNumber: 33,
-                                columnNumber: 13
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/src/components/About.tsx",
-                        lineNumber: 22,
-                        columnNumber: 11
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "[project]/src/components/About.tsx",
-                lineNumber: 7,
-                columnNumber: 9
-            }, this)
-        }, void 0, false, {
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/src/components/About.tsx",
+                    lineNumber: 7,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "stats-grid",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "grid-item",
+                            "data-counter": "",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "content",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                            className: "stat-number",
+                                            children: "20 GW"
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/About.tsx",
+                                            lineNumber: 23,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                            className: "stat-description",
+                                            children: "of total pipeline in renewable projects"
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/About.tsx",
+                                            lineNumber: 24,
+                                            columnNumber: 15
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/src/components/About.tsx",
+                                    lineNumber: 22,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "hover-image",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                        src: "/logo1.png",
+                                        alt: "Solar panels"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/About.tsx",
+                                        lineNumber: 27,
+                                        columnNumber: 15
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/About.tsx",
+                                    lineNumber: 26,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/src/components/About.tsx",
+                            lineNumber: 21,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "grid-item",
+                            "data-counter": "02",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "content",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                            className: "stat-number",
+                                            children: "200+"
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/About.tsx",
+                                            lineNumber: 33,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                            className: "stat-description",
+                                            children: "Employees"
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/About.tsx",
+                                            lineNumber: 34,
+                                            columnNumber: 15
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/src/components/About.tsx",
+                                    lineNumber: 32,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "hover-image",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                        src: "/logo1.png",
+                                        alt: "Team working"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/About.tsx",
+                                        lineNumber: 37,
+                                        columnNumber: 15
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/About.tsx",
+                                    lineNumber: 36,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/src/components/About.tsx",
+                            lineNumber: 31,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "grid-item",
+                            "data-counter": "03",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "content",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                            className: "stat-number",
+                                            children: "200+"
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/About.tsx",
+                                            lineNumber: 43,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                            className: "stat-description",
+                                            children: "Employees"
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/About.tsx",
+                                            lineNumber: 44,
+                                            columnNumber: 15
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/src/components/About.tsx",
+                                    lineNumber: 42,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "hover-image",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                        src: "/logo1.png",
+                                        alt: "Team working"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/About.tsx",
+                                        lineNumber: 47,
+                                        columnNumber: 15
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/About.tsx",
+                                    lineNumber: 46,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/src/components/About.tsx",
+                            lineNumber: 41,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "grid-item",
+                            "data-counter": "04",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "content",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                            className: "stat-number",
+                                            children: "12+"
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/About.tsx",
+                                            lineNumber: 53,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                            className: "stat-description",
+                                            children: "Countries"
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/About.tsx",
+                                            lineNumber: 54,
+                                            columnNumber: 15
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/src/components/About.tsx",
+                                    lineNumber: 52,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "hover-image",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                        src: "/logo1.png",
+                                        alt: "Global map"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/About.tsx",
+                                        lineNumber: 57,
+                                        columnNumber: 15
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/About.tsx",
+                                    lineNumber: 56,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/src/components/About.tsx",
+                            lineNumber: 51,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "grid-item",
+                            "data-counter": "05",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "content",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                            className: "stat-number",
+                                            children: "4+"
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/About.tsx",
+                                            lineNumber: 63,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                            className: "stat-description",
+                                            children: "Continents"
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/About.tsx",
+                                            lineNumber: 64,
+                                            columnNumber: 15
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/src/components/About.tsx",
+                                    lineNumber: 62,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "hover-image",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                        src: "/logo1.png",
+                                        alt: "Earth from space"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/About.tsx",
+                                        lineNumber: 67,
+                                        columnNumber: 15
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/About.tsx",
+                                    lineNumber: 66,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/src/components/About.tsx",
+                            lineNumber: 61,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "grid-item",
+                            "data-counter": "06",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "content",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                            className: "stat-number",
+                                            children: "4GW"
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/About.tsx",
+                                            lineNumber: 73,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                            className: "stat-description",
+                                            children: "Projects Already Completed"
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/About.tsx",
+                                            lineNumber: 74,
+                                            columnNumber: 15
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/src/components/About.tsx",
+                                    lineNumber: 72,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "hover-image",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                        src: "/logo1.png",
+                                        alt: "Completed solar installation"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/About.tsx",
+                                        lineNumber: 77,
+                                        columnNumber: 15
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/About.tsx",
+                                    lineNumber: 76,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/src/components/About.tsx",
+                            lineNumber: 71,
+                            columnNumber: 11
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/src/components/About.tsx",
+                    lineNumber: 20,
+                    columnNumber: 9
+                }, this)
+            ]
+        }, void 0, true, {
             fileName: "[project]/src/components/About.tsx",
             lineNumber: 6,
             columnNumber: 7
@@ -397,231 +810,245 @@ __turbopack_context__.s({
     "default": (()=>__TURBOPACK__default__export__)
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$jsx$2f$style$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/styled-jsx/style.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/image.js [app-ssr] (ecmascript)");
 'use client';
 ;
 ;
-const projects = [
+;
+;
+const technologies = [
     {
         id: 1,
-        title: "Solar Energy Solutions",
-        description: "Revolutionary solar panel installation and maintenance services for residential and commercial properties. Our cutting-edge technology ensures maximum energy efficiency and sustainability.",
-        image: "/solar-project.jpg"
+        subtitle: "Our Technologies",
+        title: "Storage, a guarantee of success for renewables",
+        description: "Advanced energy storage solutions ensure reliable power delivery and grid stability, making renewable energy.",
+        image: "/logo.png"
     },
     {
         id: 2,
-        title: "Wind Power Integration",
-        description: "State-of-the-art wind turbine systems designed for optimal energy generation. We provide comprehensive solutions from installation to maintenance.",
-        image: "/wind-project.jpg"
+        subtitle: "Our Technologies",
+        title: "Solar Innovation for Maximum Efficiency",
+        description: "More than 250 MW with access and connection and more than 1,500 MW in the permit application process.",
+        image: "/logo.png"
     },
     {
         id: 3,
-        title: "Smart Grid Technology",
-        description: "Advanced smart grid solutions that optimize energy distribution and consumption. Our systems provide real-time monitoring and automated energy management.",
-        image: "/grid-project.jpg"
+        subtitle: "Our Technologies",
+        title: "Smart Grid Integration for Solar Innovation",
+        description: "Intelligent grid management systems that seamlessly integrate renewable energy sources with existing infrastructure.",
+        image: "/logo.png"
     }
 ];
 const Projects = ()=>{
-    const [currentProject, setCurrentProject] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(0);
+    const [currentSlide, setCurrentSlide] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(0);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         const handleKeyDown = (e)=>{
             if (e.key === 'ArrowRight') {
-                nextProject();
+                nextSlide();
             } else if (e.key === 'ArrowLeft') {
-                prevProject();
+                prevSlide();
             }
         };
         window.addEventListener('keydown', handleKeyDown);
         return ()=>window.removeEventListener('keydown', handleKeyDown);
     }, []);
-    const nextProject = ()=>{
-        setCurrentProject((prev)=>(prev + 1) % projects.length);
+    const nextSlide = ()=>{
+        setCurrentSlide((prev)=>(prev + 1) % technologies.length);
     };
-    const prevProject = ()=>{
-        setCurrentProject((prev)=>(prev - 1 + projects.length) % projects.length);
+    const prevSlide = ()=>{
+        setCurrentSlide((prev)=>(prev - 1 + technologies.length) % technologies.length);
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-        className: "w-full py-16 bg-[#062516] relative",
+        id: "services",
+        style: {
+            width: '100%'
+        },
+        className: "jsx-4f3f7eba5deda519" + " " + "technology",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "absolute inset-0 z-0",
                 style: {
-                    backgroundImage: 'url(/bg.png)',
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    backgroundRepeat: 'no-repeat',
-                    //   filter: 'blur(1px)',
-                    opacity: 0.97
-                }
-            }, void 0, false, {
-                fileName: "[project]/src/components/Projects.tsx",
-                lineNumber: 59,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "container mx-auto px-4 relative z-10",
+                    width: '100%'
+                },
+                className: "jsx-4f3f7eba5deda519" + " " + "technology__container",
                 children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                        className: "text-4xl font-bold text-center mb-12 text-white",
-                        children: "Our Projects"
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "jsx-4f3f7eba5deda519" + " " + "swiper technology-swiper",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "jsx-4f3f7eba5deda519" + " " + "swiper-wrapper",
+                            children: technologies.map((tech, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    style: {
+                                        display: index === currentSlide ? 'block' : 'none',
+                                        opacity: index === currentSlide ? 1 : 0,
+                                        transform: index === currentSlide ? 'translateX(0)' : 'translateX(20px)',
+                                        transition: 'all 0.6s ease-in-out'
+                                    },
+                                    className: "jsx-4f3f7eba5deda519" + " " + `swiper-slide ${index === currentSlide ? 'active' : ''}`,
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "jsx-4f3f7eba5deda519" + " " + "technology__content",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "jsx-4f3f7eba5deda519" + " " + "technology__image",
+                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                                    src: tech.image,
+                                                    alt: "Energy storage facility",
+                                                    className: "technology__img",
+                                                    width: 600,
+                                                    height: 400,
+                                                    style: {
+                                                        objectFit: 'cover',
+                                                        width: '100%'
+                                                    }
+                                                }, void 0, false, {
+                                                    fileName: "[project]/src/components/Projects.tsx",
+                                                    lineNumber: 80,
+                                                    columnNumber: 21
+                                                }, this)
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/components/Projects.tsx",
+                                                lineNumber: 79,
+                                                columnNumber: 19
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "jsx-4f3f7eba5deda519" + " " + "technology__text",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                        className: "jsx-4f3f7eba5deda519" + " " + "technology__subtitle",
+                                                        children: tech.subtitle
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/components/Projects.tsx",
+                                                        lineNumber: 90,
+                                                        columnNumber: 21
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                                        className: "jsx-4f3f7eba5deda519" + " " + "technology__slide-title",
+                                                        children: tech.title
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/components/Projects.tsx",
+                                                        lineNumber: 91,
+                                                        columnNumber: 21
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                        className: "jsx-4f3f7eba5deda519" + " " + "technology__slide-description",
+                                                        children: tech.description
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/components/Projects.tsx",
+                                                        lineNumber: 92,
+                                                        columnNumber: 21
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/src/components/Projects.tsx",
+                                                lineNumber: 89,
+                                                columnNumber: 19
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/src/components/Projects.tsx",
+                                        lineNumber: 78,
+                                        columnNumber: 17
+                                    }, this)
+                                }, tech.id, false, {
+                                    fileName: "[project]/src/components/Projects.tsx",
+                                    lineNumber: 68,
+                                    columnNumber: 15
+                                }, this))
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/Projects.tsx",
+                            lineNumber: 66,
+                            columnNumber: 11
+                        }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/components/Projects.tsx",
-                        lineNumber: 71,
+                        lineNumber: 65,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "flex flex-col md:flex-row items-center gap-8",
+                        className: "jsx-4f3f7eba5deda519" + " " + "technology__navigation",
                         children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "w-full md:w-1/2 relative h-[400px]",
-                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "w-full aspect-video relative rounded-lg overflow-hidden shadow-lg",
-                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("video", {
-                                        autoPlay: true,
-                                        loop: true,
-                                        muted: true,
-                                        playsInline: true,
-                                        className: "absolute inset-0 w-full h-full object-cover opacity-90",
-                                        crossOrigin: "anonymous",
-                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("source", {
-                                            src: "/power.mp4",
-                                            type: "video/mp4"
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/Projects.tsx",
-                                            lineNumber: 84,
-                                            columnNumber: 11
-                                        }, this)
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                onClick: prevSlide,
+                                className: "jsx-4f3f7eba5deda519" + " " + "swiper-button-prev technology__nav-btn",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                                    width: "8",
+                                    height: "13",
+                                    viewBox: "0 0 8 13",
+                                    fill: "none",
+                                    xmlns: "http://www.w3.org/2000/svg",
+                                    className: "jsx-4f3f7eba5deda519",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                                        fillRule: "evenodd",
+                                        clipRule: "evenodd",
+                                        d: "M0.929 7.071L6.586 12.728L8 11.314L3.05 6.364L8 1.414L6.586 0L0.929 5.657C0.741529 5.84453 0.636214 6.09884 0.636214 6.364C0.636214 6.62916 0.741529 6.88347 0.929 7.071Z",
+                                        fill: "#103319",
+                                        className: "jsx-4f3f7eba5deda519"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Projects.tsx",
-                                        lineNumber: 76,
-                                        columnNumber: 13
+                                        lineNumber: 109,
+                                        columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Projects.tsx",
-                                    lineNumber: 75,
+                                    lineNumber: 108,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Projects.tsx",
-                                lineNumber: 74,
+                                lineNumber: 104,
                                 columnNumber: 11
                             }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "w-full md:w-1/2 space-y-6",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                        className: "text-3xl font-semibold text-white",
-                                        children: projects[currentProject].title
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                onClick: nextSlide,
+                                className: "jsx-4f3f7eba5deda519" + " " + "swiper-button-next technology__nav-btn",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                                    width: "8",
+                                    height: "13",
+                                    viewBox: "0 0 8 13",
+                                    fill: "none",
+                                    xmlns: "http://www.w3.org/2000/svg",
+                                    className: "jsx-4f3f7eba5deda519",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                                        fillRule: "evenodd",
+                                        clipRule: "evenodd",
+                                        d: "M7.071 7.071L1.414 12.728L0 11.314L4.95 6.364L0 1.414L1.414 0L7.071 5.657C7.25847 5.84453 7.36379 6.09884 7.36379 6.364C7.36379 6.62916 7.25847 6.88347 7.071 7.071Z",
+                                        fill: "#103319",
+                                        className: "jsx-4f3f7eba5deda519"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Projects.tsx",
-                                        lineNumber: 91,
-                                        columnNumber: 13
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "text-gray-100 leading-relaxed",
-                                        children: projects[currentProject].description
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/components/Projects.tsx",
-                                        lineNumber: 92,
-                                        columnNumber: 13
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "flex justify-center gap-2 mt-4",
-                                        children: projects.map((_, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                onClick: ()=>setCurrentProject(index),
-                                                className: `w-3 h-3 rounded-full transition-colors duration-300 ${currentProject === index ? 'bg-white' : 'bg-white/50'}`
-                                            }, index, false, {
-                                                fileName: "[project]/src/components/Projects.tsx",
-                                                lineNumber: 97,
-                                                columnNumber: 17
-                                            }, this))
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/components/Projects.tsx",
-                                        lineNumber: 95,
-                                        columnNumber: 13
+                                        lineNumber: 119,
+                                        columnNumber: 15
                                     }, this)
-                                ]
-                            }, void 0, true, {
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/Projects.tsx",
+                                    lineNumber: 118,
+                                    columnNumber: 13
+                                }, this)
+                            }, void 0, false, {
                                 fileName: "[project]/src/components/Projects.tsx",
-                                lineNumber: 90,
+                                lineNumber: 114,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/Projects.tsx",
-                        lineNumber: 72,
+                        lineNumber: 103,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/Projects.tsx",
-                lineNumber: 70,
+                lineNumber: 63,
                 columnNumber: 7
             }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                onClick: prevProject,
-                className: "absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 text-white rounded-full flex items-center justify-center shadow-lg hover:bg-white/30 transition-colors duration-300",
-                "aria-label": "Previous project",
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-                    xmlns: "http://www.w3.org/2000/svg",
-                    className: "h-6 w-6",
-                    fill: "none",
-                    viewBox: "0 0 24 24",
-                    stroke: "currentColor",
-                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                        strokeLinecap: "round",
-                        strokeLinejoin: "round",
-                        strokeWidth: 2,
-                        d: "M15 19l-7-7 7-7"
-                    }, void 0, false, {
-                        fileName: "[project]/src/components/Projects.tsx",
-                        lineNumber: 117,
-                        columnNumber: 11
-                    }, this)
-                }, void 0, false, {
-                    fileName: "[project]/src/components/Projects.tsx",
-                    lineNumber: 116,
-                    columnNumber: 9
-                }, this)
-            }, void 0, false, {
-                fileName: "[project]/src/components/Projects.tsx",
-                lineNumber: 111,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                onClick: nextProject,
-                className: "absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 text-white rounded-full flex items-center justify-center shadow-lg hover:bg-white/30 transition-colors duration-300",
-                "aria-label": "Next project",
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-                    xmlns: "http://www.w3.org/2000/svg",
-                    className: "h-6 w-6",
-                    fill: "none",
-                    viewBox: "0 0 24 24",
-                    stroke: "currentColor",
-                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                        strokeLinecap: "round",
-                        strokeLinejoin: "round",
-                        strokeWidth: 2,
-                        d: "M9 5l7 7-7 7"
-                    }, void 0, false, {
-                        fileName: "[project]/src/components/Projects.tsx",
-                        lineNumber: 127,
-                        columnNumber: 11
-                    }, this)
-                }, void 0, false, {
-                    fileName: "[project]/src/components/Projects.tsx",
-                    lineNumber: 126,
-                    columnNumber: 9
-                }, this)
-            }, void 0, false, {
-                fileName: "[project]/src/components/Projects.tsx",
-                lineNumber: 121,
-                columnNumber: 7
-            }, this)
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$jsx$2f$style$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                id: "4f3f7eba5deda519",
+                children: ".technology.jsx-4f3f7eba5deda519{color:#fff;background:radial-gradient(at bottom,#425831 0%,#274711 40%,#19361e 70%,#0f2419 100%);width:100%;padding:120px 0}.technology__container.jsx-4f3f7eba5deda519{width:100%;max-width:1400px;margin:0 auto;padding:0 5%}.swiper.jsx-4f3f7eba5deda519{z-index:1;width:100%;margin-left:auto;margin-right:auto;padding:0;list-style:none;display:block;position:relative;overflow:hidden}.technology-swiper.jsx-4f3f7eba5deda519{width:100%;overflow:visible}.swiper-wrapper.jsx-4f3f7eba5deda519{z-index:1;box-sizing:content-box;width:100%;height:100%;transition-property:transform;display:flex;position:relative}.swiper-slide.jsx-4f3f7eba5deda519{flex-shrink:0;width:100%;height:100%;transition-property:transform,opacity;transition-duration:.6s;transition-timing-function:ease-in-out;position:relative}.swiper-slide.active.jsx-4f3f7eba5deda519{opacity:1;transform:translate(0)}.swiper-slide.jsx-4f3f7eba5deda519:not(.active){opacity:0;transform:translate(20px)}.technology__content.jsx-4f3f7eba5deda519{align-items:center;gap:4rem;display:flex}.technology__image.jsx-4f3f7eba5deda519{flex:1}.technology__img.jsx-4f3f7eba5deda519{border-radius:12px;height:auto;width:100%!important}.technology__text.jsx-4f3f7eba5deda519{flex:1;padding:2rem}.technology__subtitle.jsx-4f3f7eba5deda519{color:#a0a0a0;text-transform:uppercase;letter-spacing:.05em;margin-bottom:1rem;font-size:.875rem}.technology__slide-title.jsx-4f3f7eba5deda519{color:#fff;margin-bottom:1.5rem;font-size:2.5rem;font-weight:700;line-height:1.2}.technology__slide-description.jsx-4f3f7eba5deda519{color:#d1d5db;font-size:1.125rem;line-height:1.6}.technology__navigation.jsx-4f3f7eba5deda519{justify-content:center;gap:1rem;margin-top:3rem;display:flex}.technology__nav-btn.jsx-4f3f7eba5deda519{cursor:pointer;background:#ffffff1a;border:none;border-radius:50%;justify-content:center;align-items:center;width:48px;height:48px;transition:all .3s;display:flex}.technology__nav-btn.jsx-4f3f7eba5deda519:hover{background:#fff3;transform:scale(1.05)}.technology__nav-btn.jsx-4f3f7eba5deda519 svg.jsx-4f3f7eba5deda519{transition:transform .3s}.technology__nav-btn.jsx-4f3f7eba5deda519:hover svg.jsx-4f3f7eba5deda519{transform:scale(1.1)}@media (width<=768px){.technology__content.jsx-4f3f7eba5deda519{flex-direction:column;gap:2rem}.technology__slide-title.jsx-4f3f7eba5deda519{font-size:2rem}.technology__text.jsx-4f3f7eba5deda519{padding:1rem}}"
+            }, void 0, false, void 0, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/Projects.tsx",
-        lineNumber: 58,
+        lineNumber: 62,
         columnNumber: 5
     }, this);
 };
@@ -2426,13 +2853,13 @@ function MapViz() {
             const backgroundGradient = window.am5.RadialGradient.new(root, {
                 stops: [
                     {
-                        color: window.am5.color("#0f1419")
+                        color: window.am5.color("#062516")
                     },
                     {
-                        color: window.am5.color("#1a2332")
+                        color: window.am5.color("#062516")
                     },
                     {
-                        color: window.am5.color("#243447")
+                        color: window.am5.color("#062516")
                     }
                 ]
             });
@@ -2451,7 +2878,7 @@ function MapViz() {
                 wheelY: "none",
                 pinchZoom: false,
                 background: window.am5.Rectangle.new(root, {
-                    fill: backgroundGradient,
+                    fill: window.am5.color("#062516"),
                     fillOpacity: 1
                 })
             }));
@@ -2478,10 +2905,30 @@ function MapViz() {
                 "IN"
             ];
             // Enhanced primary color with variations for visual depth
-            const primaryColor = "#085D36";
-            const primaryColorLight = "#0a6b3f";
-            const primaryColorDark = "#064f2e";
-            const primaryColorGlow = "#10b981";
+            const primaryColor = "#062516";
+            const primaryColorLight = "#0a3a1f";
+            const primaryColorDark = "#041a0f";
+            const primaryColorGlow = "#0d5a2a";
+            // Different shades of green for marked countries
+            const countryColors = {
+                ET: "#0d5a2a",
+                KE: "#0a4a22",
+                TZ: "#083d1c",
+                UG: "#063218",
+                BF: "#052814",
+                CV: "#0b6b32",
+                LR: "#0a7a3a",
+                ST: "#098942",
+                SN: "#0a8a4a",
+                SL: "#0b9a52",
+                MW: "#0caa5a",
+                ZA: "#0dba62",
+                ZW: "#0eca6a",
+                LY: "#0fda72",
+                TN: "#10ea7a",
+                AE: "#11fa82",
+                IN: "#12ff8a"
+            };
             // Create polygon series for all countries with enhanced styling
             const polygonSeries = chart.series.push(window.am5map.MapPolygonSeries.new(root, {
                 geoJSON: window.am5geodata_worldLow,
@@ -2509,10 +2956,10 @@ function MapViz() {
                             fill: window.am5.LinearGradient.new(root, {
                                 stops: [
                                     {
-                                        color: window.am5.color("#085D36")
+                                        color: window.am5.color("#062516")
                                     },
                                     {
-                                        color: window.am5.color("#064f2e")
+                                        color: window.am5.color("#041a0f")
                                     }
                                 ]
                             }),
@@ -2521,7 +2968,7 @@ function MapViz() {
                             cornerRadiusTR: 6,
                             cornerRadiusBL: 6,
                             cornerRadiusBR: 6,
-                            stroke: window.am5.color("#10b981"),
+                            stroke: window.am5.color("#0d5a2a"),
                             strokeWidth: 1
                         }),
                         paddingTop: 6,
@@ -2566,7 +3013,7 @@ function MapViz() {
                 // Outer glow circle
                 const glowCircle = window.am5.Circle.new(root, {
                     radius: 12,
-                    fill: window.am5.color("#10b981"),
+                    fill: window.am5.color("#0d5a2a"),
                     fillOpacity: 0.3
                 });
                 // Main marker
@@ -2575,10 +3022,10 @@ function MapViz() {
                     fill: window.am5.LinearGradient.new(root, {
                         stops: [
                             {
-                                color: window.am5.color("#10b981")
+                                color: window.am5.color("#0d5a2a")
                             },
                             {
-                                color: window.am5.color("#085D36")
+                                color: window.am5.color("#062516")
                             }
                         ]
                     }),
@@ -2598,7 +3045,7 @@ function MapViz() {
                 // Enhanced hover animation
                 marker.states.create("hover", {
                     scale: 1.4,
-                    fill: window.am5.color("#10b981")
+                    fill: window.am5.color("#0d5a2a")
                 });
                 // Pulsing animation for markers
                 marker.animate({
@@ -2637,10 +3084,10 @@ function MapViz() {
             // Enhanced polygon styling with modern colors and effects
             polygonSeries.mapPolygons.template.setAll({
                 interactive: true,
-                fill: window.am5.color("#2d3748"),
-                stroke: window.am5.color("#4a5568"),
-                strokeWidth: 0.3,
-                strokeOpacity: 0.5
+                fill: window.am5.color("#ffffff"),
+                stroke: window.am5.color("#e5e7eb"),
+                strokeWidth: 0.5,
+                strokeOpacity: 0.8
             });
             // Enhanced tooltip with modern glass-morphism design
             polygonSeries.mapPolygons.template.set("tooltipHTML", `
@@ -2656,7 +3103,7 @@ function MapViz() {
           min-width: 280px;
           max-width: 350px;
           font-family: 'Inter', system-ui, sans-serif;
-          border: 1px solid rgba(8, 93, 54, 0.1);
+          border: 1px solid rgba(6, 37, 22, 0.1);
           position: relative;
           overflow: hidden;
         ">
@@ -2666,23 +3113,23 @@ function MapViz() {
             left: 0;
             right: 0;
             height: 3px;
-            background: linear-gradient(90deg, #085D36 0%, #10b981 50%, #085D36 100%);
+            background: linear-gradient(90deg, #062516 0%, #0d5a2a 50%, #062516 100%);
           "></div>
           <div style="font-size: 18px; font-weight: 700; color: #1a202c; margin-bottom: 12px; display: flex; align-items: center;">
             <div style="
               width: 8px; 
               height: 8px; 
-              background: #085D36; 
+              background: #062516; 
               border-radius: 50%; 
               margin-right: 8px;
-              box-shadow: 0 0 8px #10b981;
+              box-shadow: 0 0 8px #0d5a2a;
             "></div>
             {name}
           </div>
           <div style="font-size: 14px; color: #4a5568; line-height: 1.6;">
             <div style="margin-bottom: 8px; display: flex; justify-content: space-between;">
               <span style="font-weight: 600;">Projects:</span> 
-              <span style="color: #085D36; font-weight: 700;">{projects}</span>
+              <span style="color: #062516; font-weight: 700;">{projects}</span>
             </div>
             <div style="margin-bottom: 8px; display: flex; justify-content: space-between;">
               <span style="font-weight: 600;">Capacity:</span> 
@@ -2695,7 +3142,7 @@ function MapViz() {
             <div style="
               margin-top: 12px; 
               padding-top: 12px; 
-              border-top: 1px solid rgba(8, 93, 54, 0.1);
+              border-top: 1px solid rgba(6, 37, 22, 0.1);
               font-size: 12px; 
               color: #6b7280;
               text-align: center;
@@ -2745,25 +3192,17 @@ function MapViz() {
                         const id = dataContext.id;
                         if (targetRegions.includes(id)) {
                             const data = countryData[id];
+                            const countryColor = countryColors[id] || primaryColor;
                             console.log('Setting up enhanced polygon:', {
                                 id,
-                                name: data?.name
+                                name: data?.name,
+                                color: countryColor
                             });
-                            // Create gradient fill for target countries
-                            const countryGradient = window.am5.LinearGradient.new(root, {
-                                stops: [
-                                    {
-                                        color: window.am5.color(primaryColor)
-                                    },
-                                    {
-                                        color: window.am5.color(primaryColorLight)
-                                    }
-                                ]
-                            });
-                            polygon.set("fill", countryGradient);
-                            polygon.set("stroke", window.am5.color("#10b981"));
-                            polygon.set("strokeWidth", 1);
-                            polygon.set("strokeOpacity", 0.8);
+                            // Use solid color for target countries
+                            polygon.set("fill", window.am5.color(countryColor));
+                            polygon.set("stroke", window.am5.color("#ffffff"));
+                            polygon.set("strokeWidth", 1.5);
+                            polygon.set("strokeOpacity", 1);
                             // Add country data to the dataItem for tooltip
                             if (data) {
                                 dataItem.set("projects", data.projects);
@@ -2798,35 +3237,27 @@ function MapViz() {
                 if (dataItem) {
                     const dataContext = dataItem.dataContext;
                     if (dataContext && targetRegions.includes(dataContext.id)) {
+                        const countryColor = countryColors[dataContext.id] || primaryColor;
                         // Enhanced hover states for target countries
                         this.states.create("hover", {
-                            fill: window.am5.LinearGradient.new(root, {
-                                stops: [
-                                    {
-                                        color: window.am5.color("#10b981")
-                                    },
-                                    {
-                                        color: window.am5.color("#085D36")
-                                    }
-                                ]
-                            }),
-                            stroke: window.am5.color("#34d399"),
+                            fill: window.am5.color(countryColor),
+                            stroke: window.am5.color("#ffffff"),
                             strokeWidth: 2,
                             scale: 1.02
                         });
                         this.states.create("active", {
-                            fill: window.am5.color(primaryColorDark),
+                            fill: window.am5.color(countryColor),
                             scale: 0.98
                         });
                     } else {
                         // Enhanced hover for non-target countries
                         this.states.create("hover", {
-                            fill: window.am5.color("#4a5568"),
-                            stroke: window.am5.color("#718096"),
+                            fill: window.am5.color("#f3f4f6"),
+                            stroke: window.am5.color("#d1d5db"),
                             strokeWidth: 1
                         });
                         this.states.create("active", {
-                            fill: window.am5.color("#2d3748")
+                            fill: window.am5.color("#e5e7eb")
                         });
                     }
                 }
@@ -2839,21 +3270,21 @@ function MapViz() {
             zoomControl.homeButton.set("visible", true);
             // Style zoom control buttons
             zoomControl.plusButton.set("background", window.am5.RoundedRectangle.new(root, {
-                fill: window.am5.color("#085D36"),
+                fill: window.am5.color("#062516"),
                 cornerRadiusTL: 6,
                 cornerRadiusTR: 6,
                 cornerRadiusBL: 6,
                 cornerRadiusBR: 6
             }));
             zoomControl.minusButton.set("background", window.am5.RoundedRectangle.new(root, {
-                fill: window.am5.color("#085D36"),
+                fill: window.am5.color("#062516"),
                 cornerRadiusTL: 6,
                 cornerRadiusTR: 6,
                 cornerRadiusBL: 6,
                 cornerRadiusBR: 6
             }));
             zoomControl.homeButton.set("background", window.am5.RoundedRectangle.new(root, {
-                fill: window.am5.color("#085D36"),
+                fill: window.am5.color("#062516"),
                 cornerRadiusTL: 6,
                 cornerRadiusTR: 6,
                 cornerRadiusBL: 6,
@@ -2934,7 +3365,7 @@ function MapViz() {
                 onLoad: handleScriptLoad
             }, void 0, false, {
                 fileName: "[project]/src/components/MapViz.tsx",
-                lineNumber: 702,
+                lineNumber: 714,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$script$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -2942,7 +3373,7 @@ function MapViz() {
                 strategy: "beforeInteractive"
             }, void 0, false, {
                 fileName: "[project]/src/components/MapViz.tsx",
-                lineNumber: 703,
+                lineNumber: 715,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$script$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -2950,7 +3381,7 @@ function MapViz() {
                 strategy: "beforeInteractive"
             }, void 0, false, {
                 fileName: "[project]/src/components/MapViz.tsx",
-                lineNumber: 704,
+                lineNumber: 716,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$script$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -2958,15 +3389,15 @@ function MapViz() {
                 strategy: "beforeInteractive"
             }, void 0, false, {
                 fileName: "[project]/src/components/MapViz.tsx",
-                lineNumber: 705,
+                lineNumber: 717,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$jsx$2f$style$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                id: "dd6e0528671ef2e5",
-                children: '@import "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap";.map-container{background:linear-gradient(135deg,#0f1419 0%,#1a2332 50%,#243447 100%);position:relative;overflow:hidden}.map-container:before{content:"";pointer-events:none;z-index:0;background:radial-gradient(circle at 20% 20%,#10b9811a 0%,#0000 50%),radial-gradient(circle at 80% 80%,#085d3614 0%,#0000 50%),radial-gradient(circle at 40% 60%,#34d3990d 0%,#0000 50%);position:absolute;inset:0}.popup-container{backdrop-filter:blur(20px);transform-origin:50%;background:#fffffffa;border:1px solid #085d361a;font-family:Inter,system-ui,sans-serif;animation:.3s cubic-bezier(.4,0,.2,1) popupSlideIn;box-shadow:0 25px 50px #0003,0 0 0 1px #ffffff1a,inset 0 1px #fff3}@keyframes popupSlideIn{0%{opacity:0;transform:translate(-50%,-50%)scale(.9)}to{opacity:1;transform:translate(-50%,-50%)scale(1)}}.popup-container:before{content:"";background:linear-gradient(90deg,#085d36 0%,#10b981 50%,#085d36 100%);border-radius:12px 12px 0 0;height:3px;position:absolute;top:0;left:0;right:0}'
+                id: "5d8c5d688797cddb",
+                children: '@import "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap";.map-container{background:#062516;position:relative;overflow:hidden}.map-container:before{content:"";pointer-events:none;z-index:0;background:radial-gradient(circle at 20% 20%,#0d5a2a1a 0%,#0000 50%),radial-gradient(circle at 80% 80%,#06251614 0%,#0000 50%),radial-gradient(circle at 40% 60%,#0a3a1a0d 0%,#0000 50%);position:absolute;inset:0}.popup-container{backdrop-filter:blur(20px);transform-origin:50%;background:#fffffffa;border:1px solid #0625161a;font-family:Inter,system-ui,sans-serif;animation:.3s cubic-bezier(.4,0,.2,1) popupSlideIn;box-shadow:0 25px 50px #0003,0 0 0 1px #ffffff1a,inset 0 1px #fff3}@keyframes popupSlideIn{0%{opacity:0;transform:translate(-50%,-50%)scale(.9)}to{opacity:1;transform:translate(-50%,-50%)scale(1)}}.popup-container:before{content:"";background:linear-gradient(90deg,#062516 0%,#0d5a2a 50%,#062516 100%);border-radius:12px 12px 0 0;height:3px;position:absolute;top:0;left:0;right:0}'
             }, void 0, false, void 0, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "jsx-dd6e0528671ef2e5" + " " + "flex justify-center items-start w-full h-full relative overflow-hidden",
+                className: "jsx-5d8c5d688797cddb" + " " + "flex justify-center items-start w-full h-full relative overflow-hidden",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         ref: chartRef,
@@ -2989,10 +3420,10 @@ function MapViz() {
                             });
                             e.currentTarget.parentElement?.dispatchEvent(scrollEvent);
                         },
-                        className: "jsx-dd6e0528671ef2e5" + " " + "w-full h-full map-container"
+                        className: "jsx-5d8c5d688797cddb" + " " + "w-full h-full map-container"
                     }, void 0, false, {
                         fileName: "[project]/src/components/MapViz.tsx",
-                        lineNumber: 768,
+                        lineNumber: 780,
                         columnNumber: 9
                     }, this),
                     selectedCountry && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3008,20 +3439,20 @@ function MapViz() {
                             console.log('Popup clicked');
                             e.stopPropagation();
                         },
-                        className: "jsx-dd6e0528671ef2e5" + " " + "popup-container absolute rounded-xl p-0 overflow-hidden",
+                        className: "jsx-5d8c5d688797cddb" + " " + "popup-container absolute rounded-xl p-0 overflow-hidden",
                         children: (()=>{
                             const info = getCountryInfo(selectedCountry);
                             return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "jsx-dd6e0528671ef2e5" + " " + "relative",
+                                className: "jsx-5d8c5d688797cddb" + " " + "relative",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "jsx-dd6e0528671ef2e5" + " " + "flex justify-between items-start p-6 pb-4",
+                                        className: "jsx-5d8c5d688797cddb" + " " + "flex justify-between items-start p-6 pb-4",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "jsx-dd6e0528671ef2e5" + " " + "flex items-center gap-4",
+                                                className: "jsx-5d8c5d688797cddb" + " " + "flex items-center gap-4",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "jsx-dd6e0528671ef2e5" + " " + "relative",
+                                                        className: "jsx-5d8c5d688797cddb" + " " + "relative",
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
                                                                 src: info.flag,
@@ -3029,58 +3460,58 @@ function MapViz() {
                                                                 onError: (e)=>{
                                                                     e.target.style.display = 'none';
                                                                 },
-                                                                className: "jsx-dd6e0528671ef2e5" + " " + "w-10 h-7 object-cover rounded-md border-2 border-white shadow-lg"
+                                                                className: "jsx-5d8c5d688797cddb" + " " + "w-10 h-7 object-cover rounded-md border-2 border-white shadow-lg"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/MapViz.tsx",
-                                                                lineNumber: 815,
+                                                                lineNumber: 827,
                                                                 columnNumber: 25
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                className: "jsx-dd6e0528671ef2e5" + " " + "absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full border-2 border-white shadow-sm"
+                                                                className: "jsx-5d8c5d688797cddb" + " " + "absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full border-2 border-white shadow-sm"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/MapViz.tsx",
-                                                                lineNumber: 823,
+                                                                lineNumber: 835,
                                                                 columnNumber: 25
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/MapViz.tsx",
-                                                        lineNumber: 814,
+                                                        lineNumber: 826,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                        className: "jsx-dd6e0528671ef2e5" + " " + "text-2xl font-bold text-gray-900 tracking-tight",
+                                                        className: "jsx-5d8c5d688797cddb" + " " + "text-2xl font-bold text-gray-900 tracking-tight",
                                                         children: info.name
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/MapViz.tsx",
-                                                        lineNumber: 825,
+                                                        lineNumber: 837,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/MapViz.tsx",
-                                                lineNumber: 813,
+                                                lineNumber: 825,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                                 onClick: ()=>setSelectedCountry(null),
-                                                className: "jsx-dd6e0528671ef2e5" + " " + "text-gray-400 hover:text-gray-600 text-2xl font-light w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors duration-200",
+                                                className: "jsx-5d8c5d688797cddb" + " " + "text-gray-400 hover:text-gray-600 text-2xl font-light w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors duration-200",
                                                 children: "×"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/MapViz.tsx",
-                                                lineNumber: 827,
+                                                lineNumber: 839,
                                                 columnNumber: 21
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/MapViz.tsx",
-                                        lineNumber: 812,
+                                        lineNumber: 824,
                                         columnNumber: 19
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "jsx-dd6e0528671ef2e5" + " " + "px-6 mb-6",
+                                        className: "jsx-5d8c5d688797cddb" + " " + "px-6 mb-6",
                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "jsx-dd6e0528671ef2e5" + " " + "relative overflow-hidden rounded-xl",
+                                            className: "jsx-5d8c5d688797cddb" + " " + "relative overflow-hidden rounded-xl",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
                                                     src: info.projectImage,
@@ -3088,155 +3519,99 @@ function MapViz() {
                                                     onError: (e)=>{
                                                         e.target.style.display = 'none';
                                                     },
-                                                    className: "jsx-dd6e0528671ef2e5" + " " + "w-full h-40 object-cover transition-transform duration-300 hover:scale-105"
+                                                    className: "jsx-5d8c5d688797cddb" + " " + "w-full h-40 object-cover transition-transform duration-300 hover:scale-105"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/MapViz.tsx",
-                                                    lineNumber: 838,
+                                                    lineNumber: 850,
                                                     columnNumber: 23
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "jsx-dd6e0528671ef2e5" + " " + "absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/src/components/MapViz.tsx",
-                                                    lineNumber: 846,
-                                                    columnNumber: 23
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "jsx-dd6e0528671ef2e5" + " " + "absolute bottom-3 left-3",
-                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                        className: "jsx-dd6e0528671ef2e5" + " " + "inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-white/90 text-gray-800 backdrop-blur-sm",
-                                                        children: "🌱 Renewable Energy"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/src/components/MapViz.tsx",
-                                                        lineNumber: 848,
-                                                        columnNumber: 25
-                                                    }, this)
-                                                }, void 0, false, {
-                                                    fileName: "[project]/src/components/MapViz.tsx",
-                                                    lineNumber: 847,
-                                                    columnNumber: 23
-                                                }, this)
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/src/components/MapViz.tsx",
-                                            lineNumber: 837,
-                                            columnNumber: 21
-                                        }, this)
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/components/MapViz.tsx",
-                                        lineNumber: 836,
-                                        columnNumber: 19
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "jsx-dd6e0528671ef2e5" + " " + "px-6 space-y-4",
-                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "jsx-dd6e0528671ef2e5" + " " + "grid grid-cols-1 gap-4",
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "jsx-dd6e0528671ef2e5" + " " + "flex justify-between items-center p-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl border border-green-100",
-                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "jsx-dd6e0528671ef2e5" + " " + "flex items-center gap-3",
-                                                        children: [
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                className: "jsx-dd6e0528671ef2e5" + " " + "w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-600 rounded-lg flex items-center justify-center",
-                                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                    className: "jsx-dd6e0528671ef2e5" + " " + "text-white font-bold text-lg",
-                                                                    children: info.projects
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/src/components/MapViz.tsx",
-                                                                    lineNumber: 861,
-                                                                    columnNumber: 29
-                                                                }, this)
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/src/components/MapViz.tsx",
-                                                                lineNumber: 860,
-                                                                columnNumber: 27
-                                                            }, this),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                className: "jsx-dd6e0528671ef2e5" + " " + "font-semibold text-gray-700",
-                                                                children: "Active Projects"
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/src/components/MapViz.tsx",
-                                                                lineNumber: 863,
-                                                                columnNumber: 27
-                                                            }, this)
-                                                        ]
-                                                    }, void 0, true, {
-                                                        fileName: "[project]/src/components/MapViz.tsx",
-                                                        lineNumber: 859,
-                                                        columnNumber: 25
-                                                    }, this)
+                                                    className: "jsx-5d8c5d688797cddb" + " " + "absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/MapViz.tsx",
                                                     lineNumber: 858,
                                                     columnNumber: 23
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "jsx-dd6e0528671ef2e5" + " " + "flex justify-between items-center p-4 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl border border-blue-100",
+                                                    className: "jsx-5d8c5d688797cddb" + " " + "absolute bottom-3 left-3",
+                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        className: "jsx-5d8c5d688797cddb" + " " + "inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-white/90 text-gray-800 backdrop-blur-sm",
+                                                        children: "🌱 Renewable Energy"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/components/MapViz.tsx",
+                                                        lineNumber: 860,
+                                                        columnNumber: 25
+                                                    }, this)
+                                                }, void 0, false, {
+                                                    fileName: "[project]/src/components/MapViz.tsx",
+                                                    lineNumber: 859,
+                                                    columnNumber: 23
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/src/components/MapViz.tsx",
+                                            lineNumber: 849,
+                                            columnNumber: 21
+                                        }, this)
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/MapViz.tsx",
+                                        lineNumber: 848,
+                                        columnNumber: 19
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "jsx-5d8c5d688797cddb" + " " + "px-6 space-y-4",
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "jsx-5d8c5d688797cddb" + " " + "grid grid-cols-1 gap-4",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "jsx-5d8c5d688797cddb" + " " + "flex justify-between items-center p-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl border border-green-100",
                                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "jsx-dd6e0528671ef2e5" + " " + "flex items-center gap-3",
+                                                        className: "jsx-5d8c5d688797cddb" + " " + "flex items-center gap-3",
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                className: "jsx-dd6e0528671ef2e5" + " " + "w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-lg flex items-center justify-center",
+                                                                className: "jsx-5d8c5d688797cddb" + " " + "w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-600 rounded-lg flex items-center justify-center",
                                                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                    className: "jsx-dd6e0528671ef2e5" + " " + "text-white font-bold text-xs",
-                                                                    children: "⚡"
+                                                                    className: "jsx-5d8c5d688797cddb" + " " + "text-white font-bold text-lg",
+                                                                    children: info.projects
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/MapViz.tsx",
-                                                                    lineNumber: 870,
+                                                                    lineNumber: 873,
                                                                     columnNumber: 29
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/MapViz.tsx",
-                                                                lineNumber: 869,
+                                                                lineNumber: 872,
                                                                 columnNumber: 27
                                                             }, this),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                className: "jsx-dd6e0528671ef2e5",
-                                                                children: [
-                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                        className: "jsx-dd6e0528671ef2e5" + " " + "font-semibold text-gray-700",
-                                                                        children: "Total Capacity"
-                                                                    }, void 0, false, {
-                                                                        fileName: "[project]/src/components/MapViz.tsx",
-                                                                        lineNumber: 873,
-                                                                        columnNumber: 29
-                                                                    }, this),
-                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                        className: "jsx-dd6e0528671ef2e5" + " " + "text-blue-600 font-bold text-lg",
-                                                                        children: info.capacity
-                                                                    }, void 0, false, {
-                                                                        fileName: "[project]/src/components/MapViz.tsx",
-                                                                        lineNumber: 874,
-                                                                        columnNumber: 29
-                                                                    }, this)
-                                                                ]
-                                                            }, void 0, true, {
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                className: "jsx-5d8c5d688797cddb" + " " + "font-semibold text-gray-700",
+                                                                children: "Active Projects"
+                                                            }, void 0, false, {
                                                                 fileName: "[project]/src/components/MapViz.tsx",
-                                                                lineNumber: 872,
+                                                                lineNumber: 875,
                                                                 columnNumber: 27
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/MapViz.tsx",
-                                                        lineNumber: 868,
+                                                        lineNumber: 871,
                                                         columnNumber: 25
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/MapViz.tsx",
-                                                    lineNumber: 867,
+                                                    lineNumber: 870,
                                                     columnNumber: 23
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "jsx-dd6e0528671ef2e5" + " " + "flex justify-between items-center p-4 bg-gradient-to-r from-orange-50 to-amber-50 rounded-xl border border-orange-100",
+                                                    className: "jsx-5d8c5d688797cddb" + " " + "flex justify-between items-center p-4 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl border border-blue-100",
                                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "jsx-dd6e0528671ef2e5" + " " + "flex items-center gap-3",
+                                                        className: "jsx-5d8c5d688797cddb" + " " + "flex items-center gap-3",
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                className: "jsx-dd6e0528671ef2e5" + " " + "w-10 h-10 bg-gradient-to-br from-orange-500 to-amber-600 rounded-lg flex items-center justify-center",
+                                                                className: "jsx-5d8c5d688797cddb" + " " + "w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-lg flex items-center justify-center",
                                                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                    className: "jsx-dd6e0528671ef2e5" + " " + "text-white font-bold text-xs",
-                                                                    children: "📊"
+                                                                    className: "jsx-5d8c5d688797cddb" + " " + "text-white font-bold text-xs",
+                                                                    children: "⚡"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/MapViz.tsx",
                                                                     lineNumber: 882,
@@ -3248,19 +3623,19 @@ function MapViz() {
                                                                 columnNumber: 27
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                className: "jsx-dd6e0528671ef2e5",
+                                                                className: "jsx-5d8c5d688797cddb",
                                                                 children: [
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                        className: "jsx-dd6e0528671ef2e5" + " " + "font-semibold text-gray-700",
-                                                                        children: "Development Status"
+                                                                        className: "jsx-5d8c5d688797cddb" + " " + "font-semibold text-gray-700",
+                                                                        children: "Total Capacity"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/MapViz.tsx",
                                                                         lineNumber: 885,
                                                                         columnNumber: 29
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                        className: "jsx-dd6e0528671ef2e5" + " " + "text-orange-600 font-bold text-sm",
-                                                                        children: info.status
+                                                                        className: "jsx-5d8c5d688797cddb" + " " + "text-blue-600 font-bold text-lg",
+                                                                        children: info.capacity
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/MapViz.tsx",
                                                                         lineNumber: 886,
@@ -3282,56 +3657,112 @@ function MapViz() {
                                                     fileName: "[project]/src/components/MapViz.tsx",
                                                     lineNumber: 879,
                                                     columnNumber: 23
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "jsx-5d8c5d688797cddb" + " " + "flex justify-between items-center p-4 bg-gradient-to-r from-orange-50 to-amber-50 rounded-xl border border-orange-100",
+                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "jsx-5d8c5d688797cddb" + " " + "flex items-center gap-3",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                className: "jsx-5d8c5d688797cddb" + " " + "w-10 h-10 bg-gradient-to-br from-orange-500 to-amber-600 rounded-lg flex items-center justify-center",
+                                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                    className: "jsx-5d8c5d688797cddb" + " " + "text-white font-bold text-xs",
+                                                                    children: "📊"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/src/components/MapViz.tsx",
+                                                                    lineNumber: 894,
+                                                                    columnNumber: 29
+                                                                }, this)
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/src/components/MapViz.tsx",
+                                                                lineNumber: 893,
+                                                                columnNumber: 27
+                                                            }, this),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                className: "jsx-5d8c5d688797cddb",
+                                                                children: [
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                        className: "jsx-5d8c5d688797cddb" + " " + "font-semibold text-gray-700",
+                                                                        children: "Development Status"
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/src/components/MapViz.tsx",
+                                                                        lineNumber: 897,
+                                                                        columnNumber: 29
+                                                                    }, this),
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                        className: "jsx-5d8c5d688797cddb" + " " + "text-orange-600 font-bold text-sm",
+                                                                        children: info.status
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/src/components/MapViz.tsx",
+                                                                        lineNumber: 898,
+                                                                        columnNumber: 29
+                                                                    }, this)
+                                                                ]
+                                                            }, void 0, true, {
+                                                                fileName: "[project]/src/components/MapViz.tsx",
+                                                                lineNumber: 896,
+                                                                columnNumber: 27
+                                                            }, this)
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/src/components/MapViz.tsx",
+                                                        lineNumber: 892,
+                                                        columnNumber: 25
+                                                    }, this)
+                                                }, void 0, false, {
+                                                    fileName: "[project]/src/components/MapViz.tsx",
+                                                    lineNumber: 891,
+                                                    columnNumber: 23
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/MapViz.tsx",
-                                            lineNumber: 857,
+                                            lineNumber: 869,
                                             columnNumber: 21
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/MapViz.tsx",
-                                        lineNumber: 856,
+                                        lineNumber: 868,
                                         columnNumber: 19
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "jsx-dd6e0528671ef2e5" + " " + "p-6 pt-4",
+                                        className: "jsx-5d8c5d688797cddb" + " " + "p-6 pt-4",
                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "jsx-dd6e0528671ef2e5" + " " + "bg-gradient-to-r from-gray-50 to-slate-50 rounded-xl p-4 border border-gray-100",
+                                            className: "jsx-5d8c5d688797cddb" + " " + "bg-gradient-to-r from-gray-50 to-slate-50 rounded-xl p-4 border border-gray-100",
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "jsx-dd6e0528671ef2e5" + " " + "text-sm text-gray-600 leading-relaxed",
+                                                className: "jsx-5d8c5d688797cddb" + " " + "text-sm text-gray-600 leading-relaxed",
                                                 children: "🌍 Comprehensive renewable energy development initiative focused on sustainable power generation, modern grid infrastructure, and community empowerment through clean energy access."
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/MapViz.tsx",
-                                                lineNumber: 896,
+                                                lineNumber: 908,
                                                 columnNumber: 23
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/MapViz.tsx",
-                                            lineNumber: 895,
+                                            lineNumber: 907,
                                             columnNumber: 21
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/MapViz.tsx",
-                                        lineNumber: 894,
+                                        lineNumber: 906,
                                         columnNumber: 19
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/MapViz.tsx",
-                                lineNumber: 810,
+                                lineNumber: 822,
                                 columnNumber: 17
                             }, this);
                         })()
                     }, void 0, false, {
                         fileName: "[project]/src/components/MapViz.tsx",
-                        lineNumber: 792,
+                        lineNumber: 804,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/MapViz.tsx",
-                lineNumber: 767,
+                lineNumber: 779,
                 columnNumber: 7
             }, this)
         ]

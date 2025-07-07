@@ -2,41 +2,84 @@ import React from 'react';
 
 const About = () => {
   return (
-    <div className="w-full py-16 px-4 md:px-8 bg-white">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          {/* Video Section */}
-          <div className="w-full aspect-video relative rounded-lg overflow-hidden shadow-lg">
-            <video
-              className="w-full h-full object-cover"
-              controls
-              poster="/video-poster.jpg"
-              crossOrigin="anonymous"
-            >
-              <source src="/about-video.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+    <section className="about-stats">
+      <div className="about-stats__container">
+        <div className="about-stats__header">
+          <p className="about-stats__subtitle">About Us</p>
+          <h2 className="about-stats__title">
+            <span>Decades Of</span>
+            Expertise Dedicated To Success
+          </h2>
+          <p className="about-stats__description">
+            With over two decades of experience in renewable energy development, we have established
+            ourselves as a trusted partner in the clean energy transition, delivering innovative solutions
+            across multiple markets.
+          </p>
+        </div>
+
+        <div className="stats-grid">
+          <div className="grid-item" data-counter="">
+            <div className="content">
+              <h2 className="stat-number">20 GW</h2>
+              <p className="stat-description">of total pipeline in renewable projects</p>
+            </div>
+            <div className="hover-image">
+              <img src="/logo1.png" alt="Solar panels" />
+            </div>
           </div>
 
-          {/* Text Section */}
-          <div className="space-y-6">
-            <h2 className="text-3xl font-bold text-[#062516]">About Jivo Energy</h2>
-            <p className="text-lg text-gray-700">
-              We are a leading energy solutions provider committed to transforming the way the world consumes energy. 
-              Our innovative approach combines cutting-edge technology with sustainable practices to deliver reliable 
-              and efficient energy solutions.
-            </p>
-            <p className="text-lg text-gray-700">
-              With a global presence and a team of experts, we work tirelessly to create a more sustainable future 
-              through renewable energy initiatives and smart energy management systems.
-            </p>
-            <button className="px-6 py-3 bg-[#062516] text-white rounded-lg hover:bg-[#051e12] transition-colors">
-              Learn More
-            </button>
+          <div className="grid-item" data-counter="02">
+            <div className="content">
+              <h2 className="stat-number">200+</h2>
+              <p className="stat-description">Employees</p>
+            </div>
+            <div className="hover-image">
+              <img src="/logo1.png" alt="Team working" />
+            </div>
+          </div>
+
+          <div className="grid-item" data-counter="03">
+            <div className="content">
+              <h2 className="stat-number">200+</h2>
+              <p className="stat-description">Employees</p>
+            </div>
+            <div className="hover-image">
+              <img src="/logo1.png" alt="Team working" />
+            </div>
+          </div>
+
+          <div className="grid-item" data-counter="04">
+            <div className="content">
+              <h2 className="stat-number">12+</h2>
+              <p className="stat-description">Countries</p>
+            </div>
+            <div className="hover-image">
+              <img src="/logo1.png" alt="Global map" />
+            </div>
+          </div>
+
+          <div className="grid-item" data-counter="05">
+            <div className="content">
+              <h2 className="stat-number">4+</h2>
+              <p className="stat-description">Continents</p>
+            </div>
+            <div className="hover-image">
+              <img src="/logo1.png" alt="Earth from space" />
+            </div>
+          </div>
+
+          <div className="grid-item" data-counter="06">
+            <div className="content">
+              <h2 className="stat-number">4GW</h2>
+              <p className="stat-description">Projects Already Completed</p>
+            </div>
+            <div className="hover-image">
+              <img src="/logo1.png" alt="Completed solar installation" />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
