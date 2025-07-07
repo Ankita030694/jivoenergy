@@ -169,24 +169,37 @@ export default function MapViz() {
       // Create root element
       const root = window.am5.Root.new(chartRef.current)
 
-      // Set themes
+      // Set themes with enhanced animations
       root.setThemes([window.am5themes_Animated.new(root)])
 
-      // Create the map chart
+      // Create gradient for map background
+      const backgroundGradient = window.am5.RadialGradient.new(root, {
+        stops: [
+          { color: window.am5.color("#0f1419") },
+          { color: window.am5.color("#1a2332") },
+          { color: window.am5.color("#243447") }
+        ]
+      })
+
+      // Create the map chart with enhanced styling
       const chart = root.container.children.push(
         window.am5map.MapChart.new(root, {
           panX: "translateX",
           panY: "translateY",
           projection: window.am5map.geoMercator(),
           maxPanOut: 0.2,
-          maxZoomLevel: 3,
-          minZoomLevel: 1.5,
-          centerLongitude: 60,
-          centerLatitude: 0,
+          maxZoomLevel: 4,
+          minZoomLevel: 1.3,
+          centerLongitude: 350,
+          centerLatitude: -20,
           zoomLevel: 1.7,
           wheelX: "none",
           wheelY: "none",
           pinchZoom: false,
+          background: window.am5.Rectangle.new(root, {
+            fill: backgroundGradient,
+            fillOpacity: 1
+          })
         }),
       )
 
@@ -213,31 +226,13 @@ export default function MapViz() {
         "IN", // India
       ]
 
-      // Array of different green shades for the target regions
-      const regionColors = [
-        "#16a34a", "#15803d", "#166534", "#14532d", "#052e16", // Standard greens
-        "#22c55e", "#10b981", "#059669", "#047857", "#064e3b", // Emerald greens
-        "#84cc16", "#65a30d", "#4d7c0f", "#365314", "#1a2e05", // Lime greens
-        "#22d3ee", "#06b6d4", "#0891b2", "#0e7490", "#164e63", // Cyan-greens
-        "#14b8a6", "#0d9488", "#0f766e", "#134e4a", "#042f2e", // Teal greens
-        "#86efac", "#4ade80", "#22c55e", "#16a34a", "#15803d", // Bright greens
-        "#dcfce7", "#bbf7d0", "#86efac", "#4ade80", "#22c55e", // Light greens
-        "#365314", "#3f6212", "#4d7c0f", "#65a30d", "#84cc16", // Olive greens
-        "#064e3b", "#065f46", "#047857", "#059669", "#10b981", // Forest greens
-        "#052e16", "#14532d", "#166534", "#15803d", "#16a34a", // Dark greens
-        "#1a2e05", "#365314", "#3f6212", "#4d7c0f", "#65a30d", // Deep olive
-        "#042f2e", "#134e4a", "#0f766e", "#0d9488", "#14b8a6", // Deep teal
-        "#083344", "#164e63", "#0e7490", "#0891b2", "#06b6d4", // Blue-greens
-        "#7dd3fc", "#38bdf8", "#0ea5e9", "#0284c7", "#0369a1"  // Sky-greens
-      ]
+      // Enhanced primary color with variations for visual depth
+      const primaryColor = "#085D36"
+      const primaryColorLight = "#0a6b3f"
+      const primaryColorDark = "#064f2e"
+      const primaryColorGlow = "#10b981"
 
-      // Create a color mapping for each target region
-      const countryColorMap = new Map()
-      targetRegions.forEach((countryId, index) => {
-        countryColorMap.set(countryId, regionColors[index % regionColors.length])
-      })
-
-      // Create polygon series for all countries
+      // Create polygon series for all countries with enhanced styling
       const polygonSeries = chart.series.push(
         window.am5map.MapPolygonSeries.new(root, {
           geoJSON: window.am5geodata_worldLow,
@@ -245,12 +240,12 @@ export default function MapViz() {
         }),
       )
 
-      // Create point series for location icons
+      // Create point series for location icons with glow effect
       const pointSeries = chart.series.push(
         window.am5map.MapPointSeries.new(root, {})
       )
 
-      // Add country name labels
+      // Enhanced country name labels with modern styling
       pointSeries.bullets.push(function(root: any, series: any, dataItem: any) {
         const data = dataItem.dataContext as any
         return window.am5.Bullet.new(root, {
@@ -260,23 +255,29 @@ export default function MapViz() {
             text: data.name,
             centerX: 0,
             centerY: window.am5.p50,
-            fill: window.am5.color("#1f2937"),
-            fontSize: "12px",
-            fontWeight: "600",
+            fill: window.am5.color("#ffffff"),
+            fontSize: "13px",
+            fontWeight: "700",
+            fontFamily: "Inter, system-ui, sans-serif",
             background: window.am5.RoundedRectangle.new(root, {
-              fill: window.am5.color("#ffffff"),
-              fillOpacity: 0.9,
-              cornerRadiusTL: 4,
-              cornerRadiusTR: 4,
-              cornerRadiusBL: 4,
-              cornerRadiusBR: 4,
-              stroke: window.am5.color("#e5e7eb"),
+              fill: window.am5.LinearGradient.new(root, {
+                stops: [
+                  { color: window.am5.color("#085D36") },
+                  { color: window.am5.color("#064f2e") }
+                ]
+              }),
+              fillOpacity: 0.95,
+              cornerRadiusTL: 6,
+              cornerRadiusTR: 6,
+              cornerRadiusBL: 6,
+              cornerRadiusBR: 6,
+              stroke: window.am5.color("#10b981"),
               strokeWidth: 1
             }),
-            paddingTop: 4,
-            paddingBottom: 4,
-            paddingLeft: 8,
-            paddingRight: 8,
+            paddingTop: 6,
+            paddingBottom: 6,
+            paddingLeft: 12,
+            paddingRight: 12,
             dx: 15
           })
         })
@@ -284,7 +285,7 @@ export default function MapViz() {
 
       // Wait for polygon series to be ready
       polygonSeries.events.on("datavalidated", function() {
-        // Create location icons for target countries
+        // Create enhanced location icons for target countries
         targetRegions.forEach((countryId) => {
           const dataItem = polygonSeries.getDataItemById(countryId)
           if (dataItem) {
@@ -310,21 +311,60 @@ export default function MapViz() {
         })
       })
 
-      // Configure point series
+      // Enhanced point series with glowing markers
       pointSeries.bullets.push(function() {
+        const container = window.am5.Container.new(root, {})
+        
+        // Outer glow circle
+        const glowCircle = window.am5.Circle.new(root, {
+          radius: 12,
+          fill: window.am5.color("#10b981"),
+          fillOpacity: 0.3
+        })
+        
+        // Main marker
+        const marker = window.am5.Graphics.new(root, {
+          svgPath: "M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z",
+          fill: window.am5.LinearGradient.new(root, {
+            stops: [
+              { color: window.am5.color("#10b981") },
+              { color: window.am5.color("#085D36") }
+            ]
+          }),
+          stroke: window.am5.color("#ffffff"),
+          strokeWidth: 2,
+          centerX: 0,
+          centerY: 0,
+          tooltipText: "{name}",
+          cursorOverStyle: "pointer",
+          scale: 1.2
+        })
+        
+        container.children.push(glowCircle)
+        container.children.push(marker)
+        
         const bullet = window.am5.Bullet.new(root, {
-          sprite: window.am5.Graphics.new(root, {
-            svgPath: "M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z",
-            fill: window.am5.color("#16a34a"),
-            centerX: 0,
-            centerY: 0,
-            tooltipText: "{name}",
-            cursorOverStyle: "pointer"
-          })
+          sprite: container
         })
 
-        // Add click event to the bullet sprite
-        bullet.get("sprite").events.on("click", function(ev: { target: { dataItem: any } }) {
+        // Enhanced hover animation
+        marker.states.create("hover", {
+          scale: 1.4,
+          fill: window.am5.color("#10b981")
+        })
+
+        // Pulsing animation for markers
+        marker.animate({
+          key: "scale",
+          from: 1.2,
+          to: 1.35,
+          duration: 2000,
+          loops: window.am5.Infinity,
+          easing: window.am5.ease.yoyo(window.am5.ease.cubic)
+        })
+
+        // Add click event to the marker
+        marker.events.on("click", function(ev: { target: { dataItem: any } }) {
           const dataItem = ev.target.dataItem
           if (dataItem) {
             const countryId = dataItem.get("countryId")
@@ -352,41 +392,80 @@ export default function MapViz() {
         return bullet
       })
 
-      // Set default template with improved tooltip
+      // Enhanced polygon styling with modern colors and effects
       polygonSeries.mapPolygons.template.setAll({
         interactive: true,
-        fill: window.am5.color("#e5e7eb"), // Default gray
-        stroke: window.am5.color("#77b900"),
-        strokeWidth: 0.5,
+        fill: window.am5.color("#2d3748"), // Dark gray for non-target countries
+        stroke: window.am5.color("#4a5568"),
+        strokeWidth: 0.3,
+        strokeOpacity: 0.5
       })
 
-      // Custom tooltip content for target countries
+      // Enhanced tooltip with modern glass-morphism design
       polygonSeries.mapPolygons.template.set("tooltipHTML", `
         <div style="
-          background: white; 
-          padding: 16px; 
-          border-radius: 8px; 
-          box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-          min-width: 250px;
-          max-width: 300px;
-          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-          border: 1px solid #e2e8f0;
+          background: rgba(255, 255, 255, 0.95); 
+          backdrop-filter: blur(20px);
+          padding: 20px; 
+          border-radius: 12px; 
+          box-shadow: 
+            0 20px 40px rgba(0,0,0,0.15),
+            0 0 0 1px rgba(255,255,255,0.1),
+            inset 0 1px 0 rgba(255,255,255,0.2);
+          min-width: 280px;
+          max-width: 350px;
+          font-family: 'Inter', system-ui, sans-serif;
+          border: 1px solid rgba(8, 93, 54, 0.1);
+          position: relative;
+          overflow: hidden;
         ">
-          <div style="font-size: 16px; font-weight: 600; color: #1e293b; margin-bottom: 8px;">
+          <div style="
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #085D36 0%, #10b981 50%, #085D36 100%);
+          "></div>
+          <div style="font-size: 18px; font-weight: 700; color: #1a202c; margin-bottom: 12px; display: flex; align-items: center;">
+            <div style="
+              width: 8px; 
+              height: 8px; 
+              background: #085D36; 
+              border-radius: 50%; 
+              margin-right: 8px;
+              box-shadow: 0 0 8px #10b981;
+            "></div>
             {name}
           </div>
-          <div style="font-size: 13px; color: #64748b; line-height: 1.4;">
-            <div style="margin-bottom: 4px;"><strong>Projects:</strong> {projects}</div>
-            <div style="margin-bottom: 4px;"><strong>Capacity:</strong> {capacity}</div>
-            <div style="margin-bottom: 4px;"><strong>Status:</strong> {status}</div>
-            <div style="margin-top: 8px; font-size: 12px; color: #94a3b8;">
-              Click for more details
+          <div style="font-size: 14px; color: #4a5568; line-height: 1.6;">
+            <div style="margin-bottom: 8px; display: flex; justify-content: space-between;">
+              <span style="font-weight: 600;">Projects:</span> 
+              <span style="color: #085D36; font-weight: 700;">{projects}</span>
+            </div>
+            <div style="margin-bottom: 8px; display: flex; justify-content: space-between;">
+              <span style="font-weight: 600;">Capacity:</span> 
+              <span style="color: #0369a1; font-weight: 700;">{capacity}</span>
+            </div>
+            <div style="margin-bottom: 8px; display: flex; justify-content: space-between;">
+              <span style="font-weight: 600;">Status:</span> 
+              <span style="color: #ea580c; font-weight: 700;">{status}</span>
+            </div>
+            <div style="
+              margin-top: 12px; 
+              padding-top: 12px; 
+              border-top: 1px solid rgba(8, 93, 54, 0.1);
+              font-size: 12px; 
+              color: #6b7280;
+              text-align: center;
+            ">
+              ✨ Click for detailed information
             </div>
           </div>
         </div>
       `)
 
-      // Add click event to polygons
+      // Add click event to polygons with enhanced interaction
       polygonSeries.mapPolygons.template.events.on("click", function(ev: any) {
         const dataItem = ev.target.dataItem
         if (dataItem) {
@@ -415,12 +494,12 @@ export default function MapViz() {
         }
       })
 
-      // Process data to add color information and country data
+      // Process data to add enhanced colors and country data
       polygonSeries.data.processor = window.am5.DataProcessor.new(root, {
         reusable: true
       })
 
-      // Set up the data with colors and country information
+      // Set up enhanced data with gradients and modern styling
       polygonSeries.events.on("datavalidated", function() {
         console.log('Polygon series data validated');
         polygonSeries.mapPolygons.each(function(polygon: any) {
@@ -429,17 +508,25 @@ export default function MapViz() {
           if (dataContext) {
             const id = dataContext.id
             if (targetRegions.includes(id)) {
-              const countryColor = countryColorMap.get(id)
               const data = countryData[id as keyof typeof countryData]
               
-              console.log('Setting up polygon:', {
+              console.log('Setting up enhanced polygon:', {
                 id,
-                hasColor: !!countryColor,
-                hasData: !!data,
                 name: data?.name
               });
               
-              polygon.set("fill", window.am5.color(countryColor))
+              // Create gradient fill for target countries
+              const countryGradient = window.am5.LinearGradient.new(root, {
+                stops: [
+                  { color: window.am5.color(primaryColor) },
+                  { color: window.am5.color(primaryColorLight) }
+                ]
+              })
+              
+              polygon.set("fill", countryGradient)
+              polygon.set("stroke", window.am5.color("#10b981"))
+              polygon.set("strokeWidth", 1)
+              polygon.set("strokeOpacity", 0.8)
               
               // Add country data to the dataItem for tooltip
               if (data) {
@@ -449,16 +536,18 @@ export default function MapViz() {
                 dataItem.set("name", data.name)
               }
             } else {
-              // For non-target countries, set simple tooltip
+              // Enhanced styling for non-target countries
               polygon.set("tooltipHTML", `
                 <div style="
-                  background: white; 
-                  padding: 12px; 
-                  border-radius: 6px; 
-                  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-                  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+                  background: rgba(45, 55, 72, 0.95); 
+                  backdrop-filter: blur(12px);
+                  padding: 12px 16px; 
+                  border-radius: 8px; 
+                  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+                  font-family: 'Inter', system-ui, sans-serif;
                   font-size: 14px;
-                  color: #64748b;
+                  color: #ffffff;
+                  border: 1px solid rgba(255,255,255,0.1);
                 ">
                   {name}
                 </div>
@@ -468,51 +557,85 @@ export default function MapViz() {
         })
       })
 
-      // Create hover and active states with dynamic colors
+      // Enhanced hover and active states with smooth transitions
       polygonSeries.mapPolygons.template.onPrivate("fill", function(this: any) {
         const dataItem = this.dataItem
         if (dataItem) {
           const dataContext = dataItem.dataContext as any
           if (dataContext && targetRegions.includes(dataContext.id)) {
-            const countryColor = countryColorMap.get(dataContext.id)
-            this.set("fill", window.am5.color(countryColor))
-            
-            // Set custom hover states for colored countries (slightly lighter)
+            // Enhanced hover states for target countries
             this.states.create("hover", {
-              fill: window.am5.color(countryColor + "CC") // Add transparency for hover
+              fill: window.am5.LinearGradient.new(root, {
+                stops: [
+                  { color: window.am5.color("#10b981") },
+                  { color: window.am5.color("#085D36") }
+                ]
+              }),
+              stroke: window.am5.color("#34d399"),
+              strokeWidth: 2,
+              scale: 1.02
             })
             this.states.create("active", {
-              fill: window.am5.color(countryColor)
+              fill: window.am5.color(primaryColorDark),
+              scale: 0.98
             })
           } else {
-            // Gray countries keep gray hover
+            // Enhanced hover for non-target countries
             this.states.create("hover", {
-              fill: window.am5.color("#d1d5db")
+              fill: window.am5.color("#4a5568"),
+              stroke: window.am5.color("#718096"),
+              strokeWidth: 1
             })
             this.states.create("active", {
-              fill: window.am5.color("#9ca3af")
+              fill: window.am5.color("#2d3748")
             })
           }
         }
       })
 
-      // Add zoom control
-      const zoomControl = chart.set("zoomControl", window.am5map.ZoomControl.new(root, {}))
+      // Enhanced zoom control with modern styling
+      const zoomControl = chart.set("zoomControl", window.am5map.ZoomControl.new(root, {
+        paddingTop: 20,
+        paddingRight: 20
+      }))
       zoomControl.homeButton.set("visible", true)
 
-      // Set home position
-      chart.set("homeZoomLevel", 1.7)
-      chart.set("homeGeoPoint", { longitude: 60, latitude: 0 })
+      // Style zoom control buttons
+      zoomControl.plusButton.set("background", window.am5.RoundedRectangle.new(root, {
+        fill: window.am5.color("#085D36"),
+        cornerRadiusTL: 6,
+        cornerRadiusTR: 6,
+        cornerRadiusBL: 6,
+        cornerRadiusBR: 6
+      }))
+      zoomControl.minusButton.set("background", window.am5.RoundedRectangle.new(root, {
+        fill: window.am5.color("#085D36"),
+        cornerRadiusTL: 6,
+        cornerRadiusTR: 6,
+        cornerRadiusBL: 6,
+        cornerRadiusBR: 6
+      }))
+      zoomControl.homeButton.set("background", window.am5.RoundedRectangle.new(root, {
+        fill: window.am5.color("#085D36"),
+        cornerRadiusTL: 6,
+        cornerRadiusTR: 6,
+        cornerRadiusBL: 6,
+        cornerRadiusBR: 6
+      }))
 
-      // Add background click handler
+      // Keep the home (reset) position in sync with the above values
+      chart.set("homeZoomLevel", 1.5)
+      chart.set("homeGeoPoint", { longitude: 350, latitude: -20 })
+
+      // Add background click handler with smooth animation
       chart.chartContainer.get("background").events.on("click", function(ev: any) {
         console.log('Background/water clicked');
         ev.event.stopPropagation();
         chart.goHome();
       })
 
-      // Make stuff animate on load
-      chart.appear(1000, 100)
+      // Enhanced entrance animation
+      chart.appear(1500, 200)
 
       // Cleanup function
       return () => {
@@ -580,16 +703,77 @@ export default function MapViz() {
       <Script src="https://cdn.amcharts.com/lib/5/map.js" strategy="beforeInteractive" />
       <Script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js" strategy="beforeInteractive" />
       <Script src="https://cdn.amcharts.com/lib/5/themes/Animated.js" strategy="beforeInteractive" />
-      <div className="flex items-center justify-center w-full h-full bg-[#ffffff] relative">
+      
+      <style jsx global>{`
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+        
+        .map-container {
+          background: linear-gradient(135deg, #0f1419 0%, #1a2332 50%, #243447 100%);
+          position: relative;
+          overflow: hidden;
+        }
+        
+        .map-container::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: 
+            radial-gradient(circle at 20% 20%, rgba(16, 185, 129, 0.1) 0%, transparent 50%),
+            radial-gradient(circle at 80% 80%, rgba(8, 93, 54, 0.08) 0%, transparent 50%),
+            radial-gradient(circle at 40% 60%, rgba(52, 211, 153, 0.05) 0%, transparent 50%);
+          pointer-events: none;
+          z-index: 0;
+        }
+        
+        .popup-container {
+          font-family: 'Inter', system-ui, sans-serif;
+          backdrop-filter: blur(20px);
+          background: rgba(255, 255, 255, 0.98);
+          border: 1px solid rgba(8, 93, 54, 0.1);
+          box-shadow: 
+            0 25px 50px rgba(0, 0, 0, 0.2),
+            0 0 0 1px rgba(255, 255, 255, 0.1),
+            inset 0 1px 0 rgba(255, 255, 255, 0.2);
+          animation: popupSlideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          transform-origin: center center;
+        }
+        
+        @keyframes popupSlideIn {
+          from {
+            opacity: 0;
+            transform: translate(-50%, -50%) scale(0.9);
+          }
+          to {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+          }
+        }
+        
+        .popup-container::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 3px;
+          background: linear-gradient(90deg, #085D36 0%, #10b981 50%, #085D36 100%);
+          border-radius: 12px 12px 0 0;
+        }
+      `}</style>
+      
+      <div className="flex justify-center items-start w-full h-full relative overflow-hidden">
         <div 
           ref={chartRef} 
-          className="w-full h-[150vh] map-container"
+          className="w-full h-full map-container"
           style={{
             overflowX: 'hidden',
             overflowY: 'hidden',
             pointerEvents: 'auto',
             position: 'relative',
-            zIndex: 1
+            zIndex: 1,
           }}
           onClick={(e) => {
             console.log('Map container clicked');
@@ -606,14 +790,14 @@ export default function MapViz() {
         />
         {selectedCountry && (
           <div 
-            className="popup-container absolute bg-white rounded-xl shadow-2xl p-6 border border-gray-200"
+            className="popup-container absolute rounded-xl p-0 overflow-hidden"
             style={{
               left: `${popupPosition.x + 20}px`,
               top: `${popupPosition.y - 100}px`,
-              minWidth: '380px',
-              maxWidth: '450px',
+              minWidth: '420px',
+              maxWidth: '480px',
               transform: 'translate(-50%, -50%)',
-              zIndex: 2
+              zIndex: 1000
             }}
             onClick={(e) => {
               console.log('Popup clicked');
@@ -623,22 +807,25 @@ export default function MapViz() {
             {(() => {
               const info = getCountryInfo(selectedCountry)
               return (
-                <>
+                <div className="relative">
                   {/* Header with flag and title */}
-                  <div className="flex justify-between items-start mb-4">
-                    <div className="flex items-center gap-3">
-                      <img 
-                        src={info.flag} 
-                        alt={`${info.name} flag`}
-                        className="w-8 h-6 object-cover rounded border border-gray-200"
-                        onError={(e) => {
-                          (e.target as HTMLImageElement).style.display = 'none'
-                        }}
-                      />
-                      <h3 className="text-xl font-bold text-gray-900">{info.name}</h3>
+                  <div className="flex justify-between items-start p-6 pb-4">
+                    <div className="flex items-center gap-4">
+                      <div className="relative">
+                        <img 
+                          src={info.flag} 
+                          alt={`${info.name} flag`}
+                          className="w-10 h-7 object-cover rounded-md border-2 border-white shadow-lg"
+                          onError={(e) => {
+                            (e.target as HTMLImageElement).style.display = 'none'
+                          }}
+                        />
+                        <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full border-2 border-white shadow-sm"></div>
+                      </div>
+                      <h3 className="text-2xl font-bold text-gray-900 tracking-tight">{info.name}</h3>
                     </div>
                     <button 
-                      className="text-gray-400 hover:text-gray-600 text-xl font-semibold"
+                      className="text-gray-400 hover:text-gray-600 text-2xl font-light w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors duration-200"
                       onClick={() => setSelectedCountry(null)}
                     >
                       ×
@@ -646,40 +833,73 @@ export default function MapViz() {
                   </div>
 
                   {/* Project Image */}
-                  <div className="mb-4">
-                    <img 
-                      src={info.projectImage} 
-                      alt={`${info.name} renewable energy project`}
-                      className="w-full h-32 object-cover rounded-lg border border-gray-200"
-                      onError={(e) => {
-                        (e.target as HTMLImageElement).style.display = 'none'
-                      }}
-                    />
+                  <div className="px-6 mb-6">
+                    <div className="relative overflow-hidden rounded-xl">
+                      <img 
+                        src={info.projectImage} 
+                        alt={`${info.name} renewable energy project`}
+                        className="w-full h-40 object-cover transition-transform duration-300 hover:scale-105"
+                        onError={(e) => {
+                          (e.target as HTMLImageElement).style.display = 'none'
+                        }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                      <div className="absolute bottom-3 left-3">
+                        <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-white/90 text-gray-800 backdrop-blur-sm">
+                          🌱 Renewable Energy
+                        </span>
+                      </div>
+                    </div>
                   </div>
 
                   {/* Project Details */}
-                  <div className="space-y-3">
-                    <div className="flex justify-between">
-                      <span className="font-medium text-gray-700">Active Projects:</span>
-                      <span className="text-green-600 font-semibold">{info.projects}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="font-medium text-gray-700">Total Capacity:</span>
-                      <span className="text-blue-600 font-semibold">{info.capacity}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="font-medium text-gray-700">Status:</span>
-                      <span className="text-orange-600 font-semibold">{info.status}</span>
+                  <div className="px-6 space-y-4">
+                    <div className="grid grid-cols-1 gap-4">
+                      <div className="flex justify-between items-center p-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl border border-green-100">
+                        <div className="flex items-center gap-3">
+                          <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-600 rounded-lg flex items-center justify-center">
+                            <span className="text-white font-bold text-lg">{info.projects}</span>
+                          </div>
+                          <span className="font-semibold text-gray-700">Active Projects</span>
+                        </div>
+                      </div>
+                      
+                      <div className="flex justify-between items-center p-4 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl border border-blue-100">
+                        <div className="flex items-center gap-3">
+                          <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-lg flex items-center justify-center">
+                            <span className="text-white font-bold text-xs">⚡</span>
+                          </div>
+                          <div>
+                            <span className="font-semibold text-gray-700">Total Capacity</span>
+                            <div className="text-blue-600 font-bold text-lg">{info.capacity}</div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div className="flex justify-between items-center p-4 bg-gradient-to-r from-orange-50 to-amber-50 rounded-xl border border-orange-100">
+                        <div className="flex items-center gap-3">
+                          <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-amber-600 rounded-lg flex items-center justify-center">
+                            <span className="text-white font-bold text-xs">📊</span>
+                          </div>
+                          <div>
+                            <span className="font-semibold text-gray-700">Development Status</span>
+                            <div className="text-orange-600 font-bold text-sm">{info.status}</div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
 
                   {/* Description */}
-                  <div className="mt-4 pt-4 border-t border-gray-100">
-                    <p className="text-sm text-gray-600">
-                      Renewable energy development project with focus on sustainable power generation and grid infrastructure.
-                    </p>
+                  <div className="p-6 pt-4">
+                    <div className="bg-gradient-to-r from-gray-50 to-slate-50 rounded-xl p-4 border border-gray-100">
+                      <p className="text-sm text-gray-600 leading-relaxed">
+                        🌍 Comprehensive renewable energy development initiative focused on sustainable power generation, 
+                        modern grid infrastructure, and community empowerment through clean energy access.
+                      </p>
+                    </div>
                   </div>
-                </>
+                </div>
               )
             })()}
           </div>

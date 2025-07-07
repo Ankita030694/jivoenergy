@@ -15,9 +15,9 @@ export default function Home() {
       <Navbar />
       <main className="flex flex-col items-center w-full">
         {/* Hero section with MapViz positioned below navbar */}
-        <section id="hero-section" className="relative w-full h-[150vh]">
-          {/* Map - positioned to start below navbar */}
-          <div className="absolute inset-0 z-10">
+        <section id="hero-section" className="relative w-full h-[100vh] overflow-hidden">
+          {/* Map fills hero section */}
+          <div className="absolute inset-0 z-0">
             <MapViz />
           </div>
 
@@ -41,7 +41,7 @@ export default function Home() {
               Leading the transition to sustainable energy solutions across the globe
             </p>
             <div className="mt-12 flex gap-4">
-              <button className="px-8 py-3 rounded-lg bg-[#4ADE80] text-[#0A5C35] font-semibold hover:bg-[#22C55E] transition-colors duration-200">
+              <button className="px-8 py-3 rounded-lg bg-[#4ADE80] text-[#062516] font-semibold hover:bg-[#22C55E] transition-colors duration-200">
                 Our Projects
               </button>
               <button className="px-8 py-3 rounded-lg border-2 border-[#4ADE80] text-[#4ADE80] font-semibold hover:bg-[#4ADE80]/10 transition-colors duration-200">
@@ -50,7 +50,6 @@ export default function Home() {
             </div>
           </div> */}
         </section>
-       
         <About />
         <Projects />
         <Impact />

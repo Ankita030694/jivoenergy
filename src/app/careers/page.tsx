@@ -45,7 +45,7 @@ const Careers = () => {
     <div className="min-h-screen bg-white">
         <Navbar />
       {/* Hero Section */}
-      <div className="relative w-full h-[40vh] bg-[#0A5C35]">
+      <div className="relative w-full h-[40vh] bg-[#062516]">
         <div 
           className="absolute inset-0 z-0"
           style={{
@@ -68,15 +68,15 @@ const Careers = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Left Column - Content */}
           <div className="space-y-8">
-            <h2 className="text-3xl font-bold text-[#0A5C35]">Career at JIVO Energy</h2>
+            <h2 className="text-3xl font-bold text-[#062516]">Career at JIVO Energy</h2>
             <p className="text-lg text-gray-700">
               At JIVO Energy, we take pride in building a team that is diverse, skilled, and driven by purpose.
               As we expand and take on new challenges, we are always looking to welcome talented professionals 
               who share our vision and values. If you're looking to be part of a dynamic and forward-thinking 
               environment, we invite you to explore opportunities with us and grow your career.
             </p>
-            <div className="bg-[#0A5C35]/10 p-6 rounded-lg">
-              <h3 className="text-xl font-semibold text-[#0A5C35] mb-4">Why Join Us?</h3>
+            <div className="bg-[#062516]/10 p-6 rounded-lg">
+              <h3 className="text-xl font-semibold text-[#062516] mb-4">Why Join Us?</h3>
               <ul className="space-y-3 text-gray-700">
                 <li className="flex items-center">
                   <span className="mr-2">•</span>
@@ -100,7 +100,7 @@ const Careers = () => {
 
           {/* Right Column - Application Form */}
           <div className="bg-white rounded-lg shadow-xl p-8">
-            <h3 className="text-2xl font-bold text-[#0A5C35] mb-6">BE A PART OF OUR GROWTH STORY</h3>
+            <h3 className="text-2xl font-bold text-[#062516] mb-6">BE A PART OF OUR GROWTH STORY</h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="fullName" className="block text-sm font-medium text-gray-700 mb-1">
@@ -109,7 +109,7 @@ const Careers = () => {
                 <input
                   type="text"
                   id="fullName"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#0A5C35] focus:border-[#0A5C35]"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#062516] focus:border-[#062516]"
                   required
                   onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                 />
@@ -122,7 +122,7 @@ const Careers = () => {
                 <input
                   type="email"
                   id="email"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#0A5C35] focus:border-[#0A5C35]"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#062516] focus:border-[#062516]"
                   required
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 />
@@ -135,7 +135,7 @@ const Careers = () => {
                 <input
                   type="tel"
                   id="phone"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#0A5C35] focus:border-[#0A5C35]"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#062516] focus:border-[#062516]"
                   required
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                 />
@@ -148,7 +148,7 @@ const Careers = () => {
                 <input
                   type="text"
                   id="position"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#0A5C35] focus:border-[#0A5C35]"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#062516] focus:border-[#062516]"
                   required
                   onChange={(e) => setFormData({ ...formData, position: e.target.value })}
                 />
@@ -161,7 +161,7 @@ const Careers = () => {
                 <textarea
                   id="description"
                   rows={4}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#0A5C35] focus:border-[#0A5C35]"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#062516] focus:border-[#062516]"
                   required
                   onChange={(e) => setFormData({ ...formData, description: e.target.value })}
                 />
@@ -184,7 +184,7 @@ const Careers = () => {
                   <button
                     type="button"
                     onClick={handleFileButtonClick}
-                    className="px-4 py-2 bg-[#0A5C35] text-white rounded-md hover:bg-[#084A2C] transition-colors duration-300"
+                    className="px-4 py-2 bg-[#062516] text-white rounded-md hover:bg-[#051e12] transition-colors duration-300"
                   >
                     Choose File
                   </button>
@@ -199,7 +199,7 @@ const Careers = () => {
 
               <button
                 type="submit"
-                className="w-full bg-[#0A5C35] text-white py-3 px-6 rounded-md hover:bg-[#084A2C] transition-colors duration-300"
+                className="w-full bg-[#062516] text-white py-3 px-6 rounded-md hover:bg-[#051e12] transition-colors duration-300"
               >
                 Submit Application
               </button>

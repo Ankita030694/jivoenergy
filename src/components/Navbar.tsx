@@ -2,338 +2,323 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 
 const Navbar = () => {
-  const [isHovered, setIsHovered] = useState(false);
-  const [showSubHome, setShowSubHome] = useState(false);
-  const [showLogoDropdown, setShowLogoDropdown] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const handleTrapezoidEnter = () => {
-    setIsHovered(true);
-  };
-
-  const handleTrapezoidLeave = () => {
-    setIsHovered(false);
-    setShowSubHome(false);
-  };
-
-  const handleExpandHomeHover = () => {
-    setShowSubHome(true);
-  };
-
-  const handleSubnavHover = () => {
-    setShowSubHome(false);
-  };
-
-  const handleLogoHover = () => {
-    setShowLogoDropdown(true);
-  };
-
-  const handleLogoLeave = () => {
-    setShowLogoDropdown(false);
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
   };
 
   return (
-    <div className="min-w-full">
+    <>
       <style jsx>{`
-        body {
-          min-width: 800px;
-          margin: 0px;
-        }
-
-        .trapezoid {
-          -webkit-box-sizing: content-box;
-          -moz-box-sizing: content-box;
-          box-sizing: content-box;
-          height: 0;
-          border: 80px solid rgba(0,0,0,0);
-          border-top: 0 solid;
-          border-bottom: 100px solid rgba(10, 92, 53, 0.95);
-          -webkit-border-radius: 20px 20px 0 0;
-          border-radius: 20px 20px 0 0;
-          font: normal 100%/normal Arial, Helvetica, sans-serif;
-          color: rgba(0,0,0,0.7);
-          -o-text-overflow: clip;
-          text-overflow: clip;
-          -webkit-transform: rotateX(180deg);
-          transform: rotateX(180deg);
-          margin-top: -23px;
-          width: 1000px;
-          position: relative;
-          transition: all 0.7s ease;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          padding: 0 20px;
-        }
-
-        .trapezoid-content {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 53px;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          padding: 0 20px;
-          box-sizing: border-box;
-          -webkit-transform: rotateX(180deg);
-          transform: rotateX(180deg);
-        }
-
-        .nav-items-left, .nav-items-right {
-          display: flex;
-          align-items: center;
-          gap: 10px;
-        }
-
-        .logo-container {
+        .nav {
           display: flex;
           align-items: center;
           justify-content: center;
-          padding: 0 20px;
-          flex-shrink: 0;
-          position: relative;
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          z-index: 1000;
+          padding: 15px 0;
+          background: transparent;
         }
 
-        .logo-dropdown {
+        .nav__container {
+          position: relative;
+          width: 100%;
+          height: 60px;
+          padding: 0;
+          margin: 0 80px;
+          background: rgba(255, 255, 255, 0.95);
+          backdrop-filter: blur(10px);
+          -webkit-backdrop-filter: blur(10px);
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          border-radius: 16px;
+          max-width: 1200px;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .nav__container::after {
+          content: "";
           position: absolute;
-          top: 100%;
-          left: 50%;
-          transform: translateX(-50%) translateY(10px);
-          background: rgba(10, 92, 53, 0.98);
-          border-radius: 12px;
-          padding: 15px 0;
+          right: -45px;
+          top: 0;
+          width: 80px;
+          height: 100%;
+          background: rgba(255, 255, 255, 0.95);
+          backdrop-filter: blur(10px);
+          -webkit-backdrop-filter: blur(10px);
+          border-top-right-radius: 20px;
+          border-bottom-right-radius: 16px;
+          z-index: -1;
+          transform: skewX(-36deg);
+          box-shadow: 7px 6px 10px rgba(0, 0, 0, 0.1);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .nav__container::before {
+          content: "";
+          position: absolute;
+          left: -45px;
+          top: 0;
+          width: 80px;
+          height: 100%;
+          background: rgba(255, 255, 255, 0.95);
+          backdrop-filter: blur(10px);
+          -webkit-backdrop-filter: blur(10px);
+          border-top-left-radius: 20px;
+          border-bottom-left-radius: 16px;
+          z-index: -1;
+          transform: skewX(36deg);
+          box-shadow: -7px 8px 10px rgba(0, 0, 0, 0.1);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .nav__logo {
+          padding: 0 15px;
+        }
+
+        .nav__logo a {
+          display: flex;
+          align-items: center;
+        }
+
+        .nav__menu {
+          display: flex;
+          list-style: none;
+          gap: 15px;
+          margin: 0;
+          padding: 0;
+        }
+
+        .nav__item {
+          margin: 0;
+        }
+
+        .nav__link {
+          text-decoration: none;
+          color: #333;
+          font-size: 14px;
+          font-weight: 500;
+          padding: 6px 10px;
+          border-radius: 6px;
+          transition: all 0.3s ease;
+          white-space: nowrap;
+        }
+
+        .nav__link:hover {
+          background-color: rgba(245, 245, 245, 0.8);
+          color: #062516;
+        }
+
+        .nav__toggle {
           display: none;
           flex-direction: column;
-          min-width: 250px;
-          z-index: 100;
-          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-          opacity: 0;
-          transition: all 0.3s ease;
-          backdrop-filter: blur(10px);
-          border: 1px solid rgba(255, 255, 255, 0.1);
+          background: none;
+          border: none;
+          cursor: pointer;
+          padding: 8px;
+          margin-right: 15px;
         }
 
-        .logo-dropdown.show {
-          display: flex;
-          opacity: 1;
-          transform: translateX(-50%) translateY(0);
+        .nav__toggle span {
+          width: 25px;
+          height: 3px;
+          background-color: #333;
+          margin: 3px 0;
+          transition: 0.3s;
+          border-radius: 2px;
         }
 
-        .logo-dropdown::before {
-          content: '';
-          position: absolute;
-          top: -8px;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 16px;
-          height: 16px;
-          background: rgba(10, 92, 53, 0.98);
-          transform: rotate(45deg);
-          border-left: 1px solid rgba(255, 255, 255, 0.1);
-          border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .logo-dropdown a {
-          color: white;
-          text-decoration: none;
-          padding: 12px 25px;
-          transition: all 0.3s ease;
-          font-size: 14px;
-          letter-spacing: 1px;
-          text-transform: uppercase;
-          position: relative;
+        .nav__cta {
+          background: #085D36;
+          color: #fff;
+          border: none;
+          padding: 10px 25px;
+          border-radius: 8px 8px 32px 8px;
+          font-size: 16px;
+          font-weight: 500;
+          cursor: pointer;
           display: flex;
           align-items: center;
-        }
-
-        .logo-dropdown a::before {
-          content: '';
-          position: absolute;
-          left: 0;
-          top: 50%;
-          transform: translateY(-50%);
-          width: 3px;
-          height: 0;
-          background: rgba(255, 255, 255, 0.8);
-          transition: height 0.3s ease;
-        }
-
-        .logo-dropdown a:hover {
-          background: rgba(255, 255, 255, 0.1);
-          padding-left: 30px;
-        }
-
-        .logo-dropdown a:hover::before {
-          height: 70%;
-        }
-
-        .logo-dropdown a:not(:last-child) {
-          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .trapezoid a, .subnavbtn {
-          -webkit-transform: none;
-          transform: none;
-          white-space: nowrap;
+          gap: 6px;
+          margin-right: -10px;
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
           position: relative;
-          z-index: 2;
-        }
-
-        .navbar {
-          position: sticky;
-          top: 0;
-          display: flex;
-          overflow: visible;
-          justify-content: center;
-          height: 100px;
-          background: transparent;
-          width: 100%;
-          z-index: 50;
-        }
-
-        .navbar a {
-          font-size: 14px;
-          color: white;
-          text-align: center;
-          padding: 14px 15px;
-          text-decoration: none;
-          text-transform: uppercase;
-          letter-spacing: 2px;
-          transition: all 0.5s ease;
-        }
-
-        .subnav {
-          overflow: hidden;
-        }
-
-        .subnav .subnavbtn {
-          font-size: 14px;
-          border: none;
-          outline: none;
-          color: white;
-          padding: 14px 15px;
-          background-color: inherit;
-          font-family: inherit;
-          margin: 0;
-          text-transform: uppercase;
-          letter-spacing: 2px;
-          transition: all 0.5s ease;
-          cursor: pointer;
-        }
-
-        .navbar a:hover, .subnav:hover .subnavbtn {
-          background: rgba(255, 255, 255, 0.2);
-          color: white;
-          border-radius: 5px;
-        }
-
-        .subnav-content {
-          display: none;
-          position: absolute;
-          left: 0;
-          width: 100%;
           z-index: 1;
-          transform: perspective(-10px);
+          white-space: nowrap;
+          font-family: inherit;
         }
 
-        .subnav-content a {
-          float: left;
-          color: white;
-          text-decoration: none;
+        .nav__cta::after {
+          content: "";
+          position: absolute;
+          right: -22px;
+          top: 0;
+          width: 50px;
+          height: 100%;
+          background: #085D36;
+          border-top-right-radius: 1rem;
+          border-bottom-right-radius: 1rem;
+          z-index: -1;
+          transform: skewX(-36deg);
         }
 
-        .subnav-content a:hover {
-          background: rgba(255, 255, 255, 0.2);
-          color: white;
+        .nav__cta:hover {
+          background-color: #051e12;
+          transform: translateY(-1px);
         }
 
-        .subnav:hover .subnav-content {
-          display: flex;
-          justify-content: center;
+        .nav__cta svg {
+          transition: transform 0.3s ease;
         }
 
-        .subnav-trapezoid {
-          -webkit-box-sizing: content-box;
-          -moz-box-sizing: content-box;
-          box-sizing: content-box;
-          height: 0;
-          border: 80px solid rgba(0,0,0,0);
-          border-top: 0 solid;
-          border-bottom: 100px solid rgba(10, 92, 53, 0.95);
-          -webkit-border-radius: 20px 20px 0 0;
-          border-radius: 20px 20px 0 0;
-          -webkit-transform: rotateX(180deg);
-          transform: rotateX(180deg);
-          display: flex;
-          justify-content: center;
-          align-items: flex-end;
-          padding: 0 20px 20px 20px;
+        .nav__cta:hover svg {
+          transform: translateX(2px);
         }
 
-        .subnav-trapezoid a {
-          -webkit-transform: rotateX(180deg);
-          transform: rotateX(180deg);
-          margin: 0 10px;
+        .onlymobile {
+          display: none;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+          .nav__container {
+            margin: 0 15px;
+          }
+
+          .nav__container::before,
+          .nav__container::after {
+            display: none;
+          }
+
+          .nav__menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            flex-direction: column;
+            padding: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 0 0 16px 16px;
+            gap: 8px;
+            transform: translateY(-10px);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+          }
+
+          .nav__menu.active {
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+          }
+
+          .nav__toggle {
+            display: flex;
+          }
+
+          .nav__toggle.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+          }
+
+          .nav__toggle.active span:nth-child(2) {
+            opacity: 0;
+          }
+
+          .nav__toggle.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+          }
+
+          .nav__cta {
+            display: none;
+          }
+
+          .onlymobile {
+            display: block;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .nav__container {
+            margin: 0 10px;
+            height: 55px;
+          }
+
+          .nav__logo {
+            padding: 0 12px;
+          }
         }
       `}</style>
 
-      <div className="min-w-full fixed z-50">
-        <nav className="navbar">
-          <div 
-            className="trapezoid"
-            onMouseEnter={handleTrapezoidEnter}
-            onMouseLeave={handleTrapezoidLeave}
-          >
-            <div className="trapezoid-content">
-              <div className="nav-items-left">
-                <a className="sub-home" href="/">Home</a>
-                <a href="#Projects">Projects</a>
-                <a href="/gallery">Gallery</a>
-                <a href="#CSR">CSR</a>
-
-              </div>
-              <div className="logo-container"
-                onMouseEnter={handleLogoHover}
-                onMouseLeave={handleLogoLeave}
-              >
-                <Image
-                  src="/logo1.png"
-                  alt="JIVO ENERGY"
-                  width={150}
-                  height={50}
-                  className="object-contain"
-                />
-                <div className={`logo-dropdown ${showLogoDropdown ? 'show' : ''}`}>
-                  <a href="business-areas">
-                    <span>Business Areas</span>
-                  </a>
-                  <a href="our-capabilities">
-                    <span>Capabilities</span>
-                  </a>
-                  <a href="#theme">
-                    <span>Theme</span>
-                  </a>
-                  <a href="partners">
-                    <span>Partner</span>
-                  </a>
-                  <a href="certificate">
-                    <span>Certification</span>
-                  </a>
-                </div>
-              </div>
-              <div className="nav-items-right">
-                <a href="#Media">Media</a>
-                <a href="#ESG">ESG</a>
-
-                <a href="/careers">Careers</a>
-                <a href="/contact">Contact Us</a>
-              </div>
-            </div>
+      <nav className="nav">
+        <div className="nav__container">
+          <div className="nav__logo">
+            <a href="/">
+              <Image
+                src="/logo1.png"
+                alt="JIVO ENERGY"
+                width={150}
+                height={50}
+                className="object-contain"
+              />
+            </a>
           </div>
-        </nav>
-      </div>
-    </div>
+          
+          <ul className={`nav__menu ${isMenuOpen ? 'active' : ''}`}>
+            <li className="nav__item">
+              <a className="nav__link" href="/">Jivo Energy</a>
+            </li>
+            <li className="nav__item">
+              <a className="nav__link" href="/projects">Projects</a>
+            </li>
+            <li className="nav__item">
+              <a className="nav__link" href="/gallery">Gallery</a>
+            </li>
+            <li className="nav__item">
+              <a className="nav__link" href="/csr">CSR</a>
+            </li>
+            <li className="nav__item">
+              <a className="nav__link" href="/media">Media</a>
+            </li>
+            <li className="nav__item">
+              <a className="nav__link" href="/esg">ESG</a>
+            </li>
+            <li className="nav__item">
+              <a className="nav__link" href="/careers">Careers</a>
+            </li>
+            <li className="nav__item">
+              <a className="nav__link onlymobile" href="/contact">Contact Us</a>
+            </li>
+          </ul>
+
+          <button 
+            className={`nav__toggle ${isMenuOpen ? 'active' : ''}`}
+            aria-label="Toggle menu"
+            onClick={toggleMenu}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <button className="nav__cta">
+            Contact us
+            <svg width="15" height="12" viewBox="0 0 15 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14.2287 2.62989L5.86852 0.389786C5.70362 0.3456 5.53163 0.334326 5.36237 0.35661C5.19311 0.378893 5.02989 0.434296 4.88205 0.519656C4.7342 0.605016 4.60461 0.718661 4.50069 0.854102C4.39676 0.989543 4.32053 1.14413 4.27634 1.30903C4.23215 1.47393 4.22088 1.64592 4.24316 1.81518C4.26545 1.98444 4.32085 2.14766 4.40621 2.2955C4.49157 2.44335 4.60521 2.57294 4.74066 2.67686C4.8761 2.78079 5.03068 2.85702 5.19558 2.90121L9.26821 3.99247L0.726294 8.92415C0.427657 9.09656 0.209744 9.38055 0.120493 9.71364C0.0312436 10.0467 0.077968 10.4016 0.250386 10.7003C0.422804 10.9989 0.706792 11.2168 1.03988 11.3061C1.37296 11.3953 1.72786 11.3486 2.0265 11.1762L10.5684 6.24449L9.47716 10.3171C9.43247 10.482 9.42082 10.6541 9.44287 10.8236C9.46493 10.993 9.52027 11.1564 9.6057 11.3044C9.69113 11.4523 9.80496 11.5819 9.94066 11.6858C10.0764 11.7896 10.2312 11.8655 10.3964 11.9093C10.7294 11.9985 11.0843 11.9517 11.3828 11.7794C11.6814 11.607 11.8993 11.3231 11.9886 10.9901L14.2287 2.62989Z" fill="white"/>
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </>
   );
 };
 

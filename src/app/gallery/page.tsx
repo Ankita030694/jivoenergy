@@ -1,152 +1,189 @@
 'use client';
 
 import Image from 'next/image';
-import { useState } from 'react';
+import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
-interface GallerySection {
+interface CountryCard {
   title: string;
-  images: string[];
+  subtitle: string;
+  description: string;
+  image: string;
+  path: string;
+  imageCount: number;
 }
 
-const gallerySections: GallerySection[] = [
+const countryCards: CountryCard[] = [
   {
     title: "São Tomé and Príncipe",
-    images: ['/gallery/sao1.jpg', '/gallery/sao2.jpg', '/gallery/sao3.jpg', '/gallery/sao4.jpg', '/gallery/sao5.jpg']
+    subtitle: "Gulf of Guinea",
+    description: "Discover our sustainable energy projects in this beautiful island nation, where we're helping to power communities with renewable solutions.",
+    image: '/gallery/sao1.jpg',
+    path: '/gallery/sao-tome-principe',
+    imageCount: 5
   },
   {
     title: "Malawi",
-    images: ['/gallery/malawi1.DNG', '/gallery/malawi2.JPG', '/gallery/malawi3.JPG', '/gallery/malawi4.JPG', '/gallery/malawi5.JPG']
+    subtitle: "Southeastern Africa",
+    description: "Explore our impact in the Warm Heart of Africa, where we're bringing clean energy solutions to rural communities and urban centers.",
+    image: '/gallery/malawi1.DNG',
+    path: '/gallery/malawi',
+    imageCount: 5
   },
   {
     title: "Liberia",
-    images: ['/gallery/liberia1.jpeg', '/gallery/liberia2.jpeg', '/gallery/liberia3.jpg', '/gallery/liberia4.jpeg', '/gallery/liberia5.jpeg']
+    subtitle: "West Africa",
+    description: "Witness our commitment to rebuilding and empowering communities through sustainable energy infrastructure and development projects.",
+    image: '/gallery/liberia1.jpeg',
+    path: '/gallery/liberia',
+    imageCount: 5
   },
   {
     title: "Kenya",
-    images: ['/gallery/kenya1.jpeg', '/gallery/kenya2.jpeg', '/gallery/kenya3.jpeg', '/gallery/kenya4.jpeg', '/gallery/kenya5.jpeg']
+    subtitle: "East Africa",
+    description: "Experience our innovative energy solutions in Kenya, where we're driving the transition to renewable energy across diverse landscapes.",
+    image: '/gallery/kenya1.jpeg',
+    path: '/gallery/kenya',
+    imageCount: 5
   },
   {
     title: "Maio, Cape Verde",
-    images: ['/gallery/maiocape1.jpeg', '/gallery/maiocape2.jpeg', '/gallery/maiocape3.jpeg', '/gallery/maiocape4.jpeg', '/gallery/maiocape5.jpeg']
+    subtitle: "Atlantic Ocean",
+    description: "Discover our sustainable initiatives on this pristine island, where we're harnessing natural resources for clean energy generation.",
+    image: '/gallery/maiocape1.jpeg',
+    path: '/gallery/maio-cape-verde',
+    imageCount: 5
   },
   {
     title: "Achada, Cape Verde",
-    images: ['/gallery/achacape1.jpeg', '/gallery/achacape2.jpeg', '/gallery/achacape3.jpeg', '/gallery/achacape4.jpeg', '/gallery/achacape5.jpeg']
+    subtitle: "Santiago Island",
+    description: "Explore our energy projects in this vibrant community, where we're creating lasting positive impact through sustainable development.",
+    image: '/gallery/achacape1.jpeg',
+    path: '/gallery/achada-cape-verde',
+    imageCount: 5
   }
 ];
 
 export default function GalleryPage() {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
-  const [selectedSection, setSelectedSection] = useState<string | null>(null);
-
   return (
     <>
       <Navbar />
-      <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <motion.h1 
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-5xl font-bold text-center text-gray-900 mb-4 mt-10"
-          >
-            Our Global Impact
-          </motion.h1>
-          <motion.p 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2 }}
-            className="text-xl text-gray-600 text-center mb-16 max-w-3xl mx-auto"
-          >
-            Explore our journey through these captivating moments from around the world
-          </motion.p>
-          
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
-            {gallerySections.map((section, index) => (
-              <button
-                key={index}
-                onClick={() => setSelectedSection(selectedSection === section.title ? null : section.title)}
-                className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                  selectedSection === section.title
-                    ? 'bg-blue-600 text-white shadow-lg'
-                    : 'bg-white text-gray-700 hover:bg-gray-100'
-                }`}
+      <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100">
+        {/* Hero Section */}
+        <div className="relative w-full h-[65vh] bg-[#062516] overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-r from-[#062516] to-[#051e12] opacity-90"></div>
+          <div className="relative z-10 h-full flex items-center justify-center">
+            <div className="text-center">
+              <motion.h1 
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="text-6xl md:text-7xl font-bold text-white mb-6"
               >
-                {section.title}
-              </button>
-            ))}
-          </div>
-          
-          {gallerySections.map((section, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-              className={`mb-20 ${selectedSection && selectedSection !== section.title ? 'hidden' : ''}`}
-            >
-              <h2 className="text-3xl font-semibold text-gray-800 mb-8 border-b pb-2">{section.title}</h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-                {section.images.map((image, imgIndex) => (
-                  <motion.div
-                    key={imgIndex}
-                    whileHover={{ scale: 1.05 }}
-                    className="relative aspect-square overflow-hidden rounded-xl shadow-xl cursor-pointer group"
-                    onClick={() => setSelectedImage(image)}
-                  >
-                    <Image
-                      src={image}
-                      alt={`${section.title} - Image ${imgIndex + 1}`}
-                      fill
-                      className="object-cover transition-transform duration-300 group-hover:scale-110"
-                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 20vw"
-                    />
-                    <div className="absolute inset-0 bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300" />
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-          ))}
-
-          <AnimatePresence>
-            {selectedImage && (
-              <motion.div
+                Our Global Impact
+              </motion.h1>
+              <motion.p 
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 p-4"
-                onClick={() => setSelectedImage(null)}
+                transition={{ delay: 0.2 }}
+                className="text-xl md:text-2xl text-gray-200 max-w-4xl mx-auto px-4"
               >
-                <motion.div 
-                  initial={{ scale: 0.9 }}
-                  animate={{ scale: 1 }}
-                  exit={{ scale: 0.9 }}
-                  className="relative max-w-5xl max-h-[90vh]"
-                >
-                  <Image
-                    src={selectedImage}
-                    alt="Enlarged view"
-                    width={1600}
-                    height={1200}
-                    className="object-contain max-h-[90vh] rounded-lg"
-                  />
-                  <button
-                    className="absolute top-4 right-4 text-white bg-black bg-opacity-50 rounded-full p-3 hover:bg-opacity-75 transition-all duration-300"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setSelectedImage(null);
-                    }}
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                  </button>
-                </motion.div>
+                Explore our journey through these captivating moments from around the world
+              </motion.p>
+            </div>
+          </div>
+        </div>
+
+        {/* Countries Grid */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          >
+            {countryCards.map((country, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 * index }}
+                whileHover={{ y: -8 }}
+                className="group"
+              >
+                <Link href={country.path}>
+                  <div className="bg-white rounded-2xl shadow-xl overflow-hidden cursor-pointer transition-all duration-300 group-hover:shadow-2xl">
+                    {/* Image Container */}
+                    <div className="relative h-64 overflow-hidden">
+                      <Image
+                        src={country.image}
+                        alt={country.title}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-110"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      
+                      {/* Image Count Badge */}
+                      <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 text-sm font-medium text-[#062516]">
+                        {country.imageCount} photos
+                      </div>
+                    </div>
+
+                    {/* Content */}
+                    <div className="p-6">
+                      <div className="mb-2">
+                        <h3 className="text-xl font-bold text-[#062516] group-hover:text-[#051e12] transition-colors duration-300">
+                          {country.title}
+                        </h3>
+                        <p className="text-sm text-[#062516]/70 font-medium">
+                          {country.subtitle}
+                        </p>
+                      </div>
+                      <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                        {country.description}
+                      </p>
+                      
+                      {/* View Gallery Button */}
+                      <div className="flex items-center justify-between">
+                        <span className="text-[#062516] font-medium text-sm group-hover:text-[#051e12] transition-colors duration-300">
+                          View Gallery
+                        </span>
+                        <div className="w-8 h-8 bg-[#062516] rounded-full flex items-center justify-center group-hover:bg-[#051e12] transition-colors duration-300">
+                          <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
               </motion.div>
-            )}
-          </AnimatePresence>
+            ))}
+          </motion.div>
+
+          {/* Call to Action */}
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.8 }}
+            className="text-center mt-16"
+          >
+            <div className="bg-white rounded-2xl shadow-xl p-8 max-w-2xl mx-auto">
+              <h3 className="text-2xl font-bold text-[#062516] mb-4">
+                Ready to Explore More?
+              </h3>
+              <p className="text-gray-600 mb-6">
+                Discover how we're making a difference across the globe through sustainable energy solutions.
+              </p>
+              <Link href="/contact">
+                <button className="bg-[#062516] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#051e12] transition-colors duration-300">
+                  Get in Touch
+                </button>
+              </Link>
+            </div>
+          </motion.div>
         </div>
       </div>
       <Footer />

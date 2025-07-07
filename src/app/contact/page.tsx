@@ -92,7 +92,7 @@ const Contact = () => {
       <Navbar />
       
       {/* Hero Section - Reduced height */}
-      <div className="relative w-full h-[65vh] bg-[#0A5C35] overflow-hidden">
+      <div className="relative w-full h-[65vh] bg-[#062516] overflow-hidden">
         <video
           autoPlay
           loop
@@ -121,7 +121,7 @@ const Contact = () => {
                   key={index}
                   className="bg-white rounded-lg shadow p-4 hover:shadow-md transition-shadow duration-300"
                 >
-                  <h3 className="text-lg font-bold text-[#0A5C35] mb-2">{office.country}</h3>
+                  <h3 className="text-lg font-bold text-[#062516] mb-2">{office.country}</h3>
                   <p className="text-sm text-gray-700 mb-2 whitespace-pre-line">{office.address}</p>
                   {office.tel && (
                     <p className="text-sm text-gray-700">
@@ -133,26 +133,26 @@ const Contact = () => {
             </div>
 
             {/* Social Connect Section - More compact */}
-            <div className="bg-[#0A5C35]/10 rounded-lg p-4">
-              <h2 className="text-lg font-bold text-[#0A5C35] mb-4">Connect with us</h2>
+            <div className="bg-[#062516]/10 rounded-lg p-4">
+              <h2 className="text-lg font-bold text-[#062516] mb-4">Connect with us</h2>
               <div className="flex justify-center space-x-6">
                 <a 
                   href="mailto:info@jivoenergy.com" 
-                  className="flex items-center text-[#0A5C35] hover:text-[#084A2C] transition-colors duration-300"
+                  className="flex items-center text-[#062516] hover:text-[#051e12] transition-colors duration-300"
                 >
                   <FaEnvelope size={20} />
                   <span className="ml-2">Email</span>
                 </a>
                 <a 
                   href="#" 
-                  className="flex items-center text-[#0A5C35] hover:text-[#084A2C] transition-colors duration-300"
+                  className="flex items-center text-[#062516] hover:text-[#051e12] transition-colors duration-300"
                 >
                   <FaInstagram size={20} />
                   <span className="ml-2">Instagram</span>
                 </a>
                 <a 
                   href="#" 
-                  className="flex items-center text-[#0A5C35] hover:text-[#084A2C] transition-colors duration-300"
+                  className="flex items-center text-[#062516] hover:text-[#051e12] transition-colors duration-300"
                 >
                   <FaLinkedin size={20} />
                   <span className="ml-2">LinkedIn</span>
@@ -163,7 +163,7 @@ const Contact = () => {
 
           {/* Right Column - Contact Form */}
           <div className="bg-white rounded-lg shadow-lg p-6">
-            <h2 className="text-2xl font-bold text-[#0A5C35] mb-4">Have an Enquiry?</h2>
+            <h2 className="text-2xl font-bold text-[#062516] mb-4">Have an Enquiry?</h2>
             <p className="text-gray-600 mb-6">
               Send us your enquiry and our team will respond to you shortly.
             </p>
@@ -180,7 +180,7 @@ const Contact = () => {
                     required
                     value={formData.fullName}
                     onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#0A5C35] focus:border-[#0A5C35] outline-none transition-colors text-black"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#062516] focus:border-[#062516] outline-none transition-colors text-black"
                     placeholder="John Doe"
                   />
                 </div>
@@ -195,7 +195,7 @@ const Contact = () => {
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#0A5C35] focus:border-[#0A5C35] outline-none transition-colors text-black"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#062516] focus:border-[#062516] outline-none transition-colors text-black"
                     placeholder="john@example.com"
                   />
                 </div>
@@ -209,7 +209,7 @@ const Contact = () => {
                     id="phone"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#0A5C35] focus:border-[#0A5C35] outline-none transition-colors text-black"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#062516] focus:border-[#062516] outline-none transition-colors text-black"
                     placeholder="+1 (555) 000-0000"
                   />
                 </div>
@@ -223,7 +223,7 @@ const Contact = () => {
                     id="company"
                     value={formData.company}
                     onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#0A5C35] focus:border-[#0A5C35] outline-none transition-colors text-black"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#062516] focus:border-[#062516] outline-none transition-colors text-black"
                     placeholder="Your Company"
                   />
                 </div>
@@ -238,7 +238,7 @@ const Contact = () => {
                   required
                   value={formData.interest}
                   onChange={(e) => setFormData({ ...formData, interest: e.target.value })}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#0A5C35] focus:border-[#0A5C35] outline-none transition-colors text-black"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#062516] focus:border-[#062516] outline-none transition-colors text-black"
                 >
                   <option value="">Select an option</option>
                   <option value="solar">Solar Energy</option>
@@ -259,7 +259,7 @@ const Contact = () => {
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   rows={4}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#0A5C35] focus:border-[#0A5C35] outline-none transition-colors resize-none text-black"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#062516] focus:border-[#062516] outline-none transition-colors resize-none text-black"
                   placeholder="Tell us about your project or inquiry..."
                 />
               </div>
@@ -280,10 +280,10 @@ const Contact = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className={`px-8 py-4 bg-[#0A5C35] text-white rounded-lg font-medium transition-all duration-300 ${
+                  className={`px-8 py-4 bg-[#062516] text-white rounded-lg font-medium transition-all duration-300 ${
                     isSubmitting
-                      ? 'opacity-75 cursor-not-allowed'
-                      : 'hover:bg-[#084A2C] hover:shadow-lg'
+                      ? 'opacity-50 cursor-not-allowed'
+                      : 'hover:bg-[#051e12] hover:shadow-lg'
                   }`}
                 >
                   {isSubmitting ? 'Sending...' : 'Send Message'}

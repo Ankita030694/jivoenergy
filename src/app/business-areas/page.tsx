@@ -69,7 +69,7 @@ const BusinessAreas = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <div className="relative w-full h-[65vh] bg-[#0A5C35] overflow-hidden">
+      <div className="relative w-full h-[65vh] bg-[#062516] overflow-hidden">
         <video
           autoPlay
           loop
@@ -89,7 +89,7 @@ const BusinessAreas = () => {
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 py-16">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-[#0A5C35] mb-4">Our Expertise</h2>
+          <h2 className="text-4xl font-bold text-[#062516] mb-4">Our Expertise</h2>
           <p className="text-gray-600 max-w-3xl mx-auto">
             We are a leading energy company specializing in renewable energy solutions, 
             smart grid technology, and energy consulting services across emerging markets.
@@ -117,16 +117,16 @@ const BusinessAreas = () => {
 
               {/* Content Section */}
               <div className="space-y-6">
-                <h3 className="text-3xl font-bold text-[#0A5C35]">{area.title}</h3>
+                <h3 className="text-3xl font-bold text-[#062516]">{area.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{area.description}</p>
                 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {area.features.map((feature, featureIndex) => (
                     <div 
                       key={featureIndex}
-                      className="flex items-center space-x-3 bg-[#0A5C35]/5 p-4 rounded-lg"
+                      className="flex items-center space-x-3 bg-[#062516]/5 p-4 rounded-lg"
                     >
-                      <div className="w-2 h-2 bg-[#0A5C35] rounded-full" />
+                      <div className="w-2 h-2 bg-[#062516] rounded-full" />
                       <span className="text-gray-700">{feature}</span>
                     </div>
                   ))}
@@ -138,7 +138,7 @@ const BusinessAreas = () => {
 
         {/* Call to Action */}
         <div className="mt-24 text-center">
-          <h2 className="text-3xl font-bold text-[#0A5C35] mb-6">
+          <h2 className="text-3xl font-bold text-[#062516] mb-6">
             Ready to Transform Your Energy Future?
           </h2>
           <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
@@ -147,7 +147,7 @@ const BusinessAreas = () => {
           </p>
           <a
             href="/contact"
-            className="inline-block px-8 py-4 bg-[#0A5C35] text-white rounded-lg font-medium hover:bg-[#084A2C] transition-colors duration-300"
+            className="inline-block px-8 py-4 bg-[#062516] text-white rounded-lg font-medium hover:bg-[#051e12] transition-colors duration-300"
           >
             Get in Touch
           </a>

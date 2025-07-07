@@ -50,7 +50,7 @@ const Certificate = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <div className="relative w-full h-[65vh] bg-[#0A5C35] overflow-hidden">
+      <div className="relative w-full h-[65vh] bg-[#062516] overflow-hidden">
         <video
           autoPlay
           loop
@@ -71,7 +71,7 @@ const Certificate = () => {
       <div className="max-w-7xl mx-auto px-4 py-16">
         {/* Introduction Section */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-[#0A5C35] mb-4">
+          <h2 className="text-3xl font-bold text-[#062516] mb-4">
             Our Commitment to Excellence
           </h2>
           <p className="text-gray-600 max-w-3xl mx-auto">
@@ -98,7 +98,7 @@ const Certificate = () => {
               </div>
               <div className="p-6">
                 <div className="flex justify-between items-start mb-3">
-                  <h3 className="text-xl font-bold text-[#0A5C35]">{cert.title}</h3>
+                  <h3 className="text-xl font-bold text-[#062516]">{cert.title}</h3>
                   <span className="text-sm font-semibold text-gray-500">{cert.year}</span>
                 </div>
                 <p className="text-gray-600">{cert.description}</p>
@@ -108,8 +108,8 @@ const Certificate = () => {
         </div>
 
         {/* Additional Information Section */}
-        <div className="mt-16 bg-[#0A5C35]/5 rounded-lg p-8">
-          <h3 className="text-2xl font-bold text-[#0A5C35] mb-4">
+        <div className="mt-16 bg-[#062516]/5 rounded-lg p-8">
+          <h3 className="text-2xl font-bold text-[#062516] mb-4">
             Quality Assurance
           </h3>
           <p className="text-gray-600 mb-6">
@@ -120,15 +120,15 @@ const Certificate = () => {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="bg-white p-6 rounded-lg shadow">
-              <h4 className="font-bold text-[#0A5C35] mb-2">Regular Audits</h4>
+              <h4 className="font-bold text-[#062516] mb-2">Regular Audits</h4>
               <p className="text-gray-600">Continuous monitoring and improvement of our processes</p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow">
-              <h4 className="font-bold text-[#0A5C35] mb-2">Training Programs</h4>
+              <h4 className="font-bold text-[#062516] mb-2">Training Programs</h4>
               <p className="text-gray-600">Comprehensive training for all employees on quality standards</p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow">
-              <h4 className="font-bold text-[#0A5C35] mb-2">Documentation</h4>
+              <h4 className="font-bold text-[#062516] mb-2">Documentation</h4>
               <p className="text-gray-600">Detailed documentation of all processes and procedures</p>
             </div>
           </div>

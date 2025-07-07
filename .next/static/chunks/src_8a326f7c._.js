@@ -19,276 +19,262 @@ var _s = __turbopack_context__.k.signature();
 ;
 const Navbar = ()=>{
     _s();
-    const [isHovered, setIsHovered] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
-    const [showSubHome, setShowSubHome] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
-    const [showLogoDropdown, setShowLogoDropdown] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
-    const handleTrapezoidEnter = ()=>{
-        setIsHovered(true);
+    const [isMenuOpen, setIsMenuOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const toggleMenu = ()=>{
+        setIsMenuOpen(!isMenuOpen);
     };
-    const handleTrapezoidLeave = ()=>{
-        setIsHovered(false);
-        setShowSubHome(false);
-    };
-    const handleExpandHomeHover = ()=>{
-        setShowSubHome(true);
-    };
-    const handleSubnavHover = ()=>{
-        setShowSubHome(false);
-    };
-    const handleLogoHover = ()=>{
-        setShowLogoDropdown(true);
-    };
-    const handleLogoLeave = ()=>{
-        setShowLogoDropdown(false);
-    };
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "jsx-d959c457b553ed3e" + " " + "min-w-full",
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$jsx$2f$style$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                id: "d959c457b553ed3e",
-                children: 'body.jsx-d959c457b553ed3e{min-width:800px;margin:0}.trapezoid.jsx-d959c457b553ed3e{box-sizing:content-box;color:#000000b3;text-overflow:clip;border:80px solid #0000;border-top:0 solid;border-bottom:100px solid #0a5c35f2;border-radius:20px 20px 0 0;justify-content:space-between;align-items:center;width:1000px;height:0;margin-top:-23px;padding:0 20px;font:100% Arial,Helvetica,sans-serif;transition:all .7s;display:flex;position:relative;transform:rotateX(180deg)}.trapezoid-content.jsx-d959c457b553ed3e{box-sizing:border-box;justify-content:space-between;align-items:center;width:100%;height:53px;padding:0 20px;display:flex;position:absolute;top:0;left:0;transform:rotateX(180deg)}.nav-items-left.jsx-d959c457b553ed3e,.nav-items-right.jsx-d959c457b553ed3e{align-items:center;gap:10px;display:flex}.logo-container.jsx-d959c457b553ed3e{flex-shrink:0;justify-content:center;align-items:center;padding:0 20px;display:flex;position:relative}.logo-dropdown.jsx-d959c457b553ed3e{z-index:100;opacity:0;backdrop-filter:blur(10px);background:#0a5c35fa;border:1px solid #ffffff1a;border-radius:12px;flex-direction:column;min-width:250px;padding:15px 0;transition:all .3s;display:none;position:absolute;top:100%;left:50%;transform:translate(-50%)translateY(10px);box-shadow:0 4px 20px #0003}.logo-dropdown.show.jsx-d959c457b553ed3e{opacity:1;display:flex;transform:translate(-50%)translateY(0)}.logo-dropdown.jsx-d959c457b553ed3e:before{content:"";background:#0a5c35fa;border-top:1px solid #ffffff1a;border-left:1px solid #ffffff1a;width:16px;height:16px;position:absolute;top:-8px;left:50%;transform:rotate(45deg)}.logo-dropdown.jsx-d959c457b553ed3e a.jsx-d959c457b553ed3e{color:#fff;letter-spacing:1px;text-transform:uppercase;align-items:center;padding:12px 25px;font-size:14px;text-decoration:none;transition:all .3s;display:flex;position:relative}.logo-dropdown.jsx-d959c457b553ed3e a.jsx-d959c457b553ed3e:before{content:"";background:#fffc;width:3px;height:0;transition:height .3s;position:absolute;top:50%;left:0;transform:translateY(-50%)}.logo-dropdown.jsx-d959c457b553ed3e a.jsx-d959c457b553ed3e:hover{background:#ffffff1a;padding-left:30px}.logo-dropdown.jsx-d959c457b553ed3e a.jsx-d959c457b553ed3e:hover:before{height:70%}.logo-dropdown.jsx-d959c457b553ed3e a.jsx-d959c457b553ed3e:not(:last-child){border-bottom:1px solid #ffffff1a}.trapezoid.jsx-d959c457b553ed3e a.jsx-d959c457b553ed3e,.subnavbtn.jsx-d959c457b553ed3e{white-space:nowrap;z-index:2;position:relative;transform:none}.navbar.jsx-d959c457b553ed3e{z-index:50;background:0 0;justify-content:center;width:100%;height:100px;display:flex;position:sticky;top:0;overflow:visible}.navbar.jsx-d959c457b553ed3e a.jsx-d959c457b553ed3e{color:#fff;text-align:center;text-transform:uppercase;letter-spacing:2px;padding:14px 15px;font-size:14px;text-decoration:none;transition:all .5s}.subnav.jsx-d959c457b553ed3e{overflow:hidden}.subnav.jsx-d959c457b553ed3e .subnavbtn.jsx-d959c457b553ed3e{color:#fff;background-color:inherit;text-transform:uppercase;letter-spacing:2px;cursor:pointer;border:none;outline:none;margin:0;padding:14px 15px;font-family:inherit;font-size:14px;transition:all .5s}.navbar.jsx-d959c457b553ed3e a.jsx-d959c457b553ed3e:hover,.subnav.jsx-d959c457b553ed3e:hover .subnavbtn.jsx-d959c457b553ed3e{color:#fff;background:#fff3;border-radius:5px}.subnav-content.jsx-d959c457b553ed3e{z-index:1;width:100%;display:none;position:absolute;left:0;transform:perspective(-10px)}.subnav-content.jsx-d959c457b553ed3e a.jsx-d959c457b553ed3e{float:left;color:#fff;text-decoration:none}.subnav-content.jsx-d959c457b553ed3e a.jsx-d959c457b553ed3e:hover{color:#fff;background:#fff3}.subnav.jsx-d959c457b553ed3e:hover .subnav-content.jsx-d959c457b553ed3e{justify-content:center;display:flex}.subnav-trapezoid.jsx-d959c457b553ed3e{box-sizing:content-box;border:80px solid #0000;border-top:0 solid;border-bottom:100px solid #0a5c35f2;border-radius:20px 20px 0 0;justify-content:center;align-items:flex-end;height:0;padding:0 20px 20px;display:flex;transform:rotateX(180deg)}.subnav-trapezoid.jsx-d959c457b553ed3e a.jsx-d959c457b553ed3e{margin:0 10px;transform:rotateX(180deg)}'
+                id: "2f270be11b87509d",
+                children: '.nav.jsx-2f270be11b87509d{z-index:1000;background:0 0;justify-content:center;align-items:center;padding:15px 0;display:flex;position:fixed;top:0;left:0;right:0}.nav__container.jsx-2f270be11b87509d{-webkit-backdrop-filter:blur(10px);background:#fffffff2;border:1px solid #fff3;border-radius:16px;justify-content:space-between;align-items:center;width:100%;max-width:1200px;height:60px;margin:0 80px;padding:0;display:flex;position:relative;box-shadow:0 4px 20px #0000001a}.nav__container.jsx-2f270be11b87509d:after{content:"";-webkit-backdrop-filter:blur(10px);z-index:-1;background:#fffffff2;border:1px solid #fff3;border-top-right-radius:20px;border-bottom-right-radius:16px;width:80px;height:100%;position:absolute;top:0;right:-45px;transform:skew(-36deg);box-shadow:7px 6px 10px #0000001a}.nav__container.jsx-2f270be11b87509d:before{content:"";-webkit-backdrop-filter:blur(10px);z-index:-1;background:#fffffff2;border:1px solid #fff3;border-top-left-radius:20px;border-bottom-left-radius:16px;width:80px;height:100%;position:absolute;top:0;left:-45px;transform:skew(36deg);box-shadow:-7px 8px 10px #0000001a}.nav__logo.jsx-2f270be11b87509d{padding:0 15px}.nav__logo.jsx-2f270be11b87509d a.jsx-2f270be11b87509d{align-items:center;display:flex}.nav__menu.jsx-2f270be11b87509d{gap:15px;margin:0;padding:0;list-style:none;display:flex}.nav__item.jsx-2f270be11b87509d{margin:0}.nav__link.jsx-2f270be11b87509d{color:#333;white-space:nowrap;border-radius:6px;padding:6px 10px;font-size:14px;font-weight:500;text-decoration:none;transition:all .3s}.nav__link.jsx-2f270be11b87509d:hover{color:#062516;background-color:#f5f5f5cc}.nav__toggle.jsx-2f270be11b87509d{cursor:pointer;background:0 0;border:none;flex-direction:column;margin-right:15px;padding:8px;display:none}.nav__toggle.jsx-2f270be11b87509d span.jsx-2f270be11b87509d{background-color:#333;border-radius:2px;width:25px;height:3px;margin:3px 0;transition:all .3s}.nav__cta.jsx-2f270be11b87509d{color:#fff;cursor:pointer;z-index:1;white-space:nowrap;background:#085d36;border:none;border-radius:8px 8px 32px;align-items:center;gap:6px;margin-right:-10px;padding:10px 25px;font-family:inherit;font-size:16px;font-weight:500;transition:all .3s cubic-bezier(.4,0,.2,1);display:flex;position:relative}.nav__cta.jsx-2f270be11b87509d:after{content:"";z-index:-1;background:#085d36;border-top-right-radius:1rem;border-bottom-right-radius:1rem;width:50px;height:100%;position:absolute;top:0;right:-22px;transform:skew(-36deg)}.nav__cta.jsx-2f270be11b87509d:hover{background-color:#051e12;transform:translateY(-1px)}.nav__cta.jsx-2f270be11b87509d svg.jsx-2f270be11b87509d{transition:transform .3s}.nav__cta.jsx-2f270be11b87509d:hover svg.jsx-2f270be11b87509d{transform:translate(2px)}.onlymobile.jsx-2f270be11b87509d{display:none}@media (width<=768px){.nav__container.jsx-2f270be11b87509d{margin:0 15px}.nav__container.jsx-2f270be11b87509d:before,.nav__container.jsx-2f270be11b87509d:after{display:none}.nav__menu.jsx-2f270be11b87509d{-webkit-backdrop-filter:blur(10px);opacity:0;visibility:hidden;background:#fffffff2;border:1px solid #fff3;border-radius:0 0 16px 16px;flex-direction:column;gap:8px;padding:15px;transition:all .3s;position:absolute;top:100%;left:0;right:0;transform:translateY(-10px);box-shadow:0 4px 20px #0000001a}.nav__menu.active.jsx-2f270be11b87509d{opacity:1;visibility:visible;transform:translateY(0)}.nav__toggle.jsx-2f270be11b87509d{display:flex}.nav__toggle.active.jsx-2f270be11b87509d span.jsx-2f270be11b87509d:first-child{transform:rotate(-45deg)translate(-5px,6px)}.nav__toggle.active.jsx-2f270be11b87509d span.jsx-2f270be11b87509d:nth-child(2){opacity:0}.nav__toggle.active.jsx-2f270be11b87509d span.jsx-2f270be11b87509d:nth-child(3){transform:rotate(45deg)translate(-5px,-6px)}.nav__cta.jsx-2f270be11b87509d{display:none}.onlymobile.jsx-2f270be11b87509d{display:block}}@media (width<=480px){.nav__container.jsx-2f270be11b87509d{height:55px;margin:0 10px}.nav__logo.jsx-2f270be11b87509d{padding:0 12px}}'
             }, void 0, false, void 0, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "jsx-d959c457b553ed3e" + " " + "min-w-full fixed z-50",
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
-                    className: "jsx-d959c457b553ed3e" + " " + "navbar",
-                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        onMouseEnter: handleTrapezoidEnter,
-                        onMouseLeave: handleTrapezoidLeave,
-                        className: "jsx-d959c457b553ed3e" + " " + "trapezoid",
-                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "jsx-d959c457b553ed3e" + " " + "trapezoid-content",
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
+                className: "jsx-2f270be11b87509d" + " " + "nav",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "jsx-2f270be11b87509d" + " " + "nav__container",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "jsx-2f270be11b87509d" + " " + "nav__logo",
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                href: "/",
+                                className: "jsx-2f270be11b87509d",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                    src: "/logo1.png",
+                                    alt: "JIVO ENERGY",
+                                    width: 150,
+                                    height: 50,
+                                    className: "object-contain"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/Navbar.tsx",
+                                    lineNumber: 266,
+                                    columnNumber: 15
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/Navbar.tsx",
+                                lineNumber: 265,
+                                columnNumber: 13
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/Navbar.tsx",
+                            lineNumber: 264,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
+                            className: "jsx-2f270be11b87509d" + " " + `nav__menu ${isMenuOpen ? 'active' : ''}`,
                             children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "jsx-d959c457b553ed3e" + " " + "nav-items-left",
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                            href: "/",
-                                            className: "jsx-d959c457b553ed3e" + " " + "sub-home",
-                                            children: "Home"
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/Navbar.tsx",
-                                            lineNumber: 290,
-                                            columnNumber: 17
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                            href: "#Projects",
-                                            className: "jsx-d959c457b553ed3e",
-                                            children: "Projects"
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/Navbar.tsx",
-                                            lineNumber: 291,
-                                            columnNumber: 17
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                            href: "/gallery",
-                                            className: "jsx-d959c457b553ed3e",
-                                            children: "Gallery"
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/Navbar.tsx",
-                                            lineNumber: 292,
-                                            columnNumber: 17
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                            href: "#CSR",
-                                            className: "jsx-d959c457b553ed3e",
-                                            children: "CSR"
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/Navbar.tsx",
-                                            lineNumber: 293,
-                                            columnNumber: 17
-                                        }, this)
-                                    ]
-                                }, void 0, true, {
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                    className: "jsx-2f270be11b87509d" + " " + "nav__item",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                        href: "/",
+                                        className: "jsx-2f270be11b87509d" + " " + "nav__link",
+                                        children: "Jivo Energy"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/Navbar.tsx",
+                                        lineNumber: 278,
+                                        columnNumber: 15
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/Navbar.tsx",
+                                    lineNumber: 277,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                    className: "jsx-2f270be11b87509d" + " " + "nav__item",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                        href: "/projects",
+                                        className: "jsx-2f270be11b87509d" + " " + "nav__link",
+                                        children: "Projects"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/Navbar.tsx",
+                                        lineNumber: 281,
+                                        columnNumber: 15
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/Navbar.tsx",
+                                    lineNumber: 280,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                    className: "jsx-2f270be11b87509d" + " " + "nav__item",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                        href: "/gallery",
+                                        className: "jsx-2f270be11b87509d" + " " + "nav__link",
+                                        children: "Gallery"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/Navbar.tsx",
+                                        lineNumber: 284,
+                                        columnNumber: 15
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/Navbar.tsx",
+                                    lineNumber: 283,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                    className: "jsx-2f270be11b87509d" + " " + "nav__item",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                        href: "/csr",
+                                        className: "jsx-2f270be11b87509d" + " " + "nav__link",
+                                        children: "CSR"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/Navbar.tsx",
+                                        lineNumber: 287,
+                                        columnNumber: 15
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/Navbar.tsx",
+                                    lineNumber: 286,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                    className: "jsx-2f270be11b87509d" + " " + "nav__item",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                        href: "/media",
+                                        className: "jsx-2f270be11b87509d" + " " + "nav__link",
+                                        children: "Media"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/Navbar.tsx",
+                                        lineNumber: 290,
+                                        columnNumber: 15
+                                    }, this)
+                                }, void 0, false, {
                                     fileName: "[project]/src/components/Navbar.tsx",
                                     lineNumber: 289,
-                                    columnNumber: 15
+                                    columnNumber: 13
                                 }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    onMouseEnter: handleLogoHover,
-                                    onMouseLeave: handleLogoLeave,
-                                    className: "jsx-d959c457b553ed3e" + " " + "logo-container",
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                            src: "/logo1.png",
-                                            alt: "JIVO ENERGY",
-                                            width: 150,
-                                            height: 50,
-                                            className: "object-contain"
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/Navbar.tsx",
-                                            lineNumber: 300,
-                                            columnNumber: 17
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "jsx-d959c457b553ed3e" + " " + `logo-dropdown ${showLogoDropdown ? 'show' : ''}`,
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                                    href: "#business-areas",
-                                                    className: "jsx-d959c457b553ed3e",
-                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                        className: "jsx-d959c457b553ed3e",
-                                                        children: "Business Areas"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/src/components/Navbar.tsx",
-                                                        lineNumber: 309,
-                                                        columnNumber: 21
-                                                    }, this)
-                                                }, void 0, false, {
-                                                    fileName: "[project]/src/components/Navbar.tsx",
-                                                    lineNumber: 308,
-                                                    columnNumber: 19
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                                    href: "#capabilities",
-                                                    className: "jsx-d959c457b553ed3e",
-                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                        className: "jsx-d959c457b553ed3e",
-                                                        children: "Capabilities"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/src/components/Navbar.tsx",
-                                                        lineNumber: 312,
-                                                        columnNumber: 21
-                                                    }, this)
-                                                }, void 0, false, {
-                                                    fileName: "[project]/src/components/Navbar.tsx",
-                                                    lineNumber: 311,
-                                                    columnNumber: 19
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                                    href: "#theme",
-                                                    className: "jsx-d959c457b553ed3e",
-                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                        className: "jsx-d959c457b553ed3e",
-                                                        children: "Theme"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/src/components/Navbar.tsx",
-                                                        lineNumber: 315,
-                                                        columnNumber: 21
-                                                    }, this)
-                                                }, void 0, false, {
-                                                    fileName: "[project]/src/components/Navbar.tsx",
-                                                    lineNumber: 314,
-                                                    columnNumber: 19
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                                    href: "#partner",
-                                                    className: "jsx-d959c457b553ed3e",
-                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                        className: "jsx-d959c457b553ed3e",
-                                                        children: "Partner"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/src/components/Navbar.tsx",
-                                                        lineNumber: 318,
-                                                        columnNumber: 21
-                                                    }, this)
-                                                }, void 0, false, {
-                                                    fileName: "[project]/src/components/Navbar.tsx",
-                                                    lineNumber: 317,
-                                                    columnNumber: 19
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                                    href: "#certification",
-                                                    className: "jsx-d959c457b553ed3e",
-                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                        className: "jsx-d959c457b553ed3e",
-                                                        children: "Certification"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/src/components/Navbar.tsx",
-                                                        lineNumber: 321,
-                                                        columnNumber: 21
-                                                    }, this)
-                                                }, void 0, false, {
-                                                    fileName: "[project]/src/components/Navbar.tsx",
-                                                    lineNumber: 320,
-                                                    columnNumber: 19
-                                                }, this)
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/src/components/Navbar.tsx",
-                                            lineNumber: 307,
-                                            columnNumber: 17
-                                        }, this)
-                                    ]
-                                }, void 0, true, {
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                    className: "jsx-2f270be11b87509d" + " " + "nav__item",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                        href: "/esg",
+                                        className: "jsx-2f270be11b87509d" + " " + "nav__link",
+                                        children: "ESG"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/Navbar.tsx",
+                                        lineNumber: 293,
+                                        columnNumber: 15
+                                    }, this)
+                                }, void 0, false, {
                                     fileName: "[project]/src/components/Navbar.tsx",
-                                    lineNumber: 296,
-                                    columnNumber: 15
+                                    lineNumber: 292,
+                                    columnNumber: 13
                                 }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "jsx-d959c457b553ed3e" + " " + "nav-items-right",
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                            href: "#Media",
-                                            className: "jsx-d959c457b553ed3e",
-                                            children: "Media"
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/Navbar.tsx",
-                                            lineNumber: 326,
-                                            columnNumber: 17
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                            href: "#ESG",
-                                            className: "jsx-d959c457b553ed3e",
-                                            children: "ESG"
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/Navbar.tsx",
-                                            lineNumber: 327,
-                                            columnNumber: 17
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                            href: "/careers",
-                                            className: "jsx-d959c457b553ed3e",
-                                            children: "Careers"
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/Navbar.tsx",
-                                            lineNumber: 329,
-                                            columnNumber: 17
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                            href: "/contact",
-                                            className: "jsx-d959c457b553ed3e",
-                                            children: "Contact Us"
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/Navbar.tsx",
-                                            lineNumber: 330,
-                                            columnNumber: 17
-                                        }, this)
-                                    ]
-                                }, void 0, true, {
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                    className: "jsx-2f270be11b87509d" + " " + "nav__item",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                        href: "/careers",
+                                        className: "jsx-2f270be11b87509d" + " " + "nav__link",
+                                        children: "Careers"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/Navbar.tsx",
+                                        lineNumber: 296,
+                                        columnNumber: 15
+                                    }, this)
+                                }, void 0, false, {
                                     fileName: "[project]/src/components/Navbar.tsx",
-                                    lineNumber: 325,
-                                    columnNumber: 15
+                                    lineNumber: 295,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                    className: "jsx-2f270be11b87509d" + " " + "nav__item",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                        href: "/contact",
+                                        className: "jsx-2f270be11b87509d" + " " + "nav__link onlymobile",
+                                        children: "Contact Us"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/Navbar.tsx",
+                                        lineNumber: 299,
+                                        columnNumber: 15
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/Navbar.tsx",
+                                    lineNumber: 298,
+                                    columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/Navbar.tsx",
-                            lineNumber: 288,
-                            columnNumber: 13
+                            lineNumber: 276,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                            "aria-label": "Toggle menu",
+                            onClick: toggleMenu,
+                            className: "jsx-2f270be11b87509d" + " " + `nav__toggle ${isMenuOpen ? 'active' : ''}`,
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    className: "jsx-2f270be11b87509d"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/Navbar.tsx",
+                                    lineNumber: 308,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    className: "jsx-2f270be11b87509d"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/Navbar.tsx",
+                                    lineNumber: 309,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    className: "jsx-2f270be11b87509d"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/Navbar.tsx",
+                                    lineNumber: 310,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/src/components/Navbar.tsx",
+                            lineNumber: 303,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                            className: "jsx-2f270be11b87509d" + " " + "nav__cta",
+                            children: [
+                                "Contact us",
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                                    width: "15",
+                                    height: "12",
+                                    viewBox: "0 0 15 12",
+                                    fill: "none",
+                                    xmlns: "http://www.w3.org/2000/svg",
+                                    className: "jsx-2f270be11b87509d",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                                        d: "M14.2287 2.62989L5.86852 0.389786C5.70362 0.3456 5.53163 0.334326 5.36237 0.35661C5.19311 0.378893 5.02989 0.434296 4.88205 0.519656C4.7342 0.605016 4.60461 0.718661 4.50069 0.854102C4.39676 0.989543 4.32053 1.14413 4.27634 1.30903C4.23215 1.47393 4.22088 1.64592 4.24316 1.81518C4.26545 1.98444 4.32085 2.14766 4.40621 2.2955C4.49157 2.44335 4.60521 2.57294 4.74066 2.67686C4.8761 2.78079 5.03068 2.85702 5.19558 2.90121L9.26821 3.99247L0.726294 8.92415C0.427657 9.09656 0.209744 9.38055 0.120493 9.71364C0.0312436 10.0467 0.077968 10.4016 0.250386 10.7003C0.422804 10.9989 0.706792 11.2168 1.03988 11.3061C1.37296 11.3953 1.72786 11.3486 2.0265 11.1762L10.5684 6.24449L9.47716 10.3171C9.43247 10.482 9.42082 10.6541 9.44287 10.8236C9.46493 10.993 9.52027 11.1564 9.6057 11.3044C9.69113 11.4523 9.80496 11.5819 9.94066 11.6858C10.0764 11.7896 10.2312 11.8655 10.3964 11.9093C10.7294 11.9985 11.0843 11.9517 11.3828 11.7794C11.6814 11.607 11.8993 11.3231 11.9886 10.9901L14.2287 2.62989Z",
+                                        fill: "white",
+                                        className: "jsx-2f270be11b87509d"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/Navbar.tsx",
+                                        lineNumber: 316,
+                                        columnNumber: 15
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/Navbar.tsx",
+                                    lineNumber: 315,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/src/components/Navbar.tsx",
+                            lineNumber: 313,
+                            columnNumber: 11
                         }, this)
-                    }, void 0, false, {
-                        fileName: "[project]/src/components/Navbar.tsx",
-                        lineNumber: 283,
-                        columnNumber: 11
-                    }, this)
-                }, void 0, false, {
+                    ]
+                }, void 0, true, {
                     fileName: "[project]/src/components/Navbar.tsx",
-                    lineNumber: 282,
+                    lineNumber: 263,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/Navbar.tsx",
-                lineNumber: 281,
+                lineNumber: 262,
                 columnNumber: 7
             }, this)
         ]
-    }, void 0, true, {
-        fileName: "[project]/src/components/Navbar.tsx",
-        lineNumber: 35,
-        columnNumber: 5
-    }, this);
+    }, void 0, true);
 };
-_s(Navbar, "k4Z9FcxJ3z/1/PZyYKsZh4hQX7M=");
+_s(Navbar, "vK10R+uCyHfZ4DZVnxbYkMWJB8g=");
 _c = Navbar;
 const __TURBOPACK__default__export__ = Navbar;
 var _c;
@@ -795,7 +781,7 @@ const Careers = ()=>{
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "relative w-full h-[40vh] bg-[#0A5C35]",
+                className: "relative w-full h-[40vh] bg-[#062516]",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "absolute inset-0 z-0",
@@ -841,7 +827,7 @@ const Careers = ()=>{
                             className: "space-y-8",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                    className: "text-3xl font-bold text-[#0A5C35]",
+                                    className: "text-3xl font-bold text-[#062516]",
                                     children: "Career at JIVO Energy"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/careers/page.tsx",
@@ -857,10 +843,10 @@ const Careers = ()=>{
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "bg-[#0A5C35]/10 p-6 rounded-lg",
+                                    className: "bg-[#062516]/10 p-6 rounded-lg",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                            className: "text-xl font-semibold text-[#0A5C35] mb-4",
+                                            className: "text-xl font-semibold text-[#062516] mb-4",
                                             children: "Why Join Us?"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/careers/page.tsx",
@@ -964,7 +950,7 @@ const Careers = ()=>{
                             className: "bg-white rounded-lg shadow-xl p-8",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                    className: "text-2xl font-bold text-[#0A5C35] mb-6",
+                                    className: "text-2xl font-bold text-[#062516] mb-6",
                                     children: "BE A PART OF OUR GROWTH STORY"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/careers/page.tsx",
@@ -989,7 +975,7 @@ const Careers = ()=>{
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                                     type: "text",
                                                     id: "fullName",
-                                                    className: "w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#0A5C35] focus:border-[#0A5C35]",
+                                                    className: "w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#062516] focus:border-[#062516]",
                                                     required: true,
                                                     onChange: (e)=>setFormData({
                                                             ...formData,
@@ -1020,7 +1006,7 @@ const Careers = ()=>{
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                                     type: "email",
                                                     id: "email",
-                                                    className: "w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#0A5C35] focus:border-[#0A5C35]",
+                                                    className: "w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#062516] focus:border-[#062516]",
                                                     required: true,
                                                     onChange: (e)=>setFormData({
                                                             ...formData,
@@ -1051,7 +1037,7 @@ const Careers = ()=>{
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                                     type: "tel",
                                                     id: "phone",
-                                                    className: "w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#0A5C35] focus:border-[#0A5C35]",
+                                                    className: "w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#062516] focus:border-[#062516]",
                                                     required: true,
                                                     onChange: (e)=>setFormData({
                                                             ...formData,
@@ -1082,7 +1068,7 @@ const Careers = ()=>{
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                                     type: "text",
                                                     id: "position",
-                                                    className: "w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#0A5C35] focus:border-[#0A5C35]",
+                                                    className: "w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#062516] focus:border-[#062516]",
                                                     required: true,
                                                     onChange: (e)=>setFormData({
                                                             ...formData,
@@ -1113,7 +1099,7 @@ const Careers = ()=>{
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
                                                     id: "description",
                                                     rows: 4,
-                                                    className: "w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#0A5C35] focus:border-[#0A5C35]",
+                                                    className: "w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#062516] focus:border-[#062516]",
                                                     required: true,
                                                     onChange: (e)=>setFormData({
                                                             ...formData,
@@ -1160,7 +1146,7 @@ const Careers = ()=>{
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                                             type: "button",
                                                             onClick: handleFileButtonClick,
-                                                            className: "px-4 py-2 bg-[#0A5C35] text-white rounded-md hover:bg-[#084A2C] transition-colors duration-300",
+                                                            className: "px-4 py-2 bg-[#062516] text-white rounded-md hover:bg-[#051e12] transition-colors duration-300",
                                                             children: "Choose File"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/careers/page.tsx",
@@ -1197,7 +1183,7 @@ const Careers = ()=>{
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                             type: "submit",
-                                            className: "w-full bg-[#0A5C35] text-white py-3 px-6 rounded-md hover:bg-[#084A2C] transition-colors duration-300",
+                                            className: "w-full bg-[#062516] text-white py-3 px-6 rounded-md hover:bg-[#051e12] transition-colors duration-300",
                                             children: "Submit Application"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/careers/page.tsx",

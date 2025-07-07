@@ -20,7 +20,7 @@ const About = () => {
 
           {/* Text Section */}
           <div className="space-y-6">
-            <h2 className="text-3xl font-bold text-[#0A5C35]">About Jivo Energy</h2>
+            <h2 className="text-3xl font-bold text-[#062516]">About Jivo Energy</h2>
             <p className="text-lg text-gray-700">
               We are a leading energy solutions provider committed to transforming the way the world consumes energy. 
               Our innovative approach combines cutting-edge technology with sustainable practices to deliver reliable 
@@ -30,7 +30,7 @@ const About = () => {
               With a global presence and a team of experts, we work tirelessly to create a more sustainable future 
               through renewable energy initiatives and smart energy management systems.
             </p>
-            <button className="px-6 py-3 bg-[#0A5C35] text-white rounded-lg hover:bg-[#084A2C] transition-colors">
+            <button className="px-6 py-3 bg-[#062516] text-white rounded-lg hover:bg-[#051e12] transition-colors">
               Learn More
             </button>
           </div>

@@ -7,8 +7,13 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        'brand-green': '#062516',
+        'brand-green-dark': '#051e12',
+      },
       fontFamily: {
-        poppins: ['Poppins', 'sans-serif'],
+        sans: ['Inter', 'sans-serif'],
+        inter: ['Inter', 'sans-serif'],
       },
       fontSize: {
         'nav': ['40px', {

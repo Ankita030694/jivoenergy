@@ -55,7 +55,7 @@ const Projects = () => {
   };
 
   return (
-    <section className="w-full py-16 bg-[#0A5C35] relative">
+    <section className="w-full py-16 bg-[#062516] relative">
       <div 
         className="absolute inset-0 z-0"
         style={{
@@ -79,6 +79,7 @@ const Projects = () => {
           muted
           playsInline
           className="absolute inset-0 w-full h-full object-cover opacity-90"
+          crossOrigin="anonymous"
         >
           <source src="/power.mp4" type="video/mp4" />
         </video>

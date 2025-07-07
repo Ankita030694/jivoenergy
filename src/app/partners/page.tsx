@@ -80,7 +80,7 @@ const Partners = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <div className="relative w-full h-[65vh] bg-[#0A5C35] overflow-hidden">
+      <div className="relative w-full h-[65vh] bg-[#062516] overflow-hidden">
         <video
           autoPlay
           loop
@@ -100,7 +100,7 @@ const Partners = () => {
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 py-16">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-[#0A5C35] mb-4">
+          <h2 className="text-3xl font-bold text-[#062516] mb-4">
             Strategic Partnerships for a Sustainable Future
           </h2>
           <p className="text-gray-600 max-w-3xl mx-auto">
@@ -126,19 +126,19 @@ const Partners = () => {
                       onError={() => handleImageError(partner.name)}
                     />
                   ) : (
-                    <div className="text-[#0A5C35] font-semibold text-center p-2">
+                    <div className="text-[#062516] font-semibold text-center p-2">
                       {partner.name.split(' ')[0]}
                     </div>
                   )}
                 </div>
-                <h3 className="text-xl font-bold text-[#0A5C35]">{partner.name}</h3>
+                <h3 className="text-xl font-bold text-[#062516]">{partner.name}</h3>
               </div>
               <p className="text-gray-600 mb-4">{partner.description}</p>
               <a 
                 href={`https://${partner.website}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#0A5C35] hover:text-[#084A2C] font-medium inline-flex items-center"
+                className="text-[#062516] hover:text-[#051e12] font-medium inline-flex items-center"
               >
                 Visit Website
                 <svg 
@@ -161,7 +161,7 @@ const Partners = () => {
 
         {/* Call to Action */}
         <div className="mt-16 text-center">
-          <h3 className="text-2xl font-bold text-[#0A5C35] mb-4">
+          <h3 className="text-2xl font-bold text-[#062516] mb-4">
             Interested in Partnering with Us?
           </h3>
           <p className="text-gray-600 mb-8">
@@ -169,7 +169,7 @@ const Partners = () => {
           </p>
           <a
             href="/contact"
-            className="inline-block px-8 py-4 bg-[#0A5C35] text-white rounded-lg font-medium hover:bg-[#084A2C] transition-colors duration-300"
+            className="inline-block px-8 py-4 bg-[#062516] text-white rounded-lg font-medium hover:bg-[#051e12] transition-colors duration-300"
           >
             Get in Touch
           </a>

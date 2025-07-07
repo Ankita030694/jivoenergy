@@ -144,7 +144,7 @@ export default function GlobeComponent({
         htmlElement={(d: object) => {
           const label = d as Label;
           const el = document.createElement('div');
-          el.innerHTML = `<img src="${label.image || '/logo.png'}" alt="${''}" style="width: 40px; height: 30px; border: 2px solid #0A5C35; object-fit: cover;" />`;
+          el.innerHTML = `<img src="${label.image || '/logo.png'}" alt="${''}" style="width: 40px; height: 30px; border: 2px solid #062516; object-fit: cover;" />`;
           el.style.cursor = 'pointer';
           el.addEventListener('mouseenter', () => handleLabelHover(label, null));
           el.addEventListener('mouseleave', () => handleLabelHover(null, label));
@@ -159,7 +159,7 @@ export default function GlobeComponent({
             left: '50%',
             transform: 'translate(-50%, -50%)',
             backgroundColor: 'rgba(255, 255, 255, 0.95)',
-            color: '#0A5C35',
+            color: '#062516',
             padding: '20px',
             borderRadius: '12px',
             maxWidth: '320px',
@@ -168,7 +168,7 @@ export default function GlobeComponent({
             boxShadow: '0 8px 32px rgba(10, 92, 53, 0.15)',
             border: '1px solid rgba(10, 92, 53, 0.1)',
             animation: 'fadeIn 0.3s ease-out',
-            fontFamily: 'system-ui, -apple-system, sans-serif',
+            fontFamily: 'inherit',
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '15px' }}>
@@ -179,7 +179,7 @@ export default function GlobeComponent({
                 width: '60px',
                 height: '45px',
                 marginRight: '12px',
-                border: '2px solid #0A5C35',
+                border: '2px solid #062516',
                 objectFit: 'cover'
               }}
             />
@@ -187,7 +187,7 @@ export default function GlobeComponent({
               margin: '0',
               fontSize: '1.5rem',
               fontWeight: '600',
-              color: '#0A5C35',
+              color: '#062516',
             }}>
               {/* {hoveredCountry} */}
             </h3>
@@ -205,8 +205,8 @@ export default function GlobeComponent({
                 backgroundColor: 'rgba(10, 92, 53, 0.05)',
                 borderRadius: '8px',
               }}>
-                <span style={{ color: '#0A5C35' }}>Renewable Energy</span>
-                <span style={{ fontWeight: '500', color: '#0A5C35' }}>{hoveredCountry.energyData.renewablePercentage}%</span>
+                <span style={{ color: '#062516' }}>Renewable Energy</span>
+                <span style={{ fontWeight: '500', color: '#062516' }}>{hoveredCountry.energyData.renewablePercentage}%</span>
               </div>
               <div style={{
                 display: 'flex',
@@ -216,8 +216,8 @@ export default function GlobeComponent({
                 backgroundColor: 'rgba(10, 92, 53, 0.05)',
                 borderRadius: '8px',
               }}>
-                <span style={{ color: '#0A5C35' }}>Total Production</span>
-                <span style={{ fontWeight: '500', color: '#0A5C35' }}>{hoveredCountry.energyData.totalEnergyProduction}</span>
+                <span style={{ color: '#062516' }}>Total Production</span>
+                <span style={{ fontWeight: '500', color: '#062516' }}>{hoveredCountry.energyData.totalEnergyProduction}</span>
               </div>
               <div style={{
                 display: 'flex',
@@ -227,8 +227,8 @@ export default function GlobeComponent({
                 backgroundColor: 'rgba(10, 92, 53, 0.05)',
                 borderRadius: '8px',
               }}>
-                <span style={{ color: '#0A5C35' }}>Main Source</span>
-                <span style={{ fontWeight: '500', color: '#0A5C35' }}>{hoveredCountry.energyData.mainEnergySource}</span>
+                <span style={{ color: '#062516' }}>Main Source</span>
+                <span style={{ fontWeight: '500', color: '#062516' }}>{hoveredCountry.energyData.mainEnergySource}</span>
               </div>
               <div style={{
                 display: 'flex',
@@ -238,8 +238,8 @@ export default function GlobeComponent({
                 backgroundColor: 'rgba(10, 92, 53, 0.05)',
                 borderRadius: '8px',
               }}>
-                <span style={{ color: '#0A5C35' }}>Consumption</span>
-                <span style={{ fontWeight: '500', color: '#0A5C35' }}>{hoveredCountry.energyData.energyConsumption}</span>
+                <span style={{ color: '#062516' }}>Consumption</span>
+                <span style={{ fontWeight: '500', color: '#062516' }}>{hoveredCountry.energyData.energyConsumption}</span>
               </div>
             </div>
           )}

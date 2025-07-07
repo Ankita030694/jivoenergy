@@ -59,7 +59,7 @@ const ContactForm = () => {
     <div className="w-full py-16 px-4 md:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-[#0A5C35] mb-4">Contact Us</h2>
+          <h2 className="text-4xl font-bold text-[#062516] mb-4">Contact Us</h2>
           <p className="text-lg text-gray-700">
             Get in touch with our team to learn more about our sustainable energy solutions
           </p>
@@ -81,7 +81,7 @@ const ContactForm = () => {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#0A5C35] focus:border-[#0A5C35] outline-none transition-colors text-black"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#062516] focus:border-[#062516] outline-none transition-colors text-black"
                     placeholder="John Doe"
                   />
                 </div>
@@ -97,7 +97,7 @@ const ContactForm = () => {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#0A5C35] focus:border-[#0A5C35] outline-none transition-colors text-black"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#062516] focus:border-[#062516] outline-none transition-colors text-black"
                     placeholder="john@example.com"
                   />
                 </div>
@@ -112,7 +112,7 @@ const ContactForm = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#0A5C35] focus:border-[#0A5C35] outline-none transition-colors text-black"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#062516] focus:border-[#062516] outline-none transition-colors text-black"
                     placeholder="+1 (555) 000-0000"
                   />
                 </div>
@@ -127,7 +127,7 @@ const ContactForm = () => {
                     name="company"
                     value={formData.company}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#0A5C35] focus:border-[#0A5C35] outline-none transition-colors text-black"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#062516] focus:border-[#062516] outline-none transition-colors text-black"
                     placeholder="Your Company"
                   />
                 </div>
@@ -143,7 +143,7 @@ const ContactForm = () => {
                   required
                   value={formData.interest}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#0A5C35] focus:border-[#0A5C35] outline-none transition-colors text-black"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#062516] focus:border-[#062516] outline-none transition-colors text-black"
                 >
                   <option value="">Select an option</option>
                   <option value="solar">Solar Energy</option>
@@ -165,7 +165,7 @@ const ContactForm = () => {
                   value={formData.message}
                   onChange={handleChange}
                   rows={4}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#0A5C35] focus:border-[#0A5C35] outline-none transition-colors resize-none text-black"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#062516] focus:border-[#062516] outline-none transition-colors resize-none text-black"
                   placeholder="Tell us about your project or inquiry..."
                 />
               </div>
@@ -186,10 +186,10 @@ const ContactForm = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className={`px-8 py-4 bg-[#0A5C35] text-white rounded-lg font-medium transition-all duration-300 ${
+                  className={`px-8 py-4 bg-[#062516] text-white rounded-lg font-medium transition-all duration-300 ${
                     isSubmitting
-                      ? 'opacity-75 cursor-not-allowed'
-                      : 'hover:bg-[#084A2C] hover:shadow-lg'
+                      ? 'opacity-50 cursor-not-allowed'
+                      : 'hover:bg-[#051e12] hover:shadow-lg'
                   }`}
                 >
                   {isSubmitting ? 'Sending...' : 'Send Message'}
@@ -200,7 +200,7 @@ const ContactForm = () => {
 
           {/* Right Section - Visual Design */}
           <div className="relative h-full min-h-[600px] rounded-2xl overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-[#0A5C35]/90 to-[#084A2C]/90 z-10" />
+            <div className="absolute inset-0 bg-gradient-to-br from-[#062516]/90 to-[#051e12]/90 z-10" />
             <div 
               className="absolute inset-0 bg-cover bg-center"
               style={{

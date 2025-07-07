@@ -144,7 +144,7 @@ export default function GlobeViz() {
               border-radius: 8px;
               border: 1px solid rgba(100, 255, 218, 0.3);
               box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-              font-family: system-ui, -apple-system, sans-serif;
+              font-family: inherit;
               max-width: 250px;
               pointer-events: none;
             ">

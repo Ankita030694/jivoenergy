@@ -60,7 +60,7 @@ const Capabilities = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <div className="relative w-full h-[65vh] bg-[#0A5C35] overflow-hidden">
+      <div className="relative w-full h-[65vh] bg-[#062516] overflow-hidden">
         <video
           autoPlay
           loop
@@ -90,10 +90,10 @@ const Capabilities = () => {
               {/* Number and Title Section */}
               <div className="lg:w-1/3">
                 <div className="sticky top-24">
-                  <div className="text-[#0A5C35] text-6xl font-bold mb-4">
+                  <div className="text-[#062516] text-6xl font-bold mb-4">
                     {capability.id}
                   </div>
-                  <h2 className="text-3xl font-bold text-[#0A5C35] mb-4">
+                  <h2 className="text-3xl font-bold text-[#062516] mb-4">
                     {capability.title}
                   </h2>
                   <p className="text-gray-600 text-lg">
@@ -108,7 +108,7 @@ const Capabilities = () => {
                   <ul className="space-y-4">
                     {capability.points.map((point, pointIndex) => (
                       <li key={pointIndex} className="flex items-start">
-                        <div className="flex-shrink-0 w-2 h-2 bg-[#0A5C35] rounded-full mt-2 mr-3"></div>
+                        <div className="flex-shrink-0 w-2 h-2 bg-[#062516] rounded-full mt-2 mr-3"></div>
                         <p className="text-gray-700">{point}</p>
                       </li>
                     ))}

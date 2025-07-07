@@ -60,14 +60,14 @@ export default function Impact() {
     <div className="relative py-12 bg-white">
       <div className="w-full max-w-[100vw] overflow-hidden">
         <div className="text-center mb-12 px-4">
-          <h2 className="text-4xl font-serif text-[#0a5c35] mb-4">Our Impact</h2>
-          <p className="text-sm tracking-widest uppercase text-[#0a5c35]">DRIVING SUSTAINABLE CHANGE</p>
+          <h2 className="text-4xl font-sans text-[#062516] mb-4">Our Impact</h2>
+          <p className="text-sm tracking-widest uppercase text-[#062516]">DRIVING SUSTAINABLE CHANGE</p>
         </div>
 
         <div className="relative w-full overflow-hidden">
           <button
             onClick={() => scroll("left")}
-            className="absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white p-3 rounded-full shadow-lg text-[#0a5c35] border border-[#0a5c35]/20 transition-all duration-200"
+            className="absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white p-3 rounded-full shadow-lg text-[#062516] border border-[#062516]/20 transition-all duration-200"
             aria-label="Scroll left"
           >
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -92,7 +92,7 @@ export default function Impact() {
           >
             <div className="relative flex gap-8 px-4 min-w-max">
               {/* Timeline line */}
-              <div className="absolute left-4 right-4 top-1/2 h-0.5 bg-[#0a5c35]/30 z-0" />
+              <div className="absolute left-4 right-4 top-1/2 h-0.5 bg-[#062516]/30 z-0" />
 
               {impactData.map((item, index) => (
                 <div
@@ -103,32 +103,32 @@ export default function Impact() {
                     <>
                       {/* Content above timeline */}
                       <div className="flex flex-col items-center mb-8 w-full pb-8">
-                        <h3 className="text-xl font-medium mb-4 text-[#0a5c35] text-center">{item.title}</h3>
-                        <p className="text-[#0a5c35] text-center leading-relaxed text-sm">{item.description}</p>
+                        <h3 className="text-xl font-medium mb-4 text-[#062516] text-center">{item.title}</h3>
+                        <p className="text-[#062516] text-center leading-relaxed text-sm">{item.description}</p>
                       </div>
 
                       {/* Timeline dot */}
-                      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-[#0a5c35] rounded-full z-10 border-4 border-white shadow-lg" />
+                      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-[#062516] rounded-full z-10 border-4 border-white shadow-lg" />
 
                       {/* Year below timeline */}
-                      <div className="text-3xl font-serif text-[#0a5c35] mt-8 pt-8 text-center font-bold">
+                      <div className="text-3xl font-sans text-[#062516] mt-8 pt-8 text-center font-bold">
                         {item.year}
                       </div>
                     </>
                   ) : (
                     <>
                       {/* Year above timeline */}
-                      <div className="text-3xl font-serif text-[#0a5c35] mb-8 pb-8 text-center font-bold">
+                      <div className="text-3xl font-sans text-[#062516] mb-8 pb-8 text-center font-bold">
                         {item.year}
                       </div>
 
                       {/* Timeline dot */}
-                      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-[#0a5c35] rounded-full z-10 border-4 border-white shadow-lg" />
+                      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-[#062516] rounded-full z-10 border-4 border-white shadow-lg" />
 
                       {/* Content below timeline */}
                       <div className="flex flex-col items-center mt-8 w-full pt-8">
-                        <h3 className="text-xl font-medium mb-4 text-[#0a5c35] text-center">{item.title}</h3>
-                        <p className="text-[#0a5c35] text-center leading-relaxed text-sm">{item.description}</p>
+                        <h3 className="text-xl font-medium mb-4 text-[#062516] text-center">{item.title}</h3>
+                        <p className="text-[#062516] text-center leading-relaxed text-sm">{item.description}</p>
                       </div>
                     </>
                   )}
@@ -139,7 +139,7 @@ export default function Impact() {
 
           <button
             onClick={() => scroll("right")}
-            className="absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white p-3 rounded-full shadow-lg text-[#0a5c35] border border-[#0a5c35]/20 transition-all duration-200"
+            className="absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white p-3 rounded-full shadow-lg text-[#062516] border border-[#062516]/20 transition-all duration-200"
             aria-label="Scroll right"
           >
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
