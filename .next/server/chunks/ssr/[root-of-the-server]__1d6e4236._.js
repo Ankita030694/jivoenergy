@@ -2549,126 +2549,246 @@ const mediaCards = [
         id: 1,
         title: "Renewable Energy News",
         description: "Stay updated with the latest developments in renewable energy technology and sustainable practices.",
-        image: "/media-news.jpg"
+        image: "/media-news.jpg",
+        category: "News"
     },
     {
         id: 2,
         title: "Success Stories",
         description: "Discover how our innovative solutions have transformed businesses and communities worldwide.",
-        image: "/media-success.jpg"
+        image: "/media-success.jpg",
+        category: "Case Studies"
     },
     {
         id: 3,
         title: "Industry Insights",
         description: "Expert analysis and deep dives into the future of sustainable energy and green technology.",
-        image: "/media-insights.jpg"
+        image: "/media-insights.jpg",
+        category: "Research"
     }
 ];
 const Media = ()=>{
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-        className: "w-full py-16 bg-[#062516] relative",
+        className: "w-full py-20 bg-[#062516] relative overflow-hidden",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "absolute inset-0 z-0",
-                style: {
-                    backgroundImage: 'url(/jivobn1.svg)',
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    backgroundRepeat: 'no-repeat',
-                    opacity: 0.97
-                }
-            }, void 0, false, {
-                fileName: "[project]/src/components/Media.tsx",
-                lineNumber: 36,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "container mx-auto px-4 relative z-10",
+                className: "absolute inset-0 opacity-5",
                 children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                        className: "text-4xl font-bold text-center mb-12 text-white",
-                        children: "Media & Resources"
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "absolute top-0 left-0 w-96 h-96 bg-green-400 rounded-full blur-3xl"
                     }, void 0, false, {
                         fileName: "[project]/src/components/Media.tsx",
-                        lineNumber: 47,
+                        lineNumber: 42,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "grid grid-cols-1 md:grid-cols-3 gap-8",
-                        children: mediaCards.map((card)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "bg-white/10 backdrop-blur-sm rounded-lg overflow-hidden shadow-xl hover:transform hover:scale-105 transition-all duration-300",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "relative h-48 w-full",
-                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                                            src: card.image,
-                                            alt: card.title,
-                                            fill: true,
-                                            className: "object-cover"
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/Media.tsx",
-                                            lineNumber: 56,
-                                            columnNumber: 17
-                                        }, this)
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/components/Media.tsx",
-                                        lineNumber: 55,
-                                        columnNumber: 15
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "p-6",
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                className: "text-xl font-semibold text-white mb-3",
-                                                children: card.title
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/Media.tsx",
-                                                lineNumber: 64,
-                                                columnNumber: 17
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "text-gray-100",
-                                                children: card.description
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/Media.tsx",
-                                                lineNumber: 65,
-                                                columnNumber: 17
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                className: "mt-4 px-4 py-2 bg-white/20 text-white rounded-md hover:bg-white/30 transition-colors duration-300",
-                                                children: "Learn More"
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/Media.tsx",
-                                                lineNumber: 66,
-                                                columnNumber: 17
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/src/components/Media.tsx",
-                                        lineNumber: 63,
-                                        columnNumber: 15
-                                    }, this)
-                                ]
-                            }, card.id, true, {
-                                fileName: "[project]/src/components/Media.tsx",
-                                lineNumber: 51,
-                                columnNumber: 13
-                            }, this))
+                        className: "absolute bottom-0 right-0 w-96 h-96 bg-green-300 rounded-full blur-3xl"
                     }, void 0, false, {
                         fileName: "[project]/src/components/Media.tsx",
-                        lineNumber: 49,
+                        lineNumber: 43,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-green-200 rounded-full blur-3xl"
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/Media.tsx",
+                        lineNumber: 44,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/Media.tsx",
-                lineNumber: 46,
+                lineNumber: 41,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "container mx-auto px-4 relative z-10",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "text-center mb-16",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "inline-block",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    className: "inline-block px-6 py-3 bg-white/10 backdrop-blur-sm text-white text-sm font-medium rounded-full border border-white/20 mb-6",
+                                    children: "Media & Resources"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/Media.tsx",
+                                    lineNumber: 51,
+                                    columnNumber: 13
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/Media.tsx",
+                                lineNumber: 50,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                className: "text-5xl font-bold text-white mb-6 leading-tight",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: "block",
+                                        children: "Stay Informed With Our"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/Media.tsx",
+                                        lineNumber: 56,
+                                        columnNumber: 13
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: "block text-transparent bg-clip-text bg-gradient-to-r from-green-300 to-green-100",
+                                        children: "Latest Updates & Insights"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/Media.tsx",
+                                        lineNumber: 57,
+                                        columnNumber: 13
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/src/components/Media.tsx",
+                                lineNumber: 55,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                className: "text-green-100 max-w-3xl mx-auto text-lg leading-relaxed opacity-90",
+                                children: "Explore our comprehensive collection of industry news, success stories, and expert insights to stay ahead in the renewable energy sector."
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/Media.tsx",
+                                lineNumber: 61,
+                                columnNumber: 11
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/src/components/Media.tsx",
+                        lineNumber: 49,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto",
+                        children: mediaCards.map((card)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "group bg-white/95 backdrop-blur-sm rounded-2xl overflow-hidden shadow-2xl border border-white/20 hover:bg-white hover:shadow-green-500/20 hover:-translate-y-3 hover:scale-105 transition-all duration-500 relative",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "absolute top-4 left-4 z-10",
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            className: "px-4 py-2 bg-[#062516] text-white text-xs font-semibold rounded-full shadow-lg",
+                                            children: card.category
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/Media.tsx",
+                                            lineNumber: 76,
+                                            columnNumber: 17
+                                        }, this)
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/Media.tsx",
+                                        lineNumber: 75,
+                                        columnNumber: 15
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "relative h-56 w-full overflow-hidden",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "absolute inset-0 bg-gradient-to-t from-[#062516]/40 via-transparent to-transparent z-10"
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/components/Media.tsx",
+                                                lineNumber: 83,
+                                                columnNumber: 17
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                                src: card.image,
+                                                alt: card.title,
+                                                fill: true,
+                                                className: "object-cover group-hover:scale-110 transition-transform duration-700"
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/components/Media.tsx",
+                                                lineNumber: 84,
+                                                columnNumber: 17
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/src/components/Media.tsx",
+                                        lineNumber: 82,
+                                        columnNumber: 15
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "p-8",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                                className: "text-2xl font-bold text-[#062516] mb-4 group-hover:text-green-600 transition-colors duration-300",
+                                                children: card.title
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/components/Media.tsx",
+                                                lineNumber: 94,
+                                                columnNumber: 17
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                className: "text-gray-700 mb-6 leading-relaxed",
+                                                children: card.description
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/components/Media.tsx",
+                                                lineNumber: 97,
+                                                columnNumber: 17
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                className: "inline-flex items-center px-6 py-3 bg-[#062516] text-white font-semibold rounded-xl hover:bg-green-700 hover:shadow-lg hover:shadow-green-500/25 transform hover:scale-105 transition-all duration-300 group/btn",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        children: "Learn More"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/components/Media.tsx",
+                                                        lineNumber: 103,
+                                                        columnNumber: 19
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                                                        className: "ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300",
+                                                        fill: "none",
+                                                        stroke: "currentColor",
+                                                        viewBox: "0 0 24 24",
+                                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                                                            strokeLinecap: "round",
+                                                            strokeLinejoin: "round",
+                                                            strokeWidth: 2,
+                                                            d: "M17 8l4 4m0 0l-4 4m4-4H3"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/src/components/Media.tsx",
+                                                            lineNumber: 110,
+                                                            columnNumber: 21
+                                                        }, this)
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/components/Media.tsx",
+                                                        lineNumber: 104,
+                                                        columnNumber: 19
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/src/components/Media.tsx",
+                                                lineNumber: 102,
+                                                columnNumber: 17
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/src/components/Media.tsx",
+                                        lineNumber: 93,
+                                        columnNumber: 15
+                                    }, this)
+                                ]
+                            }, card.id, true, {
+                                fileName: "[project]/src/components/Media.tsx",
+                                lineNumber: 70,
+                                columnNumber: 13
+                            }, this))
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/Media.tsx",
+                        lineNumber: 68,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/src/components/Media.tsx",
+                lineNumber: 47,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/Media.tsx",
-        lineNumber: 35,
+        lineNumber: 39,
         columnNumber: 5
     }, this);
 };
@@ -2846,43 +2966,65 @@ function MapViz() {
             if (!chartRef.current) return;
             // Create root element
             const root = window.am5.Root.new(chartRef.current);
-            // Set themes with enhanced animations
+            // Set themes with subtle animations
             root.setThemes([
                 window.am5themes_Animated.new(root)
             ]);
-            // Create gradient for map background
-            const backgroundGradient = window.am5.RadialGradient.new(root, {
-                stops: [
-                    {
-                        color: window.am5.color("#062516")
-                    },
-                    {
-                        color: window.am5.color("#062516")
-                    },
-                    {
-                        color: window.am5.color("#062516")
-                    }
-                ]
-            });
-            // Create the map chart with enhanced styling
+            // Create the map chart with clean, professional styling
             const chart = root.container.children.push(window.am5map.MapChart.new(root, {
                 panX: "translateX",
                 panY: "translateY",
                 projection: window.am5map.geoMercator(),
-                maxPanOut: 0.2,
-                maxZoomLevel: 4,
-                minZoomLevel: 1.3,
-                centerLongitude: 350,
-                centerLatitude: -20,
-                zoomLevel: 1.7,
+                maxPanOut: 0.15,
+                maxZoomLevel: 5,
+                minZoomLevel: 1.2,
+                centerLongitude: 30,
+                centerLatitude: 10,
+                zoomLevel: 2.4,
                 wheelX: "none",
                 wheelY: "none",
-                pinchZoom: false,
+                pinchZoom: true,
+                zoomStep: 1.3,
+                wheelSensitivity: 0.6,
                 background: window.am5.Rectangle.new(root, {
-                    fill: window.am5.color("#062516"),
+                    fill: window.am5.color("#d2e4d6"),
                     fillOpacity: 1
                 })
             }));
+            // Set home position and zoom level
+            chart.set("homeZoomLevel", 2.4) // Reduced zoom to fit labels better
+            ;
+            chart.set("homeGeoPoint", {
+                longitude: 30,
+                latitude: 10
+            });
+            // Subtle CTRL+scroll zoom functionality
+            chart.events.on("wheel", function(ev) {
+                if (ev.originalEvent.ctrlKey) {
+                    ev.originalEvent.preventDefault();
+                    chart.set("wheelY", "zoom");
+                } else {
+                    chart.set("wheelY", "none");
+                }
+            });
+            // Clean keyboard navigation
+            chart.events.on("keydown", function(ev) {
+                switch(ev.originalEvent.key){
+                    case "Home":
+                        ev.originalEvent.preventDefault();
+                        chart.goHome();
+                        break;
+                    case "=":
+                    case "+":
+                        ev.originalEvent.preventDefault();
+                        chart.zoomIn();
+                        break;
+                    case "-":
+                        ev.originalEvent.preventDefault();
+                        chart.zoomOut();
+                        break;
+                }
+            });
             // Target regions - specific countries only
             const targetRegions = [
                 // Africa
@@ -2905,84 +3047,45 @@ function MapViz() {
                 "AE",
                 "IN"
             ];
-            // Enhanced primary color with variations for visual depth
-            const primaryColor = "#062516";
-            const primaryColorLight = "#0a3a1f";
-            const primaryColorDark = "#041a0f";
-            const primaryColorGlow = "#0d5a2a";
-            // Different shades of green for marked countries
+            // Professional color palette - subtle and clean
+            const primaryColor = "#2563eb";
+            const primaryColorLight = "#3b82f6";
+            const primaryColorDark = "#1d4ed8";
+            const accentColor = "#059669";
+            // Subtle color variations for target countries
             const countryColors = {
-                ET: "#0d5a2a",
-                KE: "#0a4a22",
-                TZ: "#083d1c",
-                UG: "#063218",
-                BF: "#052814",
-                CV: "#0b6b32",
-                LR: "#0a7a3a",
-                ST: "#098942",
-                SN: "#0a8a4a",
-                SL: "#0b9a52",
-                MW: "#0caa5a",
-                ZA: "#0dba62",
-                ZW: "#0eca6a",
-                LY: "#0fda72",
-                TN: "#10ea7a",
-                AE: "#11fa82",
-                IN: "#12ff8a"
+                ET: "#2563eb",
+                KE: "#3b82f6",
+                TZ: "#1d4ed8",
+                UG: "#1e40af",
+                BF: "#1e3a8a",
+                CV: "#059669",
+                LR: "#047857",
+                ST: "#065f46",
+                SN: "#064e3b",
+                SL: "#022c22",
+                MW: "#2563eb",
+                ZA: "#3b82f6",
+                ZW: "#1d4ed8",
+                LY: "#1e40af",
+                TN: "#1e3a8a",
+                AE: "#059669",
+                IN: "#047857"
             };
-            // Create polygon series for all countries with enhanced styling
+            // Create polygon series for all countries with clean styling
             const polygonSeries = chart.series.push(window.am5map.MapPolygonSeries.new(root, {
                 geoJSON: window.am5geodata_worldLow,
                 exclude: [
                     "AQ"
                 ]
             }));
-            // Create point series for location icons with glow effect
+            // Create point series for location markers
             const pointSeries = chart.series.push(window.am5map.MapPointSeries.new(root, {}));
-            // Enhanced country name labels with modern styling
-            pointSeries.bullets.push(function(root, series, dataItem) {
-                const data = dataItem.dataContext;
-                return window.am5.Bullet.new(root, {
-                    locationX: 1,
-                    locationY: 0,
-                    sprite: window.am5.Label.new(root, {
-                        text: data.name,
-                        centerX: 0,
-                        centerY: window.am5.p50,
-                        fill: window.am5.color("#ffffff"),
-                        fontSize: "13px",
-                        fontWeight: "700",
-                        fontFamily: "Inter, system-ui, sans-serif",
-                        background: window.am5.RoundedRectangle.new(root, {
-                            fill: window.am5.LinearGradient.new(root, {
-                                stops: [
-                                    {
-                                        color: window.am5.color("#062516")
-                                    },
-                                    {
-                                        color: window.am5.color("#041a0f")
-                                    }
-                                ]
-                            }),
-                            fillOpacity: 0.95,
-                            cornerRadiusTL: 6,
-                            cornerRadiusTR: 6,
-                            cornerRadiusBL: 6,
-                            cornerRadiusBR: 6,
-                            stroke: window.am5.color("#0d5a2a"),
-                            strokeWidth: 1
-                        }),
-                        paddingTop: 6,
-                        paddingBottom: 6,
-                        paddingLeft: 12,
-                        paddingRight: 12,
-                        dx: 15
-                    })
-                });
-            });
+            // Clean country name labels
+            // Removed label bullets to avoid clutter; country names are now shown via tooltips.
             // Wait for polygon series to be ready
             polygonSeries.events.on("datavalidated", function() {
-                // Create enhanced location icons for target countries
+                // Create clean location markers for target countries
                 targetRegions.forEach((countryId)=>{
                     const dataItem = polygonSeries.getDataItemById(countryId);
                     if (dataItem) {
@@ -2990,7 +3093,6 @@ function MapViz() {
                         if (polygon) {
                             const centroid = polygon.visualCentroid();
                             const data = countryData[countryId];
-                            // Create point data with country information
                             const pointData = {
                                 geometry: {
                                     type: "Point",
@@ -3002,158 +3104,93 @@ function MapViz() {
                                 countryId: countryId,
                                 name: data?.name || countryId
                             };
-                            // Add the point to the series
                             pointSeries.data.push(pointData);
                         }
                     }
                 });
             });
-            // Enhanced point series with glowing markers
-            pointSeries.bullets.push(function() {
-                const container = window.am5.Container.new(root, {});
-                // Outer glow circle
-                const glowCircle = window.am5.Circle.new(root, {
-                    radius: 12,
-                    fill: window.am5.color("#0d5a2a"),
-                    fillOpacity: 0.3
+            // Add clean, spacious labels that only show at zoom level 3+
+            pointSeries.bullets.push(function(root, series, dataItem) {
+                const data = dataItem.dataContext;
+                // List of countries that should have white text
+                const whiteTextCountries = [
+                    "IN",
+                    "AE",
+                    "LY",
+                    "ET",
+                    "UG",
+                    "KE",
+                    "TZ",
+                    "MW",
+                    "ZW",
+                    "ZA",
+                    "BF",
+                    "SN",
+                    "LR",
+                    "SL"
+                ];
+                // Determine text color based on country
+                const textColor = whiteTextCountries.includes(data.countryId) ? "#ffffff" : "#000000";
+                const label = window.am5.Label.new(root, {
+                    text: data.name,
+                    centerX: window.am5.p50,
+                    centerY: window.am5.p50,
+                    fill: window.am5.color(textColor),
+                    fontSize: "9px",
+                    fontWeight: "600",
+                    fontFamily: "Poppins, system-ui, sans-serif",
+                    textAlign: "center",
+                    visible: true // Always visible like in the reference image
                 });
-                // Main marker
-                const marker = window.am5.Graphics.new(root, {
-                    svgPath: "M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z",
-                    fill: window.am5.LinearGradient.new(root, {
-                        stops: [
-                            {
-                                color: window.am5.color("#0d5a2a")
-                            },
-                            {
-                                color: window.am5.color("#062516")
-                            }
-                        ]
-                    }),
-                    stroke: window.am5.color("#ffffff"),
-                    strokeWidth: 2,
-                    centerX: 0,
-                    centerY: 0,
-                    tooltipText: "{name}",
-                    cursorOverStyle: "pointer",
-                    scale: 1.2
+                return window.am5.Bullet.new(root, {
+                    locationX: 0.5,
+                    locationY: 0.5,
+                    sprite: label
                 });
-                container.children.push(glowCircle);
-                container.children.push(marker);
-                const bullet = window.am5.Bullet.new(root, {
-                    sprite: container
-                });
-                // Enhanced hover animation
-                marker.states.create("hover", {
-                    scale: 1.4,
-                    fill: window.am5.color("#0d5a2a")
-                });
-                // Pulsing animation for markers
-                marker.animate({
-                    key: "scale",
-                    from: 1.2,
-                    to: 1.35,
-                    duration: 2000,
-                    loops: window.am5.Infinity,
-                    easing: window.am5.ease.yoyo(window.am5.ease.cubic)
-                });
-                // Add click event to the marker
-                marker.events.on("click", function(ev) {
-                    const dataItem = ev.target.dataItem;
-                    if (dataItem) {
-                        const countryId = dataItem.get("countryId");
-                        const coordinates = dataItem.get("geometry").coordinates;
-                        const point = chart.convert({
-                            longitude: coordinates[0],
-                            latitude: coordinates[1]
-                        });
-                        console.log('Marker clicked:', {
-                            countryId,
-                            coordinates,
-                            point,
-                            countryData: countryData[countryId]
-                        });
-                        setSelectedCountry(countryId);
-                        setPopupPosition({
-                            x: point.x,
-                            y: point.y
-                        });
-                    }
-                });
-                return bullet;
             });
-            // Enhanced polygon styling with modern colors and effects
+            // Remove circle markers - only show country names
+            // Clean polygon styling
             polygonSeries.mapPolygons.template.setAll({
                 interactive: true,
-                fill: window.am5.color("#ffffff"),
-                stroke: window.am5.color("#e5e7eb"),
-                strokeWidth: 0.5,
-                strokeOpacity: 0.8
+                fill: window.am5.color("#e8f1df"),
+                stroke: window.am5.color("#b7c6bc"),
+                strokeWidth: 1.5,
+                strokeOpacity: 1
             });
-            // Enhanced tooltip with modern glass-morphism design
+            // Professional tooltip design
             polygonSeries.mapPolygons.template.set("tooltipHTML", `
         <div style="
-          background: rgba(255, 255, 255, 0.95); 
-          backdrop-filter: blur(20px);
-          padding: 20px; 
-          border-radius: 12px; 
-          box-shadow: 
-            0 20px 40px rgba(0,0,0,0.15),
-            0 0 0 1px rgba(255,255,255,0.1),
-            inset 0 1px 0 rgba(255,255,255,0.2);
-          min-width: 280px;
-          max-width: 350px;
+          background: rgba(255, 255, 255, 0.98); 
+          backdrop-filter: blur(12px);
+          padding: 16px; 
+          border-radius: 8px; 
+          box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+          min-width: 240px;
+          max-width: 300px;
           font-family: 'Inter', system-ui, sans-serif;
-          border: 1px solid rgba(6, 37, 22, 0.1);
-          position: relative;
-          overflow: hidden;
+          border: 1px solid rgba(229, 231, 235, 0.8);
+          font-size: 14px;
         ">
-          <div style="
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #062516 0%, #0d5a2a 50%, #062516 100%);
-          "></div>
-          <div style="font-size: 18px; font-weight: 700; color: #1a202c; margin-bottom: 12px; display: flex; align-items: center;">
-            <div style="
-              width: 8px; 
-              height: 8px; 
-              background: #062516; 
-              border-radius: 50%; 
-              margin-right: 8px;
-              box-shadow: 0 0 8px #0d5a2a;
-            "></div>
+          <div style="font-size: 16px; font-weight: 600; color: #111827; margin-bottom: 8px;">
             {name}
           </div>
-          <div style="font-size: 14px; color: #4a5568; line-height: 1.6;">
-            <div style="margin-bottom: 8px; display: flex; justify-content: space-between;">
-              <span style="font-weight: 600;">Projects:</span> 
-              <span style="color: #062516; font-weight: 700;">{projects}</span>
+          <div style="color: #6b7280; line-height: 1.5;">
+            <div style="margin-bottom: 4px;">
+              <span style="font-weight: 500;">Projects:</span> 
+              <span style="color: #2563eb; font-weight: 600;">{projects}</span>
             </div>
-            <div style="margin-bottom: 8px; display: flex; justify-content: space-between;">
-              <span style="font-weight: 600;">Capacity:</span> 
-              <span style="color: #0369a1; font-weight: 700;">{capacity}</span>
+            <div style="margin-bottom: 4px;">
+              <span style="font-weight: 500;">Capacity:</span> 
+              <span style="color: #059669; font-weight: 600;">{capacity}</span>
             </div>
-            <div style="margin-bottom: 8px; display: flex; justify-content: space-between;">
-              <span style="font-weight: 600;">Status:</span> 
-              <span style="color: #ea580c; font-weight: 700;">{status}</span>
-            </div>
-            <div style="
-              margin-top: 12px; 
-              padding-top: 12px; 
-              border-top: 1px solid rgba(6, 37, 22, 0.1);
-              font-size: 12px; 
-              color: #6b7280;
-              text-align: center;
-            ">
-              ✨ Click for detailed information
+            <div style="margin-bottom: 4px;">
+              <span style="font-weight: 500;">Status:</span> 
+              <span style="color: #dc2626; font-weight: 600;">{status}</span>
             </div>
           </div>
         </div>
       `);
-            // Add click event to polygons with enhanced interaction
+            // Add click event to polygons
             polygonSeries.mapPolygons.template.events.on("click", function(ev) {
                 const dataItem = ev.target.dataItem;
                 if (dataItem) {
@@ -3165,12 +3202,7 @@ function MapViz() {
                             longitude: centroid.longitude,
                             latitude: centroid.latitude
                         });
-                        console.log('Polygon clicked:', {
-                            countryId: dataContext.id,
-                            centroid,
-                            point,
-                            countryData: countryData[dataContext.id]
-                        });
+                        polygonSeries.zoomToDataItem(dataItem, 1.2, true);
                         setSelectedCountry(dataContext.id);
                         setPopupPosition({
                             x: point.x,
@@ -3179,13 +3211,13 @@ function MapViz() {
                     }
                 }
             });
-            // Process data to add enhanced colors and country data
+            // Process data to add colors and country data
             polygonSeries.data.processor = window.am5.DataProcessor.new(root, {
                 reusable: true
             });
-            // Set up enhanced data with gradients and modern styling
+            // Set up clean data styling
             polygonSeries.events.on("datavalidated", function() {
-                console.log('Polygon series data validated');
+                chart.goHome();
                 polygonSeries.mapPolygons.each(function(polygon) {
                     const dataItem = polygon.dataItem;
                     const dataContext = dataItem?.dataContext;
@@ -3193,16 +3225,12 @@ function MapViz() {
                         const id = dataContext.id;
                         if (targetRegions.includes(id)) {
                             const data = countryData[id];
-                            const countryColor = countryColors[id] || primaryColor;
-                            console.log('Setting up enhanced polygon:', {
-                                id,
-                                name: data?.name,
-                                color: countryColor
-                            });
-                            // Use solid color for target countries
-                            polygon.set("fill", window.am5.color(countryColor));
-                            polygon.set("stroke", window.am5.color("#ffffff"));
-                            polygon.set("strokeWidth", 1.5);
+                            // Subtle, professional green for target countries
+                            polygon.set("fill", window.am5.color("#1e5c3a")) // muted green
+                            ;
+                            polygon.set("fillOpacity", 1);
+                            polygon.set("stroke", window.am5.color("#e5e7eb"));
+                            polygon.set("strokeWidth", 2);
                             polygon.set("strokeOpacity", 1);
                             // Add country data to the dataItem for tooltip
                             if (data) {
@@ -3212,16 +3240,16 @@ function MapViz() {
                                 dataItem.set("name", data.name);
                             }
                         } else {
-                            // Enhanced styling for non-target countries
+                            // Clean styling for non-target countries
                             polygon.set("tooltipHTML", `
                 <div style="
-                  background: rgba(45, 55, 72, 0.95); 
+                  background: rgba(55, 65, 81, 0.95); 
                   backdrop-filter: blur(12px);
-                  padding: 12px 16px; 
-                  border-radius: 8px; 
-                  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+                  padding: 12px; 
+                  border-radius: 6px; 
+                  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
                   font-family: 'Inter', system-ui, sans-serif;
-                  font-size: 14px;
+                  font-size: 13px;
                   color: #ffffff;
                   border: 1px solid rgba(255,255,255,0.1);
                 ">
@@ -3232,30 +3260,31 @@ function MapViz() {
                     }
                 });
             });
-            // Enhanced hover and active states with smooth transitions
+            // Clean hover and active states
             polygonSeries.mapPolygons.template.onPrivate("fill", function() {
                 const dataItem = this.dataItem;
                 if (dataItem) {
                     const dataContext = dataItem.dataContext;
                     if (dataContext && targetRegions.includes(dataContext.id)) {
                         const countryColor = countryColors[dataContext.id] || primaryColor;
-                        // Enhanced hover states for target countries
+                        // Subtle hover states for target countries
                         this.states.create("hover", {
                             fill: window.am5.color(countryColor),
+                            fillOpacity: 0.9,
                             stroke: window.am5.color("#ffffff"),
-                            strokeWidth: 2,
-                            scale: 1.02
+                            strokeWidth: 1.5
                         });
                         this.states.create("active", {
                             fill: window.am5.color(countryColor),
+                            fillOpacity: 1,
                             scale: 0.98
                         });
                     } else {
-                        // Enhanced hover for non-target countries
+                        // Subtle hover for non-target countries
                         this.states.create("hover", {
                             fill: window.am5.color("#f3f4f6"),
                             stroke: window.am5.color("#d1d5db"),
-                            strokeWidth: 1
+                            strokeWidth: 0.8
                         });
                         this.states.create("active", {
                             fill: window.am5.color("#e5e7eb")
@@ -3263,48 +3292,88 @@ function MapViz() {
                     }
                 }
             });
-            // Enhanced zoom control with modern styling
+            // Clean zoom control
             const zoomControl = chart.set("zoomControl", window.am5map.ZoomControl.new(root, {
-                paddingTop: 20,
-                paddingRight: 20
+                paddingTop: 16,
+                paddingRight: 16,
+                x: window.am5.p100,
+                centerX: window.am5.p100,
+                y: window.am5.p100,
+                centerY: window.am5.p100
             }));
             zoomControl.homeButton.set("visible", true);
-            // Style zoom control buttons
-            zoomControl.plusButton.set("background", window.am5.RoundedRectangle.new(root, {
-                fill: window.am5.color("#062516"),
+            // Clean button styling
+            const buttonStyle = {
+                fill: window.am5.color("#ffffff"),
                 cornerRadiusTL: 6,
                 cornerRadiusTR: 6,
                 cornerRadiusBL: 6,
-                cornerRadiusBR: 6
-            }));
-            zoomControl.minusButton.set("background", window.am5.RoundedRectangle.new(root, {
-                fill: window.am5.color("#062516"),
-                cornerRadiusTL: 6,
-                cornerRadiusTR: 6,
-                cornerRadiusBL: 6,
-                cornerRadiusBR: 6
-            }));
-            zoomControl.homeButton.set("background", window.am5.RoundedRectangle.new(root, {
-                fill: window.am5.color("#062516"),
-                cornerRadiusTL: 6,
-                cornerRadiusTR: 6,
-                cornerRadiusBL: 6,
-                cornerRadiusBR: 6
-            }));
-            // Keep the home (reset) position in sync with the above values
-            chart.set("homeZoomLevel", 1.5);
-            chart.set("homeGeoPoint", {
-                longitude: 350,
-                latitude: -20
+                cornerRadiusBR: 6,
+                stroke: window.am5.color("#e5e7eb"),
+                strokeWidth: 1
+            };
+            if (zoomControl.plusButton) {
+                zoomControl.plusButton.set("background", window.am5.RoundedRectangle.new(root, buttonStyle));
+            }
+            if (zoomControl.minusButton) {
+                zoomControl.minusButton.set("background", window.am5.RoundedRectangle.new(root, buttonStyle));
+            }
+            if (zoomControl.homeButton) {
+                zoomControl.homeButton.set("background", window.am5.RoundedRectangle.new(root, buttonStyle));
+            }
+            // Subtle hover effects for zoom control
+            const buttons = [
+                zoomControl.plusButton,
+                zoomControl.minusButton,
+                zoomControl.homeButton
+            ].filter(Boolean);
+            buttons.forEach((button)=>{
+                if (button) {
+                    button.states.create("hover", {
+                        fill: window.am5.color("#f9fafb"),
+                        stroke: window.am5.color("#d1d5db")
+                    });
+                    button.states.create("active", {
+                        fill: window.am5.color("#f3f4f6"),
+                        scale: 0.95
+                    });
+                }
             });
-            // Add background click handler with smooth animation
+            // Function to zoom to all target countries
+            const zoomToAllTargetCountries = ()=>{
+                const zoomDataItems = targetRegions.map((id)=>polygonSeries.getDataItemById(id)).filter((item)=>item !== undefined);
+                if (zoomDataItems.length > 0) {
+                    polygonSeries.zoomToDataItems(zoomDataItems, 1.2, true);
+                }
+            };
+            // Add a clean button to zoom to all target countries
+            const allCountriesButton = zoomControl.children.push(window.am5.Button.new(root, {
+                icon: window.am5.Graphics.new(root, {
+                    svgPath: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z",
+                    fill: window.am5.color("#6b7280")
+                }),
+                background: window.am5.RoundedRectangle.new(root, buttonStyle),
+                tooltipText: "View all target countries",
+                x: window.am5.p100,
+                centerX: window.am5.p100,
+                y: window.am5.p100,
+                centerY: window.am5.p100,
+                dy: -100
+            }));
+            allCountriesButton.states.create("hover", {
+                fill: window.am5.color("#f9fafb"),
+                stroke: window.am5.color("#d1d5db")
+            });
+            allCountriesButton.events.on("click", function() {
+                zoomToAllTargetCountries();
+            });
+            // Clean background click handler
             chart.chartContainer.get("background").events.on("click", function(ev) {
-                console.log('Background/water clicked');
                 ev.event.stopPropagation();
                 chart.goHome();
             });
-            // Enhanced entrance animation
-            chart.appear(1500, 200);
+            // Subtle entrance animation
+            chart.appear(1000, 100);
             // Cleanup function
             return ()=>{
                 root.dispose();
@@ -3317,15 +3386,7 @@ function MapViz() {
             const target = event.target;
             const popupContainer = document.querySelector('.popup-container');
             const mapBackground = document.querySelector('.am5-background');
-            console.log('Click event:', {
-                target: target.className,
-                isPopupClick: popupContainer?.contains(target),
-                isMapBackground: mapBackground?.contains(target),
-                selectedCountry
-            });
-            // Only close if clicking outside popup and not on map background
             if (selectedCountry && popupContainer && !popupContainer.contains(target) && !mapBackground?.contains(target)) {
-                console.log('Closing popup, selectedCountry:', selectedCountry);
                 setSelectedCountry(null);
             }
         };
@@ -3333,12 +3394,6 @@ function MapViz() {
         return ()=>{
             document.removeEventListener('mousedown', handleClickOutside);
         };
-    }, [
-        selectedCountry
-    ]);
-    // Add debug log for selectedCountry changes
-    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
-        console.log('selectedCountry changed:', selectedCountry);
     }, [
         selectedCountry
     ]);
@@ -3366,7 +3421,7 @@ function MapViz() {
                 onLoad: handleScriptLoad
             }, void 0, false, {
                 fileName: "[project]/src/components/MapViz.tsx",
-                lineNumber: 714,
+                lineNumber: 621,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$script$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -3374,7 +3429,7 @@ function MapViz() {
                 strategy: "beforeInteractive"
             }, void 0, false, {
                 fileName: "[project]/src/components/MapViz.tsx",
-                lineNumber: 715,
+                lineNumber: 622,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$script$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -3382,7 +3437,7 @@ function MapViz() {
                 strategy: "beforeInteractive"
             }, void 0, false, {
                 fileName: "[project]/src/components/MapViz.tsx",
-                lineNumber: 716,
+                lineNumber: 623,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$script$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -3390,15 +3445,15 @@ function MapViz() {
                 strategy: "beforeInteractive"
             }, void 0, false, {
                 fileName: "[project]/src/components/MapViz.tsx",
-                lineNumber: 717,
+                lineNumber: 624,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$jsx$2f$style$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                id: "5d8c5d688797cddb",
-                children: '@import "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap";.map-container{background:#062516;position:relative;overflow:hidden}.map-container:before{content:"";pointer-events:none;z-index:0;background:radial-gradient(circle at 20% 20%,#0d5a2a1a 0%,#0000 50%),radial-gradient(circle at 80% 80%,#06251614 0%,#0000 50%),radial-gradient(circle at 40% 60%,#0a3a1a0d 0%,#0000 50%);position:absolute;inset:0}.popup-container{backdrop-filter:blur(20px);transform-origin:50%;background:#fffffffa;border:1px solid #0625161a;font-family:Inter,system-ui,sans-serif;animation:.3s cubic-bezier(.4,0,.2,1) popupSlideIn;box-shadow:0 25px 50px #0003,0 0 0 1px #ffffff1a,inset 0 1px #fff3}@keyframes popupSlideIn{0%{opacity:0;transform:translate(-50%,-50%)scale(.9)}to{opacity:1;transform:translate(-50%,-50%)scale(1)}}.popup-container:before{content:"";background:linear-gradient(90deg,#062516 0%,#0d5a2a 50%,#062516 100%);border-radius:12px 12px 0 0;height:3px;position:absolute;top:0;left:0;right:0}'
+                id: "8c9ca85771c7b8d3",
+                children: '@import "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap";.map-container{background:#fff;position:relative;overflow:hidden}.popup-container{backdrop-filter:blur(16px);transform-origin:50%;background:#fffffffa;border:1px solid #e5e7ebcc;font-family:Inter,system-ui,sans-serif;animation:.2s ease-out popupSlideIn;box-shadow:0 20px 40px #0000001a,0 0 0 1px #ffffff1a}@keyframes popupSlideIn{0%{opacity:0;transform:translate(-50%,-50%)scale(.95)}to{opacity:1;transform:translate(-50%,-50%)scale(1)}}'
             }, void 0, false, void 0, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "jsx-5d8c5d688797cddb" + " " + "flex justify-center items-start w-full h-full relative overflow-hidden",
+                className: "jsx-8c9ca85771c7b8d3" + " " + "flex justify-center items-start w-full h-full relative overflow-hidden",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         ref: chartRef,
@@ -3410,7 +3465,6 @@ function MapViz() {
                             zIndex: 1
                         },
                         onClick: (e)=>{
-                            console.log('Map container clicked');
                             e.stopPropagation();
                         },
                         onWheel: (e)=>{
@@ -3421,39 +3475,38 @@ function MapViz() {
                             });
                             e.currentTarget.parentElement?.dispatchEvent(scrollEvent);
                         },
-                        className: "jsx-5d8c5d688797cddb" + " " + "w-full h-full map-container"
+                        className: "jsx-8c9ca85771c7b8d3" + " " + "w-full h-full map-container"
                     }, void 0, false, {
                         fileName: "[project]/src/components/MapViz.tsx",
-                        lineNumber: 780,
+                        lineNumber: 660,
                         columnNumber: 9
                     }, this),
                     selectedCountry && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         style: {
                             left: `${popupPosition.x + 20}px`,
                             top: `${popupPosition.y - 100}px`,
-                            minWidth: '420px',
-                            maxWidth: '480px',
+                            minWidth: '360px',
+                            maxWidth: '400px',
                             transform: 'translate(-50%, -50%)',
                             zIndex: 1000
                         },
                         onClick: (e)=>{
-                            console.log('Popup clicked');
                             e.stopPropagation();
                         },
-                        className: "jsx-5d8c5d688797cddb" + " " + "popup-container absolute rounded-xl p-0 overflow-hidden",
+                        className: "jsx-8c9ca85771c7b8d3" + " " + "popup-container absolute rounded-lg p-0 overflow-hidden",
                         children: (()=>{
                             const info = getCountryInfo(selectedCountry);
                             return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "jsx-5d8c5d688797cddb" + " " + "relative",
+                                className: "jsx-8c9ca85771c7b8d3" + " " + "relative",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "jsx-5d8c5d688797cddb" + " " + "flex justify-between items-start p-6 pb-4",
+                                        className: "jsx-8c9ca85771c7b8d3" + " " + "flex justify-between items-start p-4 pb-3",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "jsx-5d8c5d688797cddb" + " " + "flex items-center gap-4",
+                                                className: "jsx-8c9ca85771c7b8d3" + " " + "flex items-center gap-3",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "jsx-5d8c5d688797cddb" + " " + "relative",
+                                                        className: "jsx-8c9ca85771c7b8d3" + " " + "relative",
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
                                                                 src: info.flag,
@@ -3461,58 +3514,58 @@ function MapViz() {
                                                                 onError: (e)=>{
                                                                     e.target.style.display = 'none';
                                                                 },
-                                                                className: "jsx-5d8c5d688797cddb" + " " + "w-10 h-7 object-cover rounded-md border-2 border-white shadow-lg"
+                                                                className: "jsx-8c9ca85771c7b8d3" + " " + "w-8 h-6 object-cover rounded border border-gray-200"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/MapViz.tsx",
-                                                                lineNumber: 827,
+                                                                lineNumber: 705,
                                                                 columnNumber: 25
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                className: "jsx-5d8c5d688797cddb" + " " + "absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full border-2 border-white shadow-sm"
+                                                                className: "jsx-8c9ca85771c7b8d3" + " " + "absolute -top-0.5 -right-0.5 w-2 h-2 bg-green-500 rounded-full border border-white"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/MapViz.tsx",
-                                                                lineNumber: 835,
+                                                                lineNumber: 713,
                                                                 columnNumber: 25
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/MapViz.tsx",
-                                                        lineNumber: 826,
+                                                        lineNumber: 704,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                        className: "jsx-5d8c5d688797cddb" + " " + "text-2xl font-bold text-gray-900 tracking-tight",
+                                                        className: "jsx-8c9ca85771c7b8d3" + " " + "text-lg font-semibold text-gray-900",
                                                         children: info.name
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/MapViz.tsx",
-                                                        lineNumber: 837,
+                                                        lineNumber: 715,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/MapViz.tsx",
-                                                lineNumber: 825,
+                                                lineNumber: 703,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                                 onClick: ()=>setSelectedCountry(null),
-                                                className: "jsx-5d8c5d688797cddb" + " " + "text-gray-400 hover:text-gray-600 text-2xl font-light w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors duration-200",
+                                                className: "jsx-8c9ca85771c7b8d3" + " " + "text-gray-400 hover:text-gray-600 text-lg font-light w-6 h-6 flex items-center justify-center rounded hover:bg-gray-100 transition-colors duration-200",
                                                 children: "×"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/MapViz.tsx",
-                                                lineNumber: 839,
+                                                lineNumber: 717,
                                                 columnNumber: 21
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/MapViz.tsx",
-                                        lineNumber: 824,
+                                        lineNumber: 702,
                                         columnNumber: 19
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "jsx-5d8c5d688797cddb" + " " + "px-6 mb-6",
+                                        className: "jsx-8c9ca85771c7b8d3" + " " + "px-4 mb-4",
                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "jsx-5d8c5d688797cddb" + " " + "relative overflow-hidden rounded-xl",
+                                            className: "jsx-8c9ca85771c7b8d3" + " " + "relative overflow-hidden rounded-lg",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
                                                     src: info.projectImage,
@@ -3520,250 +3573,250 @@ function MapViz() {
                                                     onError: (e)=>{
                                                         e.target.style.display = 'none';
                                                     },
-                                                    className: "jsx-5d8c5d688797cddb" + " " + "w-full h-40 object-cover transition-transform duration-300 hover:scale-105"
+                                                    className: "jsx-8c9ca85771c7b8d3" + " " + "w-full h-28 object-cover"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/MapViz.tsx",
-                                                    lineNumber: 850,
+                                                    lineNumber: 728,
                                                     columnNumber: 23
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "jsx-5d8c5d688797cddb" + " " + "absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"
+                                                    className: "jsx-8c9ca85771c7b8d3" + " " + "absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/MapViz.tsx",
-                                                    lineNumber: 858,
+                                                    lineNumber: 736,
                                                     columnNumber: 23
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "jsx-5d8c5d688797cddb" + " " + "absolute bottom-3 left-3",
+                                                    className: "jsx-8c9ca85771c7b8d3" + " " + "absolute bottom-2 left-2",
                                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                        className: "jsx-5d8c5d688797cddb" + " " + "inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-white/90 text-gray-800 backdrop-blur-sm",
-                                                        children: "🌱 Renewable Energy"
+                                                        className: "jsx-8c9ca85771c7b8d3" + " " + "inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-white/90 text-gray-700",
+                                                        children: "Renewable Energy"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/MapViz.tsx",
-                                                        lineNumber: 860,
+                                                        lineNumber: 738,
                                                         columnNumber: 25
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/MapViz.tsx",
-                                                    lineNumber: 859,
+                                                    lineNumber: 737,
                                                     columnNumber: 23
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/MapViz.tsx",
-                                            lineNumber: 849,
+                                            lineNumber: 727,
                                             columnNumber: 21
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/MapViz.tsx",
-                                        lineNumber: 848,
+                                        lineNumber: 726,
                                         columnNumber: 19
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "jsx-5d8c5d688797cddb" + " " + "px-6 space-y-4",
+                                        className: "jsx-8c9ca85771c7b8d3" + " " + "px-4 space-y-3",
                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "jsx-5d8c5d688797cddb" + " " + "grid grid-cols-1 gap-4",
+                                            className: "jsx-8c9ca85771c7b8d3" + " " + "grid grid-cols-1 gap-3",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "jsx-5d8c5d688797cddb" + " " + "flex justify-between items-center p-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl border border-green-100",
+                                                    className: "jsx-8c9ca85771c7b8d3" + " " + "flex justify-between items-center p-3 bg-blue-50 rounded-lg border border-blue-100",
                                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "jsx-5d8c5d688797cddb" + " " + "flex items-center gap-3",
+                                                        className: "jsx-8c9ca85771c7b8d3" + " " + "flex items-center gap-3",
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                className: "jsx-5d8c5d688797cddb" + " " + "w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-600 rounded-lg flex items-center justify-center",
+                                                                className: "jsx-8c9ca85771c7b8d3" + " " + "w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center",
                                                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                    className: "jsx-5d8c5d688797cddb" + " " + "text-white font-bold text-lg",
+                                                                    className: "jsx-8c9ca85771c7b8d3" + " " + "text-white font-semibold text-sm",
                                                                     children: info.projects
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/MapViz.tsx",
-                                                                    lineNumber: 873,
+                                                                    lineNumber: 751,
                                                                     columnNumber: 29
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/MapViz.tsx",
-                                                                lineNumber: 872,
+                                                                lineNumber: 750,
                                                                 columnNumber: 27
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                className: "jsx-5d8c5d688797cddb" + " " + "font-semibold text-gray-700",
+                                                                className: "jsx-8c9ca85771c7b8d3" + " " + "font-medium text-gray-700",
                                                                 children: "Active Projects"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/MapViz.tsx",
-                                                                lineNumber: 875,
+                                                                lineNumber: 753,
                                                                 columnNumber: 27
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/MapViz.tsx",
-                                                        lineNumber: 871,
+                                                        lineNumber: 749,
                                                         columnNumber: 25
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/MapViz.tsx",
-                                                    lineNumber: 870,
+                                                    lineNumber: 748,
                                                     columnNumber: 23
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "jsx-5d8c5d688797cddb" + " " + "flex justify-between items-center p-4 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl border border-blue-100",
+                                                    className: "jsx-8c9ca85771c7b8d3" + " " + "flex justify-between items-center p-3 bg-green-50 rounded-lg border border-green-100",
                                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "jsx-5d8c5d688797cddb" + " " + "flex items-center gap-3",
+                                                        className: "jsx-8c9ca85771c7b8d3" + " " + "flex items-center gap-3",
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                className: "jsx-5d8c5d688797cddb" + " " + "w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-lg flex items-center justify-center",
+                                                                className: "jsx-8c9ca85771c7b8d3" + " " + "w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center",
                                                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                    className: "jsx-5d8c5d688797cddb" + " " + "text-white font-bold text-xs",
+                                                                    className: "jsx-8c9ca85771c7b8d3" + " " + "text-white font-semibold text-xs",
                                                                     children: "⚡"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/MapViz.tsx",
-                                                                    lineNumber: 882,
+                                                                    lineNumber: 760,
                                                                     columnNumber: 29
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/MapViz.tsx",
-                                                                lineNumber: 881,
+                                                                lineNumber: 759,
                                                                 columnNumber: 27
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                className: "jsx-5d8c5d688797cddb",
+                                                                className: "jsx-8c9ca85771c7b8d3",
                                                                 children: [
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                        className: "jsx-5d8c5d688797cddb" + " " + "font-semibold text-gray-700",
+                                                                        className: "jsx-8c9ca85771c7b8d3" + " " + "font-medium text-gray-700",
                                                                         children: "Total Capacity"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/MapViz.tsx",
-                                                                        lineNumber: 885,
+                                                                        lineNumber: 763,
                                                                         columnNumber: 29
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                        className: "jsx-5d8c5d688797cddb" + " " + "text-blue-600 font-bold text-lg",
+                                                                        className: "jsx-8c9ca85771c7b8d3" + " " + "text-green-600 font-semibold",
                                                                         children: info.capacity
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/MapViz.tsx",
-                                                                        lineNumber: 886,
+                                                                        lineNumber: 764,
                                                                         columnNumber: 29
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/MapViz.tsx",
-                                                                lineNumber: 884,
+                                                                lineNumber: 762,
                                                                 columnNumber: 27
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/MapViz.tsx",
-                                                        lineNumber: 880,
+                                                        lineNumber: 758,
                                                         columnNumber: 25
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/MapViz.tsx",
-                                                    lineNumber: 879,
+                                                    lineNumber: 757,
                                                     columnNumber: 23
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "jsx-5d8c5d688797cddb" + " " + "flex justify-between items-center p-4 bg-gradient-to-r from-orange-50 to-amber-50 rounded-xl border border-orange-100",
+                                                    className: "jsx-8c9ca85771c7b8d3" + " " + "flex justify-between items-center p-3 bg-orange-50 rounded-lg border border-orange-100",
                                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "jsx-5d8c5d688797cddb" + " " + "flex items-center gap-3",
+                                                        className: "jsx-8c9ca85771c7b8d3" + " " + "flex items-center gap-3",
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                className: "jsx-5d8c5d688797cddb" + " " + "w-10 h-10 bg-gradient-to-br from-orange-500 to-amber-600 rounded-lg flex items-center justify-center",
+                                                                className: "jsx-8c9ca85771c7b8d3" + " " + "w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center",
                                                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                    className: "jsx-5d8c5d688797cddb" + " " + "text-white font-bold text-xs",
+                                                                    className: "jsx-8c9ca85771c7b8d3" + " " + "text-white font-semibold text-xs",
                                                                     children: "📊"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/MapViz.tsx",
-                                                                    lineNumber: 894,
+                                                                    lineNumber: 772,
                                                                     columnNumber: 29
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/MapViz.tsx",
-                                                                lineNumber: 893,
+                                                                lineNumber: 771,
                                                                 columnNumber: 27
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                className: "jsx-5d8c5d688797cddb",
+                                                                className: "jsx-8c9ca85771c7b8d3",
                                                                 children: [
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                        className: "jsx-5d8c5d688797cddb" + " " + "font-semibold text-gray-700",
-                                                                        children: "Development Status"
+                                                                        className: "jsx-8c9ca85771c7b8d3" + " " + "font-medium text-gray-700",
+                                                                        children: "Status"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/MapViz.tsx",
-                                                                        lineNumber: 897,
+                                                                        lineNumber: 775,
                                                                         columnNumber: 29
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                        className: "jsx-5d8c5d688797cddb" + " " + "text-orange-600 font-bold text-sm",
+                                                                        className: "jsx-8c9ca85771c7b8d3" + " " + "text-orange-600 font-semibold text-sm",
                                                                         children: info.status
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/MapViz.tsx",
-                                                                        lineNumber: 898,
+                                                                        lineNumber: 776,
                                                                         columnNumber: 29
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/MapViz.tsx",
-                                                                lineNumber: 896,
+                                                                lineNumber: 774,
                                                                 columnNumber: 27
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/MapViz.tsx",
-                                                        lineNumber: 892,
+                                                        lineNumber: 770,
                                                         columnNumber: 25
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/MapViz.tsx",
-                                                    lineNumber: 891,
+                                                    lineNumber: 769,
                                                     columnNumber: 23
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/MapViz.tsx",
-                                            lineNumber: 869,
+                                            lineNumber: 747,
                                             columnNumber: 21
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/MapViz.tsx",
-                                        lineNumber: 868,
+                                        lineNumber: 746,
                                         columnNumber: 19
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "jsx-5d8c5d688797cddb" + " " + "p-6 pt-4",
+                                        className: "jsx-8c9ca85771c7b8d3" + " " + "p-4 pt-3",
                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "jsx-5d8c5d688797cddb" + " " + "bg-gradient-to-r from-gray-50 to-slate-50 rounded-xl p-4 border border-gray-100",
+                                            className: "jsx-8c9ca85771c7b8d3" + " " + "bg-gray-50 rounded-lg p-3 border border-gray-100",
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "jsx-5d8c5d688797cddb" + " " + "text-sm text-gray-600 leading-relaxed",
-                                                children: "🌍 Comprehensive renewable energy development initiative focused on sustainable power generation, modern grid infrastructure, and community empowerment through clean energy access."
+                                                className: "jsx-8c9ca85771c7b8d3" + " " + "text-sm text-gray-600 leading-relaxed",
+                                                children: "Comprehensive renewable energy development initiative focused on sustainable power generation, modern grid infrastructure, and community empowerment through clean energy access."
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/MapViz.tsx",
-                                                lineNumber: 908,
+                                                lineNumber: 786,
                                                 columnNumber: 23
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/MapViz.tsx",
-                                            lineNumber: 907,
+                                            lineNumber: 785,
                                             columnNumber: 21
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/MapViz.tsx",
-                                        lineNumber: 906,
+                                        lineNumber: 784,
                                         columnNumber: 19
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/MapViz.tsx",
-                                lineNumber: 822,
+                                lineNumber: 700,
                                 columnNumber: 17
                             }, this);
                         })()
                     }, void 0, false, {
                         fileName: "[project]/src/components/MapViz.tsx",
-                        lineNumber: 804,
+                        lineNumber: 683,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/MapViz.tsx",
-                lineNumber: 779,
+                lineNumber: 659,
                 columnNumber: 7
             }, this)
         ]
