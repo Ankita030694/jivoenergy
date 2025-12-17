@@ -1,0 +1,19 @@
+{
+  "/_not-found/page": "/_not-found",
+  "/favicon.ico/route": "/favicon.ico",
+  "/business-areas/page": "/business-areas",
+  "/certificate/page": "/certificate",
+  "/gallery/maio-cape-verde/page": "/gallery/maio-cape-verde",
+  "/contact/page": "/contact",
+  "/gallery/achada-cape-verde/page": "/gallery/achada-cape-verde",
+  "/gallery/kenya/page": "/gallery/kenya",
+  "/gallery/liberia/page": "/gallery/liberia",
+  "/gallery/malawi/page": "/gallery/malawi",
+  "/careers/page": "/careers",
+  "/gallery/page": "/gallery",
+  "/gallery/sao-tome-principe/page": "/gallery/sao-tome-principe",
+  "/our-capabilities/page": "/our-capabilities",
+  "/theme/page": "/theme",
+  "/partners/page": "/partners",
+  "/page": "/"
+}
