@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  turbopack: {},
   webpack: (config) => {
-    
     config.module.rules.push({
       test: /\.geojson$/,
       type: 'json',
@@ -11,20 +11,20 @@ const nextConfig = {
   output: 'export',
   images: {
     unoptimized: true,
-    domains: [
-      'www.irena.org',
-      'www.unglobalcompact.org',
-      'dii-desertenergy.org',
-      'tnfd.global',
-      'naturepositive.org',
-      'www.iea.org',
-      'assets.weforum.org',
-      'gwec.net',
-      'www.solarpowereurope.org',
-      'isolaralliance.org',
-      'images.unsplash.com'
+    remotePatterns: [
+      { protocol: 'https', hostname: 'www.irena.org' },
+      { protocol: 'https', hostname: 'www.unglobalcompact.org' },
+      { protocol: 'https', hostname: 'dii-desertenergy.org' },
+      { protocol: 'https', hostname: 'tnfd.global' },
+      { protocol: 'https', hostname: 'naturepositive.org' },
+      { protocol: 'https', hostname: 'www.iea.org' },
+      { protocol: 'https', hostname: 'assets.weforum.org' },
+      { protocol: 'https', hostname: 'gwec.net' },
+      { protocol: 'https', hostname: 'www.solarpowereurope.org' },
+      { protocol: 'https', hostname: 'isolaralliance.org' },
+      { protocol: 'https', hostname: 'images.unsplash.com' },
     ],
   },
 }
 
-module.exports = nextConfig 
+module.exports = nextConfig
