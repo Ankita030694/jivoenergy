@@ -19,46 +19,46 @@ const Team = () => {
     name: 'Rajesh Chugh',
     role: 'The Mentor Leader',
     image: '', // Missing image
-    linkedin: '#'
+    linkedin: 'https://www.linkedin.com/in/rajeshchugh74/'
   };
 
   const technicalSpecialists: TeamMember[] = [
     { name: 'Akshay Sharma', image: '' },
-    { name: 'Ankit Srivastava', image: '/team/Ankit.JPG' },
-    { name: 'Ashok Kumar', image: '/team/Ashok.JPG' },
-    { name: 'Manvendra Singh Hada', image: '/team/Manvendra.JPG' },
-    { name: 'Nitin', image: '' },
+    { name: 'Ankit Srivastava', image: '/team/Ankit.JPG', linkedin: 'https://www.linkedin.com/in/ankit-srivastava14/' },
+    { name: 'Ashok Kumar', image: '/team/Ashok.JPG', linkedin: 'https://www.linkedin.com/in/ashok-kumar-74a07064/' },
+    { name: 'Manvendra Singh Hada', image: '/team/Manvendra.JPG', linkedin: 'https://www.linkedin.com/in/hadamanvendrasingh/' },
+    { name: 'Nitin', image: '', linkedin: 'https://www.linkedin.com/in/nitin-kumar-195675157/' },
     { name: 'Pauline Wambui Wachira', image: '/team/Pauline.jpeg' },
-    { name: 'Prayas Gupta', image: '/team/Prayas Photo.jpeg' },
-    { name: 'Ravi Kumar', image: '/team/Ravi.JPG' },
-    { name: 'Rohit Shivaji Nalavade', image: '/team/Rohit.JPG' },
-    { name: 'Samuel Walusimbi', image: '/team/Samuel.png' },
-    { name: 'Shashi Kumar', image: '/team/Shashi.JPG' },
-    { name: 'Tushar Saurabh', image: '' },
-    { name: 'Vivek Gupta', image: '/team/Vivek.JPG' },
+    { name: 'Prayas Gupta', image: '/team/Prayas Photo.jpeg', linkedin: 'https://www.linkedin.com/in/preyas-gupta/' },
+    { name: 'Ravi Kumar', image: '/team/Ravi.JPG', linkedin: 'https://www.linkedin.com/in/ravi-kumar-yadav-36812a308/' },
+    { name: 'Rohit Shivaji Nalavade', image: '/team/Rohit.JPG', linkedin: 'https://www.linkedin.com/in/rohit-nalavade-8a6780395/' },
+    { name: 'Samuel Walusimbi', image: '/team/Samuel.png', linkedin: 'https://www.linkedin.com/in/samuel-walusimbi-k/' },
+    { name: 'Shashi Kumar', image: '/team/Shashi.JPG', linkedin: 'https://www.linkedin.com/in/shashi-kumar-87449b148/' },
+    { name: 'Tushar Saurabh', image: '', linkedin: 'https://www.linkedin.com/in/tushar-saurabh-02b5277b/' },
+    { name: 'Vivek Gupta', image: '/team/Vivek.JPG', linkedin: 'https://www.linkedin.com/in/vivek-vikram-56470a127/' },
   ];
 
   const commercialSpecialists: TeamMember[] = [
-    { name: 'Aakanksha', image: '/team/Aakanksha.JPG' },
-    { name: 'Abhishek Batra', image: '/team/Abhishek.jpeg' },
-    { name: 'Beatrice Kithinji', image: '/team/Beatrice.jpeg' },
-    { name: 'Jorge Lascas', image: '/team/Jorge.jpeg' },
-    { name: 'Naresh Kumar Singh Ghorla', image: '/team/Naresh.JPG' },
-    { name: 'Nishank Madaan', image: '/team/Nishank.JPG' },
-    { name: 'Nitesh Kumar', image: '/team/Nitesh.JPG' },
-    { name: 'Patrice Yamintare Kounkorgo', image: '/team/Patrice.jpeg' },
+    { name: 'Aakanksha', image: '/team/Aakanksha.JPG', linkedin: 'https://www.linkedin.com/in/aakankshachugh/' },
+    { name: 'Abhishek Batra', image: '/team/Abhishek.jpeg', linkedin: 'https://www.linkedin.com/in/caabhishekbatra/' },
+    { name: 'Beatrice Kithinji', image: '/team/Beatrice.jpeg', linkedin: 'https://www.linkedin.com/in/beatrice-kithinji-mba-30aa448a/' },
+    { name: 'Jorge Lascas', image: '/team/Jorge.jpeg', linkedin: 'https://www.linkedin.com/in/jorgemslascas/' },
+    { name: 'Naresh Kumar Singh Ghorla', image: '/team/Naresh.JPG', linkedin: 'https://www.linkedin.com/in/naresh-ghorla-805222150/' },
+    { name: 'Nishank Madaan', image: '/team/Nishank.JPG', linkedin: 'https://www.linkedin.com/in/nishank-madaan-658177146/' },
+    { name: 'Nitesh Kumar', image: '/team/Nitesh.JPG', linkedin: 'https://www.linkedin.com/in/nitesh-jangra-a9567a278/' },
+    { name: 'Patrice Yamintare Kounkorgo', image: '/team/Patrice.jpeg', linkedin: 'https://www.linkedin.com/in/yamintare-patrice-kounkorgo-058405179/' },
   ];
 
   const functionalSpecialists: TeamMember[] = [
-    { name: 'Ainemigisha Martha Tukahirwa Flavia', image: '/team/Martha.jpeg' },
-    { name: 'Anuradha Nehra', image: '/team/Anuradha.JPG' },
-    { name: 'Arun Kumar', image: '/team/Arun.JPG' },
-    { name: 'Chavvi Ahuja', image: '/team/Chavvi.JPG' },
-    { name: 'Gayatri Mudgil', image: '/team/Gayatri.jpg' },
-    { name: 'Geetika Sondhi', image: '/team/Geetika.JPG' },
-    { name: 'Nitin Kumar', image: '/team/Nitin.JPG' },
-    { name: 'Shivalika Nagpal', image: '/team/Shivalika.JPG' },
-    { name: 'Ujwal Arora', image: '/team/Ujwal.JPG' },
+    { name: 'Ainemigisha Martha Tukahirwa Flavia', image: '/team/Martha.jpeg', linkedin: 'https://www.linkedin.com/in/martha-ainemigisha-a6a2b4238/' },
+    { name: 'Anuradha Nehra', image: '/team/Anuradha.JPG', linkedin: 'https://www.linkedin.com/in/graphologistanuradha/' },
+    { name: 'Arun Kumar', image: '/team/Arun.JPG', linkedin: 'https://www.linkedin.com/in/arun-sharma-b5504918b/' },
+    { name: 'Chavvi Ahuja', image: '/team/Chavvi.JPG', linkedin: 'https://www.linkedin.com/in/chavvi-ahuja-68507b20a/' },
+    { name: 'Gayatri Mudgil', image: '/team/Gayatri.jpg', linkedin: 'https://www.linkedin.com/in/gayatri-m-92122918b/' },
+    { name: 'Geetika Sondhi', image: '/team/Geetika.JPG', linkedin: 'https://www.linkedin.com/in/geetika-sondhi-82274520/' },
+    { name: 'Nitin Kumar', image: '/team/Nitin.JPG', linkedin: 'https://www.linkedin.com/in/nitin-kumar-195675157/' },
+    { name: 'Shivalika Nagpal', image: '/team/Shivalika.JPG', linkedin: 'https://www.linkedin.com/in/shivalikanagpal/' },
+    { name: 'Ujwal Arora', image: '/team/Ujwal.JPG', linkedin: 'https://www.linkedin.com/in/ca-ujwal-arora-6481108b/' },
   ];
 
   const containerVariants = {
@@ -198,7 +198,9 @@ const Team = () => {
               </div>
               
               <a 
-                href="#" 
+                href={mentor.linkedin || '#'} 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center group/link text-[#062516] font-bold hover:text-[#062516]/70 transition-colors"
               >
                 <span className="border-b-2 border-[#FFFA84] pb-1 group-hover/link:border-[#062516] transition-colors">Connect on LinkedIn</span>

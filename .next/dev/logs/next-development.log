@@ -1,11 +1,13 @@
-[00:00:00.639] Server  LOG     
-[00:00:00.639] Server  LOG        We detected TypeScript in your project and reconfigured your tsconfig.json file for you.
-[00:00:00.639] Server  LOG        The following suggested values were added to your tsconfig.json. These values can be changed to fit your project's needs:
-
-[00:00:00.639] Server  LOG        	- include was updated to add '.next/dev/types/**/*.ts'
-[00:00:00.639] Server  LOG     
-[00:00:00.639] Server  LOG        The following mandatory changes were made to your tsconfig.json:
-
-[00:00:00.639] Server  LOG        	- jsx was set to react-jsx (next.js uses the React automatic runtime)
-[00:00:00.639] Server  LOG     
-[00:00:00.758] Server  LOG      ✓ Ready in 529ms
+[00:00:00.880] Server  LOG      ✓ Ready in 609ms
+[00:00:05.055] Browser WARN    Image with src "http://localhost:3000/logo1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:13.131] Browser WARN    Image with src "/logo1.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:00:13.131] Browser WARN    Image with src "http://localhost:3000/logo1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:01:58.749] Server  LOG      ✓ Compiled in 166ms
+[00:02:00.718] Server  LOG      ✓ Compiled in 55ms
+[00:02:02.420] Server  LOG      ✓ Compiled in 71ms
+[00:02:04.174] Server  LOG      ✓ Compiled in 51ms
+[00:02:05.296] Server  LOG      ✓ Compiled in 48ms
+[00:03:25.491] Browser WARN    Image with src "/logo1.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:03:25.491] Browser WARN    Image with src "http://localhost:3000/logo1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
