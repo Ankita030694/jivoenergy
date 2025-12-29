@@ -1,13 +1,117 @@
-[00:00:00.880] Server  LOG      ✓ Ready in 609ms
-[00:00:05.055] Browser WARN    Image with src "http://localhost:3000/logo1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:00:13.131] Browser WARN    Image with src "/logo1.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+[00:00:00.851] Server  LOG      ✓ Ready in 605ms
+[00:00:15.100] Browser WARN    Image with src "/logo1.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
 Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
-[00:00:13.131] Browser WARN    Image with src "http://localhost:3000/logo1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:01:58.749] Server  LOG      ✓ Compiled in 166ms
-[00:02:00.718] Server  LOG      ✓ Compiled in 55ms
-[00:02:02.420] Server  LOG      ✓ Compiled in 71ms
-[00:02:04.174] Server  LOG      ✓ Compiled in 51ms
-[00:02:05.296] Server  LOG      ✓ Compiled in 48ms
-[00:03:25.491] Browser WARN    Image with src "/logo1.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+[00:00:15.101] Browser WARN    Image with src "http://localhost:3000/logo1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:01:49.834] Server  LOG      ✓ Compiled in 211ms
+[00:02:01.554] Browser WARN    Image with src "/logo1.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
 Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
-[00:03:25.491] Browser WARN    Image with src "http://localhost:3000/logo1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:02:01.554] Browser WARN    Image with src "http://localhost:3000/logo1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:02:12.171] Browser WARN    Image with src "/logo1.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:02:12.171] Browser WARN    Image with src "http://localhost:3000/logo1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:03:32.298] Server  LOG      ✓ Compiled in 158ms
+[00:03:38.943] Browser WARN    Image with src "/logo1.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:03:38.943] Browser WARN    Image with src "http://localhost:3000/logo1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:03:46.814] Browser WARN    Image with src "/logo1.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:03:46.815] Browser WARN    Image with src "http://localhost:3000/logo1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:05:16.859] Server  LOG      ✓ Compiled in 112ms
+[00:05:22.802] Browser WARN    Image with src "/logo1.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:05:22.802] Browser WARN    Image with src "http://localhost:3000/logo1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:19:25.628] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:25.793] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:26.726] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:26.901] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:27.105] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:27.256] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:27.418] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:27.555] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:27.716] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:27.856] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:28.008] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:28.155] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:28.317] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:28.454] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:28.605] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:28.746] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:28.927] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:29.060] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:29.218] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:29.348] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:29.496] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:29.642] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:29.801] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:29.944] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:30.095] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:30.229] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:30.412] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:30.555] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:30.707] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:30.841] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:31.003] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:31.147] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:31.296] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:31.444] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:31.609] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:31.753] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:31.934] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:32.081] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:32.290] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:32.474] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:32.724] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:32.897] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:33.095] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:33.247] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:33.395] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:33.533] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:33.680] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:33.821] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:33.970] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:34.108] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:34.266] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:34.419] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:34.565] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:34.703] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:34.842] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:34.971] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:35.122] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:35.258] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:35.412] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:35.540] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:35.682] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:35.814] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:35.959] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:36.109] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:36.257] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:36.386] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:36.533] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:36.659] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:36.804] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:36.935] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:37.077] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:37.212] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:37.358] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:37.489] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:37.635] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:37.783] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:38.139] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:38.274] Server  ERROR    ⨯ Error: The default export is not a React Component in "/esg/page"
+[00:19:40.518] Browser ERROR   uncaughtError: Error: The default export is not a React Component in "/esg/page"
+[00:22:45.615] Server  LOG      ✓ Compiled in 335ms
+[00:22:49.172] Browser WARN    Image with src "http://localhost:3000/logo1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:24:02.878] Server  LOG      ✓ Compiled in 176ms
+[00:26:35.448] Server  LOG      ✓ Compiled in 102ms
+[00:26:52.210] Browser WARN    Image with src "http://localhost:3000/logo1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:27:18.757] Server  LOG      ✓ Compiled in 234ms
+[00:27:20.559] Server  LOG      ✓ Compiled in 91ms
+[00:27:24.781] Server  LOG      ✓ Compiled in 45ms
+[00:27:27.364] Server  LOG      ✓ Compiled in 89ms
+[00:32:57.092] Browser WARN    Image with src "http://localhost:3000/logo1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:33:52.571] Server  LOG      ✓ Compiled in 204ms
+[00:39:24.036] Browser WARN    Image with src "/logo1.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:39:24.146] Browser WARN    Image with src "http://localhost:3000/logo1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:39:29.826] Browser WARN    Image with src "http://localhost:3000/logo1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:45:46.002] Browser WARN    Image with src "http://localhost:3000/logo1.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.

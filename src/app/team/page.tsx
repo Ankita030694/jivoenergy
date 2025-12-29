@@ -120,7 +120,7 @@ const Team = () => {
         </div>
         
         <div className="p-5 text-center flex-grow flex flex-col justify-center bg-white relative z-10 group-hover:bg-gray-50 transition-colors duration-300">
-          <h3 className="font-bold text-[#062516] text-lg leading-tight mb-1 group-hover:text-[#062516] transition-colors">{member.name}</h3>
+          <h3 className="font-bold text-[#062516] text-lg leading-tight mb-1 group-hover:text-[#062516] transition-colors">{member.name.split(' ')[0]}</h3>
           {member.role && (
             <p className="text-sm text-gray-500 font-medium">{member.role}</p>
           )}
@@ -162,7 +162,7 @@ const Team = () => {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-20 space-y-32">
+      <div className="container mx-auto px-4 pt-20 pb-64 space-y-32">
         
         {/* Mentor Leader Section */}
         <motion.section 
@@ -188,7 +188,7 @@ const Team = () => {
               </div>
               
               <div className="uppercase tracking-widest text-xs text-[#062516] font-bold mb-2">Leadership</div>
-              <h2 className="text-4xl font-bold text-[#062516] mb-2">{mentor.name}</h2>
+              <h2 className="text-4xl font-bold text-[#062516] mb-2">{mentor.name.split(' ')[0]}</h2>
               <div className="text-[#062516]/60 font-medium text-lg mb-8">{mentor.role}</div>
               
               <div className="relative pl-6 border-l-4 border-[#FFFA84] mb-8">
@@ -288,6 +288,8 @@ const Team = () => {
         </section>
 
       </div>
+      
+      <div className="h-40 w-full bg-white"></div>
 
       <Footer />
     </div>

@@ -72,6 +72,24 @@ type LayoutConfig<Route extends LayoutRoutes = LayoutRoutes> = {
   type __Unused = __Check
 }
 
+// Validate ../../../src/app/csr/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/csr">> = Specific
+  const handler = {} as typeof import("../../../src/app/csr/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../src/app/esg/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/esg">> = Specific
+  const handler = {} as typeof import("../../../src/app/esg/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../../src/app/gallery/achada-cape-verde/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/gallery/achada-cape-verde">> = Specific

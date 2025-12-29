@@ -208,20 +208,44 @@ const Careers = () => {
           </p>
           
           <div className="grid gap-6">
-            {[1, 2, 3].map((job) => (
-              <div key={job} className="bg-white border border-gray-200 p-6 rounded-xl hover:shadow-md transition-shadow flex flex-col md:flex-row md:items-center justify-between group">
+            {[
+              {
+                title: "Technical Manager - Electrical",
+                experience: "5 to 10 years",
+                location: "Africa (travel required)",
+                pdf: "/careers/Technical Manager JD for Careers Page.pdf"
+              },
+              {
+                title: "Logistics Manager",
+                experience: "4 to 7 years",
+                location: "Gurgaon, India (travel required)",
+                pdf: "/careers/Logistics Manager JD for Careers Page.pdf"
+              },
+              {
+                title: "HSES Manager",
+                experience: "5 to 7 years",
+                location: "Gurgaon, India (travel required)",
+                pdf: "/careers/HSES Manager JD for Careers Page.pdf"
+              }
+            ].map((job, index) => (
+              <div key={index} className="bg-white border border-gray-200 p-6 rounded-xl hover:shadow-md transition-shadow flex flex-col md:flex-row md:items-center justify-between group">
                 <div>
                   <h4 className="text-xl font-bold text-[#062516] group-hover:text-[#062516]/80 transition-colors">
-                    [Job Title {job}]
+                    {job.title}
                   </h4>
                   <div className="flex items-center space-x-4 mt-2 text-sm text-gray-500">
-                    <span className="flex items-center"><Briefcase className="w-4 h-4 mr-1" /> (years of experience)</span>
-                    <span className="flex items-center"><Globe className="w-4 h-4 mr-1" /> Location: (City)</span>
+                    <span className="flex items-center"><Briefcase className="w-4 h-4 mr-1" /> {job.experience}</span>
+                    <span className="flex items-center"><Globe className="w-4 h-4 mr-1" /> {job.location}</span>
                   </div>
                 </div>
-                <button className="mt-4 md:mt-0 px-6 py-2 border border-[#062516] text-[#062516] rounded-full hover:bg-[#062516] hover:text-white transition-all duration-300 text-sm font-medium">
+                <a 
+                  href={job.pdf}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 md:mt-0 px-6 py-2 border border-[#062516] text-[#062516] rounded-full hover:bg-[#062516] hover:text-white transition-all duration-300 text-sm font-medium inline-block text-center"
+                >
                   View Details
-                </button>
+                </a>
               </div>
             ))}
           </div>
