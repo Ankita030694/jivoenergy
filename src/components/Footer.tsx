@@ -55,13 +55,8 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/esg" className="text-gray-400 hover:text-white transition-colors duration-200">
-                  ESG
-                </Link>
-              </li>
-              <li>
-                <Link href="/csr" className="text-gray-400 hover:text-white transition-colors duration-200">
-                  CSR
+                <Link href="/sustainability" className="text-gray-400 hover:text-white transition-colors duration-200">
+                  Sustainability
                 </Link>
               </li>
             </ul>

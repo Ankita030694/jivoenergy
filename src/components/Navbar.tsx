@@ -416,13 +416,10 @@ const Navbar = () => {
               <a className="nav__link" href="/gallery">Gallery</a>
             </li>
             <li className="nav__item">
-              <a className="nav__link" href="/csr">CSR</a>
-            </li>
-            <li className="nav__item">
               <a className="nav__link" href="/media">Media</a>
             </li>
             <li className="nav__item">
-              <a className="nav__link" href="/esg">ESG</a>
+              <a className="nav__link" href="/sustainability">Sustainability</a>
             </li>
             <li className="nav__item">
               <a className="nav__link" href="/careers">Careers</a>
