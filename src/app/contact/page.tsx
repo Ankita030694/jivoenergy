@@ -6,10 +6,15 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { FaLinkedin, FaInstagram, FaEnvelope } from 'react-icons/fa';
 
+import { countries } from '@/lib/countries';
+
+import { useRouter } from 'next/navigation';
+
 interface FormData {
   fullName: string;
   email: string;
   phone: string;
+  countryCode: string;
   company: string;
   subject: string;
   message: string;
@@ -17,10 +22,12 @@ interface FormData {
 }
 
 const Contact = () => {
+  const router = useRouter();
   const [formData, setFormData] = useState<FormData>({
     fullName: '',
     email: '',
     phone: '',
+    countryCode: '+91',
     company: '',
     subject: '',
     message: '',
@@ -30,24 +37,62 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
+  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    if (/^[a-zA-Z\s]*$/.test(value)) {
+      setFormData({ ...formData, fullName: value });
+    }
+  };
+
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    // Only basic strict typing prevention here (like spaces), 
+    // real email structure validation happens on blur or submit usually,
+    // but user asked "only email".
+    // A strict regex for partial email input is hard, so we block spaces.
+    const value = e.target.value;
+    if (!/\s/.test(value)) {
+      setFormData({ ...formData, email: value });
+    }
+  };
+
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    if (/^\d*$/.test(value)) {
+      setFormData({ ...formData, phone: value });
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
     try {
-      // Here you would typically make an API call to your backend
-      await new Promise(resolve => setTimeout(resolve, 1000)); // Simulated API call
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to submit form');
+      }
+
       setSubmitStatus('success');
       setFormData({
         fullName: '',
         email: '',
         phone: '',
+        countryCode: '+91',
         company: '',
         subject: '',
         message: '',
         interest: ''
       });
+      router.push('/thank-you');
     } catch (error) {
+      console.error('Error submitting form:', error);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -179,7 +224,7 @@ const Contact = () => {
                     id="fullName"
                     required
                     value={formData.fullName}
-                    onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+                    onChange={handleNameChange} // Strict alpha + space validation
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#062516] focus:border-[#062516] outline-none transition-colors text-black"
                     placeholder="John Doe"
                   />
@@ -194,24 +239,39 @@ const Contact = () => {
                     id="email"
                     required
                     value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    onChange={handleEmailChange} // Strict no-space validation
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#062516] focus:border-[#062516] outline-none transition-colors text-black"
                     placeholder="john@example.com"
                   />
                 </div>
 
-                <div>
+                <div className="col-span-1 sm:col-span-2">
                   <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
                     Phone Number
                   </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#062516] focus:border-[#062516] outline-none transition-colors text-black"
-                    placeholder="+1 (555) 000-0000"
-                  />
+                  <div className="flex gap-2">
+                    <div className="w-1/3 min-w-[120px]">
+                      <select
+                        value={formData.countryCode}
+                        onChange={(e) => setFormData({ ...formData, countryCode: e.target.value })}
+                        className="w-full h-full px-2 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#062516] focus:border-[#062516] outline-none transition-colors text-black bg-white"
+                      >
+                        {countries.map((country) => (
+                          <option key={`${country.code}-${country.dial_code}`} value={country.dial_code}>
+                             {country.code} ({country.dial_code})
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                    <input
+                      type="tel"
+                      id="phone"
+                      value={formData.phone}
+                      onChange={handlePhoneChange} // Strict numeric validation
+                      className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#062516] focus:border-[#062516] outline-none transition-colors text-black"
+                      placeholder="5550000000"
+                    />
+                  </div>
                 </div>
 
                 <div>

@@ -16,10 +16,13 @@ import {
   ArrowRight
 } from 'lucide-react';
 
+import { countries } from '@/lib/countries';
+
 interface FormData {
   fullName: string;
   email: string;
   phone: string;
+  countryCode: string;
   position: string;
   description: string;
   cv: File | null;
@@ -31,21 +34,81 @@ const Careers = () => {
     fullName: '',
     email: '',
     phone: '',
+    countryCode: '+91',
     position: '',
     description: '',
     cv: null
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log(formData);
-    alert('Application submitted successfully!');
+    
+    // Create FormData object
+    const data = new FormData();
+    data.append('fullName', formData.fullName);
+    data.append('email', formData.email);
+    data.append('phone', formData.phone);
+    data.append('countryCode', formData.countryCode);
+    data.append('position', formData.position);
+    data.append('description', formData.description);
+    if (formData.cv) {
+      data.append('cv', formData.cv);
+    }
+
+    try {
+      const response = await fetch('/api/careers', {
+        method: 'POST',
+        body: data,
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to submit application');
+      }
+
+      alert('Application submitted successfully!');
+      // Reset form
+      setFormData({
+        fullName: '',
+        email: '',
+        phone: '',
+        countryCode: '+91',
+        position: '',
+        description: '',
+        cv: null
+      });
+      if (fileInputRef.current) {
+        fileInputRef.current.value = '';
+      }
+    } catch (error) {
+      console.error('Error submitting application:', error);
+      alert('There was an error submitting your application. Please try again.');
+    }
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
       setFormData({ ...formData, cv: e.target.files[0] });
+    }
+  };
+
+  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    if (/^[a-zA-Z\s]*$/.test(value)) {
+      setFormData({ ...formData, fullName: value });
+    }
+  };
+
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    if (!/\s/.test(value)) {
+      setFormData({ ...formData, email: value });
+    }
+  };
+
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    if (/^\d*$/.test(value)) {
+      setFormData({ ...formData, phone: value });
     }
   };
 
@@ -278,7 +341,8 @@ const Careers = () => {
                     className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#062516] focus:border-transparent outline-none transition-all"
                     placeholder="John Doe"
                     required
-                    onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+                    value={formData.fullName}
+                    onChange={handleNameChange} // Strict alpha + space validation
                   />
                 </div>
                 <div>
@@ -289,7 +353,8 @@ const Careers = () => {
                     className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#062516] focus:border-transparent outline-none transition-all"
                     placeholder="john@example.com"
                     required
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    value={formData.email}
+                    onChange={handleEmailChange} // Strict no-space validation
                   />
                 </div>
               </div>
@@ -297,15 +362,34 @@ const Careers = () => {
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#062516] focus:border-transparent outline-none transition-all"
-                    placeholder="+1 (555) 000-0000"
-                    required
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  />
+                  <div className="flex gap-2">
+                    <div className="w-1/3 min-w-[120px]">
+                      <select
+                        value={formData.countryCode}
+                        onChange={(e) => setFormData({ ...formData, countryCode: e.target.value })}
+                        className="w-full h-full px-2 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#062516] focus:border-transparent outline-none transition-all text-sm"
+                      >
+                        {countries.map((country) => (
+                          <option key={`${country.code}-${country.dial_code}`} value={country.dial_code}>
+                             {country.code} ({country.dial_code})
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                     <input
+                       type="tel"
+                       id="phone"
+                       className="flex-1 px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#062516] focus:border-transparent outline-none transition-all"
+                       placeholder="5550000000"
+                       required
+                       value={formData.phone}
+                       onChange={handlePhoneChange} // Strict numeric validation
+                     />
+                   </div>
                 </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="position" className="block text-sm font-medium text-gray-700 mb-1">Position Applied For</label>
                   <input
@@ -314,6 +398,7 @@ const Careers = () => {
                     className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#062516] focus:border-transparent outline-none transition-all"
                     placeholder="e.g. Project Manager"
                     required
+                    value={formData.position}
                     onChange={(e) => setFormData({ ...formData, position: e.target.value })}
                   />
                 </div>
@@ -327,6 +412,7 @@ const Careers = () => {
                   className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#062516] focus:border-transparent outline-none transition-all resize-none"
                   placeholder="Tell us a bit about yourself and why you'd be a great fit..."
                   required
+                  value={formData.description}
                   onChange={(e) => setFormData({ ...formData, description: e.target.value })}
                 />
               </div>
