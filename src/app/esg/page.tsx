@@ -54,7 +54,7 @@ export default function SustainabilityPage() {
             <div className="w-full md:w-1/2">
               <div className="relative h-[400px] w-full rounded-2xl overflow-hidden shadow-xl">
                  <Image
-                    src="/esg/IMG_0478.jpg"
+                    src="/QHSE.png"
                     alt="QHSE"
                     fill
                     className="object-cover"
@@ -82,7 +82,7 @@ export default function SustainabilityPage() {
             <div className="w-full md:w-1/2">
               <div className="relative h-[400px] w-full rounded-2xl overflow-hidden shadow-xl">
                  <Image
-                    src="/esg/1766384012528.jpg"
+                    src="/Social.png"
                     alt="CSR Activity"
                     fill
                     className="object-cover"
@@ -110,7 +110,7 @@ export default function SustainabilityPage() {
             <div className="w-full md:w-1/2">
                <div className="relative h-[400px] w-full rounded-2xl overflow-hidden shadow-xl">
                  <Image
-                    src="/esg/1766384012520.jpg"
+                    src="/Sustainblity.png"
                     alt="Sustainability"
                     fill
                     className="object-cover"
