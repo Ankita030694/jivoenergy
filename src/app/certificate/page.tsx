@@ -1,9 +1,10 @@
 'use client';
 
-import React from 'react';
+import dynamic from 'next/dynamic';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import PdfThumbnail from '@/components/PdfThumbnail';
+
+const PdfThumbnail = dynamic(() => import('@/components/PdfThumbnail'), { ssr: false });
 
 const certifications = [
   {
