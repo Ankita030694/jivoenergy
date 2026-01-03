@@ -1,46 +1,42 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import PdfThumbnail from '@/components/PdfThumbnail';
 
 const certifications = [
   {
-    title: "ISO 9001:2015",
-    description: "Quality Management System certification ensuring consistent quality standards across all operations.",
-    image: "/certificates/iso9001.png",
-    year: "2023"
+    title: "ISO 9001:2015 Quality Management System",
+    file: "ISO 9001 JIVO ENERGY PRIVATE LIMITED.pdf"
   },
   {
-    title: "ISO 14001:2015",
-    description: "Environmental Management System certification demonstrating our commitment to environmental sustainability.",
-    image: "/certificates/iso14001.png",
-    year: "2023"
+    title: "ISO 14001:2015 Environmental Management System",
+    file: "ISO 14001 JIVO ENERGY PRIVATE LIMITED.pdf"
   },
   {
-    title: "OHSAS 18001:2007",
-    description: "Occupational Health and Safety Management System ensuring workplace safety standards.",
-    image: "/certificates/ohsas18001.png",
-    year: "2023"
+    title: "ISO 14064-1:2018 The Greenhouse Gases Part 1",
+    file: "ISO 14064 JIVO ENERGY PRIVATE LIMITED.pdf"
   },
   {
-    title: "IEC 61439",
-    description: "International standard for low-voltage switchgear and controlgear assemblies.",
-    image: "/certificates/iec61439.png",
-    year: "2023"
+    title: "ISO/IEC 27001:2022 Information Security Management System",
+    file: "ISO 27001 JIVO ENERGY PRIVATE LIMITED.pdf"
   },
   {
-    title: "UL Certification",
-    description: "Safety certification for electrical equipment and components.",
-    image: "/certificates/ul.png",
-    year: "2023"
+    title: "ISO 20400:2017 Sustainable Procurement",
+    file: "ISO 20400 JIVO ENERGY PRIVATE LIMITED.pdf"
   },
   {
-    title: "CE Marking",
-    description: "European conformity marking for products sold in the European Economic Area.",
-    image: "/certificates/ce.png",
-    year: "2023"
+    title: "ISO 31000:2018 Risk Management",
+    file: "ISO 31000 JIVO ENERGY PRIVATE LIMITED.pdf"
+  },
+  {
+    title: "ISO 37001:2016 Anti-Bribery Management System",
+    file: "ISO 37001 JIVO ENERGY PRIVATE LIMITED.pdf"
+  },
+  {
+    title: "ISO 45001:2018 Occupational Health & Safety Management System",
+    file: "ISO 45001 JIVO ENERGY PRIVATE LIMITED.pdf"
   }
 ];
 
@@ -58,7 +54,7 @@ const Certificate = () => {
           playsInline
           className="absolute inset-0 w-full h-full object-cover opacity-90"
         >
-          <source src="/power.mp4" type="video/mp4" />
+          <source src="/cert_vid.mp4" type="video/mp4" />
         </video>
         <div className="relative z-10 h-full flex items-center justify-center">
           <h1 className="text-7xl font-bold text-white text-center px-4">
@@ -69,69 +65,35 @@ const Certificate = () => {
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 py-16">
-        {/* Introduction Section */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-[#062516] mb-4">
-            Our Commitment to Excellence
-          </h2>
-          <p className="text-gray-600 max-w-3xl mx-auto">
-            At Jivo Energy, we maintain the highest standards of quality, safety, and environmental responsibility. 
-            Our certifications demonstrate our commitment to excellence and our dedication to delivering reliable 
-            energy solutions that meet international standards.
-          </p>
-        </div>
-
-        {/* Certifications Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="flex flex-wrap justify-center gap-8">
           {certifications.map((cert, index) => (
-            <div 
+            <a 
               key={index}
-              className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+              href={`/certifications/${cert.file}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 flex flex-col items-center text-center group cursor-pointer w-full md:w-[calc(50%-2rem)] lg:w-[30%]"
             >
-              <div className="relative h-48 bg-gray-100">
-                <Image
-                  src={cert.image}
-                  alt={cert.title}
-                  fill
-                  className="object-contain p-4"
-                />
+              <div className="w-full bg-gray-100 relative border-b border-gray-100">
+                <PdfThumbnail file={`/certifications/${cert.file}`} width={350} />
               </div>
-              <div className="p-6">
-                <div className="flex justify-between items-start mb-3">
-                  <h3 className="text-xl font-bold text-[#062516]">{cert.title}</h3>
-                  <span className="text-sm font-semibold text-gray-500">{cert.year}</span>
-                </div>
-                <p className="text-gray-600">{cert.description}</p>
-              </div>
-            </div>
-          ))}
-        </div>
 
-        {/* Additional Information Section */}
-        <div className="mt-16 bg-[#062516]/5 rounded-lg p-8">
-          <h3 className="text-2xl font-bold text-[#062516] mb-4">
-            Quality Assurance
-          </h3>
-          <p className="text-gray-600 mb-6">
-            Our commitment to quality extends beyond certifications. We continuously monitor and improve our 
-            processes to ensure we deliver the highest quality products and services to our clients. Our 
-            quality management system is regularly audited and updated to maintain compliance with 
-            international standards.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-white p-6 rounded-lg shadow">
-              <h4 className="font-bold text-[#062516] mb-2">Regular Audits</h4>
-              <p className="text-gray-600">Continuous monitoring and improvement of our processes</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow">
-              <h4 className="font-bold text-[#062516] mb-2">Training Programs</h4>
-              <p className="text-gray-600">Comprehensive training for all employees on quality standards</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow">
-              <h4 className="font-bold text-[#062516] mb-2">Documentation</h4>
-              <p className="text-gray-600">Detailed documentation of all processes and procedures</p>
-            </div>
-          </div>
+              <div className="p-8 flex flex-col items-center flex-grow w-full">
+                <h3 className="text-xl font-bold text-[#062516] mb-6 flex-grow line-clamp-3">
+                  {cert.title}
+                </h3>
+                
+                <span 
+                  className="inline-flex items-center px-6 py-3 bg-[#062516] text-white rounded-lg group-hover:bg-[#051e12] transition-colors duration-300 font-medium mt-auto"
+                >
+                  <span>View Certificate</span>
+                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </span>
+              </div>
+            </a>
+          ))}
         </div>
       </div>
 

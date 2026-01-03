@@ -28,17 +28,18 @@ const Partners = () => {
       <h2 className="text-3xl font-bold text-[#062516] text-center mb-10 border-b pb-4 mx-auto max-w-2xl">
         {title}
       </h2>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-items-center items-center">
+      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6 justify-items-center items-center">
         {images.map((img, index) => (
           <div 
             key={index} 
-            className="w-full h-40 relative p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100 flex items-center justify-center"
+            className="w-full h-32 relative p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100 flex items-center justify-center"
           >
             <Image
               src={`/partners/${img}`}
               alt={`${title} Partner ${index + 1}`}
               fill
-              className="object-contain p-4"
+              className="object-contain p-2"
+              quality={100}
             />
           </div>
         ))}
