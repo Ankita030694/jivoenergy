@@ -246,7 +246,7 @@ export default function GlobeViz() {
   // The MapViz used a fixed position relative to the map container.
 
   return (
-    <div className="relative w-full h-full bg-black overflow-hidden">
+    <div className="relative w-full h-full bg-black overflow-hidden" style={{ touchAction: 'pan-y' }}>
       <style jsx global>{`
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
         
@@ -288,19 +288,27 @@ export default function GlobeViz() {
         width={typeof window !== 'undefined' ? window.innerWidth : 800} 
         onGlobeReady={() => {
           if (globeEl.current) {
+            // Disable auto-rotation for all
             globeEl.current.controls().autoRotate = false
             globeEl.current.controls().enableZoom = false
             
             // Adjust view based on screen width
             const isMobile = window.innerWidth < 768
-            const altitude = isMobile ? 3.0 : 1.8
+            const altitude = isMobile ? 2.5 : 1.8
             
             globeEl.current.pointOfView({ lat: 15, lng: 45, altitude })
+
+            if (isMobile) {
+                // Wait for the view to set, then disable controls to allow native scroll
+                setTimeout(() => {
+                    if (globeEl.current) {
+                        globeEl.current.controls().enabled = false;
+                    }
+                }, 100);
+            }
           }
         }}
-        // Need to ensure width/height are responsive or fill container
-        // React-globe.gl canvas resizing can be tricky. Use ResizeObserver if needed,
-        // but for full screen hero usually window size is okay or use container stats.
+        height={typeof window !== 'undefined' ? window.innerHeight : 600}
       />
 
       {/* Popup Overlay */}
@@ -311,9 +319,9 @@ export default function GlobeViz() {
                 top: '50%',
                 left: '50%',
                 transform: 'translate(-50%, -50%)',
-                zIndex: 1000,
-                minWidth: '320px',
-                maxWidth: '400px'
+                zIndex: 9999, // High z-index to ensure it's above everything
+                width: '90%', // Responsive width for mobile
+                maxWidth: '400px' // Max width for desktop
             }}
         >
              {(() => {
@@ -333,9 +341,12 @@ export default function GlobeViz() {
                       </div>
                       <h3 className="text-lg font-semibold text-white">{info.name}</h3>
                     </div>
+                    {/* Increased touch target for mobile */}
                     <button 
-                      className="text-gray-400 hover:text-white text-lg font-light w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/10 transition-colors duration-200"
-                      onClick={() => {
+                      className="text-gray-400 hover:text-white text-lg font-light w-12 h-12 flex items-center justify-center rounded-full hover:bg-white/10 transition-colors duration-200 -mr-3 -mt-3"
+                      onPointerUp={(e) => {
+                          e.stopPropagation(); 
+                          e.preventDefault();
                           setSelectedCountry(null)
                       }}
                     >
@@ -343,50 +354,50 @@ export default function GlobeViz() {
                     </button>
                   </div>
 
-                  <div className="px-4 py-4">
+                  <div className="px-4 py-4 max-h-[60vh] overflow-y-auto"> {/* Scrollable content if nice */}
                     <div className="relative overflow-hidden rounded-lg border border-white/10 mb-4 group">
                       <img 
                         src={info.projectImage} 
                         alt={`${info.name} renewable energy project`}
-                        className="w-full h-32 object-cover transition-transform duration-500 group-hover:scale-105"
+                        className="w-full h-28 sm:h-32 object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                        <div className="absolute bottom-3 left-3">
-                        <span className="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-green-500/20 text-green-300 border border-green-500/30 backdrop-blur-sm">
+                        <span className="inline-flex items-center px-2 py-1 rounded text-[10px] sm:text-xs font-medium bg-green-500/20 text-green-300 border border-green-500/30 backdrop-blur-sm">
                           Renewable Energy
                         </span>
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-1 gap-3">
-                      <div className="flex justify-between items-center p-3 bg-blue-500/10 rounded-lg border border-blue-500/20">
+                    <div className="grid grid-cols-1 gap-2 sm:gap-3">
+                      <div className="flex justify-between items-center p-2.5 sm:p-3 bg-blue-500/10 rounded-lg border border-blue-500/20">
                         <div className="flex items-center gap-3">
                           <div className="w-8 h-8 bg-blue-500/20 rounded-lg flex items-center justify-center border border-blue-500/30">
                             <span className="text-blue-300 font-semibold text-sm">{info.projects}</span>
                           </div>
-                          <span className="font-medium text-gray-300">Active Projects</span>
+                          <span className="font-medium text-gray-300 text-sm">Active Projects</span>
                         </div>
                       </div>
                       
-                      <div className="flex justify-between items-center p-3 bg-emerald-500/10 rounded-lg border border-emerald-500/20">
+                      <div className="flex justify-between items-center p-2.5 sm:p-3 bg-emerald-500/10 rounded-lg border border-emerald-500/20">
                          <div className="flex items-center gap-3">
                           <div className="w-8 h-8 bg-emerald-500/20 rounded-lg flex items-center justify-center border border-emerald-500/30">
                             <span className="text-emerald-300 font-semibold text-xs">⚡</span>
                           </div>
                           <div>
-                            <span className="font-medium text-gray-300 block text-xs mb-0.5">Total Capacity</span>
-                            <div className="text-emerald-300 font-semibold">{info.capacity}</div>
+                            <span className="font-medium text-gray-300 block text-[10px] sm:text-xs mb-0.5">Total Capacity</span>
+                            <div className="text-emerald-300 font-semibold text-sm">{info.capacity}</div>
                           </div>
                         </div>
                       </div>
                       
-                      <div className="flex justify-between items-center p-3 bg-orange-500/10 rounded-lg border border-orange-500/20">
+                      <div className="flex justify-between items-center p-2.5 sm:p-3 bg-orange-500/10 rounded-lg border border-orange-500/20">
                         <div className="flex items-center gap-3">
                           <div className="w-8 h-8 bg-orange-500/20 rounded-lg flex items-center justify-center border border-orange-500/30">
                             <span className="text-orange-300 font-semibold text-xs">📊</span>
                           </div>
                           <div>
-                            <span className="font-medium text-gray-300 block text-xs mb-0.5">Status</span>
+                            <span className="font-medium text-gray-300 block text-[10px] sm:text-xs mb-0.5">Status</span>
                             <div className="text-orange-300 font-semibold text-sm">{info.status}</div>
                           </div>
                         </div>
@@ -396,7 +407,7 @@ export default function GlobeViz() {
 
                   <div className="p-4 pt-0">
                     <div className="bg-white/5 rounded-lg p-3 border border-white/10">
-                      <p className="text-sm text-gray-400 leading-relaxed text-justify">
+                      <p className="text-xs sm:text-sm text-gray-400 leading-relaxed text-justify">
                         Comprehensive renewable energy development initiative focused on sustainable power generation, 
                         modern grid infrastructure, and community empowerment through clean energy access.
                       </p>
