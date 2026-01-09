@@ -8,15 +8,17 @@ interface MediaCard {
   description: string;
   image: string;
   category: string;
+  link?: string;
 }
 
 const mediaCards: MediaCard[] = [
   {
     id: 1,
-    title: "Renewable Energy News",
-    description: "Stay updated with the latest developments in renewable energy technology and sustainable practices.",
-    image: "/media-news.jpg",
-    category: "News"
+    title: "JIVO Energy constrói Central Solar de Santo Amaro em São Tomé",
+    description: "A JIVO Energy concluiu com sucesso o projecto de Engenharia, Aquisição e Construção (EPC) de uma central fotovoltaica de 1,2 MWp ligada à rede em São Tomé e Príncipe.",
+    image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&q=80",
+    category: "News",
+    link: "https://www.telanon.info/sociedade/2025/12/27/51256/jivo-energy-constroi-central-solar-de-santo-amaro-em-sao-tome/"
   },
   {
     id: 2,
@@ -67,9 +69,12 @@ const Media = () => {
         {/* Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {mediaCards.map((card) => (
-            <div 
+            <a 
               key={card.id}
-              className="group bg-white/95 backdrop-blur-sm rounded-2xl overflow-hidden shadow-2xl border border-white/20 hover:bg-white hover:shadow-green-500/20 hover:-translate-y-3 hover:scale-105 transition-all duration-500 relative"
+              href={card.link || '#'}
+              target={card.link ? "_blank" : undefined}
+              rel={card.link ? "noopener noreferrer" : undefined}
+              className="group bg-white/95 backdrop-blur-sm rounded-2xl overflow-hidden shadow-2xl border border-white/20 hover:bg-white hover:shadow-green-500/20 hover:-translate-y-3 hover:scale-105 transition-all duration-500 relative block"
             >
               {/* Category Badge */}
               <div className="absolute top-4 left-4 z-10">
@@ -99,7 +104,7 @@ const Media = () => {
                 </p>
                 
                 {/* CTA Button */}
-                <button className="inline-flex items-center px-6 py-3 bg-[#062516] text-white font-semibold rounded-xl hover:bg-green-700 hover:shadow-lg hover:shadow-green-500/25 transform hover:scale-105 transition-all duration-300 group/btn">
+                <div className="inline-flex items-center px-6 py-3 bg-[#062516] text-white font-semibold rounded-xl hover:bg-green-700 hover:shadow-lg hover:shadow-green-500/25 transform hover:scale-105 transition-all duration-300 group/btn">
                   <span>Learn More</span>
                   <svg 
                     className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" 
@@ -109,9 +114,9 @@ const Media = () => {
                   >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
-                </button>
+                </div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
         

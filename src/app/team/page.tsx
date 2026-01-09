@@ -3,7 +3,7 @@
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { Linkedin, ArrowUpRight } from 'lucide-react';
+import { Linkedin, ArrowUpRight, FileText } from 'lucide-react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
@@ -12,6 +12,7 @@ interface TeamMember {
   role?: string;
   image: string;
   linkedin?: string;
+  pdf?: string;
 }
 
 const Team = () => {
@@ -51,14 +52,14 @@ const Team = () => {
 
   const functionalSpecialists: TeamMember[] = [
     { name: 'Ainemigisha Martha Tukahirwa Flavia', image: '/team/Martha.jpeg', linkedin: 'https://www.linkedin.com/in/martha-ainemigisha-a6a2b4238/' },
-    { name: 'Anuradha Nehra', image: '/team/Anuradha.JPG', linkedin: 'https://www.linkedin.com/in/graphologistanuradha/' },
+    { name: 'Anuradha Nehra', image: '/team/Anuradha.JPG', linkedin: 'https://www.linkedin.com/in/graphologistanuradha/', pdf: '/team/Anu.pdf' },
     { name: 'Arun Kumar', image: '/team/Arun.JPG', linkedin: 'https://www.linkedin.com/in/arun-sharma-b5504918b/' },
-    { name: 'Chavvi Ahuja', image: '/team/Chavvi.JPG', linkedin: 'https://www.linkedin.com/in/chavvi-ahuja-68507b20a/' },
+    { name: 'Chavvi Ahuja', image: '/team/Chavvi.JPG', linkedin: 'https://www.linkedin.com/in/chavvi-ahuja-68507b20a/', pdf: '/team/Chavvi.pdf' },
     { name: 'Gayatri Mudgil', image: '/team/Gayatri.jpg', linkedin: 'https://www.linkedin.com/in/gayatri-m-92122918b/' },
-    { name: 'Geetika Sondhi', image: '/team/Geetika.JPG', linkedin: 'https://www.linkedin.com/in/geetika-sondhi-82274520/' },
+    { name: 'Geetika Sondhi', image: '/team/Geetika.JPG', linkedin: 'https://www.linkedin.com/in/geetika-sondhi-82274520/', pdf: '/team/Geetika.pdf' },
     { name: 'Nitin Kumar', image: '/team/Nitin.JPG', linkedin: 'https://www.linkedin.com/in/nitin-kumar-195675157/' },
     { name: 'Shivalika Nagpal', image: '/team/Shivalika.JPG', linkedin: 'https://www.linkedin.com/in/shivalikanagpal/' },
-    { name: 'Ujwal Arora', image: '/team/Ujwal.JPG', linkedin: 'https://www.linkedin.com/in/ca-ujwal-arora-6481108b/' },
+    { name: 'Ujwal Arora', image: '/team/Ujwal.JPG', linkedin: 'https://www.linkedin.com/in/ca-ujwal-arora-6481108b/', pdf: '/team/Ujwal.pdf' },
   ];
 
   const containerVariants = {
@@ -89,13 +90,13 @@ const Team = () => {
       className="group relative"
     >
       <div className="relative overflow-hidden rounded-2xl bg-white shadow-md hover:shadow-2xl transition-all duration-500 border border-gray-100 h-full flex flex-col">
-        <div className="aspect-[3/4] overflow-hidden bg-gray-100 relative">
+        <div className="aspect-square overflow-hidden bg-gray-100 relative">
           {member.image ? (
             <Image
               src={member.image}
               alt={member.name}
               fill
-              className="object-cover transition-transform duration-700 group-hover:scale-110"
+              className="object-cover object-top transition-transform duration-700 group-hover:scale-110"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
           ) : (
@@ -106,20 +107,33 @@ const Team = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-[#062516] via-[#062516]/20 to-transparent opacity-0 group-hover:opacity-90 transition-opacity duration-500" />
           
           <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500 flex flex-col items-center justify-end h-full pb-8">
-             <a 
-              href={member.linkedin || '#'} 
-              className="bg-white/10 backdrop-blur-md border border-white/20 p-3 rounded-full text-white hover:bg-white hover:text-[#0077b5] transition-all duration-300 transform hover:scale-110"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`Connect with ${member.name} on LinkedIn`}
-            >
-              <Linkedin className="w-6 h-6" />
-            </a>
-            <span className="text-white/80 text-sm mt-3 font-light tracking-wide">Connect on LinkedIn</span>
+            <div className="flex gap-4">
+              <a 
+                href={member.linkedin || '#'} 
+                className="bg-white/10 backdrop-blur-md border border-white/20 p-3 rounded-full text-white hover:bg-white hover:text-[#0077b5] transition-all duration-300 transform hover:scale-110"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Connect with ${member.name} on LinkedIn`}
+              >
+                <Linkedin className="w-5 h-5" />
+              </a>
+              {member.pdf && (
+                <a 
+                  href={member.pdf} 
+                  className="bg-white/10 backdrop-blur-md border border-white/20 p-3 rounded-full text-white hover:bg-white hover:text-[#ff0000] transition-all duration-300 transform hover:scale-110"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`View ${member.name}'s Profile`}
+                >
+                  <FileText className="w-5 h-5" />
+                </a>
+              )}
+            </div>
+            <span className="text-white/80 text-sm mt-3 font-light tracking-wide">Connect & Info</span>
           </div>
         </div>
         
-        <div className="p-5 text-center flex-grow flex flex-col justify-center bg-white relative z-10 group-hover:bg-gray-50 transition-colors duration-300">
+        <div className="p-8 text-center flex-grow flex flex-col justify-center bg-white relative z-10 group-hover:bg-gray-50 transition-colors duration-300">
           <h3 className="font-bold text-[#062516] text-lg leading-tight mb-1 group-hover:text-[#062516] transition-colors">{member.name.split(' ')[0]}</h3>
           {member.role && (
             <p className="text-sm text-gray-500 font-medium">{member.role}</p>
