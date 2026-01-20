@@ -22,17 +22,19 @@ const mediaCards: MediaCard[] = [
   },
   {
     id: 2,
-    title: "Success Stories",
-    description: "Discover how our innovative solutions have transformed businesses and communities worldwide.",
-    image: "/media-success.jpg",
-    category: "Case Studies"
+    title: "JIVO Energy has built the Santo Amaro solar power plant in Sao Tome",
+    description: "JIVO Energy successfully completed the Engineering, Procurement, and Construction (EPC) of a 1.2 MWp grid-connected solar PV plant in São Tomé and Príncipe.",
+    image: "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&q=80",
+    category: "News",
+    link: "https://www.africanpowerplatform.org/news/press-releases-2/external/4551-jivo-energy-has-built-the-santo-amaro-solar-power-plant-in-sao-tome.html"
   },
   {
     id: 3,
-    title: "Industry Insights",
-    description: "Expert analysis and deep dives into the future of sustainable energy and green technology.",
-    image: "/media-insights.jpg",
-    category: "Research"
+    title: "JIVO Energy Adds 1.2 MWp Solar Capacity To Reduce Load-Shedding In São Tomé",
+    description: "JIVO Energy commissions 1.2 MWp Santo Amaro Solar Plant in São Tomé, boosting renewable energy, reducing load-shedding, and supporting grid stability.",
+    image: "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=80",
+    category: "Press Release",
+    link: "https://solarquarter.com/2026/01/16/jivo-energy-adds-1-2-mwp-solar-capacity-to-reduce-load-shedding-in-sao-tome/"
   }
 ];
 
