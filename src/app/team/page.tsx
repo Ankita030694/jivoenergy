@@ -25,41 +25,42 @@ const Team = () => {
 
   const technicalSpecialists: TeamMember[] = [
     { name: 'Akshay Sharma', image: '' },
-    { name: 'Ankit Srivastava', image: '/team/Ankit.JPG', linkedin: 'https://www.linkedin.com/in/ankit-srivastava14/' },
-    { name: 'Ashok Kumar', image: '/team/Ashok.JPG', linkedin: 'https://www.linkedin.com/in/ashok-kumar-74a07064/' },
-    { name: 'Manvendra Singh Hada', image: '/team/Manvendra.JPG', linkedin: 'https://www.linkedin.com/in/hadamanvendrasingh/' },
+    { name: 'Ankit Srivastava', image: '/team/Ankit.jpg', linkedin: 'https://www.linkedin.com/in/ankit-srivastava14/' },
+    { name: 'Ashok Kumar', image: '/team/Ashok.jpg', linkedin: 'https://www.linkedin.com/in/ashok-kumar-74a07064/' },
+    { name: 'Manvendra Singh Hada', image: '/team/Manvendra.jpg', linkedin: 'https://www.linkedin.com/in/hadamanvendrasingh/' },
     { name: 'Nitin', image: '', linkedin: 'https://www.linkedin.com/in/nitin-kumar-195675157/' },
     { name: 'Pauline Wambui Wachira', image: '/team/Pauline.jpeg' },
     { name: 'Prayas Gupta', image: '/team/Prayas Photo.jpeg', linkedin: 'https://www.linkedin.com/in/preyas-gupta/' },
-    { name: 'Ravi Kumar', image: '/team/Ravi.JPG', linkedin: 'https://www.linkedin.com/in/ravi-kumar-yadav-36812a308/' },
-    { name: 'Rohit Shivaji Nalavade', image: '/team/Rohit.JPG', linkedin: 'https://www.linkedin.com/in/rohit-nalavade-8a6780395/' },
+    { name: 'Ravi Kumar', image: '/team/Ravi.jpg', linkedin: 'https://www.linkedin.com/in/ravi-kumar-yadav-36812a308/' },
+    { name: 'Rohit Shivaji Nalavade', image: '/team/Rohit.jpg', linkedin: 'https://www.linkedin.com/in/rohit-nalavade-8a6780395/' },
     { name: 'Samuel Walusimbi', image: '/team/Samuel.png', linkedin: 'https://www.linkedin.com/in/samuel-walusimbi-k/' },
-    { name: 'Shashi Kumar', image: '/team/Shashi.JPG', linkedin: 'https://www.linkedin.com/in/shashi-kumar-87449b148/' },
+    { name: 'Shashi Kumar', image: '/team/Shashi.jpg', linkedin: 'https://www.linkedin.com/in/shashi-kumar-87449b148/' },
     { name: 'Tushar Saurabh', image: '', linkedin: 'https://www.linkedin.com/in/tushar-saurabh-02b5277b/' },
-    { name: 'Vivek Gupta', image: '/team/Vivek.JPG', linkedin: 'https://www.linkedin.com/in/vivek-vikram-56470a127/' },
+    { name: 'Vivek Gupta', image: '/team/Vivek.jpg', linkedin: 'https://www.linkedin.com/in/vivek-vikram-56470a127/' },
   ];
 
   const commercialSpecialists: TeamMember[] = [
-    { name: 'Aakanksha', image: '/team/Aakanksha.JPG', linkedin: 'https://www.linkedin.com/in/aakankshachugh/' },
+    { name: 'Aakanksha', image: '/team/Aakanksha.jpg', linkedin: 'https://www.linkedin.com/in/aakankshachugh/' },
     { name: 'Abhishek Batra', image: '/team/Abhishek.jpeg', linkedin: 'https://www.linkedin.com/in/caabhishekbatra/' },
     { name: 'Beatrice Kithinji', image: '/team/Beatrice.jpeg', linkedin: 'https://www.linkedin.com/in/beatrice-kithinji-mba-30aa448a/' },
     { name: 'Jorge Lascas', image: '/team/Jorge.jpeg', linkedin: 'https://www.linkedin.com/in/jorgemslascas/' },
-    { name: 'Naresh Kumar Singh Ghorla', image: '/team/Naresh.JPG', linkedin: 'https://www.linkedin.com/in/naresh-ghorla-805222150/' },
-    { name: 'Nishank Madaan', image: '/team/Nishank.JPG', linkedin: 'https://www.linkedin.com/in/nishank-madaan-658177146/' },
-    { name: 'Nitesh Kumar', image: '/team/Nitesh.JPG', linkedin: 'https://www.linkedin.com/in/nitesh-jangra-a9567a278/' },
+    { name: 'Naresh Kumar Singh Ghorla', image: '/team/Naresh.jpg', linkedin: 'https://www.linkedin.com/in/naresh-ghorla-805222150/' },
+    { name: 'Nishank Madaan', image: '/team/Nishank.jpg', linkedin: 'https://www.linkedin.com/in/nishank-madaan-658177146/' },
+    { name: 'Nitesh Kumar', image: '/team/Nitesh.jpg', linkedin: 'https://www.linkedin.com/in/nitesh-jangra-a9567a278/' },
     { name: 'Patrice Yamintare Kounkorgo', image: '/team/Patrice.jpeg', linkedin: 'https://www.linkedin.com/in/yamintare-patrice-kounkorgo-058405179/' },
   ];
 
   const functionalSpecialists: TeamMember[] = [
     { name: 'Ainemigisha Martha Tukahirwa Flavia', image: '/team/Martha.jpeg', linkedin: 'https://www.linkedin.com/in/martha-ainemigisha-a6a2b4238/' },
-    { name: 'Anuradha Nehra', image: '/team/Anuradha.JPG', linkedin: 'https://www.linkedin.com/in/graphologistanuradha/', pdf: '/team/Anu.pdf' },
-    { name: 'Arun Kumar', image: '/team/Arun.JPG', linkedin: 'https://www.linkedin.com/in/arun-sharma-b5504918b/' },
-    { name: 'Chavvi Ahuja', image: '/team/Chavvi.JPG', linkedin: 'https://www.linkedin.com/in/chavvi-ahuja-68507b20a/', pdf: '/team/Chavvi.pdf' },
+    { name: 'Anuradha Nehra', image: '/team/Anuradha.jpg', linkedin: 'https://www.linkedin.com/in/graphologistanuradha/', pdf: '/team/Anu.pdf' },
+    { name: 'Arun Kumar', image: '/team/Arun.jpg', linkedin: 'https://www.linkedin.com/in/arun-sharma-b5504918b/' },
+    { name: 'Chavvi Ahuja', image: '/team/Chavvi.jpg', linkedin: 'https://www.linkedin.com/in/chavvi-ahuja-68507b20a/', pdf: '/team/Chavvi.pdf' },
     { name: 'Gayatri Mudgil', image: '/team/Gayatri.jpg', linkedin: 'https://www.linkedin.com/in/gayatri-m-92122918b/' },
-    { name: 'Geetika Sondhi', image: '/team/Geetika.JPG', linkedin: 'https://www.linkedin.com/in/geetika-sondhi-82274520/', pdf: '/team/Geetika.pdf' },
-    { name: 'Nitin Kumar', image: '/team/Nitin.JPG', linkedin: 'https://www.linkedin.com/in/nitin-kumar-195675157/' },
-    { name: 'Shivalika Nagpal', image: '/team/Shivalika.JPG', linkedin: 'https://www.linkedin.com/in/shivalikanagpal/' },
-    { name: 'Ujwal Arora', image: '/team/Ujwal.JPG', linkedin: 'https://www.linkedin.com/in/ca-ujwal-arora-6481108b/', pdf: '/team/Ujwal.pdf' },
+    { name: 'Geetika Sondhi', image: '/team/Geetika.jpg', linkedin: 'https://www.linkedin.com/in/geetika-sondhi-82274520/', pdf: '/team/Geetika.pdf' },
+    { name: 'Nidhi', image: '/team/nidhi.jpg' },
+    { name: 'Nitin Kumar', image: '/team/Nitin.jpg', linkedin: 'https://www.linkedin.com/in/nitin-kumar-195675157/' },
+    { name: 'Shivalika Nagpal', image: '/team/Shivalika.jpg', linkedin: 'https://www.linkedin.com/in/shivalikanagpal/' },
+    { name: 'Ujwal Arora', image: '/team/Ujwal.jpg', linkedin: 'https://www.linkedin.com/in/ca-ujwal-arora-6481108b/', pdf: '/team/Ujwal.pdf' },
   ];
 
   const containerVariants = {
