@@ -23,44 +23,46 @@ const Team = () => {
     linkedin: 'https://www.linkedin.com/in/rajeshchugh74/'
   };
 
-  const technicalSpecialists: TeamMember[] = [
-    { name: 'Akshay Sharma', image: '' },
-    { name: 'Ankit Srivastava', image: '/team/Ankit.jpg', linkedin: 'https://www.linkedin.com/in/ankit-srivastava14/' },
-    { name: 'Ashok Kumar', image: '/team/Ashok.jpg', linkedin: 'https://www.linkedin.com/in/ashok-kumar-74a07064/' },
-    { name: 'Manvendra Singh Hada', image: '/team/Manvendra.jpg', linkedin: 'https://www.linkedin.com/in/hadamanvendrasingh/' },
-    { name: 'Nitin', image: '', linkedin: 'https://www.linkedin.com/in/nitin-kumar-195675157/' },
-    { name: 'Pauline Wambui Wachira', image: '/team/Pauline.jpeg' },
-    { name: 'Prayas Gupta', image: '/team/Prayas Photo.jpeg', linkedin: 'https://www.linkedin.com/in/preyas-gupta/' },
-    { name: 'Ravi Kumar', image: '/team/Ravi.jpg', linkedin: 'https://www.linkedin.com/in/ravi-kumar-yadav-36812a308/' },
-    { name: 'Rohit Shivaji Nalavade', image: '/team/Rohit.jpg', linkedin: 'https://www.linkedin.com/in/rohit-nalavade-8a6780395/' },
-    { name: 'Samuel Walusimbi', image: '/team/Samuel.png', linkedin: 'https://www.linkedin.com/in/samuel-walusimbi-k/' },
-    { name: 'Shashi Kumar', image: '/team/Shashi.jpg', linkedin: 'https://www.linkedin.com/in/shashi-kumar-87449b148/' },
-    { name: 'Tushar Saurabh', image: '', linkedin: 'https://www.linkedin.com/in/tushar-saurabh-02b5277b/' },
-    { name: 'Vivek Gupta', image: '/team/Vivek.jpg', linkedin: 'https://www.linkedin.com/in/vivek-vikram-56470a127/' },
-  ];
-
-  const commercialSpecialists: TeamMember[] = [
-    { name: 'Aakanksha', image: '/team/Aakanksha.jpg', linkedin: 'https://www.linkedin.com/in/aakankshachugh/' },
-    { name: 'Abhishek Batra', image: '/team/Abhishek.jpeg', linkedin: 'https://www.linkedin.com/in/caabhishekbatra/' },
-    { name: 'Beatrice Kithinji', image: '/team/Beatrice.jpeg', linkedin: 'https://www.linkedin.com/in/beatrice-kithinji-mba-30aa448a/' },
+  const projectDevelopment: TeamMember[] = [
     { name: 'Jorge Lascas', image: '/team/Jorge.jpeg', linkedin: 'https://www.linkedin.com/in/jorgemslascas/' },
-    { name: 'Naresh Kumar Singh Ghorla', image: '/team/Naresh.jpg', linkedin: 'https://www.linkedin.com/in/naresh-ghorla-805222150/' },
+    { name: 'Aakanksha', image: '/team/Aakanksha.jpg', linkedin: 'https://www.linkedin.com/in/aakankshachugh/' },
+    { name: 'Geetika Sondhi', image: '/team/Geetika.jpg', linkedin: 'https://www.linkedin.com/in/geetika-sondhi-82274520/', pdf: '/team/Geetika.pdf' },
     { name: 'Nishank Madaan', image: '/team/Nishank.jpg', linkedin: 'https://www.linkedin.com/in/nishank-madaan-658177146/' },
+    { name: 'Abhishek Batra', image: '/team/Abhishek.jpeg', linkedin: 'https://www.linkedin.com/in/caabhishekbatra/' },
+    { name: 'Naresh Kumar Singh Ghorla', image: '/team/Naresh.jpg', linkedin: 'https://www.linkedin.com/in/naresh-ghorla-805222150/' },
     { name: 'Nitesh Kumar', image: '/team/Nitesh.jpg', linkedin: 'https://www.linkedin.com/in/nitesh-jangra-a9567a278/' },
+    { name: 'Beatrice Kithinji', image: '/team/Beatrice.jpeg', linkedin: 'https://www.linkedin.com/in/beatrice-kithinji-mba-30aa448a/' },
     { name: 'Patrice Yamintare Kounkorgo', image: '/team/Patrice.jpeg', linkedin: 'https://www.linkedin.com/in/yamintare-patrice-kounkorgo-058405179/' },
+    { name: 'Ivan', image: '' },
+    { name: 'Boydd', image: '' },
   ];
 
-  const functionalSpecialists: TeamMember[] = [
-    { name: 'Ainemigisha Martha Tukahirwa Flavia', image: '/team/Martha.jpeg', linkedin: 'https://www.linkedin.com/in/martha-ainemigisha-a6a2b4238/' },
-    { name: 'Anuradha Nehra', image: '/team/Anuradha.jpg', linkedin: 'https://www.linkedin.com/in/graphologistanuradha/', pdf: '/team/Anu.pdf' },
-    { name: 'Arun Kumar', image: '/team/Arun.jpg', linkedin: 'https://www.linkedin.com/in/arun-sharma-b5504918b/' },
+  const projectExecution: TeamMember[] = [
+    { name: 'Prayas Gupta', image: '/team/Prayas Photo.jpeg', linkedin: 'https://www.linkedin.com/in/preyas-gupta/' },
+    { name: 'Manvendra Singh Hada', image: '/team/Manvendra.jpg', linkedin: 'https://www.linkedin.com/in/hadamanvendrasingh/' },
+    { name: 'Ankit Srivastava', image: '/team/Ankit.jpg', linkedin: 'https://www.linkedin.com/in/ankit-srivastava14/' },
+    { name: 'Vivek Gupta', image: '/team/Vivek.jpg', linkedin: 'https://www.linkedin.com/in/vivek-vikram-56470a127/' },
+    { name: 'Rohit Shivaji Nalavade', image: '/team/Rohit.jpg', linkedin: 'https://www.linkedin.com/in/rohit-nalavade-8a6780395/' },
+    { name: 'Tushar Saurabh', image: '', linkedin: 'https://www.linkedin.com/in/tushar-saurabh-02b5277b/' },
+    { name: 'Akshay Sharma', image: '' },
+    { name: 'Ashok Kumar', image: '/team/Ashok.jpg', linkedin: 'https://www.linkedin.com/in/ashok-kumar-74a07064/' },
+    { name: 'Shashi Kumar', image: '/team/Shashi.jpg', linkedin: 'https://www.linkedin.com/in/shashi-kumar-87449b148/' },
+    { name: 'Samuel Walusimbi', image: '/team/Samuel.png', linkedin: 'https://www.linkedin.com/in/samuel-walusimbi-k/' },
+    { name: 'Pauline Wambui Wachira', image: '/team/Pauline.jpeg' },
+    { name: 'Nitin Kumar', image: '/team/Nitin.jpg', linkedin: 'https://www.linkedin.com/in/nitin-kumar-195675157/' },
+    { name: 'Alfred', image: '' },
+    { name: 'Ravi Kumar', image: '/team/Ravi.jpg', linkedin: 'https://www.linkedin.com/in/ravi-kumar-yadav-36812a308/' },
+  ];
+
+  const projectSupport: TeamMember[] = [
+    { name: 'Ujwal Arora', image: '/team/Ujwal.jpg', linkedin: 'https://www.linkedin.com/in/ca-ujwal-arora-6481108b/', pdf: '/team/Ujwal.pdf' },
     { name: 'Chavvi Ahuja', image: '/team/Chavvi.jpg', linkedin: 'https://www.linkedin.com/in/chavvi-ahuja-68507b20a/', pdf: '/team/Chavvi.pdf' },
     { name: 'Gayatri Mudgil', image: '/team/Gayatri.jpg', linkedin: 'https://www.linkedin.com/in/gayatri-m-92122918b/' },
-    { name: 'Geetika Sondhi', image: '/team/Geetika.jpg', linkedin: 'https://www.linkedin.com/in/geetika-sondhi-82274520/', pdf: '/team/Geetika.pdf' },
-    { name: 'Nidhi', image: '/team/nidhi.jpg' },
-    { name: 'Nitin Kumar', image: '/team/Nitin.jpg', linkedin: 'https://www.linkedin.com/in/nitin-kumar-195675157/' },
+    { name: 'Anuradha Nehra', image: '/team/Anuradha.jpg', linkedin: 'https://www.linkedin.com/in/graphologistanuradha/', pdf: '/team/Anu.pdf' },
+    { name: 'Arun Kumar', image: '/team/Arun.jpg', linkedin: 'https://www.linkedin.com/in/arun-sharma-b5504918b/' },
+    { name: 'Ainemigisha Martha Tukahirwa Flavia', image: '/team/Martha.jpeg', linkedin: 'https://www.linkedin.com/in/martha-ainemigisha-a6a2b4238/' },
     { name: 'Shivalika Nagpal', image: '/team/Shivalika.jpg', linkedin: 'https://www.linkedin.com/in/shivalikanagpal/' },
-    { name: 'Ujwal Arora', image: '/team/Ujwal.jpg', linkedin: 'https://www.linkedin.com/in/ca-ujwal-arora-6481108b/', pdf: '/team/Ujwal.pdf' },
+    { name: 'Jaideep', image: '' },
   ];
 
   const containerVariants = {
@@ -225,7 +227,7 @@ const Team = () => {
           </div>
         </motion.section>
 
-        {/* Project Technical Specialists */}
+        {/* Project Development */}
         <section>
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -233,8 +235,8 @@ const Team = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-[#062516] mb-4">Project Technical Specialists</h2>
-            <p className="text-gray-500 text-lg max-w-2xl mx-auto">Experts dedicated to driving technical excellence and innovation in every project.</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#062516] mb-4">Project Development</h2>
+            <p className="text-gray-500 text-lg max-w-2xl mx-auto">Strategists ensuring sustainable growth and commercial success.</p>
           </motion.div>
           
           <motion.div 
@@ -244,13 +246,13 @@ const Team = () => {
             viewport={{ once: true, margin: "-50px" }}
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
           >
-            {technicalSpecialists.map((member, index) => (
+            {projectDevelopment.map((member, index) => (
               <MemberCard key={index} member={member} />
             ))}
           </motion.div>
         </section>
 
-        {/* Commercial Specialists */}
+        {/* Project Execution */}
         <section className="relative">
           <div className="absolute inset-0 bg-gray-50 -skew-y-3 -z-10 transform scale-110" />
           <motion.div 
@@ -259,9 +261,9 @@ const Team = () => {
             viewport={{ once: true }}
             className="text-center mb-16 pt-10"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-[#062516] mb-4">Commercial Specialists</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#062516] mb-4">Project Execution</h2>
             <div className="h-1.5 w-24 bg-[#FFFA84] mx-auto rounded-full" />
-            <p className="text-gray-500 text-lg mt-4 max-w-2xl mx-auto">Strategists ensuring sustainable growth and commercial success.</p>
+            <p className="text-gray-500 text-lg mt-4 max-w-2xl mx-auto">Experts dedicated to driving technical excellence and innovation in every project.</p>
           </motion.div>
           
           <motion.div 
@@ -271,13 +273,13 @@ const Team = () => {
             viewport={{ once: true, margin: "-50px" }}
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
           >
-            {commercialSpecialists.map((member, index) => (
+            {projectExecution.map((member, index) => (
               <MemberCard key={index} member={member} />
             ))}
           </motion.div>
         </section>
 
-        {/* Functional Specialists */}
+        {/* Project Support */}
         <section>
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -285,7 +287,7 @@ const Team = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-[#062516] mb-4">Functional Specialists</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#062516] mb-4">Project Support</h2>
             <p className="text-gray-500 text-lg max-w-2xl mx-auto">The backbone of our operations, driving efficiency and support.</p>
           </motion.div>
           
@@ -296,7 +298,7 @@ const Team = () => {
             viewport={{ once: true, margin: "-50px" }}
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
           >
-            {functionalSpecialists.map((member, index) => (
+            {projectSupport.map((member, index) => (
               <MemberCard key={index} member={member} />
             ))}
           </motion.div>

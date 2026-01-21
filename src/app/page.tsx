@@ -1,9 +1,13 @@
 "use client"
 import Image from "next/image"
+import Navbar from "@/components/Navbar"
+import Media from "@/components/Media"
+import Footer from "@/components/Footer"
 
 export default function Home() {
   return (
     <main className="relative min-h-screen w-full overflow-hidden">
+
         {/* Mobile Image */}
         <div className="block md:hidden relative w-full h-screen">
           <Image
@@ -27,6 +31,8 @@ export default function Home() {
             quality={100}
           />
         </div>
+
+       
     </main>
   )
 }

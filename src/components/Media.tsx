@@ -35,10 +35,24 @@ const mediaCards: MediaCard[] = [
     image: "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=80",
     category: "Press Release",
     link: "https://solarquarter.com/2026/01/16/jivo-energy-adds-1-2-mwp-solar-capacity-to-reduce-load-shedding-in-sao-tome/"
+  },
+  {
+    id: 4,
+    title: "JIVO Energy Powers 39 Off-Grid Health Facilities in Liberia with Solar + BESS",
+    description: "JIVO Energy has completed the installation of Solar PV and Battery Energy Storage System (BESS) hybrid systems at 39 health facilities across Liberia, bringing reliable and eco-friendly power to previously off-grid locations.",
+    image: "https://solarquarter.com/wp-content/uploads/2026/01/Screenshot-2026-01-21-104302.png",
+    category: "News",
+    link: "https://solarquarter.com/2026/01/21/jivo-energy-powers-39-off-grid-health-facilities-in-liberia-with-solar-bess/"
   }
 ];
 
-const Media = () => {
+interface MediaProps {
+  limit?: number;
+}
+
+const Media = ({ limit }: MediaProps) => {
+  const sortedCards = [...mediaCards].reverse();
+  const displayedCards = limit ? sortedCards.slice(0, limit) : sortedCards;
   return (
     <section className="w-full py-20 bg-[#062516] relative overflow-hidden">
       {/* Background Pattern */}
@@ -70,7 +84,7 @@ const Media = () => {
         
         {/* Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-          {mediaCards.map((card) => (
+          {displayedCards.map((card) => (
             <a 
               key={card.id}
               href={card.link || '#'}
