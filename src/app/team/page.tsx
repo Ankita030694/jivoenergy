@@ -3,7 +3,7 @@
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { Linkedin, ArrowUpRight, FileText } from 'lucide-react';
+import { Linkedin, ArrowUpRight } from 'lucide-react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
@@ -12,33 +12,32 @@ interface TeamMember {
   role?: string;
   image: string;
   linkedin?: string;
-  pdf?: string;
 }
 
 const Team = () => {
   const mentor: TeamMember = {
     name: 'Rajesh Chugh',
     role: 'The Mentor Leader',
-    image: '', // Missing image
+    image: '/team/Rajesh.jpg',
     linkedin: 'https://www.linkedin.com/in/rajeshchugh74/'
   };
 
   const projectDevelopment: TeamMember[] = [
-    { name: 'Jorge Lascas', image: '/team/Jorge.jpeg', linkedin: 'https://www.linkedin.com/in/jorgemslascas/' },
+    { name: 'Jorge Lascas', image: '/team/Jorge.jpg', linkedin: 'https://www.linkedin.com/in/jorgemslascas/' },
     { name: 'Aakanksha', image: '/team/Aakanksha.jpg', linkedin: 'https://www.linkedin.com/in/aakankshachugh/' },
-    { name: 'Geetika Sondhi', image: '/team/Geetika.jpg', linkedin: 'https://www.linkedin.com/in/geetika-sondhi-82274520/', pdf: '/team/Geetika.pdf' },
+    { name: 'Geetika Sondhi', image: '/team/Geetika.jpg', linkedin: 'https://www.linkedin.com/in/geetika-sondhi-82274520/' },
     { name: 'Nishank Madaan', image: '/team/Nishank.jpg', linkedin: 'https://www.linkedin.com/in/nishank-madaan-658177146/' },
-    { name: 'Abhishek Batra', image: '/team/Abhishek.jpeg', linkedin: 'https://www.linkedin.com/in/caabhishekbatra/' },
+    { name: 'Abhishek Batra', image: '/team/Abhishek.jpg', linkedin: 'https://www.linkedin.com/in/caabhishekbatra/' },
     { name: 'Naresh Kumar Singh Ghorla', image: '/team/Naresh.jpg', linkedin: 'https://www.linkedin.com/in/naresh-ghorla-805222150/' },
     { name: 'Nitesh Kumar', image: '/team/Nitesh.jpg', linkedin: 'https://www.linkedin.com/in/nitesh-jangra-a9567a278/' },
-    { name: 'Beatrice Kithinji', image: '/team/Beatrice.jpeg', linkedin: 'https://www.linkedin.com/in/beatrice-kithinji-mba-30aa448a/' },
-    { name: 'Patrice Yamintare Kounkorgo', image: '/team/Patrice.jpeg', linkedin: 'https://www.linkedin.com/in/yamintare-patrice-kounkorgo-058405179/' },
+    { name: 'Beatrice Kithinji', image: '/team/Beatrice.jpg', linkedin: 'https://www.linkedin.com/in/beatrice-kithinji-mba-30aa448a/' },
+    { name: 'Patrice Yamintare Kounkorgo', image: '/team/Patrice.jpg', linkedin: 'https://www.linkedin.com/in/yamintare-patrice-kounkorgo-058405179/' },
     { name: 'Ivan', image: '' },
     { name: 'Boydd', image: '' },
   ];
 
   const projectExecution: TeamMember[] = [
-    { name: 'Prayas Gupta', image: '/team/Prayas Photo.jpeg', linkedin: 'https://www.linkedin.com/in/preyas-gupta/' },
+    { name: 'Prayas Gupta', image: '/team/Prayas.jpg', linkedin: 'https://www.linkedin.com/in/preyas-gupta/' },
     { name: 'Manvendra Singh Hada', image: '/team/Manvendra.jpg', linkedin: 'https://www.linkedin.com/in/hadamanvendrasingh/' },
     { name: 'Ankit Srivastava', image: '/team/Ankit.jpg', linkedin: 'https://www.linkedin.com/in/ankit-srivastava14/' },
     { name: 'Vivek Gupta', image: '/team/Vivek.jpg', linkedin: 'https://www.linkedin.com/in/vivek-vikram-56470a127/' },
@@ -47,22 +46,23 @@ const Team = () => {
     { name: 'Akshay Sharma', image: '' },
     { name: 'Ashok Kumar', image: '/team/Ashok.jpg', linkedin: 'https://www.linkedin.com/in/ashok-kumar-74a07064/' },
     { name: 'Shashi Kumar', image: '/team/Shashi.jpg', linkedin: 'https://www.linkedin.com/in/shashi-kumar-87449b148/' },
-    { name: 'Samuel Walusimbi', image: '/team/Samuel.png', linkedin: 'https://www.linkedin.com/in/samuel-walusimbi-k/' },
-    { name: 'Pauline Wambui Wachira', image: '/team/Pauline.jpeg' },
+    { name: 'Samuel Walusimbi', image: '/team/Samuel.jpg', linkedin: 'https://www.linkedin.com/in/samuel-walusimbi-k/' },
+    { name: 'Pauline Wambui Wachira', image: '/team/Pauline.jpg' },
     { name: 'Nitin Kumar', image: '/team/Nitin.jpg', linkedin: 'https://www.linkedin.com/in/nitin-kumar-195675157/' },
     { name: 'Alfred', image: '' },
     { name: 'Ravi Kumar', image: '/team/Ravi.jpg', linkedin: 'https://www.linkedin.com/in/ravi-kumar-yadav-36812a308/' },
   ];
 
   const projectSupport: TeamMember[] = [
-    { name: 'Ujwal Arora', image: '/team/Ujwal.jpg', linkedin: 'https://www.linkedin.com/in/ca-ujwal-arora-6481108b/', pdf: '/team/Ujwal.pdf' },
-    { name: 'Chavvi Ahuja', image: '/team/Chavvi.jpg', linkedin: 'https://www.linkedin.com/in/chavvi-ahuja-68507b20a/', pdf: '/team/Chavvi.pdf' },
+    { name: 'Ujwal Arora', image: '/team/Ujwal.jpg', linkedin: 'https://www.linkedin.com/in/ca-ujwal-arora-6481108b/' },
+    { name: 'Chavvi Ahuja', image: '/team/Chavvi.jpg', linkedin: 'https://www.linkedin.com/in/chavvi-ahuja-68507b20a/' },
     { name: 'Gayatri Mudgil', image: '/team/Gayatri.jpg', linkedin: 'https://www.linkedin.com/in/gayatri-m-92122918b/' },
-    { name: 'Anuradha Nehra', image: '/team/Anuradha.jpg', linkedin: 'https://www.linkedin.com/in/graphologistanuradha/', pdf: '/team/Anu.pdf' },
+    { name: 'Anuradha Nehra', image: '/team/Anuradha.jpg', linkedin: 'https://www.linkedin.com/in/graphologistanuradha/' },
     { name: 'Arun Kumar', image: '/team/Arun.jpg', linkedin: 'https://www.linkedin.com/in/arun-sharma-b5504918b/' },
-    { name: 'Ainemigisha Martha Tukahirwa Flavia', image: '/team/Martha.jpeg', linkedin: 'https://www.linkedin.com/in/martha-ainemigisha-a6a2b4238/' },
+    { name: 'Ainemigisha Martha Tukahirwa Flavia', image: '/team/Martha.jpg', linkedin: 'https://www.linkedin.com/in/martha-ainemigisha-a6a2b4238/' },
     { name: 'Shivalika Nagpal', image: '/team/Shivalika.jpg', linkedin: 'https://www.linkedin.com/in/shivalikanagpal/' },
     { name: 'Jaideep', image: '' },
+    { name: 'Nidhi', image: '/team/nidhi.jpg' },
   ];
 
   const containerVariants = {
@@ -92,7 +92,10 @@ const Team = () => {
       variants={itemVariants}
       className="group relative"
     >
-      <div className="relative overflow-hidden rounded-2xl bg-white shadow-md hover:shadow-2xl transition-all duration-500 border border-gray-100 h-full flex flex-col">
+      <div 
+        className={`relative overflow-hidden rounded-2xl bg-white shadow-md hover:shadow-2xl transition-all duration-500 border border-gray-100 h-full flex flex-col ${member.linkedin ? 'cursor-pointer' : ''}`}
+        onClick={() => member.linkedin && window.open(member.linkedin, '_blank')}
+      >
         <div className="aspect-square overflow-hidden bg-gray-100 relative">
           {member.image ? (
             <Image
@@ -117,20 +120,10 @@ const Team = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`Connect with ${member.name} on LinkedIn`}
+                onClick={(e) => e.stopPropagation()}
               >
                 <Linkedin className="w-5 h-5" />
               </a>
-              {member.pdf && (
-                <a 
-                  href={member.pdf} 
-                  className="bg-white/10 backdrop-blur-md border border-white/20 p-3 rounded-full text-white hover:bg-white hover:text-[#ff0000] transition-all duration-300 transform hover:scale-110"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`View ${member.name}'s Profile`}
-                >
-                  <FileText className="w-5 h-5" />
-                </a>
-              )}
             </div>
             <span className="text-white/80 text-sm mt-3 font-light tracking-wide">Connect & Info</span>
           </div>
@@ -191,11 +184,22 @@ const Team = () => {
         >
           <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100 flex flex-col md:flex-row group hover:shadow-[0_20px_50px_rgba(6,37,22,0.1)] transition-shadow duration-500">
             <div className="md:w-5/12 relative min-h-[400px] bg-gray-100 overflow-hidden">
-               {/* Placeholder for Mentor Image */}
-               <div className="absolute inset-0 flex items-center justify-center bg-[#062516] text-[#FFFA84]">
-                  <span className="text-8xl font-serif font-bold opacity-20">RC</span>
-               </div>
-               <div className="absolute inset-0 bg-gradient-to-tr from-[#062516]/40 to-transparent" />
+               {mentor.image ? (
+                 <Image
+                   src={mentor.image}
+                   alt={mentor.name}
+                   fill
+                   className="object-cover object-top hover:scale-105 transition-transform duration-700"
+                   sizes="(max-width: 768px) 100vw, 50vw"
+                 />
+               ) : (
+                 <>
+                   <div className="absolute inset-0 flex items-center justify-center bg-[#062516] text-[#FFFA84]">
+                      <span className="text-8xl font-serif font-bold opacity-20">{mentor.name.split(' ').map(n => n[0]).join('')}</span>
+                   </div>
+                   <div className="absolute inset-0 bg-gradient-to-tr from-[#062516]/40 to-transparent" />
+                 </>
+               )}
             </div>
             <div className="md:w-7/12 p-10 md:p-16 flex flex-col justify-center relative">
               <div className="absolute top-0 right-0 p-10 opacity-5">
