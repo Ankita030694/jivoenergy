@@ -9,6 +9,7 @@ import { getProjects } from '@/lib/projects';
 import { getProjectSettings, ProjectSettings } from '@/lib/projectSettings';
 import ProjectCard from '@/components/projects/ProjectCard';
 import { ChevronDown, Filter, X, Zap } from 'lucide-react';
+import Link from 'next/link';
 
 interface FilterState {
   countries: string[];
@@ -248,6 +249,42 @@ const ProjectsPage = () => {
 
       {/* Main Content Area */}
       <main className="container mx-auto px-6 py-24 md:py-32">
+        {/* Featured Showcase Banner */}
+        <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-20 bg-[#062516] rounded-[40px] overflow-hidden shadow-2xl relative"
+        >
+            <div className="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1466611653911-95282fc3656b?auto=format&fit=crop&q=80')] bg-cover bg-center" />
+            <div className="relative z-10 p-8 md:p-16 flex flex-col md:flex-row items-center justify-between gap-12">
+                <div className="max-w-2xl text-center md:text-left">
+                    <span className="inline-block px-4 py-1.5 rounded-full bg-[#FFFA84] text-[#062516] text-[10px] font-black uppercase tracking-[0.2em] mb-6">
+                        Featured Prototype
+                    </span>
+                    <h2 className="text-4xl md:text-6xl font-black text-white mb-6 leading-tight tracking-tight">
+                        Experience Our <span className="text-[#FFFA84]">Premium</span> Design System
+                    </h2>
+                    <p className="text-white/70 text-lg font-medium mb-8 leading-relaxed">
+                        Step into a full-fledged project demonstration featuring cinematic high-resolution visuals, technical depth, and our flagship renewable energy vision.
+                    </p>
+                    <Link 
+                        href="/projects/demo" 
+                        className="inline-flex items-center gap-3 px-10 py-5 bg-[#FFFA84] text-[#062516] rounded-full font-black text-sm uppercase tracking-widest hover:scale-105 transition-transform shadow-xl"
+                    >
+                        View Full Showcase
+                        <Zap className="w-4 h-4" />
+                    </Link>
+                </div>
+                <div className="relative w-full md:w-80 aspect-square">
+                    <div className="absolute inset-0 bg-[#FFFA84]/10 rounded-full animate-pulse" />
+                    <div className="absolute inset-4 bg-white/5 rounded-full backdrop-blur-3xl border border-white/10 flex items-center justify-center">
+                        <Zap className="w-20 h-20 text-[#FFFA84] animate-bounce" />
+                    </div>
+                </div>
+            </div>
+        </motion.div>
+
         {loading ? (
              <div className="flex flex-col items-center justify-center py-40 gap-4">
                 <Loader2 className="w-10 h-10 animate-spin text-[#062516]" />
