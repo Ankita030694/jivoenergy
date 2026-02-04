@@ -1,6 +1,7 @@
 import { db, storage } from "./firebase";
 import {
     collection,
+    getDoc,
     getDocs,
     addDoc,
     updateDoc,
@@ -9,7 +10,9 @@ import {
     Timestamp,
     serverTimestamp,
     query,
-    orderBy
+    orderBy,
+    where,
+    limit
 } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { Project } from "@/types/project";
@@ -27,6 +30,39 @@ export const getProjects = async (): Promise<Project[]> => {
     } catch (error) {
         console.error("Error fetching projects:", error);
         return [];
+    }
+};
+
+export const getProjectById = async (id: string): Promise<Project | null> => {
+    try {
+        const docRef = doc(db, COLLECTION_NAME, id);
+        const docSnap = await getDoc(docRef);
+        if (docSnap.exists()) {
+            return { id: docSnap.id, ...docSnap.data() } as Project;
+        }
+        return null;
+    } catch (error) {
+        console.error("Error fetching project by id:", error);
+        return null;
+    }
+};
+
+export const getProjectBySlug = async (slug: string): Promise<Project | null> => {
+    try {
+        const q = query(
+            collection(db, COLLECTION_NAME),
+            where("slug", "==", slug),
+            limit(1)
+        );
+        const querySnapshot = await getDocs(q);
+        if (!querySnapshot.empty) {
+            const doc = querySnapshot.docs[0];
+            return { id: doc.id, ...doc.data() } as Project;
+        }
+        return null;
+    } catch (error) {
+        console.error("Error fetching project by slug:", error);
+        return null;
     }
 };
 
@@ -54,4 +90,12 @@ export const uploadProjectImage = async (file: File, path: string): Promise<stri
     const storageRef = ref(storage, path);
     const snapshot = await uploadBytes(storageRef, file);
     return await getDownloadURL(snapshot.ref);
+};
+
+export const uploadProjectImages = async (files: File[], basePath: string): Promise<string[]> => {
+    const uploadPromises = files.map(async (file) => {
+        const path = `${basePath}/${Date.now()}_${file.name}`;
+        return uploadProjectImage(file, path);
+    });
+    return Promise.all(uploadPromises);
 };

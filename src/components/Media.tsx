@@ -16,7 +16,7 @@ const mediaCards: MediaCard[] = [
     id: 1,
     title: "JIVO Energy constrói Central Solar de Santo Amaro em São Tomé",
     description: "A JIVO Energy concluiu com sucesso o projecto de Engenharia, Aquisição e Construção (EPC) de uma central fotovoltaica de 1,2 MWp ligada à rede em São Tomé e Príncipe.",
-    image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&q=80",
+    image: "/media_assets/sao_tome_1.png",
     category: "News",
     link: "https://www.telanon.info/sociedade/2025/12/27/51256/jivo-energy-constroi-central-solar-de-santo-amaro-em-sao-tome/"
   },
@@ -24,7 +24,7 @@ const mediaCards: MediaCard[] = [
     id: 2,
     title: "JIVO Energy has built the Santo Amaro solar power plant in Sao Tome",
     description: "JIVO Energy successfully completed the Engineering, Procurement, and Construction (EPC) of a 1.2 MWp grid-connected solar PV plant in São Tomé and Príncipe.",
-    image: "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&q=80",
+    image: "/media_assets/sao_tome_2.png",
     category: "News",
     link: "https://www.africanpowerplatform.org/news/press-releases-2/external/4551-jivo-energy-has-built-the-santo-amaro-solar-power-plant-in-sao-tome.html"
   },
@@ -32,7 +32,7 @@ const mediaCards: MediaCard[] = [
     id: 3,
     title: "JIVO Energy Adds 1.2 MWp Solar Capacity To Reduce Load-Shedding In São Tomé",
     description: "JIVO Energy commissions 1.2 MWp Santo Amaro Solar Plant in São Tomé, boosting renewable energy, reducing load-shedding, and supporting grid stability.",
-    image: "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=80",
+    image: "/media_assets/sao_tome_3.png",
     category: "Press Release",
     link: "https://solarquarter.com/2026/01/16/jivo-energy-adds-1-2-mwp-solar-capacity-to-reduce-load-shedding-in-sao-tome/"
   },
@@ -40,9 +40,49 @@ const mediaCards: MediaCard[] = [
     id: 4,
     title: "JIVO Energy Powers 39 Off-Grid Health Facilities in Liberia with Solar + BESS",
     description: "JIVO Energy has completed the installation of Solar PV and Battery Energy Storage System (BESS) hybrid systems at 39 health facilities across Liberia, bringing reliable and eco-friendly power to previously off-grid locations.",
-    image: "https://solarquarter.com/wp-content/uploads/2026/01/Screenshot-2026-01-21-104302.png",
+    image: "/media_assets/liberia_health.png",
     category: "News",
     link: "https://solarquarter.com/2026/01/21/jivo-energy-powers-39-off-grid-health-facilities-in-liberia-with-solar-bess/"
+  },
+  {
+    id: 5,
+    title: "JIVO Energy Solarizes Irrigation Water Pumps to Support Rice Farming in Northern Senegal",
+    description: "JIVO Energy has solarized irrigation water pumps to support rice farming in northern Senegal, enhancing agricultural productivity and sustainable farming.",
+    image: "/media_assets/senegal_1.png",
+    category: "News",
+    link: "https://africa-energy-portal.org/news/jivo-energy-solarizes-irrigation-water-pumps-support-rice-farming-northern-senegal"
+  },
+  {
+    id: 6,
+    title: "Solar-Powered Irrigation Initiative Boosts Climate-Resilient Agriculture in Senegal",
+    description: "JIVO Energy installs 650 kW solar-powered irrigation systems in northern Senegal, improving water access and climate-resilient agriculture.",
+    image: "/media_assets/senegal_2.png",
+    category: "News",
+    link: "https://solarquarter.com/2026/01/28/jivo-energy-solarizes-irrigation-water-pumps-to-support-rice-farming-in-northern-senegal/"
+  },
+  {
+    id: 7,
+    title: "Completion of 650 kW Solar PV Installations for Irrigation Projects in Senegal",
+    description: "JIVO Energy completes 650 kW solar PV installations for irrigation projects in northern Senegal, supporting clean energy adoption in agriculture.",
+    image: "/media_assets/senegal_3.png",
+    category: "News",
+    link: "https://solarquarter.com/2026/01/28/jivo-energy-completes-solar-pv-installations-for-irrigation-projects-in-northern-senegal/"
+  },
+  {
+    id: 8,
+    title: "Senegal Agricultural Irrigation Project Completion Featured on NOW Solar",
+    description: "Jivo Energy successfully completed solar PV installations for irrigation projects in northern Senegal, as part of its commitment to sustainable agriculture.",
+    image: "/media_assets/senegal_4.png",
+    category: "News",
+    link: "https://now.solar/2026/01/28/jivo-energy-completes-solar-pv-installations-for-irrigation-projects-in-northern-senegal-solarquarter/"
+  },
+  {
+    id: 9,
+    title: "SolarQuarter Shares Jivo Energy's Senegal Project Success on Instagram",
+    description: "SolarQuarter highlights JIVO Energy's success in solarizing irrigation projects in Senegal on their social media platform.",
+    image: "/media_assets/senegal_social.png",
+    category: "Social Media",
+    link: "https://www.instagram.com/p/DUC1DKblrOp/"
   }
 ];
 

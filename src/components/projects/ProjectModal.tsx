@@ -57,52 +57,75 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
             </div>
 
             {/* Right Content Section */}
-            <div className="w-full md:w-3/5 p-8 md:p-10 bg-white">
-                <span className="inline-block px-3 py-1 rounded-full bg-[#FFFA84]/20 text-[#062516] text-xs font-bold uppercase tracking-wider mb-4">
-                    {project.status}
-                </span>
-                
-                <h2 className="text-3xl md:text-4xl font-bold text-[#062516] mb-6 leading-tight">
-                    {project.title}
-                </h2>
+            <div className="w-full md:w-3/5 p-8 md:p-12 bg-white overflow-y-auto">
+                <div className="mb-10">
+                    <h2 className="text-4xl font-bold text-[#062516] mb-2 leading-tight">
+                        {project.title} | {project.capacity}
+                    </h2>
+                    <div className="h-1 w-20 bg-[#FFFA84] rounded-full"></div>
+                </div>
 
-                <div className="grid grid-cols-2 gap-4 mb-8">
-                    <div className="p-4 rounded-2xl bg-gray-50 border border-gray-100">
-                        <p className="text-xs text-gray-500 uppercase tracking-wider mb-1">Capacity</p>
-                        <p className="font-bold text-[#062516]">{project.capacity || 'N/A'}</p>
+                <div className="space-y-8 mb-10">
+                    <div>
+                        <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">Project Name:</h4>
+                        <p className="text-xl font-semibold text-[#062516]">{project.title}</p>
                     </div>
-                    <div className="p-4 rounded-2xl bg-gray-50 border border-gray-100">
-                        <p className="text-xs text-gray-500 uppercase tracking-wider mb-1">Technology</p>
-                        <p className="font-bold text-[#062516]">{project.technology || 'N/A'}</p>
+
+                    <div>
+                        <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">Location:</h4>
+                        <p className="text-xl font-semibold text-[#062516]">{project.location}, {project.country}</p>
+                    </div>
+
+                    <div>
+                        <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">Size:</h4>
+                        <p className="text-xl font-semibold text-[#062516]">{project.capacity}</p>
                     </div>
                 </div>
 
-                <div className="prose prose-green max-w-none text-gray-600 mb-8 leading-relaxed">
-                   <p className="whitespace-pre-line">{project.description}</p>
+                <div className="prose prose-green max-w-none text-gray-600 mb-12 leading-relaxed text-lg">
+                    <p className="whitespace-pre-line">{project.description}</p>
                 </div>
 
-                {/* Specs List */}
-                <div className="space-y-3 pt-6 border-t border-gray-100">
+                {/* Image Gallery Section */}
+                {project.galleryUrls && project.galleryUrls.length > 0 && (
+                    <div className="pt-10 border-t border-gray-100">
+                        <h3 className="text-2xl font-bold text-[#062516] mb-6">Project Gallery</h3>
+                        <div className="grid grid-cols-2 gap-4">
+                            {project.galleryUrls.map((url, index) => (
+                                <div key={index} className="relative h-48 rounded-2xl overflow-hidden bg-gray-100">
+                                    <Image 
+                                        src={url} 
+                                        alt={`${project.title} gallery ${index + 1}`} 
+                                        fill 
+                                        className="object-cover hover:scale-110 transition-transform duration-500" 
+                                    />
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                )}
+
+                {/* Additional Specs if any */}
+                <div className="mt-10 space-y-4">
                     {project.beneficiary && (
-                        <div className="flex items-start gap-3">
+                        <div className="flex items-start gap-3 p-4 rounded-xl bg-gray-50 border border-gray-100">
                             <CheckCircle2 className="w-5 h-5 text-[#062516] mt-0.5 flex-shrink-0" />
                             <div>
-                                <span className="block text-xs text-gray-400 font-bold uppercase">Beneficiary</span>
-                                <span className="font-medium text-gray-900">{project.beneficiary}</span>
+                                <span className="block text-[10px] text-gray-400 font-bold uppercase tracking-wider">Beneficiary</span>
+                                <span className="font-medium text-[#062516]">{project.beneficiary}</span>
                             </div>
                         </div>
                     )}
                      {project.financing && (
-                        <div className="flex items-start gap-3">
+                        <div className="flex items-start gap-3 p-4 rounded-xl bg-gray-50 border border-gray-100">
                             <CheckCircle2 className="w-5 h-5 text-[#062516] mt-0.5 flex-shrink-0" />
                             <div>
-                                <span className="block text-xs text-gray-400 font-bold uppercase">Financing</span>
-                                <span className="font-medium text-gray-900">{project.financing}</span>
+                                <span className="block text-[10px] text-gray-400 font-bold uppercase tracking-wider">Financing</span>
+                                <span className="font-medium text-[#062516]">{project.financing}</span>
                             </div>
                         </div>
                     )}
                 </div>
-
             </div>
         </motion.div>
       </div>

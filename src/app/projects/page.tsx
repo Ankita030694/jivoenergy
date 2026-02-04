@@ -4,72 +4,115 @@ import React, { useState, useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Project, ProjectRegion, ProjectCountry } from '@/types/project';
+import { Project } from '@/types/project';
 import { getProjects } from '@/lib/projects';
+import { getProjectSettings, ProjectSettings } from '@/lib/projectSettings';
 import ProjectCard from '@/components/projects/ProjectCard';
-import ProjectModal from '@/components/projects/ProjectModal';
+import { ChevronDown, Filter, X, Zap } from 'lucide-react';
 
-// Helper to group flat projects list into Regions -> Countries
-const groupProjects = (projects: Project[]): ProjectRegion[] => {
-  const regions: Record<string, ProjectRegion> = {};
+interface FilterState {
+  countries: string[];
+  regions: string[];
+  statuses: string[];
+  technologies: string[];
+  capacities: string[];
+}
 
-  // Define default regions to ensure order
-  const defaultRegions = ['West Africa', 'East Africa', 'Southern Africa', 'Central Africa'];
-  defaultRegions.forEach(name => {
-    regions[name] = { id: name.toLowerCase().replace(' ', '-'), name, countries: [] };
-  });
+const FilterDropdown = ({ 
+    label, 
+    options, 
+    selected, 
+    onChange 
+}: { 
+    label: string, 
+    options: string[], 
+    selected: string[], 
+    onChange: (val: string) => void 
+}) => {
+    const [isOpen, setIsOpen] = useState(false);
 
-  projects.forEach(project => {
-    const regionName = project.region || 'Other';
-    const countryName = project.country || 'Unknown';
+    return (
+        <div className="relative">
+            <button 
+                onClick={() => setIsOpen(!isOpen)}
+                className={`flex items-center gap-2 px-5 py-2.5 rounded-xl border transition-all text-sm font-medium ${
+                    selected.length > 0 
+                    ? 'bg-[#062516] text-[#FFFA84] border-[#062516]' 
+                    : 'bg-white text-gray-700 border-gray-200 hover:border-gray-300'
+                }`}
+            >
+                {label} {selected.length > 0 && `(${selected.length})`}
+                <ChevronDown className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
+            </button>
 
-    if (!regions[regionName]) {
-      regions[regionName] = { 
-        id: regionName.toLowerCase().replace(/\s+/g, '-'), 
-        name: regionName, 
-        countries: [] 
-      };
-    }
-
-    const region = regions[regionName];
-    let country = region.countries.find(c => c.name === countryName);
-    
-    if (!country) {
-      country = { name: countryName, projects: [] };
-      region.countries.push(country);
-    }
-
-    country.projects.push(project);
-  });
-
-  // Filter out empty regions and sort countries
-  return Object.values(regions)
-    .filter((r: ProjectRegion) => r.countries.length > 0)
-    .map((r: ProjectRegion) => ({
-      ...r,
-      countries: r.countries.sort((a: ProjectCountry, b: ProjectCountry) => a.name.localeCompare(b.name))
-    }));
+            <AnimatePresence>
+                {isOpen && (
+                    <>
+                        <div className="fixed inset-0 z-30" onClick={() => setIsOpen(false)} />
+                        <motion.div 
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: 10 }}
+                            className="absolute left-0 mt-2 w-64 bg-white rounded-2xl shadow-xl border border-gray-100 z-40 max-h-80 overflow-y-auto p-2"
+                        >
+                            {options.sort().map(opt => (
+                                <button
+                                    key={opt}
+                                    onClick={() => onChange(opt)}
+                                    className={`w-full text-left px-4 py-2 rounded-lg text-sm transition-colors flex items-center justify-between ${
+                                        selected.includes(opt)
+                                        ? 'bg-[#062516]/5 text-[#062516] font-bold'
+                                        : 'text-gray-600 hover:bg-gray-50'
+                                    }`}
+                                >
+                                    {opt}
+                                    {selected.includes(opt) && (
+                                        <div className="w-2 h-2 rounded-full bg-[#062516]" />
+                                    )}
+                                </button>
+                            ))}
+                        </motion.div>
+                    </>
+                )}
+            </AnimatePresence>
+        </div>
+    );
 };
 
-const Projects = () => {
-  const [activeRegion, setActiveRegion] = useState<string>('');
-  const [regions, setRegions] = useState<ProjectRegion[]>([]);
+const ProjectsPage = () => {
+  const [allProjects, setAllProjects] = useState<Project[]>([]);
+  const [filteredProjects, setFilteredProjects] = useState<Project[]>([]);
+  const [settings, setSettings] = useState<ProjectSettings | null>(null);
   const [loading, setLoading] = useState(true);
-  
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const [filters, setFilters] = useState<FilterState>({
+    countries: [],
+    regions: [],
+    statuses: [],
+    technologies: [],
+    capacities: []
+  });
+
+  const [availableCapacities, setAvailableCapacities] = useState<string[]>([]);
 
   useEffect(() => {
     const loadData = async () => {
       try {
-        const data = await getProjects();
-        const grouped = groupProjects(data);
-        setRegions(grouped);
-        if (grouped.length > 0) {
-          setActiveRegion(grouped[0].id);
-        }
+        const [projectsData, settingsData] = await Promise.all([
+          getProjects(),
+          getProjectSettings()
+        ]);
+        
+        setAllProjects(projectsData);
+        setSettings(settingsData);
+        
+        // Extract unique capacities
+        const capacities = Array.from(new Set(projectsData.map(p => p.capacity).filter(Boolean))) as string[];
+        setAvailableCapacities(capacities);
+        
+        setFilteredProjects(projectsData);
       } catch (error) {
-        console.error("Failed to load projects:", error);
+        console.error("Failed to load data:", error);
       } finally {
         setLoading(false);
       }
@@ -77,123 +120,188 @@ const Projects = () => {
     loadData();
   }, []);
 
-  const openProject = (project: Project) => {
-    setSelectedProject(project);
-    setIsModalOpen(true);
+  useEffect(() => {
+    let result = allProjects;
+
+    if (filters.regions.length > 0) {
+      result = result.filter(p => filters.regions.includes(p.region));
+    }
+    if (filters.countries.length > 0) {
+      result = result.filter(p => filters.countries.includes(p.country));
+    }
+    if (filters.statuses.length > 0) {
+      result = result.filter(p => filters.statuses.includes(p.status));
+    }
+    if (filters.technologies.length > 0) {
+      result = result.filter(p => filters.technologies.includes(p.technology || ''));
+    }
+    if (filters.capacities.length > 0) {
+      result = result.filter(p => filters.capacities.includes(p.capacity || ''));
+    }
+
+    setFilteredProjects(result);
+  }, [filters, allProjects]);
+
+  const toggleFilter = (category: keyof FilterState, value: string) => {
+    setFilters(prev => {
+      const current = prev[category];
+      const updated = current.includes(value)
+        ? current.filter(v => v !== value)
+        : [...current, value];
+      return { ...prev, [category]: updated };
+    });
   };
 
+  const clearFilters = () => {
+    setFilters({
+      countries: [],
+      regions: [],
+      statuses: [],
+      technologies: [],
+      capacities: []
+    });
+  };
+
+  const activeFiltersCount = Object.values(filters).reduce((acc, curr) => acc + curr.length, 0);
+
   return (
-    <div className="min-h-screen bg-white font-sans selection:bg-[#FFFA84] selection:text-[#062516]">
+    <div className="min-h-screen bg-gray-50 font-sans selection:bg-[#FFFA84] selection:text-[#062516]">
       <Navbar />
       
-      {/* Hero Section */}
-      <div className="relative h-[50vh] flex items-center justify-center overflow-hidden bg-[#062516]">
+      {/* Banner Section */}
+      <div className="relative h-[60vh] md:h-[50vh] flex items-center justify-center overflow-hidden bg-[#062516]">
         <motion.div 
-          initial={{ scale: 1.1, opacity: 0 }}
-          animate={{ scale: 1, opacity: 0.4 }}
-          transition={{ duration: 1.5 }}
-          className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&q=80')] bg-cover bg-center" 
+          initial={{ scale: 1.2, opacity: 0 }}
+          animate={{ scale: 1, opacity: 0.3 }}
+          transition={{ duration: 2 }}
+          className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1466611653911-95282fc3656b?auto=format&fit=crop&q=80')] bg-cover bg-center" 
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#062516]/50 via-[#062516]/70 to-[#062516]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#062516]/50 to-[#062516]" />
         
-        <div className="relative z-10 container mx-auto px-4 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            <span className="inline-block py-1 px-3 rounded-full bg-[#FFFA84]/10 text-[#FFFA84] text-sm font-semibold tracking-wider mb-6 border border-[#FFFA84]/20">
-              OUR GLOBAL FOOTPRINT
-            </span>
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white tracking-tight">
-              Featured <span className="text-[#FFFA84]">Projects</span>
-            </h1>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto font-light leading-relaxed">
-              Transforming the energy landscape across Africa with sustainable, innovative solutions.
-            </p>
-          </motion.div>
+        <div className="relative z-10 text-center px-4">
+            <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, ease: "easeOut" }}
+            >
+                <h1 className="text-6xl md:text-8xl font-black text-white tracking-tighter mb-4">
+                    OUR <span className="text-[#FFFA84]">PROJECTS</span>
+                </h1>
+                <div className="h-2 w-32 bg-[#FFFA84] mx-auto rounded-full mb-8 shadow-[0_0_20px_rgba(255,250,132,0.4)]" />
+                <p className="text-gray-300 text-lg md:text-xl font-medium max-w-2xl mx-auto tracking-wide uppercase opacity-80">
+                    Innovative Energy Solutions Powering Africa's Future
+                </p>
+            </motion.div>
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-20 relative z-20 -mt-20">
-        
+      {/* Filter Bar */}
+      <div className="sticky top-[80px] z-30 bg-white/80 backdrop-blur-md border-b border-gray-100 shadow-sm py-6">
+        <div className="container mx-auto px-6 flex flex-wrap items-center gap-4">
+            <div className="flex items-center gap-2 text-[#062516] font-bold mr-4 text-sm uppercase tracking-widest">
+                <Filter className="w-4 h-4" />
+                Filters
+            </div>
+
+            <FilterDropdown 
+                label="Region" 
+                options={settings?.regions || []} 
+                selected={filters.regions} 
+                onChange={(val) => toggleFilter('regions', val)} 
+            />
+            <FilterDropdown 
+                label="Country" 
+                options={settings?.countries || []} 
+                selected={filters.countries} 
+                onChange={(val) => toggleFilter('countries', val)} 
+            />
+            <FilterDropdown 
+                label="Status" 
+                options={settings?.statuses || []} 
+                selected={filters.statuses} 
+                onChange={(val) => toggleFilter('statuses', val)} 
+            />
+            <FilterDropdown 
+                label="Technology" 
+                options={settings?.technologies || []} 
+                selected={filters.technologies} 
+                onChange={(val) => toggleFilter('technologies', val)} 
+            />
+             <FilterDropdown 
+                label="Power" 
+                options={availableCapacities} 
+                selected={filters.capacities} 
+                onChange={(val) => toggleFilter('capacities', val)} 
+            />
+
+            {activeFiltersCount > 0 && (
+                <button 
+                    onClick={clearFilters}
+                    className="flex items-center gap-2 px-4 py-2 text-xs font-bold text-red-600 hover:bg-red-50 rounded-full transition-colors ml-auto"
+                >
+                    <X className="w-4 h-4" />
+                    Reset All
+                </button>
+            )}
+        </div>
+      </div>
+
+      {/* Main Content Area */}
+      <main className="container mx-auto px-6 py-24 md:py-32">
         {loading ? (
-             <div className="flex justify-center py-20">
-                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#FFFA84]"></div>
+             <div className="flex flex-col items-center justify-center py-40 gap-4">
+                <Loader2 className="w-10 h-10 animate-spin text-[#062516]" />
+                <p className="text-black font-bold tracking-widest uppercase text-xs">Loading Projects Library</p>
              </div>
         ) : (
-          <>
-            {/* Region Tabs */}
-            <div className="flex flex-wrap justify-center gap-4 mb-16">
-              {regions.map((region) => (
-                <button
-                  key={region.id}
-                  onClick={() => setActiveRegion(region.id)}
-                  className={`px-8 py-4 rounded-full text-lg font-bold transition-all duration-300 transform hover:-translate-y-1 shadow-lg ${
-                    activeRegion === region.id
-                      ? 'bg-[#FFFA84] text-[#062516] scale-105 shadow-[#FFFA84]/30'
-                      : 'bg-white text-[#062516] border border-[#062516]/10 hover:border-[#062516]/30'
-                  }`}
-                >
-                  {region.name}
-                </button>
-              ))}
+          <div>
+            <div className="flex justify-between items-end py-8 px-2">
+                <div>
+                    <h2 className="text-4xl md:text-5xl font-black text-[#062516] tracking-tight mb-2">Project Portfolio</h2>
+                    <p className="text-black font-bold uppercase text-[10px] tracking-widest opacity-60">Showing {filteredProjects.length} projects across Africa</p>
+                </div>
             </div>
 
-            {/* Content Area */}
-            <div className="min-h-[600px]">
-              <AnimatePresence mode="wait">
-                {regions.map((region) => (
-                  region.id === activeRegion && (
-                    <motion.div
-                      key={region.id}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -20 }}
-                      transition={{ duration: 0.5 }}
-                      className="space-y-16"
+            {filteredProjects.length > 0 ? (
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 pb-8">
+                    {filteredProjects.map((project) => (
+                        <ProjectCard 
+                            key={project.id} 
+                            project={project} 
+                        />
+                    ))}
+                </div>
+            ) : (
+                <div className="text-center py-40 bg-white rounded-[40px] border border-dashed border-gray-200">
+                    <div className="p-6 rounded-full bg-gray-50 w-fit mx-auto mb-6">
+                        <Zap className="w-12 h-12 text-gray-300" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-gray-800 mb-2">No projects found</h3>
+                    <p className="text-gray-500 max-w-md mx-auto">We couldn't find any projects matching your current filters. Try adjusting your selection.</p>
+                    <button 
+                        onClick={clearFilters}
+                        className="mt-8 px-8 py-3 bg-[#062516] text-[#FFFA84] rounded-full font-bold transition-transform hover:scale-105"
                     >
-                      {region.countries.map((country: ProjectCountry, idx: number) => (
-                        <div key={country.name}>
-                             <div className="flex items-center gap-4 mb-8">
-                                <h3 className="text-3xl font-bold text-[#062516]">{country.name}</h3>
-                                <div className="h-px bg-gray-200 flex-grow"></div>
-                             </div>
-                             
-                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                                {country.projects.map((project: Project) => (
-                                    <ProjectCard 
-                                        key={project.id} 
-                                        project={project} 
-                                        onClick={openProject} 
-                                    />
-                                ))}
-                             </div>
-                        </div>
-                      ))}
-                    </motion.div>
-                  )
-                ))}
-              </AnimatePresence>
-            </div>
-          </>
+                        Clear All Filters
+                    </button>
+                </div>
+            )}
+          </div>
         )}
-        
-        <div className="mt-16 text-center text-sm text-gray-400">
-          <p>* Select a project to view detailed case study.</p>
-        </div>
+      </main>
 
-      </div>
-
-      <ProjectModal 
-        project={selectedProject} 
-        isOpen={isModalOpen} 
-        onClose={() => setIsModalOpen(false)} 
-      />
 
       <Footer />
     </div>
   );
 };
 
-export default Projects;
+// Simple Loader component
+const Loader2 = ({ className }: { className?: string }) => (
+    <svg className={className} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+    </svg>
+);
+
+export default ProjectsPage;

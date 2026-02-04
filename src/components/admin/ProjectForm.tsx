@@ -1,40 +1,25 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { Project, ProjectStatus } from '@/types/project';
+import { Project } from '@/types/project';
+import { getProjectSettings, ProjectSettings } from '@/lib/projectSettings';
 import TiptapEditor from './TiptapEditor';
+import { Loader2, ChevronDown } from 'lucide-react';
 
 interface ProjectFormProps {
   initialData?: Partial<Project>;
-  onSubmit: (data: Omit<Project, 'id'>, coverImage: File | null) => Promise<void>;
+  onSubmit: (data: Omit<Project, 'id'>, coverImage: File | null, galleryImages: File[]) => Promise<void>;
   isLoading: boolean;
 }
 
-const REGION_COUNTRIES: Record<string, string[]> = {
-  "West Africa": [
-    "Benin", "Burkina Faso", "Cape Verde", "Côte d'Ivoire", "Gambia", "Ghana", "Guinea", "Guinea-Bissau", 
-    "Liberia", "Mali", "Mauritania", "Niger", "Nigeria", "Senegal", "Sierra Leone", "Togo", "São Tomé and Príncipe"
-  ],
-  "East Africa": [
-    "Burundi", "Comoros", "Djibouti", "Eritrea", "Ethiopia", "Kenya", "Madagascar", "Malawi", "Mauritius", 
-    "Mozambique", "Rwanda", "Seychelles", "Somalia", "South Sudan", "Tanzania", "Uganda", "Zambia", "Zimbabwe"
-  ],
-  "Southern Africa": [
-    "Angola", "Botswana", "Eswatini", "Lesotho", "Namibia", "South Africa"
-  ],
-  "Central Africa": [
-    "Cameroon", "Central African Republic", "Chad", "Congo (Brazzaville)", "Congo (Kinshasa)", "Equatorial Guinea", "Gabon"
-  ],
-  "North Africa": [
-    "Algeria", "Egypt", "Libya", "Morocco", "Sudan", "Tunisia"
-  ]
-};
-
 const ProjectForm: React.FC<ProjectFormProps> = ({ initialData, onSubmit, isLoading }) => {
+  const [settings, setSettings] = useState<ProjectSettings | null>(null);
+  const [fetchingSettings, setFetchingSettings] = useState(true);
+  
   const [formData, setFormData] = useState<Partial<Project>>({
     title: initialData?.title || '',
     country: initialData?.country || '',
-    region: initialData?.region || 'West Africa',
+    region: initialData?.region || '',
     status: initialData?.status || 'Planned',
     capacity: initialData?.capacity || '',
     technology: initialData?.technology || '',
@@ -46,24 +31,22 @@ const ProjectForm: React.FC<ProjectFormProps> = ({ initialData, onSubmit, isLoad
   });
   
   const [coverImage, setCoverImage] = useState<File | null>(null);
-  const [availableCountries, setAvailableCountries] = useState<string[]>([]);
+  const [galleryImages, setGalleryImages] = useState<File[]>([]);
 
-  // Update available countries when region changes
   useEffect(() => {
-    const region = formData.region || 'West Africa';
-    setAvailableCountries(REGION_COUNTRIES[region] || []);
-    
-    // Reset country if it's not in the new region list (unless it's initial load/edit)
-    if (formData.country && REGION_COUNTRIES[region] && !REGION_COUNTRIES[region].includes(formData.country)) {
-       // Optional: clear country or keep it? Let's keep it to be safe but allow change
-    }
-  }, [formData.region]);
+    const loadSettings = async () => {
+      const data = await getProjectSettings();
+      setSettings(data);
+      setFetchingSettings(false);
+      if (!formData.region && data.regions.length > 0) setFormData(prev => ({ ...prev, region: data.regions[0] }));
+    };
+    loadSettings();
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.title || !formData.country) return;
-    
-    await onSubmit(formData as Omit<Project, 'id'>, coverImage);
+    await onSubmit(formData as Omit<Project, 'id'>, coverImage, galleryImages);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -72,167 +55,121 @@ const ProjectForm: React.FC<ProjectFormProps> = ({ initialData, onSubmit, isLoad
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files[0]) {
-      setCoverImage(e.target.files[0]);
-    }
+    if (e.target.files && e.target.files[0]) setCoverImage(e.target.files[0]);
   };
 
-  const inputClass = "w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all text-gray-900 placeholder:text-gray-400";
-  const labelClass = "block text-sm font-medium text-gray-700 mb-2";
+  const handleGalleryChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files) setGalleryImages(Array.from(e.target.files));
+  };
+
+  const inputClass = "w-full px-4 py-2 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#062516]/10 focus:border-[#062516]/20 transition-all !text-[#062516] placeholder:text-gray-400 text-sm appearance-none bg-white font-medium";
+  const labelClass = "block text-[11px] font-bold text-gray-400 uppercase tracking-widest mb-1.5 ml-1";
+
+  if (fetchingSettings) {
+    return (
+      <div className="flex flex-col items-center justify-center p-20 gap-4">
+        <Loader2 className="w-8 h-8 animate-spin text-[#062516]" />
+        <p className="text-gray-500 text-sm font-medium">Initializing form settings...</p>
+      </div>
+    );
+  }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6 max-w-4xl mx-auto p-6 bg-white rounded-xl shadow-sm border border-gray-100">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {/* Basic Info */}
+    <form onSubmit={handleSubmit} className="space-y-8 max-w-4xl mx-auto p-10 bg-white rounded-3xl shadow-sm border border-gray-50">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="col-span-2">
-          <label className={labelClass}>Project Title</label>
-          <input
-            name="title"
-            value={formData.title}
-            onChange={handleChange}
-            required
-            className={inputClass}
-            placeholder="e.g. Solar PV + BESS Hybrid System"
-          />
+          <label className={labelClass}>Project Name</label>
+          <input name="title" value={formData.title} onChange={handleChange} required className={`${inputClass} text-lg py-3`} placeholder="e.g. Kleibrok Solar Project" />
         </div>
 
-        <div>
-          <label className={labelClass}>Region</label>
-          <select
-            name="region"
-            value={formData.region}
-            onChange={handleChange}
-            className={inputClass}
-          >
-            {Object.keys(REGION_COUNTRIES).map(region => (
-                <option key={region} value={region}>{region}</option>
-            ))}
+        <div className="relative">
+          <label className={labelClass}>Operating Region</label>
+          <select name="region" value={formData.region} onChange={handleChange} className={inputClass}>
+            <option value="">Select Region</option>
+            {settings?.regions.map(v => <option key={v} value={v}>{v}</option>)}
           </select>
+          <ChevronDown className="absolute right-4 top-9 w-4 h-4 text-gray-400 pointer-events-none" />
         </div>
 
-        <div>
-          <label className={labelClass}>Country</label>
-          <select
-            name="country"
-            value={formData.country}
-            onChange={handleChange}
-            required
-            className={inputClass}
-          >
+        <div className="relative">
+          <label className={labelClass}>Project Country</label>
+          <select name="country" value={formData.country} onChange={handleChange} required className={inputClass}>
             <option value="">Select Country</option>
-            {availableCountries.map(country => (
-                <option key={country} value={country}>{country}</option>
-            ))}
-             {/* If current value is not in list (e.g. custom or migrated), show it */}
-             {formData.country && !availableCountries.includes(formData.country) && (
-                <option value={formData.country}>{formData.country}</option>
-             )}
+            {[...(settings?.countries || [])].sort().map(v => <option key={v} value={v}>{v}</option>)}
           </select>
+          <ChevronDown className="absolute right-4 top-9 w-4 h-4 text-gray-400 pointer-events-none" />
         </div>
 
-        <div>
-          <label className={labelClass}>Location (City/Site)</label>
-          <input
-            name="location"
-            value={formData.location}
-            onChange={handleChange}
-            className={inputClass}
-             placeholder="e.g. Santo Amaro"
-          />
-        </div>
-
-        <div>
-          <label className={labelClass}>Status</label>
-          <select
-            name="status"
-            value={formData.status}
-            onChange={handleChange}
-            className={inputClass}
-          >
-            <option value="Completed">Completed</option>
-            <option value="Under Development">Under Development</option>
-            <option value="Planned">Planned</option>
-            <option value="Operation & Maintenance">Operation & Maintenance</option>
-          </select>
-        </div>
-
-        {/* Technical Specs */}
-        <div>
-          <label className={labelClass}>Capacity</label>
-          <input
-            name="capacity"
-            value={formData.capacity}
-            onChange={handleChange}
-            placeholder="e.g. 1.2 MWp"
-            className={inputClass}
-          />
-        </div>
-
-        <div>
-          <label className={labelClass}>Technology</label>
-          <input
-            name="technology"
-            value={formData.technology}
-            onChange={handleChange}
-            placeholder="e.g. Grid-Connected Solar PV"
-            className={inputClass}
-          />
-        </div>
-
-         <div>
-          <label className={labelClass}>Beneficiary</label>
-          <input
-            name="beneficiary"
-            value={formData.beneficiary}
-            onChange={handleChange}
-            placeholder="e.g. Ministry of Health"
-            className={inputClass}
-          />
-        </div>
-
-        <div>
-          <label className={labelClass}>Financing</label>
-          <input
-            name="financing"
-            value={formData.financing}
-            onChange={handleChange}
-            placeholder="e.g. World Bank"
-            className={inputClass}
-          />
-        </div>
-
-        {/* Description */}
-        <div className="col-span-2">
-          <label className={labelClass}>Description</label>
-          <TiptapEditor
-            content={formData.description || ''}
-            onChange={(newContent) => setFormData(prev => ({ ...prev, description: newContent }))}
-            className="w-full rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-transparent min-h-[400px]"
-          />
-        </div>
-
-        {/* Image Upload */}
-        <div className="col-span-2">
-          <label className={labelClass}>Cover Image</label>
-          <input
-            type="file"
-            onChange={handleFileChange}
-            accept="image/*"
-            className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-transparent file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-green-50 file:text-green-700 hover:file:bg-green-100 text-gray-500"
-          />
-          {initialData?.imageUrl && !coverImage && (
-             <p className="text-sm text-gray-500 mt-1">Current: {initialData.imageUrl.split('/').pop()}</p>
+        <div className="relative">
+          <label className={labelClass}>Detailed Site Location</label>
+          {settings?.locations && settings.locations.length > 0 ? (
+            <select name="location" value={formData.location} onChange={handleChange} className={inputClass}>
+              <option value="">Select Site</option>
+              {[...(settings.locations)].sort().map(v => <option key={v} value={v}>{v}</option>)}
+            </select>
+          ) : (
+            <input name="location" value={formData.location} onChange={handleChange} className={inputClass} placeholder="Enter site name..." />
           )}
+          {settings?.locations && settings.locations.length > 0 && <ChevronDown className="absolute right-4 top-9 w-4 h-4 text-gray-400 pointer-events-none" />}
+        </div>
+
+        <div className="relative">
+          <label className={labelClass}>Development Status</label>
+          <select name="status" value={formData.status} onChange={handleChange} className={inputClass}>
+            {settings?.statuses.map(v => <option key={v} value={v}>{v}</option>)}
+          </select>
+          <ChevronDown className="absolute right-4 top-9 w-4 h-4 text-gray-400 pointer-events-none" />
+        </div>
+
+        <div>
+          <label className={labelClass}>System Capacity</label>
+          <input name="capacity" value={formData.capacity} onChange={handleChange} placeholder="e.g. 38.5 MWp" className={inputClass} />
+        </div>
+
+        <div className="relative">
+          <label className={labelClass}>Infrastructure Technology</label>
+          <select name="technology" value={formData.technology} onChange={handleChange} className={inputClass}>
+              <option value="">Select Tech</option>
+              {(settings?.technologies || []).map(v => <option key={v} value={v}>{v}</option>)}
+          </select>
+          <ChevronDown className="absolute right-4 top-9 w-4 h-4 text-gray-400 pointer-events-none" />
+        </div>
+
+        <div>
+          <label className={labelClass}>Primary Beneficiary</label>
+          <input name="beneficiary" value={formData.beneficiary} onChange={handleChange} placeholder="e.g. Local Municipality" className={inputClass} />
+        </div>
+
+        <div>
+          <label className={labelClass}>Financing Entity</label>
+          <input name="financing" value={formData.financing} onChange={handleChange} placeholder="e.g. Infrastructure Fund" className={inputClass} />
+        </div>
+
+        <div className="col-span-2">
+          <label className={labelClass}>Detailed Case Study / Description</label>
+          <TiptapEditor content={formData.description || ''} onChange={(newContent) => setFormData(prev => ({ ...prev, description: newContent }))} className="w-full rounded-2xl border border-gray-100 focus:ring-2 focus:ring-[#062516]/10 focus:border-[#062516]/20 transition-all min-h-[400px] shadow-sm overflow-hidden" />
+        </div>
+
+        <div className="col-span-1">
+          <label className={labelClass}>Primary Cover Image</label>
+          <div className="relative group">
+            <input type="file" onChange={handleFileChange} accept="image/*" className="block w-full text-sm text-gray-500 file:mr-4 file:py-2.5 file:px-6 file:rounded-xl file:border-0 file:text-sm file:font-bold file:bg-[#062516] file:text-[#FFFA84] hover:file:bg-[#08301d] transition-all cursor-pointer bg-gray-50 p-2 rounded-2xl border border-dashed border-gray-200" />
+          </div>
+          {initialData?.imageUrl && !coverImage && <p className="text-[10px] text-gray-400 mt-2 font-medium px-1">Current Image Active</p>}
+        </div>
+
+        <div className="col-span-1">
+          <label className={labelClass}>Image Gallery (Multiple Allowed)</label>
+          <div className="relative group">
+            <input type="file" onChange={handleGalleryChange} accept="image/*" multiple className="block w-full text-sm text-gray-500 file:mr-4 file:py-2.5 file:px-6 file:rounded-xl file:border-0 file:text-sm file:font-bold file:bg-blue-600 file:text-white hover:file:bg-blue-700 transition-all cursor-pointer bg-gray-50 p-2 rounded-2xl border border-dashed border-gray-200" />
+          </div>
+          {galleryImages.length > 0 && <p className="text-[10px] text-blue-600 mt-2 font-bold px-1 uppercase tracking-wider">{galleryImages.length} items selected</p>}
         </div>
       </div>
 
-      <div className="flex justify-end pt-6">
-        <button
-          type="submit"
-          disabled={isLoading}
-          className={`px-8 py-3 rounded-full bg-[#062516] text-[#FFFA84] font-semibold tracking-wide hover:bg-[#08301d] transition-colors ${isLoading ? 'opacity-70 cursor-not-allowed' : ''}`}
-        >
-          {isLoading ? 'Saving...' : 'Save Project'}
+      <div className="flex justify-end pt-10 border-t border-gray-50">
+        <button type="submit" disabled={isLoading} className={`px-12 py-4 rounded-full bg-[#062516] text-[#FFFA84] font-bold tracking-widest uppercase text-xs shadow-xl shadow-[#062516]/20 hover:shadow-[#062516]/30 hover:-translate-y-0.5 transition-all active:translate-y-0 ${isLoading ? 'opacity-70 cursor-not-allowed scale-95' : ''}`}>
+          {isLoading ? 'Processing...' : 'Deploy Project'}
         </button>
       </div>
     </form>
