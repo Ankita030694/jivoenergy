@@ -196,95 +196,8 @@ const ProjectsPage = () => {
         </div>
       </div>
 
-      {/* Filter Bar */}
-      <div className="sticky top-[80px] z-30 bg-white/80 backdrop-blur-md border-b border-gray-100 shadow-sm py-6">
-        <div className="container mx-auto px-6 flex flex-wrap items-center gap-4">
-            <div className="flex items-center gap-2 text-[#062516] font-bold mr-4 text-sm uppercase tracking-widest">
-                <Filter className="w-4 h-4" />
-                Filters
-            </div>
-
-            <FilterDropdown 
-                label="Region" 
-                options={settings?.regions || []} 
-                selected={filters.regions} 
-                onChange={(val) => toggleFilter('regions', val)} 
-            />
-            <FilterDropdown 
-                label="Country" 
-                options={settings?.countries || []} 
-                selected={filters.countries} 
-                onChange={(val) => toggleFilter('countries', val)} 
-            />
-            <FilterDropdown 
-                label="Status" 
-                options={settings?.statuses || []} 
-                selected={filters.statuses} 
-                onChange={(val) => toggleFilter('statuses', val)} 
-            />
-            <FilterDropdown 
-                label="Technology" 
-                options={settings?.technologies || []} 
-                selected={filters.technologies} 
-                onChange={(val) => toggleFilter('technologies', val)} 
-            />
-             <FilterDropdown 
-                label="Power" 
-                options={availableCapacities} 
-                selected={filters.capacities} 
-                onChange={(val) => toggleFilter('capacities', val)} 
-            />
-
-            {activeFiltersCount > 0 && (
-                <button 
-                    onClick={clearFilters}
-                    className="flex items-center gap-2 px-4 py-2 text-xs font-bold text-red-600 hover:bg-red-50 rounded-full transition-colors ml-auto"
-                >
-                    <X className="w-4 h-4" />
-                    Reset All
-                </button>
-            )}
-        </div>
-      </div>
-
       {/* Main Content Area */}
       <main className="container mx-auto px-6 py-24 md:py-32">
-        {/* Featured Showcase Banner */}
-        <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-20 bg-[#062516] rounded-[40px] overflow-hidden shadow-2xl relative"
-        >
-            <div className="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1466611653911-95282fc3656b?auto=format&fit=crop&q=80')] bg-cover bg-center" />
-            <div className="relative z-10 p-8 md:p-16 flex flex-col md:flex-row items-center justify-between gap-12">
-                <div className="max-w-2xl text-center md:text-left">
-                    <span className="inline-block px-4 py-1.5 rounded-full bg-[#FFFA84] text-[#062516] text-[10px] font-black uppercase tracking-[0.2em] mb-6">
-                        Featured Prototype
-                    </span>
-                    <h2 className="text-4xl md:text-6xl font-black text-white mb-6 leading-tight tracking-tight">
-                        Experience Our <span className="text-[#FFFA84]">Premium</span> Design System
-                    </h2>
-                    <p className="text-white/70 text-lg font-medium mb-8 leading-relaxed">
-                        Step into a full-fledged project demonstration featuring cinematic high-resolution visuals, technical depth, and our flagship renewable energy vision.
-                    </p>
-                    <Link 
-                        href="/projects/demo" 
-                        className="inline-flex items-center gap-3 px-10 py-5 bg-[#FFFA84] text-[#062516] rounded-full font-black text-sm uppercase tracking-widest hover:scale-105 transition-transform shadow-xl"
-                    >
-                        View Full Showcase
-                        <Zap className="w-4 h-4" />
-                    </Link>
-                </div>
-                <div className="relative w-full md:w-80 aspect-square">
-                    <div className="absolute inset-0 bg-[#FFFA84]/10 rounded-full animate-pulse" />
-                    <div className="absolute inset-4 bg-white/5 rounded-full backdrop-blur-3xl border border-white/10 flex items-center justify-center">
-                        <Zap className="w-20 h-20 text-[#FFFA84] animate-bounce" />
-                    </div>
-                </div>
-            </div>
-        </motion.div>
-
         {loading ? (
              <div className="flex flex-col items-center justify-center py-40 gap-4">
                 <Loader2 className="w-10 h-10 animate-spin text-[#062516]" />
@@ -295,13 +208,13 @@ const ProjectsPage = () => {
             <div className="flex justify-between items-end py-8 px-2">
                 <div>
                     <h2 className="text-4xl md:text-5xl font-black text-[#062516] tracking-tight mb-2">Project Portfolio</h2>
-                    <p className="text-black font-bold uppercase text-[10px] tracking-widest opacity-60">Showing {filteredProjects.length} projects across Africa</p>
+                    <p className="text-black font-bold uppercase text-[10px] tracking-widest opacity-60">Showing {allProjects.length} projects across Africa</p>
                 </div>
             </div>
 
-            {filteredProjects.length > 0 ? (
+            {allProjects.length > 0 ? (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 pb-8">
-                    {filteredProjects.map((project) => (
+                    {allProjects.map((project) => (
                         <ProjectCard 
                             key={project.id} 
                             project={project} 
@@ -314,13 +227,6 @@ const ProjectsPage = () => {
                         <Zap className="w-12 h-12 text-gray-300" />
                     </div>
                     <h3 className="text-2xl font-bold text-gray-800 mb-2">No projects found</h3>
-                    <p className="text-gray-500 max-w-md mx-auto">We couldn't find any projects matching your current filters. Try adjusting your selection.</p>
-                    <button 
-                        onClick={clearFilters}
-                        className="mt-8 px-8 py-3 bg-[#062516] text-[#FFFA84] rounded-full font-bold transition-transform hover:scale-105"
-                    >
-                        Clear All Filters
-                    </button>
                 </div>
             )}
           </div>

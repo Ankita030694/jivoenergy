@@ -90,51 +90,51 @@ const Team = () => {
   const MemberCard = ({ member }: { member: TeamMember }) => (
     <motion.div 
       variants={itemVariants}
-      className="group relative"
+      className="flex flex-col items-center"
     >
       <div 
-        className={`relative overflow-hidden rounded-2xl bg-white shadow-md hover:shadow-2xl transition-all duration-500 border border-gray-100 h-full flex flex-col ${member.linkedin ? 'cursor-pointer' : ''}`}
+        className={`relative w-32 h-32 md:w-36 md:h-36 overflow-hidden rounded-full bg-gray-100 shadow-sm hover:shadow-lg transition-all duration-500 border-2 border-white group mb-4 ${member.linkedin ? 'cursor-pointer' : ''}`}
         onClick={() => member.linkedin && window.open(member.linkedin, '_blank')}
       >
-        <div className="aspect-square overflow-hidden bg-gray-100 relative">
-          {member.image ? (
-            <Image
-              src={member.image}
-              alt={member.name}
-              fill
-              className="object-cover object-top transition-transform duration-700 group-hover:scale-110"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            />
-          ) : (
-            <div className="w-full h-full flex items-center justify-center bg-[#062516]/5 text-[#062516]/20">
-              <span className="text-5xl font-bold font-serif">{member.name.charAt(0)}</span>
-            </div>
-          )}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#062516] via-[#062516]/20 to-transparent opacity-0 group-hover:opacity-90 transition-opacity duration-500" />
-          
-          <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500 flex flex-col items-center justify-end h-full pb-8">
-            <div className="flex gap-4">
-              <a 
-                href={member.linkedin || '#'} 
-                className="bg-white/10 backdrop-blur-md border border-white/20 p-3 rounded-full text-white hover:bg-white hover:text-[#0077b5] transition-all duration-300 transform hover:scale-110"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`Connect with ${member.name} on LinkedIn`}
-                onClick={(e) => e.stopPropagation()}
-              >
-                <Linkedin className="w-5 h-5" />
-              </a>
-            </div>
-            <span className="text-white/80 text-sm mt-3 font-light tracking-wide">Connect & Info</span>
+        {member.image ? (
+          <Image
+            src={member.image}
+            alt={member.name}
+            fill
+            className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+            sizes="(max-width: 768px) 150px, 200px"
+          />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center bg-[#062516]/5 text-[#062516]/20">
+            <span className="text-3xl font-bold font-serif">{member.name.charAt(0)}</span>
           </div>
-        </div>
+        )}
         
-        <div className="p-8 text-center flex-grow flex flex-col justify-center bg-white relative z-10 group-hover:bg-gray-50 transition-colors duration-300">
-          <h3 className="font-bold text-[#062516] text-lg leading-tight mb-1 group-hover:text-[#062516] transition-colors">{member.name.split(' ')[0]}</h3>
-          {member.role && (
-            <p className="text-sm text-gray-500 font-medium">{member.role}</p>
-          )}
-        </div>
+        {member.linkedin && (
+           <div className="absolute inset-0 bg-[#062516]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <div className="bg-white/90 p-2 rounded-full shadow-sm">
+                <Linkedin className="w-4 h-4 text-[#0077b5]" />
+              </div>
+           </div>
+        )}
+      </div>
+      
+      <div className="text-center">
+        <h3 className="font-bold text-[#062516] text-sm md:text-base leading-tight mb-1">{member.name}</h3>
+        {member.linkedin ? (
+          <a 
+            href={member.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center text-[#0077b5] hover:underline text-xs font-medium gap-1"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <Linkedin className="w-3 h-3" />
+            LinkedIn
+          </a>
+        ) : (
+          member.role && <p className="text-xs text-gray-500 font-medium">{member.role}</p>
+        )}
       </div>
     </motion.div>
   );
@@ -144,7 +144,7 @@ const Team = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <div className="relative h-[60vh] flex items-center justify-center overflow-hidden bg-[#062516]">
+      <div className="relative h-[60vh] flex items-center justify-center overflow-hidden bg-[#062516] mb-10">
         <motion.div 
           initial={{ scale: 1.1, opacity: 0 }}
           animate={{ scale: 1, opacity: 0.4 }}
@@ -172,7 +172,7 @@ const Team = () => {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 pt-20 pb-64 space-y-32">
+      <div className="container mx-auto px-4 pt-20">
         
         {/* Mentor Leader Section */}
         <motion.section 
@@ -180,53 +180,57 @@ const Team = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="max-w-5xl mx-auto"
+          className="max-w-4xl mx-auto text-center mb-10"
         >
-          <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100 flex flex-col md:flex-row group hover:shadow-[0_20px_50px_rgba(6,37,22,0.1)] transition-shadow duration-500">
-            <div className="md:w-5/12 relative min-h-[400px] bg-gray-100 overflow-hidden">
+          <div className="flex flex-col items-center">
+            <div 
+              className="relative w-48 h-48 md:w-64 md:h-64 overflow-hidden rounded-full bg-gray-100 shadow-2xl transition-all duration-700 border-4 border-[#FFFA84] hover:scale-105 group mb-8 cursor-pointer"
+              onClick={() => mentor.linkedin && window.open(mentor.linkedin, '_blank')}
+            >
                {mentor.image ? (
                  <Image
                    src={mentor.image}
                    alt={mentor.name}
                    fill
-                   className="object-cover object-top hover:scale-105 transition-transform duration-700"
-                   sizes="(max-width: 768px) 100vw, 50vw"
+                   className="object-cover object-top"
+                   sizes="(max-width: 768px) 200px, 300px"
                  />
                ) : (
-                 <>
-                   <div className="absolute inset-0 flex items-center justify-center bg-[#062516] text-[#FFFA84]">
-                      <span className="text-8xl font-serif font-bold opacity-20">{mentor.name.split(' ').map(n => n[0]).join('')}</span>
-                   </div>
-                   <div className="absolute inset-0 bg-gradient-to-tr from-[#062516]/40 to-transparent" />
-                 </>
+                 <div className="absolute inset-0 flex items-center justify-center bg-[#062516] text-[#FFFA84]">
+                    <span className="text-6xl font-serif font-bold opacity-20">{mentor.name.split(' ').map(n => n[0]).join('')}</span>
+                 </div>
+               )}
+               {mentor.linkedin && (
+                 <div className="absolute inset-0 bg-[#062516]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <div className="bg-white/90 p-3 rounded-full shadow-lg">
+                      <Linkedin className="w-6 h-6 text-[#0077b5]" />
+                    </div>
+                 </div>
                )}
             </div>
-            <div className="md:w-7/12 p-10 md:p-16 flex flex-col justify-center relative">
-              <div className="absolute top-0 right-0 p-10 opacity-5">
-                <svg width="100" height="100" viewBox="0 0 100 100" fill="currentColor">
-                  <path d="M0 0h100v100H0z" />
-                </svg>
-              </div>
+
+            <div className="space-y-4">
+              <div className="uppercase tracking-[0.3em] text-xs text-[#062516] font-black">Leadership</div>
+              <h2 className="text-4xl md:text-5xl font-black text-[#062516] tracking-tight">{mentor.name}</h2>
+              <div className="text-[#062516]/60 font-bold text-lg">{mentor.role}</div>
               
-              <div className="uppercase tracking-widest text-xs text-[#062516] font-bold mb-2">Leadership</div>
-              <h2 className="text-4xl font-bold text-[#062516] mb-2">{mentor.name.split(' ')[0]}</h2>
-              <div className="text-[#062516]/60 font-medium text-lg mb-8">{mentor.role}</div>
-              
-              <div className="relative pl-6 border-l-4 border-[#FFFA84] mb-8">
+              <div className="max-w-xl mx-auto py-6">
                 <p className="text-gray-600 text-xl italic leading-relaxed">
                   "With a vision to contribute to clean energy transition globally."
                 </p>
               </div>
               
-              <a 
-                href={mentor.linkedin || '#'} 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center group/link text-[#062516] font-bold hover:text-[#062516]/70 transition-colors"
-              >
-                <span className="border-b-2 border-[#FFFA84] pb-1 group-hover/link:border-[#062516] transition-colors">Connect on LinkedIn</span>
-                <ArrowUpRight className="w-5 h-5 ml-2 transform group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform" />
-              </a>
+              {mentor.linkedin && (
+                <a 
+                  href={mentor.linkedin} 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-8 py-3 bg-[#0077b5] text-white rounded-full font-bold hover:bg-[#005582] transition-colors shadow-lg"
+                >
+                  <Linkedin className="w-5 h-5" />
+                  Connect on LinkedIn
+                </a>
+              )}
             </div>
           </div>
         </motion.section>
@@ -248,7 +252,7 @@ const Team = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+            className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 md:gap-8"
           >
             {projectDevelopment.map((member, index) => (
               <MemberCard key={index} member={member} />
@@ -275,7 +279,7 @@ const Team = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+            className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 md:gap-8"
           >
             {projectExecution.map((member, index) => (
               <MemberCard key={index} member={member} />
@@ -300,7 +304,7 @@ const Team = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+            className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 md:gap-8"
           >
             {projectSupport.map((member, index) => (
               <MemberCard key={index} member={member} />

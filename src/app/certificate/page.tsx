@@ -66,32 +66,26 @@ const Certificate = () => {
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 py-16">
-        <div className="flex flex-wrap justify-center gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {certifications.map((cert, index) => (
             <a 
               key={index}
               href={`/certifications/${cert.file}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 flex flex-col items-center text-center group cursor-pointer w-full md:w-[calc(50%-2rem)] lg:w-[30%]"
+              className="bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col items-center text-center group cursor-pointer overflow-hidden"
             >
-              <div className="w-full bg-gray-100 relative border-b border-gray-100">
-                <PdfThumbnail file={`/certifications/${cert.file}`} width={350} />
+              <div className="w-full bg-gray-50 h-48 md:h-64 overflow-hidden flex items-start justify-center transition-colors group-hover:bg-white relative">
+                <div className="scale-110 origin-top pt-4">
+                  <PdfThumbnail file={`/certifications/${cert.file}`} width={300} />
+                </div>
+                <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-gray-50 group-hover:from-white to-transparent z-20" />
               </div>
 
-              <div className="p-8 flex flex-col items-center flex-grow w-full">
-                <h3 className="text-xl font-bold text-[#062516] mb-6 flex-grow line-clamp-3">
+              <div className="p-4 flex flex-col items-center flex-grow w-full border-t border-gray-50">
+                <h3 className="text-sm font-bold text-[#062516] line-clamp-2 min-h-[40px]">
                   {cert.title}
                 </h3>
-                
-                <span 
-                  className="inline-flex items-center px-6 py-3 bg-[#062516] text-white rounded-lg group-hover:bg-[#051e12] transition-colors duration-300 font-medium mt-auto"
-                >
-                  <span>View Certificate</span>
-                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                </span>
               </div>
             </a>
           ))}

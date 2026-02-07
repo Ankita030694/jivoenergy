@@ -505,7 +505,7 @@ const Navbar = () => {
                 onMouseLeave={closeDropdown}
                 style={{ cursor: 'pointer' }}
               >
-                Jivo Energy
+                JIVO Energy
                 <svg 
                   className={`dropdown-arrow ${isDropdownOpen ? 'open' : ''}`}
                   width="12" 
@@ -523,33 +523,33 @@ const Navbar = () => {
                 onMouseLeave={closeDropdown}
               >
                 <li className="dropdown-item">
-                  <a className="dropdown-link" href="/business-areas">Business Areas</a>
+                  <a className="dropdown-link" href="/about">About Us</a>
                 </li>
                 <li className="dropdown-item">
                   <a className="dropdown-link" href="/partners">Partners</a>
                 </li>
                 <li className="dropdown-item">
-                  <a className="dropdown-link" href="/certificate">Certificate</a>
+                  <a className="dropdown-link" href="/certificate">Certifications</a>
                 </li>
                 <li className="dropdown-item">
-                  <a className="dropdown-link" href="/capabilities">Capabilities</a>
+                  <a className="dropdown-link" href="/esg">ESG</a>
                 </li>
                 <li className="dropdown-item">
-                  <a className="dropdown-link" href="/theme">Theme</a>
+                  <a className="dropdown-link" href="/team">Team</a>
                 </li>
               </ul>
+            </li>
+            <li className="nav__item">
+              <a className="nav__link" href="/business-areas">Business Areas</a>
             </li>
             <li className="nav__item">
               <a className="nav__link" href="/projects">Projects</a>
             </li>
             <li className="nav__item">
-              <a className="nav__link" href="/gallery">Gallery</a>
+              <a className="nav__link" href="/capabilities">Capabilities</a>
             </li>
             <li className="nav__item">
               <a className="nav__link" href="/media">Media</a>
-            </li>
-            <li className="nav__item">
-              <a className="nav__link" href="/sustainability">Sustainability</a>
             </li>
             <li className="nav__item">
               <a className="nav__link" href="/careers">Careers</a>

@@ -91,8 +91,10 @@ interface MediaProps {
 }
 
 const Media = ({ limit }: MediaProps) => {
+  const [activeLink, setActiveLink] = React.useState<string | null>(null);
   const sortedCards = [...mediaCards].reverse();
   const displayedCards = limit ? sortedCards.slice(0, limit) : sortedCards;
+
   return (
     <section className="w-full py-20 bg-[#062516] relative overflow-hidden">
       {/* Background Pattern */}
@@ -125,12 +127,10 @@ const Media = ({ limit }: MediaProps) => {
         {/* Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {displayedCards.map((card) => (
-            <a 
+            <button 
               key={card.id}
-              href={card.link || '#'}
-              target={card.link ? "_blank" : undefined}
-              rel={card.link ? "noopener noreferrer" : undefined}
-              className="group bg-white/95 backdrop-blur-sm rounded-2xl overflow-hidden shadow-2xl border border-white/20 hover:bg-white hover:shadow-green-500/20 hover:-translate-y-3 hover:scale-105 transition-all duration-500 relative block"
+              onClick={() => card.link && setActiveLink(card.link)}
+              className="group bg-white/95 backdrop-blur-sm rounded-2xl overflow-hidden shadow-2xl border border-white/20 hover:bg-white hover:shadow-green-500/20 hover:-translate-y-3 hover:scale-105 transition-all duration-500 relative block text-left"
             >
               {/* Category Badge */}
               <div className="absolute top-4 left-4 z-10">
@@ -172,13 +172,71 @@ const Media = ({ limit }: MediaProps) => {
                   </svg>
                 </div>
               </div>
-            </a>
+            </button>
           ))}
         </div>
-        
       </div>
+
+      {/* Iframe Modal */}
+      {activeLink && (
+        <div className="fixed inset-0 z-[2000] flex items-center justify-center p-4 md:p-8 pt-24 md:pt-32">
+          <div 
+            className="absolute inset-0 bg-black/80 backdrop-blur-md transition-opacity duration-300"
+            onClick={() => setActiveLink(null)}
+          ></div>
+          
+          <div className="relative w-full h-full max-w-6xl bg-white rounded-3xl overflow-hidden shadow-2xl flex flex-col animate-in fade-in zoom-in duration-300">
+            {/* Modal Header */}
+            <div className="flex items-center justify-between px-6 py-4 bg-[#062516] border-b border-white/10">
+              <h3 className="text-white font-medium truncate pr-4">
+                {mediaCards.find(c => c.link === activeLink)?.title}
+              </h3>
+              <button 
+                onClick={() => setActiveLink(null)}
+                className="p-2 text-white/70 hover:text-white hover:bg-white/10 rounded-full transition-all duration-200"
+                aria-label="Close modal"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+
+            {/* Iframe Container */}
+            <div className="flex-1 w-full relative bg-gray-50">
+              <div className="absolute inset-0 flex items-center justify-center -z-10">
+                <div className="w-8 h-8 border-4 border-green-500 border-t-transparent rounded-full animate-spin"></div>
+              </div>
+              <iframe 
+                src={activeLink}
+                className="w-full h-full border-none shadow-inner"
+                title="External Content"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+
+            {/* Modal Footer */}
+            <div className="px-6 py-4 bg-gray-50 border-t border-gray-100 flex justify-between items-center text-sm text-gray-500">
+              <p>Content hosted by external site</p>
+              <a 
+                href={activeLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-green-600 font-semibold hover:text-green-700 flex items-center gap-1 transition-colors"
+              >
+                Open in new tab
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
 
-export default Media; 
+export default Media;
+ 
