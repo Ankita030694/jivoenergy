@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { getProjects, deleteProject } from '@/lib/projects';
 import { Project } from '@/types/project';
 import Image from 'next/image';
-import { Plus, Trash2, Database, Search, Filter } from 'lucide-react';
+import { Plus, Trash2, Database, Search, Filter, Edit } from 'lucide-react';
 import Link from 'next/link';
 
 export default function AdminProjectsPage() {
@@ -132,6 +132,13 @@ export default function AdminProjectsPage() {
                     </td>
                     <td className="px-6 py-4 text-right">
                       <div className="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <Link
+                          href={`/admin/projects/edit-project/${project.id}`}
+                          className="p-2 text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+                          title="Edit"
+                        >
+                          <Edit className="w-5 h-5" />
+                        </Link>
                         <button 
                           onClick={() => handleDelete(project.id!)}
                           className="p-2 text-red-600 hover:bg-red-50 rounded-lg transition-colors"

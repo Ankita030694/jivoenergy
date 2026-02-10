@@ -155,7 +155,22 @@ const ProjectForm: React.FC<ProjectFormProps> = ({ initialData, onSubmit, isLoad
           <div className="relative group">
             <input type="file" onChange={handleFileChange} accept="image/*" className="block w-full text-sm text-gray-500 file:mr-4 file:py-2.5 file:px-6 file:rounded-xl file:border-0 file:text-sm file:font-bold file:bg-[#062516] file:text-[#FFFA84] hover:file:bg-[#08301d] transition-all cursor-pointer bg-gray-50 p-2 rounded-2xl border border-dashed border-gray-200" />
           </div>
-          {initialData?.imageUrl && !coverImage && <p className="text-[10px] text-gray-400 mt-2 font-medium px-1">Current Image Active</p>}
+          {formData.imageUrl && !coverImage && (
+            <div className="relative mt-2 inline-block">
+               <img src={formData.imageUrl} alt="Current Cover" className="h-20 w-auto rounded-lg border border-gray-200" />
+               <button
+                 type="button"
+                 onClick={() => setFormData(prev => ({ ...prev, imageUrl: '' }))}
+                 className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full p-1 hover:bg-red-600 transition-colors shadow-sm"
+                 title="Remove Image"
+               >
+                 <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
+                   <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+                 </svg>
+               </button>
+               <p className="text-[10px] text-gray-400 mt-1 font-medium px-1">Current Image</p>
+            </div>
+          )}
         </div>
 
         <div className="col-span-1">
@@ -163,7 +178,28 @@ const ProjectForm: React.FC<ProjectFormProps> = ({ initialData, onSubmit, isLoad
           <div className="relative group">
             <input type="file" onChange={handleGalleryChange} accept="image/*" multiple className="block w-full text-sm text-gray-500 file:mr-4 file:py-2.5 file:px-6 file:rounded-xl file:border-0 file:text-sm file:font-bold file:bg-blue-600 file:text-white hover:file:bg-blue-700 transition-all cursor-pointer bg-gray-50 p-2 rounded-2xl border border-dashed border-gray-200" />
           </div>
-          {galleryImages.length > 0 && <p className="text-[10px] text-blue-600 mt-2 font-bold px-1 uppercase tracking-wider">{galleryImages.length} items selected</p>}
+          
+          {formData.galleryUrls && formData.galleryUrls.length > 0 && (
+            <div className="mt-3 grid grid-cols-4 gap-2">
+              {formData.galleryUrls.map((url, index) => (
+                <div key={index} className="relative group">
+                  <img src={url} alt={`Gallery ${index}`} className="h-16 w-full object-cover rounded-lg border border-gray-200" />
+                  <button
+                    type="button"
+                    onClick={() => setFormData(prev => ({ ...prev, galleryUrls: prev.galleryUrls?.filter((_, i) => i !== index) }))}
+                    className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full p-1 hover:bg-red-600 transition-colors shadow-sm opacity-0 group-hover:opacity-100"
+                    title="Remove Image"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+                    </svg>
+                  </button>
+                </div>
+              ))}
+            </div>
+          )}
+          
+          {galleryImages.length > 0 && <p className="text-[10px] text-blue-600 mt-2 font-bold px-1 uppercase tracking-wider">{galleryImages.length} new items selected</p>}
         </div>
       </div>
 

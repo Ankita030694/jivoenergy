@@ -87,9 +87,21 @@ export const deleteProject = async (id: string) => {
 };
 
 export const uploadProjectImage = async (file: File, path: string): Promise<string> => {
-    const storageRef = ref(storage, path);
-    const snapshot = await uploadBytes(storageRef, file);
-    return await getDownloadURL(snapshot.ref);
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('path', path);
+
+    const response = await fetch('/api/admin/upload', {
+        method: 'POST',
+        body: formData,
+    });
+
+    if (!response.ok) {
+        throw new Error('Failed to upload image');
+    }
+
+    const data = await response.json();
+    return data.url;
 };
 
 export const uploadProjectImages = async (files: File[], basePath: string): Promise<string[]> => {
