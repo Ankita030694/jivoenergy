@@ -69,6 +69,22 @@ const mediaCards: MediaCard[] = [
     link: "https://salonemessengers.com/jivo-energy-first-hybrid-off-grid-mini-grid-moyamba/"
   },
   {
+    id: 8,
+    title: "JIVO Energy adds 1.2 MWp solar capacity in Sao Tome",
+    description: "Solar Quarter highlights JIVO Energy's contribution to reducing load-shedding in Sao Tome with new solar capacity.",
+    image: "/media_assets/sao_tome_3.png",
+    category: "News",
+    link: "https://solarquarter.com/2026/01/16/jivo-energy-adds-1-2-mwp-solar-capacity-to-reduce-load-shedding-in-sao-tome/"
+  },
+  {
+    id: 9,
+    title: "JIVO Energy Powers 39 Off-Grid Health Facilities in Liberia with Solar + BESS - SolarQuarter",
+    description: "JIVO Energy provides reliable solar + BESS power to 39 off-grid health facilities in Liberia.",
+    image: "/media_assets/liberia_health.png",
+    category: "News",
+    link: "https://solarquarter.com/2026/01/21/jivo-energy-powers-39-off-grid-health-facilities-with-solar-bess-solarquarter/"
+  },
+  {
     id: 10,
     title: "JIVO Energy solarizes irrigation water pumps in Northern Senegal",
     description: "Another feature on JIVO Energy's solar irrigation project in Northern Senegal by Solar Quarter.",
@@ -83,22 +99,6 @@ const mediaCards: MediaCard[] = [
     image: "/media_assets/senegal_3.png",
     category: "News",
     link: "https://solarquarter.com/2026/01/28/jivo-energy-completes-solar-pv-installations-for-irrigation-projects-in-northern-senegal/"
-  },
-  {
-    id: 8,
-    title: "JIVO Energy adds 1.2 MWp solar capacity in Sao Tome",
-    description: "Solar Quarter highlights JIVO Energy's contribution to reducing load-shedding in Sao Tome with new solar capacity.",
-    image: "/media_assets/sao_tome_3.png",
-    category: "News",
-    link: "https://solarquarter.com/2026/01/16/jivo-energy-adds-1-2-mwp-solar-capacity-to-reduce-load-shedding-in-sao-tome/"
-  },
-  {
-    id: 9,
-    title: "JIVO Energy Powers 39 Off-Grid Health Facilities in Liberia",
-    description: "JIVO Energy provides reliable solar + BESS power to 39 off-grid health facilities in Liberia.",
-    image: "/media_assets/liberia_health.png",
-    category: "News",
-    link: "https://solarquarter.com/2026/01/21/jivo-energy-powers-39-off-grid-health-facilities-with-solar-bess-solarquarter/"
   },
   {
     id: 12,
@@ -148,7 +148,8 @@ interface MediaProps {
 
 const Media = ({ limit }: MediaProps) => {
   const [activeLink, setActiveLink] = React.useState<string | null>(null);
-  const sortedCards = [...mediaCards].reverse();
+  const sortedCards = [...mediaCards];
+
   const displayedCards = limit ? sortedCards.slice(0, limit) : sortedCards;
 
   return (
