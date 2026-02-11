@@ -8,6 +8,7 @@ import ContactForm from "@/components/ContactForm"
 import Footer from "@/components/Footer"
 import Media from "@/components/Media"
 import GlobeViz from "@/components/GlobeViz";
+import GreenGlobe from "@/components/GreenGlobe";
 
 export default function Home() {
   return (
@@ -17,7 +18,10 @@ export default function Home() {
       <Navbar />
       <main className="flex flex-col items-center w-full">
         <section id="hero-section" className="relative w-full h-[100vh] overflow-hidden bg-black">
-          <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 z-0 hidden md:block">
+            <GlobeViz />
+          </div>
+          <div className="absolute inset-0 z-0 block md:hidden bg-[#062516]">
             <GlobeViz />
           </div>
 

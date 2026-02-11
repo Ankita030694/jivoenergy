@@ -1,6 +1,11 @@
 "use client"
 import { useEffect, useState, useRef, useMemo } from "react"
 import dynamic from "next/dynamic"
+import { Plus, Minus, RotateCw, RotateCcw, ExternalLink } from "lucide-react"
+import { getProjects } from "@/lib/projects"
+import { Project } from "@/types/project"
+import { countries as countryList } from "@/lib/countries"
+import Link from "next/link"
 
 // Dynamically import Globe to avoid SSR issues with WebGL
 const Globe = dynamic(() => import("react-globe.gl"), {
@@ -12,172 +17,79 @@ const Globe = dynamic(() => import("react-globe.gl"), {
   )
 })
 
-// Country-specific data (Preserved from original)
-const countryData = {
-  // Africa
-  ET: { 
-    name: "Ethiopia", 
-    projects: 12, 
-    capacity: "850 MW", 
-    status: "Active Development",
-    flag: "https://flagcdn.com/w160/et.png",
-    projectImage: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=300&h=200&fit=crop"
-  },
-  KE: { 
-    name: "Kenya", 
-    projects: 8, 
-    capacity: "620 MW", 
-    status: "Operational",
-    flag: "https://flagcdn.com/w160/ke.png",
-    projectImage: "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=300&h=200&fit=crop"
-  },
-  TZ: { 
-    name: "Tanzania", 
-    projects: 6, 
-    capacity: "450 MW", 
-    status: "Planning Phase",
-    flag: "https://flagcdn.com/w160/tz.png",
-    projectImage: "https://images.unsplash.com/photo-1566312087-9b02b5c62c77?w=300&h=200&fit=crop"
-  },
-  UG: { 
-    name: "Uganda", 
-    projects: 4, 
-    capacity: "320 MW", 
-    status: "Construction",
-    flag: "https://flagcdn.com/w160/ug.png",
-    projectImage: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=300&h=200&fit=crop"
-  },
-  BF: { 
-    name: "Burkina Faso", 
-    projects: 3, 
-    capacity: "180 MW", 
-    status: "Early Development",
-    flag: "https://flagcdn.com/w160/bf.png",
-    projectImage: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=300&h=200&fit=crop"
-  },
-  CV: { 
-    name: "Cape Verde", 
-    projects: 2, 
-    capacity: "95 MW", 
-    status: "Operational",
-    flag: "https://flagcdn.com/w160/cv.png",
-    projectImage: "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=300&h=200&fit=crop"
-  },
-  LR: { 
-    name: "Liberia", 
-    projects: 1, 
-    capacity: "45 MW", 
-    status: "Planning",
-    flag: "https://flagcdn.com/w160/lr.png",
-    projectImage: "https://images.unsplash.com/photo-1566312087-9b02b5c62c77?w=300&h=200&fit=crop"
-  },
-  ST: { 
-    name: "São Tomé & Príncipe", 
-    projects: 1, 
-    capacity: "25 MW", 
-    status: "Feasibility",
-    flag: "https://flagcdn.com/w160/st.png",
-    projectImage: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=300&h=200&fit=crop"
-  },
-  SN: { 
-    name: "Senegal", 
-    projects: 5, 
-    capacity: "380 MW", 
-    status: "Active Development",
-    flag: "https://flagcdn.com/w160/sn.png",
-    projectImage: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=300&h=200&fit=crop"
-  },
-  SL: { 
-    name: "Sierra Leone", 
-    projects: 2, 
-    capacity: "120 MW", 
-    status: "Construction",
-    flag: "https://flagcdn.com/w160/sl.png",
-    projectImage: "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=300&h=200&fit=crop"
-  },
-  MW: { 
-    name: "Malawi", 
-    projects: 3, 
-    capacity: "200 MW", 
-    status: "Planning Phase",
-    flag: "https://flagcdn.com/w160/mw.png",
-    projectImage: "https://images.unsplash.com/photo-1566312087-9b02b5c62c77?w=300&h=200&fit=crop"
-  },
-  ZA: { 
-    name: "South Africa", 
-    projects: 15, 
-    capacity: "1200 MW", 
-    status: "Operational",
-    flag: "https://flagcdn.com/w160/za.png",
-    projectImage: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=300&h=200&fit=crop"
-  },
-  ZW: { 
-    name: "Zimbabwe", 
-    projects: 4, 
-    capacity: "280 MW", 
-    status: "Development",
-    flag: "https://flagcdn.com/w160/zw.png",
-    projectImage: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=300&h=200&fit=crop"
-  },
-  LY: { 
-    name: "Libya", 
-    projects: 6, 
-    capacity: "500 MW", 
-    status: "Planning",
-    flag: "https://flagcdn.com/w160/ly.png",
-    projectImage: "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=300&h=200&fit=crop"
-  },
-  TN: { 
-    name: "Tunisia", 
-    projects: 7, 
-    capacity: "420 MW", 
-    status: "Construction",
-    flag: "https://flagcdn.com/w160/tn.png",
-    projectImage: "https://images.unsplash.com/photo-1566312087-9b02b5c62c77?w=300&h=200&fit=crop"
-  },
-  // Asia & Middle East
-  AE: { 
-    name: "UAE", 
-    projects: 10, 
-    capacity: "750 MW", 
-    status: "Operational",
-    flag: "https://flagcdn.com/w160/ae.png",
-    projectImage: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=300&h=200&fit=crop"
-  },
-  IN: { 
-    name: "India", 
-    projects: 25, 
-    capacity: "2100 MW", 
-    status: "Multi-Phase Development",
-    flag: "https://flagcdn.com/w160/in.png",
-    projectImage: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=300&h=200&fit=crop"
-  },
-}
-
+// Target IDs - will be populated dynamically
 // Colors
-const DEFAULT_LAND_COLOR = "#2d3748"
-const HOVER_LAND_COLOR = "#4a5568"
-const SELECTED_LAND_COLOR = "#059669" // Green
-const TARGET_LAND_COLOR = "#2563eb" // Blue-ish default for targets
-
-// Target IDs
-const targetRegions = Object.keys(countryData)
 
 export default function GlobeViz() {
   const globeEl = useRef<any>(null)
   const [countries, setCountries] = useState({ features: [] })
   const [selectedCountry, setSelectedCountry] = useState<string | null>(null)
-  const [hoveredPolygon, setHoveredPolygon] = useState<any>(null)
   const [popupPosition, setPopupPosition] = useState<{ x: number, y: number } | null>(null)
+  const [countryData, setCountryData] = useState<Record<string, any>>({})
+  const [loading, setLoading] = useState(true)
+
+  const targetRegions = useMemo(() => Object.keys(countryData), [countryData])
 
   useEffect(() => {
-    // load data
+    // load geojson
     fetch('https://raw.githubusercontent.com/vasturiano/react-globe.gl/master/example/datasets/ne_110m_admin_0_countries.geojson')
       .then(res => res.json())
       .then(setCountries)
+
+    // Load projects and transform
+    const loadProjects = async () => {
+        const projects = await getProjects()
+        
+        // Country Name to Code Mapping
+        const nameToCode: Record<string, string> = {}
+        countryList.forEach(c => {
+            nameToCode[c.name.toLowerCase()] = c.code
+        })
+        // Manual overrides for common mismatches
+        nameToCode['uae'] = 'AE'
+        nameToCode['united arab emirates'] = 'AE'
+        nameToCode['usa'] = 'US'
+        nameToCode['united states'] = 'US'
+        nameToCode['uk'] = 'GB'
+        nameToCode['united kingdom'] = 'GB'
+        nameToCode['sao tome and principe'] = 'ST'
+        nameToCode['são tomé & príncipe'] = 'ST'
+
+        const grouped = projects.reduce((acc: Record<string, any>, p: Project) => {
+            const countryName = p.country || ""
+            const code = nameToCode[countryName.toLowerCase()] || countryName.toUpperCase()
+            
+            if (!acc[code]) {
+                acc[code] = {
+                    name: countryName,
+                    projects: 0,
+                    projectList: [], // Store project identifiers
+                    capacity: p.capacity || "N/A",
+                    status: p.status || "N/A",
+                    flag: `https://flagcdn.com/w160/${code.toLowerCase()}.png`,
+                    projectImage: p.imageUrl || "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=300&h=200&fit=crop",
+                    capacityValue: 0, // For potential sorting/aggregation
+                }
+            }
+            
+            acc[code].projects += 1
+            if (p.id) {
+                acc[code].projectList.push({ id: p.id, title: p.title })
+            }
+            // Simple heuristic: if multiple projects, maybe just say "Multiple Projects" or keep status from the latest/first
+            if (acc[code].projects > 1) {
+                acc[code].status = "Multi-Phase Development"
+            }
+            
+            return acc
+        }, {})
+
+        setCountryData(grouped)
+        setLoading(false)
+    }
+
+    loadProjects()
   }, [])
-
-
 
   const handlePolygonClick = (polygon: any, event: MouseEvent) => {
     if (!polygon) return
@@ -197,47 +109,44 @@ export default function GlobeViz() {
     // Stop rotation when looking at details
     if (globeEl.current) {
       globeEl.current.controls().autoRotate = false
-      
-      // Calculate centroid to look at
-      // react-globe.gl doesn't give centroid on polygon click easily in the event, 
-      // but we can calculate it or just rely on manual navigation. 
-      // A better UX is to rotate the globe to center the country.
-      // Getting lat/lng from the click event:
-      const { lat, lng } = polygon.properties.LABEL_Y && polygon.properties.LABEL_X 
-        ? { lat: polygon.properties.LABEL_Y, lng: polygon.properties.LABEL_X }
-        : { lat: 0, lng: 0 } // Fallback if data missing, simple approximate
-
-      // Actually the event argument often has coords from pointer
-      // But standard globe.gl polygonClick passes (polygon, event, { lat, lng, altitude })
-      
-      // Since type defs might be loose, let's try to animate to the looked at country if center is known.
-      // For simplicity, we just stop rotation and show popup.
     }
     
     // Set popup position (simplified for now, ideally projected to screen coords)
-    // Since we are in 3D canvas, screen coords need to be projected.
-    // simpler to just center it or use a fixed overlay.
-    // The previous implementation used fixed overlay centered on screen or calculated.
-    // Let's use screen center for the popup for now.
     setPopupPosition({ x: window.innerWidth / 2, y: window.innerHeight / 2 })
-  }
-
-  const getPolygonColor = (d: any) => {
-    const code = d.properties.ISO_A2
-    if (code === selectedCountry) return SELECTED_LAND_COLOR
-    if (d === hoveredPolygon && targetRegions.includes(code)) return HOVER_LAND_COLOR
-    if (targetRegions.includes(code)) {
-        // We can use specific colors or just a default "active" color
-        // The original had varied colors.
-        // Let's use a subtle green/blue for targets to make them pop against dark world.
-        return "#1e40af" // Dark blue
-    }
-    return DEFAULT_LAND_COLOR
   }
 
   const getCountryInfo = (countryId: string | null) => {
     if (!countryId) return null
     return countryData[countryId as keyof typeof countryData] || null
+  }
+
+  // Controls State
+  const [isAutoRotating, setIsAutoRotating] = useState(false)
+
+  // Control Handlers
+  const handleZoomIn = () => {
+    if (globeEl.current) {
+      const currentAlt = globeEl.current.pointOfView().altitude
+      const newAlt = Math.max(0.1, currentAlt - 0.5) // Limit zoom in
+      globeEl.current.pointOfView({ altitude: newAlt }, 400)
+    }
+  }
+
+  const handleZoomOut = () => {
+    if (globeEl.current) {
+      const currentAlt = globeEl.current.pointOfView().altitude
+      const newAlt = Math.min(4.0, currentAlt + 0.5) // Limit zoom out
+      globeEl.current.pointOfView({ altitude: newAlt }, 400)
+    }
+  }
+
+  const toggleAutoRotate = () => {
+    if (globeEl.current) {
+      const newState = !isAutoRotating
+      setIsAutoRotating(newState)
+      globeEl.current.controls().autoRotate = newState
+      globeEl.current.controls().autoRotateSpeed = 0.5 // Adjust speed as needed
+    }
   }
 
   // Effect to project popup position if we want it to follow the globe?
@@ -273,22 +182,26 @@ export default function GlobeViz() {
         ref={globeEl}
         globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
         backgroundImageUrl="//unpkg.com/three-globe/example/img/night-sky.png"
-        polygonsData={countries.features}
-        polygonAltitude={d => d === hoveredPolygon ? 0.03 : 0.01}
-        polygonCapColor={getPolygonColor}
-        polygonSideColor={() => 'rgba(255, 255, 255, 0.1)'}
-        polygonStrokeColor={() => '#555'}
-        polygonLabel={({ properties: d }: any) => `
+        hexPolygonsData={countries.features}
+        hexPolygonResolution={3}
+        hexPolygonMargin={0.2}
+        hexPolygonColor={(d: any) => {
+            const code = d.properties.ISO_A2
+            if (targetRegions.includes(code)) {
+                return '#059669' // Green for countries with projects
+            }
+            return '#2d3748' // Default land color
+        }}
+        hexPolygonLabel={({ properties: d }: any) => `
             <div style="background: rgba(0,0,0,0.8); color: white; padding: 4px 8px; border-radius: 4px;">
                 ${d.ADMIN} (${d.ISO_A2})
             </div>
         `}
-        onPolygonHover={setHoveredPolygon}
-        onPolygonClick={handlePolygonClick}
+        onHexPolygonClick={handlePolygonClick}
         width={typeof window !== 'undefined' ? window.innerWidth : 800} 
         onGlobeReady={() => {
           if (globeEl.current) {
-            // Disable auto-rotation for all
+            // Disable auto-rotation for all initially
             globeEl.current.controls().autoRotate = false
             globeEl.current.controls().enableZoom = false
             
@@ -296,7 +209,7 @@ export default function GlobeViz() {
             const isMobile = window.innerWidth < 768
             const altitude = isMobile ? 2.5 : 1.8
             
-            globeEl.current.pointOfView({ lat: 15, lng: 45, altitude })
+            globeEl.current.pointOfView({ lat: 0, lng: 20, altitude })
 
             if (isMobile) {
                 // Wait for the view to set, then disable controls to allow native scroll
@@ -310,6 +223,31 @@ export default function GlobeViz() {
         }}
         height={typeof window !== 'undefined' ? window.innerHeight : 600}
       />
+
+      {/* Globe Controls */}
+      <div className="absolute top-24 right-4 flex flex-col gap-2 z-10">
+        <button
+          onClick={handleZoomIn}
+          className="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white p-2 rounded-full border border-white/10 transition-colors"
+          title="Zoom In"
+        >
+          <Plus size={20} />
+        </button>
+        <button
+          onClick={handleZoomOut}
+          className="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white p-2 rounded-full border border-white/10 transition-colors"
+          title="Zoom Out"
+        >
+          <Minus size={20} />
+        </button>
+        <button
+          onClick={toggleAutoRotate}
+          className={`bg-white/10 hover:bg-white/20 backdrop-blur-md text-white p-2 rounded-full border border-white/10 transition-colors ${isAutoRotating ? 'text-green-400 border-green-500/50' : ''}`}
+          title={isAutoRotating ? "Stop Rotation" : "Auto Rotate"}
+        >
+            {isAutoRotating ? <RotateCcw size={20} /> : <RotateCw size={20} />}
+        </button>
+      </div>
 
       {/* Popup Overlay */}
       {selectedCountry && (
@@ -406,11 +344,25 @@ export default function GlobeViz() {
                   </div>
 
                   <div className="p-4 pt-0">
-                    <div className="bg-white/5 rounded-lg p-3 border border-white/10">
+                    <div className="bg-white/5 rounded-lg p-3 border border-white/10 mb-3">
                       <p className="text-xs sm:text-sm text-gray-400 leading-relaxed text-justify">
                         Comprehensive renewable energy development initiative focused on sustainable power generation, 
                         modern grid infrastructure, and community empowerment through clean energy access.
                       </p>
+                    </div>
+
+                    <div className="space-y-2 max-h-32 overflow-y-auto pr-1 custom-scrollbar">
+                      <p className="text-[10px] uppercase tracking-widest text-gray-500 font-bold mb-2">Projects in {info.name}</p>
+                      {info.projectList?.map((p: any) => (
+                        <Link 
+                          key={p.id} 
+                          href={`/projects/${p.id}`}
+                          className="flex items-center justify-between p-2.5 bg-white/5 hover:bg-white/10 border border-white/5 hover:border-white/20 rounded-lg transition-all group"
+                        >
+                          <span className="text-xs text-gray-300 group-hover:text-white font-medium truncate pr-4">{p.title}</span>
+                          <ExternalLink size={12} className="text-gray-500 group-hover:text-green-400 flex-shrink-0" />
+                        </Link>
+                      ))}
                     </div>
                   </div>
                 </div>

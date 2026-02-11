@@ -3,7 +3,7 @@
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { Linkedin, ArrowUpRight } from 'lucide-react';
+import { Linkedin } from 'lucide-react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
@@ -89,8 +89,10 @@ const Team = () => {
     }
   };
 
+  const MotionDiv = motion.div as any;
+
   const MemberCard = ({ member, size = "large" }: { member: TeamMember, size?: "large" | "small" }) => (
-    <motion.div 
+    <MotionDiv 
       variants={itemVariants}
       className="flex flex-col items-center group"
     >
@@ -124,7 +126,7 @@ const Team = () => {
           {member.name.split(' ')[0]}
         </h3>
       </div>
-    </motion.div>
+    </MotionDiv>
   );
 
   return (
@@ -135,8 +137,6 @@ const Team = () => {
         
         {/* Mentor Leader */}
         <motion.div 
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
           className="flex flex-col items-center mt-20 mb-5"
         >
           <div 
@@ -157,7 +157,7 @@ const Team = () => {
           {/* Project Development */}
           <section>
             <h2 className="text-sm md:text-base font-black text-[#062516]/40 uppercase tracking-[0.3em] text-center mb-8 border-b border-gray-100 pb-2">Project Development</h2>
-            <motion.div 
+            <MotionDiv 
               variants={containerVariants}
               initial="hidden"
               animate="visible"
@@ -166,13 +166,13 @@ const Team = () => {
               {projectDevelopment.map((member, index) => (
                 <MemberCard key={index} member={member} size="small" />
               ))}
-            </motion.div>
+            </MotionDiv>
           </section>
 
           {/* Project Execution */}
           <section>
             <h2 className="text-sm md:text-base font-black text-[#062516]/40 uppercase tracking-[0.3em] text-center mb-8 border-b border-gray-100 pb-2">Project Execution</h2>
-            <motion.div 
+            <MotionDiv 
               variants={containerVariants}
               initial="hidden"
               animate="visible"
@@ -181,13 +181,13 @@ const Team = () => {
               {projectExecution.map((member, index) => (
                 <MemberCard key={index} member={member} size="small" />
               ))}
-            </motion.div>
+            </MotionDiv>
           </section>
 
           {/* Project Support */}
           <section className='mb-10'>
             <h2 className="text-sm md:text-base font-black text-[#062516]/40 uppercase tracking-[0.3em] text-center mb-8 border-b border-gray-100 pb-2">Project Support</h2>
-            <motion.div 
+            <MotionDiv 
               variants={containerVariants}
               initial="hidden"
               animate="visible"
@@ -196,7 +196,7 @@ const Team = () => {
               {projectSupport.map((member, index) => (
                 <MemberCard key={index} member={member} size="small" />
               ))}
-            </motion.div>
+            </MotionDiv>
           </section>
         </div>
 
