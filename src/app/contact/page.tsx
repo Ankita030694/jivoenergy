@@ -101,14 +101,19 @@ const Contact = () => {
 
   const offices = [
     {
-      country: "Spain",
-      address: "Calle de Orense, 34, Torre Norte, Piso 10, 28020 Madrid, Spain",
+      country: "India",
+      address: "108 to 111, First Floor, Tower B, Spaze Business Park, Sector-66, Gurgaon, Haryana",
       tel: ""
     },
     {
-      country: "India",
-      address: "108 to 111, First Floor, Tower B, Spaze Business Park, Sector-66, Gurgaon, Haryana",
-      tel: "+91 99920 06899"
+      country: "Dubai",
+      address: "Meydan Grandstand, 6th Floor, Meydan Road, NadEl Sheba, Dubai, U.A.E",
+      tel: ""
+    },
+    {
+      country: "Uganda",
+      address: "Plot 40, Wanainchi Road, Ministers' Village, Ntinda, Kampala, PO Box 11580",
+      tel: ""
     },
     {
       country: "Mauritius",
@@ -116,19 +121,14 @@ const Contact = () => {
       tel: ""
     },
     {
-      country: "Uganda",
-      address: "6th Floor Trust Tower, Plot 4, Kyadondo Road, Kampala, Uganda",
-      tel: "+256 763 804483"
-    },
-    {
-      country: "Dubai",
-      address: "Meydan Grandstand, 6th Floor, Meydan Road, Nad El Sheba, Dubai, U.A.E",
-      tel: "+971 52 530 8095"
-    },
-    {
       country: "Ethiopia",
       address: "Office no-1203, Eldasol Building, Mike Leyland Street, Bole Sub-City, Woreda 4, House no. New, Addis Ababa, Ethiopia",
-      tel: "+251 9347 97090"
+      tel: ""
+    },
+    {
+      country: "Portugal",
+      address: "Rua, Joaquim Brandao, 13, Floor 1, Setubal, Portugal",
+      tel: ""
     }
   ];
 
@@ -168,11 +168,6 @@ const Contact = () => {
                 >
                   <h3 className="text-lg font-bold text-[#062516] mb-2">{office.country}</h3>
                   <p className="text-sm text-gray-700 mb-2 whitespace-pre-line">{office.address}</p>
-                  {office.tel && (
-                    <p className="text-sm text-gray-700">
-                      <span className="font-semibold">Tel:</span> {office.tel}
-                    </p>
-                  )}
                 </div>
               ))}
             </div>
@@ -182,7 +177,7 @@ const Contact = () => {
               <h2 className="text-lg font-bold text-[#062516] mb-4">Connect with us</h2>
               <div className="flex justify-center space-x-6">
                 <a 
-                  href="mailto:info@jivoenergy.com" 
+                  href="mailto:africa@jivoenergy.com" 
                   className="flex items-center text-[#062516] hover:text-[#051e12] transition-colors duration-300"
                 >
                   <FaEnvelope size={20} />

@@ -168,33 +168,7 @@ const ProjectsPage = () => {
   return (
     <div className="min-h-screen bg-gray-50 font-sans selection:bg-[#FFFA84] selection:text-[#062516]">
       <Navbar />
-      
-      {/* Banner Section */}
-      <div className="relative h-[60vh] md:h-[50vh] flex items-center justify-center overflow-hidden bg-[#062516]">
-        <motion.div 
-          initial={{ scale: 1.2, opacity: 0 }}
-          animate={{ scale: 1, opacity: 0.3 }}
-          transition={{ duration: 2 }}
-          className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1466611653911-95282fc3656b?auto=format&fit=crop&q=80')] bg-cover bg-center" 
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#062516]/50 to-[#062516]" />
-        
-        <div className="relative z-10 text-center px-4">
-            <motion.div
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, ease: "easeOut" }}
-            >
-                <h1 className="text-6xl md:text-8xl font-black text-white tracking-tighter mb-4">
-                    OUR <span className="text-[#FFFA84]">PROJECTS</span>
-                </h1>
-                <div className="h-2 w-32 bg-[#FFFA84] mx-auto rounded-full mb-8 shadow-[0_0_20px_rgba(255,250,132,0.4)]" />
-                <p className="text-gray-300 text-lg md:text-xl font-medium max-w-2xl mx-auto tracking-wide uppercase opacity-80">
-                    Innovative Energy Solutions Powering Africa's Future
-                </p>
-            </motion.div>
-        </div>
-      </div>
+     
 
       {/* Main Content Area */}
       <main className="container mx-auto px-6 py-24 md:py-32">
@@ -205,7 +179,7 @@ const ProjectsPage = () => {
              </div>
         ) : (
           <div>
-            <div className="flex justify-between items-end py-8 px-2">
+            <div className="flex justify-between items-end py-8 px-2 pt-30">
                 <div>
                     <h2 className="text-4xl md:text-5xl font-black text-[#062516] tracking-tight mb-2">Project Portfolio</h2>
                     <p className="text-black font-bold uppercase text-[10px] tracking-widest opacity-60">Showing {allProjects.length} projects across Africa</p>

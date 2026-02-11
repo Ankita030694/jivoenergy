@@ -185,7 +185,7 @@ const Team = () => {
           </section>
 
           {/* Project Support */}
-          <section>
+          <section className='mb-10'>
             <h2 className="text-sm md:text-base font-black text-[#062516]/40 uppercase tracking-[0.3em] text-center mb-8 border-b border-gray-100 pb-2">Project Support</h2>
             <motion.div 
               variants={containerVariants}
